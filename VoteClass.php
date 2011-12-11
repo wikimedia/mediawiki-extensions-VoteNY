@@ -103,7 +103,7 @@ class Vote {
 
 			// Kill parser cache
 			$article = new Article( $page_title );
-			$parserCache =& ParserCache::singleton();
+			$parserCache = ParserCache::singleton();
 			$parser_key = $parserCache->getKey( $article, $wgUser );
 			$wgMemc->delete( $parser_key );
 		}
