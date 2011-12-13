@@ -26,7 +26,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version' => '2.3.3',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'description' => 'JavaScript-based voting with the <tt>&lt;vote&gt;</tt> tag',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:VoteNY'
+	'url' => 'https://www.mediawiki.org/wiki/Extension:VoteNY'
 );
 
 // Path to Vote extension files
