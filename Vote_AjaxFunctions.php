@@ -4,7 +4,7 @@
  */
 $wgAjaxExportList[] = 'wfVoteClick';
 
-function wfVoteClick( $voteValue, $pageId, $mk ) {
+function wfVoteClick( $voteValue, $pageId ) {
 	global $wgUser;
 
 	if ( !$wgUser->isAllowed( 'vote' ) ) {
@@ -22,7 +22,7 @@ function wfVoteClick( $voteValue, $pageId, $mk ) {
 }
 
 $wgAjaxExportList[] = 'wfVoteDelete';
-function wfVoteDelete( $pageId, $mk ) {
+function wfVoteDelete( $pageId ) {
 	global $wgUser;
 
 	if ( !$wgUser->isAllowed( 'vote' ) ) {
@@ -40,7 +40,7 @@ function wfVoteDelete( $pageId, $mk ) {
 }
 
 $wgAjaxExportList[] = 'wfVoteStars';
-function wfVoteStars( $voteValue, $pageId, $mk ) {
+function wfVoteStars( $voteValue, $pageId ) {
 	global $wgUser;
 
 	if ( !$wgUser->isAllowed( 'vote' ) ) {
@@ -57,7 +57,7 @@ function wfVoteStars( $voteValue, $pageId, $mk ) {
 }
 
 $wgAjaxExportList[] = 'wfVoteStarsMulti';
-function wfVoteStarsMulti( $voteValue, $pageId, $mk ) {
+function wfVoteStarsMulti( $voteValue, $pageId ) {
 	global $wgUser;
 
 	if ( !$wgUser->isAllowed( 'vote' ) ) {

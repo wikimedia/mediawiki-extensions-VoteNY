@@ -27,7 +27,7 @@ class VoteHooks {
 	 * @return String: HTML
 	 */
 	public static function renderVote( $input, $args, $parser ) {
-		global $wgOut, $wgTitle, $wgScriptPath;
+		global $wgOut;
 
 		wfProfileIn( __METHOD__ );
 
@@ -39,12 +39,7 @@ class VoteHooks {
 		// Add CSS & JS
 		// In order for us to do this *here* instead of having to do this in
 		// registerParserHook(), we must've disabled parser cache
-		if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-			$wgOut->addModules( 'ext.voteNY' );
-		} else {
-			$wgOut->addScriptFile( $wgScriptPath . '/extensions/VoteNY/Vote.js' );
-			$wgOut->addExtensionStyle( $wgScriptPath . '/extensions/VoteNY/Vote.css' );
-		}
+		$wgOut->addModules( 'ext.voteNY' );
 
 		// Define variable - 0 means that we'll get that green voting box by default
 		$type = 0;
@@ -56,7 +51,7 @@ class VoteHooks {
 			$type = intval( $args['type'] );
 		}
 
-		$articleID = $wgTitle->getArticleID();
+		$articleID = $wgOut->getTitle()->getArticleID();
 		switch( $type ) {
 			case 0:
 				$vote = new Vote( $articleID );
@@ -73,18 +68,6 @@ class VoteHooks {
 		wfProfileOut( __METHOD__ );
 
 		return $output;
-	}
-
-	/**
-	 * Adds required JS variables to the HTML output.
-	 *
-	 * @param $vars Array: array of pre-existing JS globals
-	 * @return Boolean: true
-	 */
-	public static function addJSGlobalVariables( $vars ) {
-		$vars['_VOTE_LINK'] = wfMsg( 'vote-link' );
-		$vars['_UNVOTE_LINK'] = wfMsg( 'vote-unvote-link' );
-		return true;
 	}
 
 	/**
@@ -172,18 +155,13 @@ class VoteHooks {
 	 * Creates the necessary database table when the user runs
 	 * maintenance/update.php.
 	 *
-	 * @param $updater Object: instance of DatabaseUpdater
+	 * @param $updater DatabaseUpdater
 	 * @return Boolean: true
 	 */
-	public static function addTable( $updater = null ) {
+	public static function addTable( $updater ) {
 		$dir = dirname( __FILE__ );
 		$file = "$dir/vote.sql";
-		if ( $updater === null ) {
-			global $wgExtNewTables;
-			$wgExtNewTables[] = array( 'Vote', $file );
-		} else {
-			$updater->addExtensionUpdate( array( 'addTable', 'Vote', $file, true ) );
-		}
+		$updater->addExtensionUpdate( array( 'addTable', 'Vote', $file, true ) );
 		return true;
 	}
 }

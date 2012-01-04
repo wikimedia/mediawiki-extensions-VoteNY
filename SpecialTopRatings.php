@@ -9,7 +9,7 @@
  *
  * @file
  * @ingroup Extensions
- * @date 21 August 2011
+ * @date 11 December 2011
  * @license To the extent that it is possible, this code is in the public domain
  */
 class SpecialTopRatings extends IncludableSpecialPage {
@@ -27,7 +27,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	 * @param $par Mixed: parameter passed to the special page or null
 	 */
 	public function execute( $par ) {
-		global $wgOut, $wgScriptPath, $wgUser;
+		global $wgOut, $wgScriptPath;
 
 		// Set the page title, robot policies, etc.
 		$this->setHeaders();
@@ -49,13 +49,12 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$limit = 50;
 		}
 
-		// Add JS -- needed so that users can vote on this page and so that
-		// their browsers' consoles won't be filled with JS errors ;-)
-		$wgOut->addScriptFile( $wgScriptPath . '/extensions/VoteNY/Vote.js' );
+		// Add JS (and CSS) -- needed so that users can vote on this page and
+		// so that their browsers' consoles won't be filled with JS errors ;-)
+		$wgOut->addModules( 'ext.voteNY' );
 
 		$ratings = array();
 		$output = '';
-		$sk = $wgUser->getSkin();
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = $where = $joinConds = array();
@@ -124,7 +123,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 
 				$vote = new VoteStars( $pageId );
 				$output .= '<div class="user-list-rating">' .
-					$sk->link(
+					Linker::link(
 						$titleObj,
 						$titleObj->getPrefixedText() // prefixed, so that the namespace shows!
 					) . wfMsg( 'word-separator' ) . // i18n overkill? ya betcha...

@@ -4,11 +4,11 @@
  * @file
  * @ingroup Extensions
  * @author Jack Phoenix <jack@countervandalism.net>
- * @date 19 June 2011
+ * @date 4 January 2012
  */
 var VoteNY = {
 	MaxRating: 5,
-	clearRatingTimer: '',
+	clearRatingTimer: null,
 	voted_new: [],
 	id: 0,
 	last_id: 0,
@@ -16,57 +16,46 @@ var VoteNY = {
 
 	/**
 	 * Called when voting through the green square voting box
+	 *
 	 * @param TheVote
 	 * @param PageID Integer: internal ID number of the current article
-	 * @param mk Mixed: random token
 	 */
-	clickVote: function( TheVote, PageID, mk ) {
+	clickVote: function( TheVote, PageID ) {
 		sajax_request_type = 'POST';
-		sajax_do_call( 'wfVoteClick', [ TheVote, PageID, mk ], function( request ) {
+		sajax_do_call( 'wfVoteClick', [ TheVote, PageID ], function( request ) {
 			document.getElementById( 'votebox' ).style.cursor = 'default';
 			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
-			var unvoteMessage;
-			if ( typeof( mediaWiki ) == 'undefined' ) {
-				unvoteMessage = _UNVOTE_LINK;
-			} else {
-				unvoteMessage = mediaWiki.msg( 'vote-unvote-link' );
-			}
 			document.getElementById( 'Answer' ).innerHTML =
-				"<a href=javascript:VoteNY.unVote(" + PageID + ",'" + mk +
-				"')>" + unvoteMessage + '</a>';
+				'<a href="javascript:void(0);" class="vote-unvote-link">' +
+				mediaWiki.msg( 'vote-unvote-link' ) + '</a>';
 		} );
 	},
 
 	/**
 	 * Called when removing your vote through the green square voting box
+	 *
 	 * @param PageID Integer: internal ID number of the current article
 	 * @param mk Mixed: random token
 	 */
-	unVote: function( PageID, mk ) {
+	unVote: function( PageID ) {
 		sajax_request_type = 'POST';
-		sajax_do_call( 'wfVoteDelete', [ PageID, mk ], function( request ) {
+		sajax_do_call( 'wfVoteDelete', [ PageID ], function( request ) {
 			document.getElementById( 'votebox' ).style.cursor = 'pointer';
 			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
-			var voteMessage;
-			if ( typeof( mediaWiki ) == 'undefined' ) {
-				voteMessage = _VOTE_LINK;
-			} else {
-				voteMessage = mediaWiki.msg( 'vote-link' );
-			}
 			document.getElementById( 'Answer' ).innerHTML =
-				'<a href=javascript:VoteNY.clickVote(1,' + PageID + ',"' + mk +
-				'")>' + voteMessage + '</a>';
+				'<a href="javascript:void(0);" class="vote-vote-link">' +
+				mediaWiki.msg( 'vote-link' ) + '</a>';
 		} );
 	},
 
 	/**
 	 * Called when adding a vote after a user has clicked the yellow voting stars
+	 *
 	 * @param PageID Integer: internal ID number of the current article
-	 * @param mk Mixed: random token
 	 * @param id Integer: ID of the current rating star
 	 * @param action Integer: controls which AJAX function will be called
 	 */
-	clickVoteStars: function( TheVote, PageID, mk, id, action ) {
+	clickVoteStars: function( TheVote, PageID, id, action ) {
 		VoteNY.voted_new[id] = TheVote;
 		var rsfun;
 		if( action == 3 ) {
@@ -78,26 +67,25 @@ var VoteNY = {
 
 		var resultElement = document.getElementById( 'rating_' + id );
 		sajax_request_type = 'POST';
-		sajax_do_call( rsfun, [ TheVote, PageID, mk ], resultElement );
+		sajax_do_call( rsfun, [ TheVote, PageID ], resultElement );
 	},
 
 	/**
 	 * Called when removing your vote through the yellow voting stars
+	 *
 	 * @param PageID Integer: internal ID number of the current article
-	 * @param mk Mixed: random token
 	 * @param id Integer: ID of the current rating star
 	 */
-	unVoteStars: function( PageID, mk, id ) {
+	unVoteStars: function( PageID, id ) {
 		var resultElement = document.getElementById( 'rating_' + id );
 		sajax_request_type = 'POST';
-		sajax_do_call( 'wfVoteStarsDelete', [ PageID, mk ], resultElement );
+		sajax_do_call( 'wfVoteStarsDelete', [ PageID ], resultElement );
 	},
 
 	startClearRating: function( id, rating, voted ) {
-		VoteNY.clearRatingTimer = setTimeout(
-			"VoteNY.clearRating('" + id + "',0," + rating + ',' + voted + ')',
-			200
-		);
+		VoteNY.clearRatingTimer = setTimeout( function() {
+			VoteNY.clearRating( id, 0, rating, voted );
+		}, 200 );
 	},
 
 	clearRating: function( id, num, prev_rating, voted ) {
@@ -134,3 +122,47 @@ var VoteNY = {
 		VoteNY.last_id = id;
 	}
 };
+
+jQuery( document ).ready( function() {
+	// Green voting box
+	jQuery( '#votebox, a.vote-vote-link' ).click( function() {
+		VoteNY.clickVote( 1, mw.config.get( 'wgArticleId' ) );
+	} );
+
+	jQuery( 'a.vote-unvote-link' ).click( function() {
+		VoteNY.unVote( mw.config.get( 'wgArticleId' ) );
+	} );
+
+	// Rating stars
+	jQuery( 'img.vote-rating-star' ).click( function() {
+		var that = jQuery( this );
+		VoteNY.clickVoteStars(
+			that.data( 'vote-the-vote' ),
+			mw.config.get( 'wgArticleId' ),
+			that.data( 'vote-id' ),
+			that.data( 'vote-action' )
+		);
+	} ).mouseover( function() {
+		var that = jQuery( this );
+		VoteNY.updateRating(
+			that.data( 'vote-id' ),
+			that.data( 'vote-the-vote' ),
+			that.data( 'vote-rating' )
+		);
+	} ).mouseout( function() {
+		var that = jQuery( this );
+		VoteNY.startClearRating(
+			that.data( 'vote-id' ),
+			that.data( 'vote-rating' ),
+			that.data( 'vote-voted' )
+		);
+	} );
+
+	// Remove vote (rating stars)
+	jQuery( 'a.vote-remove-stars-link' ).click( function() {
+		VoteNY.unVoteStars(
+			mw.config.get( 'wgArticleId' ),
+			jQuery( this ).data( 'vote-id' )
+		);
+	} );
+} );

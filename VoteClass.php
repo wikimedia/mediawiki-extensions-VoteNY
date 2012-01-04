@@ -13,6 +13,7 @@ class Vote {
 
 	/**
 	 * Constructor
+	 *
 	 * @param $pageID Integer: article ID number
 	 */
 	public function __construct( $pageID ) {
@@ -26,10 +27,12 @@ class Vote {
 	/**
 	 * Counts all votes, fetching the data from memcached if available
 	 * or from the database if memcached isn't available
+	 *
 	 * @return Integer: amount of votes
 	 */
 	function count() {
 		global $wgMemc;
+
 		$key = wfMemcKey( 'vote', 'count', $this->PageID );
 		$data = $wgMemc->get( $key );
 
@@ -52,6 +55,7 @@ class Vote {
 			}
 			$wgMemc->set( $key, $vote_count );
 		}
+
 		return $vote_count;
 	}
 
@@ -82,6 +86,7 @@ class Vote {
 			}
 			$wgMemc->set( $key, $voteAvg );
 		}
+
 		return number_format( $voteAvg, 2 );
 	}
 
@@ -96,21 +101,22 @@ class Vote {
 		$wgMemc->delete( wfMemcKey( 'vote', 'avg', $this->PageID ) );
 
 		// Purge squid
-		$page_title = Title::newFromID( $this->PageID );
-		if( is_object( $page_title ) ) {
-			$page_title->invalidateCache();
-			$page_title->purgeSquid();
+		$pageTitle = Title::newFromID( $this->PageID );
+		if( is_object( $pageTitle ) ) {
+			$pageTitle->invalidateCache();
+			$pageTitle->purgeSquid();
 
 			// Kill parser cache
-			$article = new Article( $page_title );
+			$article = new Article( $pageTitle );
 			$parserCache = ParserCache::singleton();
-			$parser_key = $parserCache->getKey( $article, $wgUser );
-			$wgMemc->delete( $parser_key );
+			$parserKey = $parserCache->getKey( $article, $wgUser );
+			$wgMemc->delete( $parserKey );
 		}
 	}
 
 	/**
-	 * Delete the user's vote from the DB if s/he wants to remove his/her vote
+	 * Delete the user's vote from the database, purges normal caches and
+	 * updates SocialProfile's statistics, if SocialProfile is active.
 	 */
 	function delete() {
 		$dbw = wfGetDB( DB_MASTER );
@@ -169,8 +175,9 @@ class Vote {
 
 	/**
 	 * Checks if a user has already voted
-	 * @return Boolean: false if s/he hasn't, otherwise returns the value of
-	 *                  'vote_value' column from Vote DB table
+	 *
+	 * @return Boolean|Integer: false if s/he hasn't, otherwise returns the
+	 *                          value of 'vote_value' column from Vote DB table
 	 */
 	function UserAlreadyVoted() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -197,7 +204,6 @@ class Vote {
 	function display() {
 		global $wgUser;
 
-		$this->votekey = md5( $this->PageID . 'pants' . $this->Username );
 		$voted = $this->UserAlreadyVoted();
 
 		$make_vote_box_clickable = '';
@@ -205,7 +211,7 @@ class Vote {
 			$make_vote_box_clickable = ' vote-clickable';
 		}
 
-		$output = "<div class=\"vote-box{$make_vote_box_clickable}\" id=\"votebox\" onclick=\"VoteNY.clickVote(1,{$this->PageID},'{$this->votekey}')\">";
+		$output = "<div class=\"vote-box{$make_vote_box_clickable}\" id=\"votebox\">";
 	 	$output .= '<span id="PollVotes" class="vote-number">' . $this->count() . '</span>';
 		$output .= '</div>';
 		$output .= '<div id="Answer" class="vote-action">';
@@ -221,10 +227,10 @@ class Vote {
 		} else {
 			if( !wfReadOnly() ) {
 				if( $voted == false ) {
-					$output .= "<a href=\"javascript:VoteNY.clickVote(1,{$this->PageID},'{$this->votekey}')\">" .
+					$output .= '<a href="javascript:void(0);" class="vote-vote-link">' .
 						wfMsg( 'vote-link' ) . '</a>';
 				} else {
-					$output .= "<a href=\"javascript:VoteNY.unVote('{$this->PageID}', '{$this->votekey}')\">" .
+					$output .= '<a href="javascript:void(0);" class="vote-unvote-link">' .
 						wfMsg( 'vote-unvote-link' ) . '</a>';
 				}
 			}
@@ -244,7 +250,8 @@ class VoteStars extends Vote {
 
 	/**
 	 * Displays voting stars
-	 * @param $voted Boolean: false by default
+	 *
+	 * @param $voted Boolean: has the user already voted? False by default
 	 * @return Mixed: HTML output
 	 */
 	function display( $voted = false ) {
@@ -258,7 +265,6 @@ class VoteStars extends Vote {
 			$display_stars_rating = $this->getAverageVote();
 		}
 
-		$this->votekey = md5( $this->PageID . 'pants' . $this->Username );
 	 	$id = '';
 
 		// Should probably be $this->PageID or something?
@@ -279,7 +285,7 @@ class VoteStars extends Vote {
 			$output .= '<div class="rating-voted">' .
 				wfMsgExt( 'vote-gave-this', 'parsemag', $already_voted ) .
 			" </div>
-			<a href=\"javascript:VoteNY.unVoteStars({$this->PageID},'{$this->votekey}','{$id}')\">("
+			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\" data-vote-id=\"{$id}\">("
 				. wfMsg( 'vote-remove' ) .
 			')</a>';
 		}
@@ -304,7 +310,6 @@ class VoteStars extends Vote {
 		if( !$rating ) {
 			$rating = 0;
 		}
-		$this->votekey = md5( $this->PageID . 'pants' . $this->Username );
 		if( !$voted ) {
 			$voted = 0;
 		}
@@ -316,10 +321,10 @@ class VoteStars extends Vote {
 			} else {
 				$action = 5;
 			}
-			$onclick = "VoteNY.clickVoteStars({$x},{$this->PageID},'{$this->votekey}','{$id}',$action);";
-			$onmouseover = "VoteNY.updateRating('{$id}',{$x},{$rating});";
-			$onmouseout = "VoteNY.startClearRating('{$id}','{$rating}',{$voted});";
-			$output .= "<img onclick=\"javascript:{$onclick}\" onmouseover=\"javascript:{$onmouseover}\" onmouseout=\"javascript:{$onmouseout}\" id=\"rating_{$id}_{$x}\" src=\"{$wgScriptPath}/extensions/VoteNY/images/star_";
+			$output .= "<img class=\"vote-rating-star\" data-vote-the-vote=\"{$x}\"" .
+				" data-vote-id=\"{$id}\" data-vote-action=\"{$action}\" data-vote-rating=\"{$rating}\"" .
+				" data-vote-voted=\"{$voted}\" id=\"rating_{$id}_{$x}\"" .
+				" src=\"{$wgScriptPath}/extensions/VoteNY/images/star_";
 			switch( true ) {
 				case $rating >= $x:
 					if( $voted ) {

@@ -4,7 +4,7 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.3.3
+ * @version 2.4
  * @author Aaron Wright <aaron.wright@gmail.com>
  * @author David Pean <david.pean@gmail.com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -23,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Vote',
-	'version' => '2.3.3',
+	'version' => '2.4',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'description' => 'JavaScript-based voting with the <tt>&lt;vote&gt;</tt> tag',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:VoteNY'
@@ -55,7 +55,6 @@ $wgSpecialPages['TopRatings'] = 'SpecialTopRatings';
 $wgAutoloadClasses['VoteHooks'] = $dir . 'VoteHooks.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'VoteHooks::registerParserHook';
-$wgHooks['MakeGlobalVariablesScript'][] = 'VoteHooks::addJSGlobalVariables';
 $wgHooks['RenameUserSQL'][] = 'VoteHooks::onUserRename';
 // Translations for {{NUMBEROFVOTES}}
 //$wgExtensionMessagesFiles['NumberOfVotes'] = $dir . 'Vote.i18n.magic.php';
