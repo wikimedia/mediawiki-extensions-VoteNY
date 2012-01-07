@@ -107,7 +107,7 @@ class Vote {
 			$pageTitle->purgeSquid();
 
 			// Kill parser cache
-			$article = new Article( $pageTitle );
+			$article = new Article( $pageTitle, /* oldid */0 );
 			$parserCache = ParserCache::singleton();
 			$parserKey = $parserCache->getKey( $article, $wgUser );
 			$wgMemc->delete( $parserKey );
