@@ -82,21 +82,6 @@ class VoteHooks {
 	}
 
 	/**
-	 * Set up the {{NUMBEROFVOTES}} magic word.
-	 *
-	 * @param $magicWords Array: array of magic words
-	 * @param $langID
-	 * @return Boolean: true
-	 */
-	public static function setUpMagicWord( &$magicWords, $langID ) {
-		// tell MediaWiki that {{NUMBEROFVOTES}} and all case variants found in
-		// wiki text should be mapped to magic ID 'NUMBEROFVOTES'
-		// (0 means case-insensitive)
-		$magicWords['NUMBEROFVOTES'] = array( 0, 'NUMBEROFVOTES' );
-		return true;
-	}
-
-	/**
 	 * Assign a value to {{NUMBEROFVOTES}}. First we try memcached and if that
 	 * fails, we fetch it directly from the database and cache it for 24 hours.
 	 *

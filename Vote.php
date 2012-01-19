@@ -23,9 +23,9 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Vote',
-	'version' => '2.4',
+	'version' => '2.5',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
-	'description' => 'JavaScript-based voting with the <tt>&lt;vote&gt;</tt> tag',
+	'descriptionmsg' => 'voteny-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:VoteNY'
 );
 
@@ -43,6 +43,7 @@ require_once( 'Vote_AjaxFunctions.php' );
 // Autoload classes and set up i18n
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['Vote'] = $dir . 'Vote.i18n.php';
+$wgExtensionMessagesFiles['VoteNYMagic'] = $dir . 'VoteNY.i18n.magic.php';
 $wgAutoloadClasses['Vote'] = $dir . 'VoteClass.php';
 $wgAutoloadClasses['VoteStars'] = $dir . 'VoteClass.php';
 
@@ -56,9 +57,6 @@ $wgAutoloadClasses['VoteHooks'] = $dir . 'VoteHooks.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'VoteHooks::registerParserHook';
 $wgHooks['RenameUserSQL'][] = 'VoteHooks::onUserRename';
-// Translations for {{NUMBEROFVOTES}}
-//$wgExtensionMessagesFiles['NumberOfVotes'] = $dir . 'Vote.i18n.magic.php';
-$wgHooks['LanguageGetMagic'][] = 'VoteHooks::setUpMagicWord';
 $wgHooks['ParserGetVariableValueSwitch'][] = 'VoteHooks::assignValueToMagicWord';
 $wgHooks['MagicWordwgVariableIDs'][] = 'VoteHooks::registerVariableId';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'VoteHooks::addTable';

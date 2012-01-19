@@ -13,6 +13,7 @@ $messages = array();
  * @author David Pean <david.pean@gmail.com>
  */
 $messages['en'] = array(
+	'voteny-desc' => 'JavaScript-based voting with the <tt>&lt;vote&gt;</tt> tag',
 	'vote-link' => 'Vote',
 	'vote-unvote-link' => 'unvote',
 	'vote-community-score' => 'community score: $1',
