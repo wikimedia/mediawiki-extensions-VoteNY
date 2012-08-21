@@ -28,6 +28,18 @@ $messages['en'] = array(
 	'right-vote' => 'Vote pages',
 );
 
+/** Message documentation */
+$messages['qqq'] = array(
+	'vote-link' => 'Link title',
+	'vote-unvote-link' => 'Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.',
+	'vote-community-score' => 'Community score is the average of votes a page has been given, $1 is the actual score in numbers (i.e. 4.5 or 3)',
+	'vote-remove' => 'Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.',
+	'vote-gave-this' => '$1 is a number, the vote you gave to the page. Refer to the [[mw:File:VoteNY.png|image]] for details.',
+	'topratings' => 'Title of Special:TopRatings, as shown on the special page itself and on Special:SpecialPages',
+	'topratings-no-pages' => 'Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.',
+	'right-vote' => 'Shown on Special:ListGroupRights',
+);
+
 /** Finnish (Suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
  */
