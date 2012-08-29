@@ -223,15 +223,15 @@ class Vote {
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
 			$output .= '<a class="votebutton" href="' .
 				$login->escapeFullURL() . '" rel="nofollow">' .
-				wfMsg( 'vote-link' ) . '</a>';
+				wfMsg( 'voteny-link' ) . '</a>';
 		} else {
 			if( !wfReadOnly() ) {
 				if( $voted == false ) {
 					$output .= '<a href="javascript:void(0);" class="vote-vote-link">' .
-						wfMsg( 'vote-link' ) . '</a>';
+						wfMsg( 'voteny-link' ) . '</a>';
 				} else {
 					$output .= '<a href="javascript:void(0);" class="vote-unvote-link">' .
-						wfMsg( 'vote-unvote-link' ) . '</a>';
+						wfMsg( 'voteny-unvote-link' ) . '</a>';
 				}
 			}
 		}
@@ -278,15 +278,15 @@ class VoteStars extends Vote {
 		$count = $this->count();
 		if( $count ) {
 			$output .= ' <span class="rating-total">(' .
-				wfMsgExt( 'vote-votes', 'parsemag', $count ) . ')</span>';
+				wfMsgExt( 'voteny-votes', 'parsemag', $count ) . ')</span>';
 		}
 		$already_voted = $this->UserAlreadyVoted();
 		if( $already_voted && $wgUser->isLoggedIn() ) {
 			$output .= '<div class="rating-voted">' .
-				wfMsgExt( 'vote-gave-this', 'parsemag', $already_voted ) .
+				wfMsgExt( 'voteny-gave-this', 'parsemag', $already_voted ) .
 			" </div>
 			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\" data-vote-id=\"{$id}\">("
-				. wfMsg( 'vote-remove' ) .
+				. wfMsg( 'voteny-remove' ) .
 			')</a>';
 		}
 		$output .= '</div>
@@ -353,8 +353,8 @@ class VoteStars extends Vote {
 	 */
 	function displayScore() {
 		$count = $this->count();
-		return wfMsg( 'vote-community-score', '<b>' . $this->getAverageVote() . '</b>' ) .
-				' (' . wfMsgExt( 'vote-ratings', 'parsemag', $count ) . ')';
+		return wfMsg( 'voteny-community-score', '<b>' . $this->getAverageVote() . '</b>' ) .
+				' (' . wfMsgExt( 'voteny-ratings', 'parsemag', $count ) . ')';
 	}
 
 }

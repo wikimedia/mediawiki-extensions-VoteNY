@@ -4,7 +4,7 @@
  * @file
  * @ingroup Extensions
  * @author Jack Phoenix <jack@countervandalism.net>
- * @date 4 January 2012
+ * @date 29 August 2012
  */
 var VoteNY = {
 	MaxRating: 5,
@@ -27,7 +27,7 @@ var VoteNY = {
 			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
 			document.getElementById( 'Answer' ).innerHTML =
 				'<a href="javascript:void(0);" class="vote-unvote-link">' +
-				mediaWiki.msg( 'vote-unvote-link' ) + '</a>';
+				mediaWiki.msg( 'voteny-unvote-link' ) + '</a>';
 		} );
 	},
 
@@ -44,7 +44,7 @@ var VoteNY = {
 			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
 			document.getElementById( 'Answer' ).innerHTML =
 				'<a href="javascript:void(0);" class="vote-vote-link">' +
-				mediaWiki.msg( 'vote-link' ) + '</a>';
+				mediaWiki.msg( 'voteny-link' ) + '</a>';
 		} );
 	},
 

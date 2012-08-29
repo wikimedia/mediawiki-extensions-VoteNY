@@ -4,11 +4,11 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.4
+ * @version 2.5.1
  * @author Aaron Wright <aaron.wright@gmail.com>
  * @author David Pean <david.pean@gmail.com>
  * @author Jack Phoenix <jack@countervandalism.net>
- * @link http://www.mediawiki.org/wiki/Extension:VoteNY Documentation
+ * @link https://www.mediawiki.org/wiki/Extension:VoteNY Documentation
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -23,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Vote',
-	'version' => '2.5',
+	'version' => '2.5.1',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'voteny-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:VoteNY'
@@ -65,7 +65,7 @@ $wgHooks['LoadExtensionSchemaUpdates'][] = 'VoteHooks::addTable';
 $wgResourceModules['ext.voteNY'] = array(
 	'styles' => 'Vote.css',
 	'scripts' => 'Vote.js',
-	'messages' => array( 'vote-link', 'vote-unvote-link' ),
+	'messages' => array( 'voteny-link', 'voteny-unvote-link' ),
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'VoteNY',
 	'position' => 'top' // available since r85616

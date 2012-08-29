@@ -14,13 +14,13 @@ $messages = array();
  */
 $messages['en'] = array(
 	'voteny-desc' => 'JavaScript-based voting with the <tt>&lt;vote&gt;</tt> tag',
-	'vote-link' => 'Vote',
-	'vote-unvote-link' => 'unvote',
-	'vote-community-score' => 'community score: $1',
-	'vote-ratings' => '{{PLURAL:$1|one rating|$1 ratings}}',
-	'vote-remove' => 'remove',
-	'vote-gave-this' => 'you gave this a $1',
-	'vote-votes' => '{{PLURAL:$1|one vote|$1 votes}}',
+	'voteny-link' => 'Vote',
+	'voteny-unvote-link' => 'unvote',
+	'voteny-community-score' => 'community score: $1',
+	'voteny-ratings' => '{{PLURAL:$1|one rating|$1 ratings}}',
+	'voteny-remove' => 'remove',
+	'voteny-gave-this' => 'you gave this a $1',
+	'voteny-votes' => '{{PLURAL:$1|one vote|$1 votes}}',
 	// Special:TopRatings
 	'topratings' => 'Top rated pages',
 	'topratings-no-pages' => 'No top rated pages.',
@@ -30,11 +30,11 @@ $messages['en'] = array(
 
 /** Message documentation */
 $messages['qqq'] = array(
-	'vote-link' => 'Link title',
-	'vote-unvote-link' => 'Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.',
-	'vote-community-score' => 'Community score is the average of votes a page has been given, $1 is the actual score in numbers (i.e. 4.5 or 3)',
-	'vote-remove' => 'Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.',
-	'vote-gave-this' => '$1 is a number, the vote you gave to the page. Refer to the [[mw:File:VoteNY.png|image]] for details.',
+	'voteny-link' => 'Link title',
+	'voteny-unvote-link' => 'Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.',
+	'voteny-community-score' => 'Community score is the average of votes a page has been given, $1 is the actual score in numbers (i.e. 4.5 or 3)',
+	'voteny-remove' => 'Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.',
+	'voteny-gave-this' => '$1 is a number, the vote you gave to the page. Refer to the [[mw:File:VoteNY.png|image]] for details.',
 	'topratings' => 'Title of Special:TopRatings, as shown on the special page itself and on Special:SpecialPages',
 	'topratings-no-pages' => 'Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.',
 	'right-vote' => 'Shown on Special:ListGroupRights',
@@ -44,13 +44,13 @@ $messages['qqq'] = array(
  * @author Jack Phoenix <jack@countervandalism.net>
  */
 $messages['fi'] = array(
-	'vote-link' => 'Äänestä',
-	'vote-unvote-link' => 'poista ääni',
-	'vote-community-score' => 'yhteisön antama pistemäärä: $1',
-	'vote-ratings' => '{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}',
-	'vote-remove' => 'poista',
-	'vote-gave-this' => 'annoit tälle {{PLURAL:$1|yhden tähden|$1 tähteä}}',
-	'vote-votes' => '{{PLURAL:$1|yksi ääni|$1 ääntä}}',
+	'voteny-link' => 'Äänestä',
+	'voteny-unvote-link' => 'poista ääni',
+	'voteny-community-score' => 'yhteisön antama pistemäärä: $1',
+	'voteny-ratings' => '{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}',
+	'voteny-remove' => 'poista',
+	'voteny-gave-this' => 'annoit tälle {{PLURAL:$1|yhden tähden|$1 tähteä}}',
+	'voteny-votes' => '{{PLURAL:$1|yksi ääni|$1 ääntä}}',
 	'topratings' => 'Huippusivut',
 	'topratings-no-pages' => 'Ei huippusivuja.',
 	'right-vote' => 'Äänestää sivuja',
@@ -60,10 +60,10 @@ $messages['fi'] = array(
  * @author Jack Phoenix <jack@countervandalism.net>
  */
 $messages['fr'] = array(
-	'vote-link' => 'Voter',
-	'vote-unvote-link' => 'supprimer vote',
-	'vote-remove' => 'supprimer',
-	'vote-votes' => '{{PLURAL:$1|un vote|$1 votes}}',
+	'voteny-link' => 'Voter',
+	'voteny-unvote-link' => 'supprimer vote',
+	'voteny-remove' => 'supprimer',
+	'voteny-votes' => '{{PLURAL:$1|un vote|$1 votes}}',
 	'right-vote' => 'Voter pages',
 );
 
@@ -71,12 +71,12 @@ $messages['fr'] = array(
  * @author Mitchel Corstjens
  */
 $messages['nl'] = array(
-	'vote-link' => 'Stem',
-	'vote-unvote-link' => 'stem terugtrekken',
-	'vote-community-score' => 'gemeenschap score: $1',
-	'vote-remove' => 'verwijder',
-	'vote-gave-this' => 'je gaf dit een $1',
-	'vote-votes' => '{{PLURAL:$1|een stem|$1 stemmen}}',
+	'voteny-link' => 'Stem',
+	'voteny-unvote-link' => 'stem terugtrekken',
+	'voteny-community-score' => 'gemeenschap score: $1',
+	'voteny-remove' => 'verwijder',
+	'voteny-gave-this' => 'je gaf dit een $1',
+	'voteny-votes' => '{{PLURAL:$1|een stem|$1 stemmen}}',
 	'topratings' => 'Meest gewaardeerde pagina\'s',
 	'topratings-no-pages' => 'Er zijn nog geen meest gewaardeerde pagina\'s',
 	'right-vote' => 'Stem paginas',
@@ -86,12 +86,12 @@ $messages['nl'] = array(
  * @author Misiek95
  */
 $messages['pl'] = array(
-	'vote-link' => 'Głosuj',
-	'vote-unvote-link' => 'Anuluj',
-	'vote-community-score' => 'Wynik wśród społeczności: $1',
-	'vote-ratings' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
-	'vote-remove' => 'usuń',
-	'vote-gave-this' => 'Oceniłeś to na $1',
-	'vote-votes' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
+	'voteny-link' => 'Głosuj',
+	'voteny-unvote-link' => 'Anuluj',
+	'voteny-community-score' => 'Wynik wśród społeczności: $1',
+	'voteny-ratings' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
+	'voteny-remove' => 'usuń',
+	'voteny-gave-this' => 'Oceniłeś to na $1',
+	'voteny-votes' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
 	'right-vote' => 'Udział w głosowaniach',
 );
