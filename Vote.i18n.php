@@ -28,13 +28,18 @@ $messages['en'] = array(
 	'right-vote' => 'Vote pages',
 );
 
-/** Message documentation (Message documentation) */
+/** Message documentation (Message documentation)
+ * @author Darth Kule
+ */
 $messages['qqq'] = array(
+	'voteny-desc' => '{{desc}}',
 	'voteny-link' => 'Link title',
 	'voteny-unvote-link' => 'Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.',
 	'voteny-community-score' => 'Community score is the average of votes a page has been given, $1 is the actual score in numbers (i.e. 4.5 or 3)',
+	'voteny-ratings' => '<code>$1</code> is the number of ratings, if said number is greater than 1.',
 	'voteny-remove' => 'Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.',
 	'voteny-gave-this' => '$1 is a number, the vote you gave to the page. Refer to the [[mw:File:VoteNY.png|image]] for details.',
+	'voteny-votes' => '$1 is the number of votes.',
 	'topratings' => 'Title of Special:TopRatings, as shown on the special page itself and on Special:SpecialPages',
 	'topratings-no-pages' => 'Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.',
 );
@@ -104,12 +109,35 @@ $messages['fi'] = array(
 
 /** French (français)
  * @author Jack Phoenix <jack@countervandalism.net>
+ * @author Tititou36
  */
 $messages['fr'] = array(
+	'voteny-desc' => 'Système de vote en JavaScript avec la balise <tt>&lt;vote&gt;</tt>',
 	'voteny-link' => 'Voter',
 	'voteny-unvote-link' => 'supprimer vote',
+	'voteny-community-score' => 'note de la communauté : $1',
+	'voteny-ratings' => '{{PLURAL:$1|une note|$1 notes}}',
 	'voteny-remove' => 'supprimer',
+	'voteny-gave-this' => 'Vous avez noté $1',
 	'voteny-votes' => '{{PLURAL:$1|un vote|$1 votes}}',
+	'topratings' => 'Pages les mieux notées',
+	'topratings-no-pages' => 'Aucune page notée.',
+);
+
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'voteny-desc' => 'Sistema de votación en JavaScript coa etiqueta <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Votar',
+	'voteny-unvote-link' => 'retirar o voto',
+	'voteny-community-score' => 'puntuación da comunidade: $1',
+	'voteny-ratings' => '{{PLURAL:$1|unha valoración|$1 valoracións}}',
+	'voteny-remove' => 'eliminar',
+	'voteny-gave-this' => 'vostede deu un $1',
+	'voteny-votes' => '{{PLURAL:$1|un voto|$1 votos}}',
+	'topratings' => 'Páxinas mellor valoradas',
+	'topratings-no-pages' => 'Non hai ningunha páxina valorada.',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -126,6 +154,22 @@ $messages['hsb'] = array(
 	'voteny-votes' => '{{PLURAL:$1|jedyn hłós|$1 hłosaj|$1 hłosy|$1 hłosow}}',
 	'topratings' => 'Najwyše pohódnoćene strony',
 	'topratings-no-pages' => 'Žane najwyše pohódnoćene strony.',
+);
+
+/** Italian (italiano)
+ * @author Darth Kule
+ */
+$messages['it'] = array(
+	'voteny-desc' => 'Sistema di voto basato su JavaScript con il tag <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Vota',
+	'voteny-unvote-link' => 'rimuovi voto',
+	'voteny-community-score' => 'punteggio della comunità: $1',
+	'voteny-ratings' => '{{PLURAL:$1|un giudizio|$1 giudizi}}',
+	'voteny-remove' => 'rimuovi',
+	'voteny-gave-this' => 'hai dato $1',
+	'voteny-votes' => '{{PLURAL:$1|un voto|$1 voti}}',
+	'topratings' => 'Pagine migliori',
+	'topratings-no-pages' => 'Nessuna pagina migliore.',
 );
 
 /** Japanese (日本語)
@@ -165,9 +209,11 @@ $messages['mk'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
+	'voteny-desc' => 'Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>',
 	'voteny-link' => 'Stemmen',
 	'voteny-unvote-link' => 'stem terugtrekken',
 	'voteny-community-score' => 'gemeenschapsscore: $1',
+	'voteny-ratings' => '{{PLURAL:$1|één waardering|$1 waarderingen}}',
 	'voteny-remove' => 'verwijderen',
 	'voteny-gave-this' => 'u heeft een $1 gegeven',
 	'voteny-votes' => '{{PLURAL:$1|één stem|$1 stemmen}}',
