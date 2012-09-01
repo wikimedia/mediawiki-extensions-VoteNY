@@ -45,19 +45,27 @@ $messages['qqq'] = array(
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Metalhead64
  */
 $messages['de'] = array(
-	'voteny-desc' => 'Ergänzt das Tag <tt>&lt;vote&gt;</tt> zur JavaScript-basierten Abstimmung.',
+	'voteny-desc' => 'Ergänzt das Tag <tt>&lt;vote&gt;</tt> zum Durchführen JavaScript-gestützter Abstimmungen',
 	'voteny-link' => 'Abstimmen',
-	'voteny-unvote-link' => 'nicht abstimmen',
+	'voteny-unvote-link' => 'Stimme zurücknehmen',
 	'voteny-community-score' => 'Punktestand der Gemeinschaft: $1',
-	'voteny-ratings' => '{{PLURAL:$1|Eine Bewertung|$1 Bewertungen}}',
+	'voteny-ratings' => '{{PLURAL:$1|eine Bewertung|$1 Bewertungen}}',
 	'voteny-remove' => 'entfernen',
-	'voteny-gave-this' => 'Du hast diesem eine $1 gegeben.',
-	'voteny-votes' => '{{PLURAL:$1|Eine Abstimmung|$1 Abstimmungen}}',
+	'voteny-gave-this' => 'Du hast eine $1 vergeben.',
+	'voteny-votes' => '{{PLURAL:$1|eine Stimme|$1 Stimmen}}',
 	'topratings' => 'Höchstbewertete Seiten',
-	'topratings-no-pages' => 'Keine höchstbewerteten Seiten vorhanden.',
+	'topratings-no-pages' => 'Es sind keine höchstbewerteten Seiten vorhanden.',
+);
+
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Kghbln
+ */
+$messages['de-formal'] = array(
+	'voteny-gave-this' => 'Sie haben eine $1 vergeben.',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -94,6 +102,7 @@ $messages['es'] = array(
 
 /** Finnish (suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
+ * @author Nike
  */
 $messages['fi'] = array(
 	'voteny-link' => 'Äänestä',
@@ -101,7 +110,7 @@ $messages['fi'] = array(
 	'voteny-community-score' => 'yhteisön antama pistemäärä: $1',
 	'voteny-ratings' => '{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}',
 	'voteny-remove' => 'poista',
-	'voteny-gave-this' => 'annoit tälle {{PLURAL:$1|yhden tähden|$1 tähteä}}',
+	'voteny-gave-this' => 'annoit {{PLURAL:$1|yhden tähden|$1 tähteä}}',
 	'voteny-votes' => '{{PLURAL:$1|yksi ääni|$1 ääntä}}',
 	'topratings' => 'Huippusivut',
 	'topratings-no-pages' => 'Ei huippusivuja.',
