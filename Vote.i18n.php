@@ -30,6 +30,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Darth Kule
+ * @author Nemo bis
  */
 $messages['qqq'] = array(
 	'desc' => '{{desc}}',
@@ -42,6 +43,8 @@ $messages['qqq'] = array(
 	'votes' => '$1 is the number of votes.',
 	'topratings' => 'Title of Special:TopRatings, as shown on the special page itself and on Special:SpecialPages',
 	'topratings-no-pages' => 'Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.',
+	'right-vote' => '{{doc-right}}
+Right to place a vote on pages with the extension.',
 );
 
 /** German (Deutsch)
@@ -83,6 +86,7 @@ $messages['dsb'] = array(
 	'votes' => '{{PLURAL:$1|jaden głos|$1 głosa|$1 głose|$1 głosow}}',
 	'topratings' => 'Nejwuše pógódnośone boki',
 	'topratings-no-pages' => 'Žedne nejwuše pógódnośone boki.',
+	'right-vote' => 'Wótgłosowańske boki',
 );
 
 /** Spanish (español)
@@ -99,6 +103,7 @@ $messages['es'] = array(
 	'votes' => '{{PLURAL:$1|un voto|$1 votos}}',
 	'topratings' => 'Páginas más valoradas',
 	'topratings-no-pages' => 'No hay páginas mejor valoradas',
+	'right-vote' => 'Páginas de votación',
 );
 
 /** Finnish (suomi)
@@ -148,6 +153,7 @@ $messages['gl'] = array(
 	'votes' => '{{PLURAL:$1|un voto|$1 votos}}',
 	'topratings' => 'Páxinas mellor valoradas',
 	'topratings-no-pages' => 'Non hai ningunha páxina valorada.',
+	'right-vote' => 'Votar páxinas',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -164,9 +170,11 @@ $messages['hsb'] = array(
 	'votes' => '{{PLURAL:$1|jedyn hłós|$1 hłosaj|$1 hłosy|$1 hłosow}}',
 	'topratings' => 'Najwyše pohódnoćene strony',
 	'topratings-no-pages' => 'Žane najwyše pohódnoćene strony.',
+	'right-vote' => 'Wothłosowanske strony',
 );
 
 /** Italian (italiano)
+ * @author Beta16
  * @author Darth Kule
  */
 $messages['it'] = array(
@@ -180,6 +188,7 @@ $messages['it'] = array(
 	'votes' => '{{PLURAL:$1|un voto|$1 voti}}',
 	'topratings' => 'Pagine migliori',
 	'topratings-no-pages' => 'Nessuna pagina migliore.',
+	'right-vote' => 'Vota le pagine',
 );
 
 /** Japanese (日本語)
@@ -196,6 +205,7 @@ $messages['ja'] = array(
 	'votes' => '{{PLURAL:$1|$1 票}}',
 	'topratings' => '評価が高いページ',
 	'topratings-no-pages' => '評価が高いページはありません。',
+	'right-vote' => 'ページに投票',
 );
 
 /** Macedonian (македонски)
@@ -212,6 +222,7 @@ $messages['mk'] = array(
 	'votes' => '{{PLURAL:$1|еден глас|$1 гласа}}',
 	'topratings' => 'Водечки страници',
 	'topratings-no-pages' => 'Нема водечки страници.',
+	'right-vote' => 'Гласање за страници',
 );
 
 /** Dutch (Nederlands)
@@ -229,6 +240,7 @@ $messages['nl'] = array(
 	'votes' => '{{PLURAL:$1|één stem|$1 stemmen}}',
 	'topratings' => "Meest gewaardeerde pagina's",
 	'topratings-no-pages' => "Er zijn nog geen meest gewaardeerde pagina's.",
+	'right-vote' => "Op pagina's stemmen",
 );
 
 /** Polish (polski) */
@@ -244,6 +256,7 @@ $messages['pl'] = array(
 
 /** Tagalog (Tagalog)
  * @author AnakngAraw
+ * @author TheSleepyhollow02
  */
 $messages['tl'] = array(
 	'desc' => 'Botohan na nakabatay sa JavaScript na mayroong tatak na <tt>&lt;bumoto&gt;</tt>',
@@ -256,5 +269,6 @@ $messages['tl'] = array(
 	'votes' => '{{PLURAL:$1| isang boto| $1 mga boto}}',
 	'topratings' => 'Mga pahinang nangunguna sa pag-aantas',
 	'topratings-no-pages' => 'Walang mga pahinang nangunguna sa pag-aantas.',
+	'right-vote' => 'Iboto ang mga pahina',
 );
 
