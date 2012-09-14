@@ -208,6 +208,13 @@ $messages['ja'] = array(
 	'right-vote' => 'ページに投票',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'link' => 'ხმის მიცემა',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
