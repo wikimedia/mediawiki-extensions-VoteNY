@@ -50,6 +50,7 @@ Right to place a vote on pages with the extension.',
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
+ * @author Purodha
  */
 $messages['de'] = array(
 	'desc' => 'Ergänzt das Tag <tt>&lt;vote&gt;</tt> zum Durchführen JavaScript-gestützter Abstimmungen',
@@ -62,7 +63,7 @@ $messages['de'] = array(
 	'votes' => '{{PLURAL:$1|eine Stimme|$1 Stimmen}}',
 	'topratings' => 'Höchstbewertete Seiten',
 	'topratings-no-pages' => 'Es sind keine höchstbewerteten Seiten vorhanden.',
-	'right-vote' => 'Abstimmungsseiten',
+	'right-vote' => 'Abstimmen über Seiten',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -213,6 +214,23 @@ $messages['ja'] = array(
  */
 $messages['ka'] = array(
 	'link' => 'ხმის მიცემა',
+);
+
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'desc' => 'Afschtemmonge met JavaSkrep övver dä Befähl <code lang="en">&lt;vote&gt;</code>.',
+	'link' => 'Afschtemme',
+	'unvote-link' => 'Schtemm zerökträke',
+	'community-score' => 'Jemeinschafflejje Pünkscher: $1',
+	'ratings' => '{{PLURAL:$1|Ein Bewertong|$1 Bewertonge|Kein Bewertonge}}',
+	'remove' => 'fott nämme',
+	'gave-this' => 'Do häs en $1 verjovve.',
+	'votes' => '{{PLURAL:$1|Ein Schtemm|$1 Schtemme|Kein Schtemme}}',
+	'topratings' => 'Sigge met de hühste Bewertonge',
+	'topratings-no-pages' => 'Kein Sigge met hühste Bewertonge jefonge.',
+	'right-vote' => 'Övver Siige afschtemme',
 );
 
 /** Macedonian (македонски)
