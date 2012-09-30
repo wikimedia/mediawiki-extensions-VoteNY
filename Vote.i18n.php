@@ -250,6 +250,20 @@ $messages['mk'] = array(
 	'right-vote' => 'Гласање за страници',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'desc' => 'Pengundian berasaskan JavaScript dengan teg <tt>&lt;vote&gt;</tt>',
+	'link' => 'Undi',
+	'unvote-link' => 'tarik balik undi',
+	'community-score' => 'markah komuniti: $1',
+	'ratings' => '$1 penilaian',
+	'remove' => 'buang',
+	'gave-this' => 'anda memberi yang ini $1',
+	'votes' => '$1 undian',
+);
+
 /** Dutch (Nederlands)
  * @author Mitchel Corstjens
  * @author Siebrand
