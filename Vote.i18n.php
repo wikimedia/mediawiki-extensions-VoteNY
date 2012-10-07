@@ -233,6 +233,17 @@ $messages['ksh'] = array(
 	'right-vote' => 'Övver Siige afschtemme',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'link' => 'Ofstëmmen',
+	'unvote-link' => 'Stëmm zréckzéien',
+	'remove' => 'ewechhuelen',
+	'gave-this' => 'Dir hutt eng $1 ofginn',
+	'right-vote' => 'Ofstëmmen iwwer Säiten',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
