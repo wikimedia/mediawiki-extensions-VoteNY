@@ -73,6 +73,15 @@ $messages['de-formal'] = array(
 	'gave-this' => 'Sie haben eine $1 vergeben.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Erdemaslancan
+ */
+$messages['diq'] = array(
+	'link' => 'Rey Bıdê',
+	'unvote-link' => 'rey medı',
+	'right-vote' => 'Pera rey dayışi',
+);
+
 /** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
