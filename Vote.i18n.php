@@ -75,11 +75,12 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
-	'link' => 'Rey Bıdê',
-	'unvote-link' => 'rey medı',
-	'right-vote' => 'Pera rey dayışi',
+	'link' => 'Rey',
+	'unvote-link' => 'rey mede',
+	'right-vote' => 'Pera reydayışi',
 );
 
 /** Lower Sorbian (dolnoserbski)
