@@ -80,7 +80,7 @@ $messages['de-formal'] = array(
 $messages['diq'] = array(
 	'link' => 'Rey',
 	'unvote-link' => 'rey mede',
-	'right-vote' => 'Pera reydayışi',
+	'right-vote' => 'Pelê reydayışi',
 );
 
 /** Lower Sorbian (dolnoserbski)
