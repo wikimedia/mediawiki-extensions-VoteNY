@@ -283,6 +283,9 @@ $messages['ms'] = array(
 	'remove' => 'buang',
 	'gave-this' => 'anda memberi yang ini $1',
 	'votes' => '$1 undian',
+	'topratings' => 'Halaman undian tertinggi',
+	'topratings-no-pages' => 'Tiada halaman undian tertinggi.',
+	'right-vote' => 'Mengundi halaman',
 );
 
 /** Dutch (Nederlands)
