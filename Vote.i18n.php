@@ -303,7 +303,8 @@ $messages['nl'] = array(
 	'right-vote' => "Op pagina's stemmen",
 );
 
-/** Polish (polski) */
+/** Polish (polski)
+ */
 $messages['pl'] = array(
 	'link' => 'Głosuj',
 	'unvote-link' => 'Anuluj',
@@ -331,4 +332,3 @@ $messages['tl'] = array(
 	'topratings-no-pages' => 'Walang mga pahinang nangunguna sa pag-aantas.',
 	'right-vote' => 'Iboto ang mga pahina',
 );
-
