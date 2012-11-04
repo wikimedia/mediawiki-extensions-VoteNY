@@ -134,6 +134,7 @@ $messages['fi'] = array(
 );
 
 /** French (français)
+ * @author Crochet.david
  * @author Jack Phoenix <jack@countervandalism.net>
  * @author Tititou36
  */
@@ -148,6 +149,7 @@ $messages['fr'] = array(
 	'votes' => '{{PLURAL:$1|un vote|$1 votes}}',
 	'topratings' => 'Pages les mieux notées',
 	'topratings-no-pages' => 'Aucune page notée.',
+	'right-vote' => 'Pages de vote',
 );
 
 /** Galician (galego)
