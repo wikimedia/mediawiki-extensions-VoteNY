@@ -320,6 +320,14 @@ $messages['pl'] = array(
 	'votes' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
 );
 
+/** Tamil (தமிழ்)
+ * @author மதனாஹரன்
+ */
+$messages['ta'] = array(
+	'link' => 'வாக்களி',
+	'remove' => 'நீக்கு',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  * @author TheSleepyhollow02
