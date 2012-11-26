@@ -80,9 +80,9 @@ $messages['de-formal'] = array(
 $messages['diq'] = array(
 	'link' => 'Rey',
 	'unvote-link' => 'rey mede',
-	'community-score' => 'Skorê şêlıgi: $1',
-	'ratings' => '{{PLURAL:$1|yew rêze|$1 rêzey}}',
-	'remove' => 'wedarne',
+	'community-score' => 'Puwanê şêlıki: $1',
+	'ratings' => '{{PLURAL:$1|yew nırğnayış|$1 nırğnayışi}}',
+	'remove' => 'wedare',
 	'votes' => '{{PLURAL:$1|yew rey|$1 reyi}}',
 	'right-vote' => 'Pelê reydayışi',
 );
