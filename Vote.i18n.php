@@ -349,3 +349,20 @@ $messages['tl'] = array(
 	'topratings-no-pages' => 'Walang mga pahinang nangunguna sa pag-aantas.',
 	'right-vote' => 'Iboto ang mga pahina',
 );
+
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'desc' => 'Голосування на основі JavaScript із теґом <tt>&lt;vote&gt;</tt>',
+	'link' => 'Голосувати',
+	'unvote-link' => 'скасувати голос',
+	'community-score' => 'середня оцінка: $1',
+	'ratings' => '{{PLURAL:$1|один голос|$1 голоси|$1 голосів}}',
+	'remove' => 'вилучити',
+	'gave-this' => 'Ви оцінили це як $1',
+	'votes' => '{{PLURAL:$1|один голос|$1 голоси|$1 голосів}}',
+	'topratings' => 'Сторінки із найвищим оцінками',
+	'topratings-no-pages' => 'Сторінки із не найвищими оцінками.',
+	'right-vote' => 'Голосувати за сторінки',
+);
