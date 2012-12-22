@@ -122,6 +122,16 @@ $messages['es'] = array(
 	'right-vote' => 'Páginas de votación',
 );
 
+/** Persian (فارسی)
+ * @author Mjbmr
+ */
+$messages['fa'] = array(
+	'link' => 'رأی دهی',
+	'unvote-link' => 'حذف رأی',
+	'remove' => 'حذف',
+	'right-vote' => 'صفحه‌های رأی',
+);
+
 /** Finnish (suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
  * @author Nike
