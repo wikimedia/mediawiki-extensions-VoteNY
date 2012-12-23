@@ -48,6 +48,13 @@ $messages['qqq'] = array(
 Right to place a vote on pages with the extension.',
 );
 
+/** Bulgarian (български)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['bg'] = array(
+	'remove' => 'премахване',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
@@ -201,6 +208,13 @@ $messages['hsb'] = array(
 	'right-vote' => 'Wothłosowanske strony',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['id'] = array(
+	'remove' => 'hapus',
+);
+
 /** Italian (italiano)
  * @author Beta16
  * @author Darth Kule
@@ -335,6 +349,21 @@ $messages['pl'] = array(
 	'votes' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
 );
 
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'link' => 'Rösta',
+	'unvote-link' => 'ta bort röst',
+	'community-score' => 'gemenskapspoäng: $1',
+	'ratings' => '{{PLURAL:$1|ett betyg|$1 betyg}}',
+	'remove' => 'ta bort',
+	'gave-this' => 'du gav detta $1',
+	'votes' => '{{PLURAL:$1|en röst|$1 röster}}',
+	'topratings' => 'Topplistade sidor',
+	'topratings-no-pages' => 'Inga topplistade sidor.',
+);
+
 /** Tamil (தமிழ்)
  * @author மதனாஹரன்
  */
@@ -376,4 +405,26 @@ $messages['uk'] = array(
 	'topratings' => 'Сторінки із найвищим оцінками',
 	'topratings-no-pages' => 'Сторінки із не найвищими оцінками.',
 	'right-vote' => 'Голосувати за сторінки',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hans'] = array(
+	'link' => '投票',
+	'ratings' => '{{PLURAL:$1|$1人评分}}',
+	'remove' => '删除',
+	'votes' => '{{PLURAL:$1|$1票}}',
+	'right-vote' => '投票页面',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hant'] = array(
+	'link' => '投票',
+	'ratings' => '{{PLURAL:$1|$1個評級}}',
+	'remove' => '移除',
+	'votes' => '{{PLURAL:$1|$1票}}',
+	'right-vote' => '投票頁面',
 );
