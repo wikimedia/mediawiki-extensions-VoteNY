@@ -174,6 +174,20 @@ $messages['fr'] = array(
 	'right-vote' => 'Pages de vote',
 );
 
+/** Franco-Provençal (arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'link' => 'Votar',
+	'unvote-link' => 'enlevar lo voto',
+	'community-score' => 'mârca de la comunôtât : $1',
+	'ratings' => '{{PLURAL:$1|yona èstimacion|$1 èstimacions}}',
+	'remove' => 'enlevar',
+	'gave-this' => 'vos éd balyê $1',
+	'votes' => '{{PLURAL:$1|yon voto|$1 votos}}',
+	'right-vote' => 'Votar des pâges',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
@@ -347,6 +361,31 @@ $messages['pl'] = array(
 	'remove' => 'usuń',
 	'gave-this' => 'Oceniłeś to na $1',
 	'votes' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
+);
+
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'desc' => 'Votassion basà dzor JavaScript con la tichëtta <tt>&lt;vote&gt;</tt>',
+	'link' => 'Voté',
+	'unvote-link' => 'scansela vot',
+	'community-score' => 'Pontegi dla comunità: $1',
+	'ratings' => '{{PLURAL:$1|na valutassion|$1 valutassion}}',
+	'remove' => 'gava',
+	'gave-this' => "It l'has daje un $1",
+	'votes' => '{{PLURAL:$1|un vot|$1 vot}}',
+	'topratings' => 'Le pagine pi valutà',
+	'topratings-no-pages' => 'Gnun-e pagine pi valutà.',
+	'right-vote' => 'Voté pàgine',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'link' => 'ඡන්දය දෙන්න',
+	'remove' => 'ඉවත් කරන්න',
 );
 
 /** Swedish (svenska)
