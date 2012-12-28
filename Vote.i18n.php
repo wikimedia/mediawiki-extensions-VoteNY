@@ -380,12 +380,22 @@ $messages['pms'] = array(
 	'right-vote' => 'Voté pàgine',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'right-vote' => 'د رايې مخونه',
+);
+
 /** Sinhala (සිංහල)
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
 	'link' => 'ඡන්දය දෙන්න',
+	'unvote-link' => 'මනාපය ලබා නොදෙන්න',
+	'community-score' => 'ප්‍රජා ලකුණ: $1',
 	'remove' => 'ඉවත් කරන්න',
+	'right-vote' => 'මනාප පිටු',
 );
 
 /** Swedish (svenska)
