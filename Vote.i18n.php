@@ -394,7 +394,12 @@ $messages['si'] = array(
 	'link' => 'ඡන්දය දෙන්න',
 	'unvote-link' => 'මනාපය ලබා නොදෙන්න',
 	'community-score' => 'ප්‍රජා ලකුණ: $1',
+	'ratings' => '{{PLURAL:$1|තරාතිරමක්|තරාතිරම් $1 ක්}}',
 	'remove' => 'ඉවත් කරන්න',
+	'gave-this' => 'ඔබ මෙයට $1 දී ඇත',
+	'votes' => '{{PLURAL:$1|මනාපයක්|මනාප $1 ක්}}',
+	'topratings' => 'ඉහළ ශ්‍රේණිගත පිටු',
+	'topratings-no-pages' => 'ඉහළ ශ්‍රේණිගත පිටු නොමැත.',
 	'right-vote' => 'මනාප පිටු',
 );
 
