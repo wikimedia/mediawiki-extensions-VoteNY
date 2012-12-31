@@ -387,6 +387,15 @@ $messages['ps'] = array(
 	'right-vote' => 'د رايې مخونه',
 );
 
+/** Romanian (română)
+ * @author Minisarm
+ * @author Stelistcristi
+ */
+$messages['ro'] = array(
+	'link' => 'Votați',
+	'remove' => 'elimină',
+);
+
 /** Sinhala (සිංහල)
  * @author පසිඳු කාවින්ද
  */
