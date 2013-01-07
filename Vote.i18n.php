@@ -364,20 +364,21 @@ $messages['pl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
 	'desc' => 'Votassion basà dzor JavaScript con la tichëtta <tt>&lt;vote&gt;</tt>',
 	'link' => 'Voté',
-	'unvote-link' => 'scansela vot',
+	'unvote-link' => 'scancelé vot',
 	'community-score' => 'Pontegi dla comunità: $1',
 	'ratings' => '{{PLURAL:$1|na valutassion|$1 valutassion}}',
 	'remove' => 'gava',
 	'gave-this' => "It l'has daje un $1",
 	'votes' => '{{PLURAL:$1|un vot|$1 vot}}',
-	'topratings' => 'Le pagine pi valutà',
-	'topratings-no-pages' => 'Gnun-e pagine pi valutà.',
-	'right-vote' => 'Voté pàgine',
+	'topratings' => 'Le pàgine valutà mej',
+	'topratings-no-pages' => 'Gnun-e pàgine valutà.',
+	'right-vote' => 'Pàgine ëd vot',
 );
 
 /** Pashto (پښتو)
