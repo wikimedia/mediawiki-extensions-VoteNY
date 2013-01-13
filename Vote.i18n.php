@@ -44,7 +44,7 @@ $messages['qqq'] = array(
 	'votes' => '$1 is the number of votes.',
 	'topratings' => 'Title of Special:TopRatings, as shown on the special page itself and on Special:SpecialPages',
 	'topratings-no-pages' => 'Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.',
-	'right-vote' => '{{doc-right}}
+	'right-vote' => '{{doc-right|vote|prefix=Voteny-}}
 Right to place a vote on pages with the extension.',
 );
 
