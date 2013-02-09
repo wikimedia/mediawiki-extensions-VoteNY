@@ -269,6 +269,7 @@ $messages['ja'] = array(
  */
 $messages['ka'] = array(
 	'link' => 'ხმის მიცემა',
+	'remove' => 'წაშლა',
 );
 
 /** Colognian (Ripoarisch)
