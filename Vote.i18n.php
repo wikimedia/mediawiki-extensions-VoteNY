@@ -398,6 +398,14 @@ $messages['ro'] = array(
 	'remove' => 'elimină',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'link' => 'Vote',
+	'remove' => 'live',
+);
+
 /** Sinhala (සිංහල)
  * @author පසිඳු කාවින්ද
  */
