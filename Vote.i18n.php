@@ -404,6 +404,8 @@ $messages['ro'] = array(
  */
 $messages['roa-tara'] = array(
 	'link' => 'Vote',
+	'unvote-link' => 'no vutà',
+	'community-score' => "pundegge d'a comunitate: $1",
 	'remove' => 'live',
 );
 
