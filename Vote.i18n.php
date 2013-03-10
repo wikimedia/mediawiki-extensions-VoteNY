@@ -206,6 +206,18 @@ $messages['gl'] = array(
 	'right-vote' => 'Votar páxinas',
 );
 
+/** Hebrew (עברית)
+ * @author חיים
+ */
+$messages['he'] = array(
+	'link' => 'הצבעה',
+	'unvote-link' => 'הסר הצבעה',
+	'remove' => 'הסרה',
+	'gave-this' => 'נתת לזה $1',
+	'votes' => '{{PLURAL:$1|הצבעה אחת|$1 הצבעות}}',
+	'right-vote' => 'דפי ההצבעה',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
