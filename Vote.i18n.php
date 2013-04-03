@@ -415,10 +415,17 @@ $messages['ro'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'desc' => "Votazione ca se base sus a JavaScript cu 'u tag <tt>&lt;vote&gt;</tt>",
 	'link' => 'Vote',
 	'unvote-link' => 'no vutà',
 	'community-score' => "pundegge d'a comunitate: $1",
+	'ratings' => "{{PLURAL:$1|'na valutazione|$1 valutaziune}}",
 	'remove' => 'live',
+	'gave-this' => 'Tu è date quiste $1',
+	'votes' => "{{PLURAL:$1|'nu vote|$1 vote}}",
+	'topratings' => 'Pàggene cchiù vutate',
+	'topratings-no-pages' => "Pàggene ca no stonne 'ngape a le vote.",
+	'right-vote' => 'Vote le vôsce',
 );
 
 /** Sinhala (සිංහල)
