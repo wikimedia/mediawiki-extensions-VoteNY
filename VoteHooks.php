@@ -51,19 +51,24 @@ class VoteHooks {
 			$type = intval( $args['type'] );
 		}
 
-		$articleID = $wgOut->getTitle()->getArticleID();
-		switch( $type ) {
-			case 0:
-				$vote = new Vote( $articleID );
-				break;
-			case 1:
-				$vote = new VoteStars( $articleID );
-				break;
-			default:
-				$vote = new Vote( $articleID );
-		}
+		$output = null;
+		$title = $wgOut->getTitle();
+		if( $title ) {
 
-		$output = $vote->display();
+			$articleID = $title->getArticleID();
+			switch( $type ) {
+				case 0:
+					$vote = new Vote( $articleID );
+					break;
+				case 1:
+					$vote = new VoteStars( $articleID );
+					break;
+				default:
+					$vote = new Vote( $articleID );
+			}
+
+			$output = $vote->display();
+		}
 
 		wfProfileOut( __METHOD__ );
 
