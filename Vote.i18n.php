@@ -521,12 +521,19 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Justincheng12345
  * @author Shirayuki
  */
 $messages['zh-hant'] = array(
+	'desc' => '基於JavaScript的投票與<tt>&lt;vote&gt;</tt>標記',
 	'link' => '投票',
+	'unvote-link' => '取消投票',
+	'community-score' => '社羣積分：$1',
 	'ratings' => '{{PLURAL:$1|$1個評級}}',
 	'remove' => '移除',
+	'gave-this' => '你給了$1分',
 	'votes' => '{{PLURAL:$1|$1票}}',
+	'topratings' => '最受好評的頁面',
+	'topratings-no-pages' => '沒有最受好評的頁面。',
 	'right-vote' => '投票頁面',
 );
