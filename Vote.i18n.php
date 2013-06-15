@@ -49,6 +49,23 @@ $messages['qqq'] = array(
 Right to place a vote on pages with the extension.',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'desc' => 'Votación basada en JavaScript cola etiqueta <tt>&lt;vote&gt;</tt>',
+	'link' => 'Votar',
+	'unvote-link' => 'retirar el votu',
+	'community-score' => 'puntuación de la comunidá: $1',
+	'ratings' => '{{PLURAL:$1|una valoración|$1 valoraciones}}',
+	'remove' => 'desaniciar',
+	'gave-this' => 'dio-y a esto un $1',
+	'votes' => '{{PLURAL:$1|un votu|$1 votos}}',
+	'topratings' => 'Páxines meyor calificaes',
+	'topratings-no-pages' => 'Nun hai páxines meyor calificaes',
+	'right-vote' => 'Votar páxines',
+);
+
 /** Bulgarian (български)
  * @author පසිඳු කාවින්ද
  */
