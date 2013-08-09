@@ -302,6 +302,23 @@ $messages['ka'] = array(
 	'voteny-remove' => 'წაშლა',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'desc' => '<tt>&lt;vote&gt;</tt> 태그로 자바스크립트 기반 투포',
+	'link' => '투표',
+	'unvote-link' => '투표 취소',
+	'community-score' => '공동체 점수: $1',
+	'ratings' => '{{PLURAL:$1|평가 한 개|평가 $1개}}',
+	'remove' => '제거',
+	'gave-this' => '이것을 $1(으)로 주었습니다',
+	'votes' => '{{PLURAL:$1|한 표|$1표}}',
+	'topratings' => '평가가 높은 문서',
+	'topratings-no-pages' => '평가가 높은 문서가 없습니다.',
+	'right-vote' => '문서 투표',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
