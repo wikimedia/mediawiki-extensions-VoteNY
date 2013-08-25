@@ -436,6 +436,15 @@ $messages['ps'] = array(
 	'right-vote' => 'د رايې مخونه',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas
+ */
+$messages['pt-br'] = array(
+	'link' => 'Votar',
+	'remove' => 'remover',
+	'votes' => '{{PLURAL:$1|um voto|$1 votos}}',
+);
+
 /** Romanian (română)
  * @author Minisarm
  * @author Stelistcristi
