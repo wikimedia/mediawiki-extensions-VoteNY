@@ -37,7 +37,10 @@ $messages['qqq'] = array(
 	'desc' => '{{desc|name=Vote NY|url=http://www.mediawiki.org/wiki/Extension:VoteNY}}',
 	'link' => 'Link title',
 	'unvote-link' => 'Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.',
-	'community-score' => 'Community score is the average of votes a page has been given, $1 is the actual score in numbers (i.e. 4.5 or 3)',
+	'community-score' => 'Community score is the average of votes a page has been given.
+
+Parameters:
+* $1 - the actual score in numbers (i.e. 4.5 or 3)',
 	'ratings' => 'Parameters:
 * $1 - the number of ratings, if said number is greater than 1',
 	'remove' => 'Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.',
