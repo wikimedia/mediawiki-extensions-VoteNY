@@ -158,11 +158,19 @@ $messages['es'] = array(
 
 /** Persian (فارسی)
  * @author Mjbmr
+ * @author Omidh
  */
 $messages['fa'] = array(
+	'desc' => 'سیستمی بر اساس جاوا اسکریپت برای رای گیری با تگ <tt>&lt;vote&gt;</tt>',
 	'link' => 'رأی دهی',
 	'unvote-link' => 'حذف رأی',
+	'community-score' => 'امتیاز کلی: $1',
+	'ratings' => '{{PLURAL:$1|یک امتیاز|$1 امتیاز}}',
 	'remove' => 'حذف',
+	'gave-this' => 'شما $1 امتیاز دادید',
+	'votes' => '{{PLURAL:$1|یک رای|$1 رای ها}}',
+	'topratings' => 'صفحات دارای امتیاز بالا',
+	'topratings-no-pages' => 'صفحه هایی با امتیاز بالا وجود ندارند.',
 	'right-vote' => 'صفحه‌های رأی',
 );
 
