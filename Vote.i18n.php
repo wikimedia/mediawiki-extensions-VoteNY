@@ -488,6 +488,18 @@ $messages['roa-tara'] = array(
 	'right-vote' => 'Vote le vôsce',
 );
 
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'desc' => 'Голосование на основе JavaScript с использованием тега <tt>&lt;vote&gt;</tt>',
+	'link' => 'Голосовать',
+	'unvote-link' => 'отменить выбор',
+	'community-score' => 'оценка сообщества: $1',
+	'ratings' => '{{PLURAL:$1|один балл|$1 балла|$1 баллов}}',
+	'votes' => '{{PLURAL:$1|один голос|$1 голоса|$1 голосов}}',
+);
+
 /** Sinhala (සිංහල)
  * @author පසිඳු කාවින්ද
  */
