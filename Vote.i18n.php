@@ -157,20 +157,21 @@ $messages['es'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Mjbmr
  * @author Omidh
  */
 $messages['fa'] = array(
-	'desc' => 'سیستمی بر اساس جاوا اسکریپت برای رای گیری با تگ <tt>&lt;vote&gt;</tt>',
+	'desc' => 'سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با تگ <tt>&lt;vote&gt;</tt>',
 	'link' => 'رأی دهی',
 	'unvote-link' => 'حذف رأی',
 	'community-score' => 'امتیاز کلی: $1',
 	'ratings' => '{{PLURAL:$1|یک امتیاز|$1 امتیاز}}',
 	'remove' => 'حذف',
 	'gave-this' => 'شما $1 امتیاز دادید',
-	'votes' => '{{PLURAL:$1|یک رای|$1 رای ها}}',
+	'votes' => '{{PLURAL:$1|یک رای|$1 رای}}',
 	'topratings' => 'صفحات دارای امتیاز بالا',
-	'topratings-no-pages' => 'صفحه هایی با امتیاز بالا وجود ندارند.',
+	'topratings-no-pages' => 'صفحه‌هایی با امتیاز بالا وجود ندارند.',
 	'right-vote' => 'صفحه‌های رأی',
 );
 
@@ -497,7 +498,12 @@ $messages['ru'] = array(
 	'unvote-link' => 'отменить выбор',
 	'community-score' => 'оценка сообщества: $1',
 	'ratings' => '{{PLURAL:$1|один балл|$1 балла|$1 баллов}}',
+	'remove' => 'отменить',
+	'gave-this' => 'Вы поставили $1',
 	'votes' => '{{PLURAL:$1|один голос|$1 голоса|$1 голосов}}',
+	'topratings' => 'Самые популярные страницы',
+	'topratings-no-pages' => 'Нет популярных страниц.',
+	'right-vote' => 'Страницы голосований',
 );
 
 /** Sinhala (සිංහල)
