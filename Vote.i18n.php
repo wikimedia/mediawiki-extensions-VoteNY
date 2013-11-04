@@ -82,6 +82,23 @@ $messages['bg'] = array(
 	'remove' => 'премахване',
 );
 
+/** Catalan (català)
+ * @author Toniher
+ */
+$messages['ca'] = array(
+	'desc' => "Votació basada en JavaScript amb l'etiqueta <tt>&lt;vote&gt;</tt>",
+	'link' => 'Vota',
+	'unvote-link' => 'anul·la el vot',
+	'community-score' => 'puntuació comunitària: $1',
+	'ratings' => '{{PLURAL:$1|una valoració|$1 valoracions}}',
+	'remove' => 'suprimeix',
+	'gave-this' => 'vau donar-li un $1',
+	'votes' => '{{PLURAL:$1|un vot|$1 vots}}',
+	'topratings' => 'Pàgines més puntuades',
+	'topratings-no-pages' => 'No hi ha cap pàgina puntuada.',
+	'right-vote' => 'Pàgines de votació',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
