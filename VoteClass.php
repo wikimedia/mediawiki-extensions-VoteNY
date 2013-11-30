@@ -45,13 +45,13 @@ class Vote {
 			$vote_count = 0;
 			$res = $dbr->select(
 				'Vote',
-				'COUNT(*) AS VoteCount',
+				'COUNT(*) AS votecount',
 				array( 'vote_page_id' => $this->PageID ),
 				__METHOD__
 			);
 			$row = $dbr->fetchObject( $res );
 			if( $row ) {
-				$vote_count = $row->VoteCount;
+				$vote_count = $row->votecount;
 			}
 			$wgMemc->set( $key, $vote_count );
 		}
@@ -76,13 +76,13 @@ class Vote {
 			$dbr = wfGetDB( DB_SLAVE );
 			$res = $dbr->select(
 				'Vote',
-				'AVG(vote_value) AS VoteAvg',
+				'AVG(vote_value) AS voteavg',
 				array( 'vote_page_id' => $this->PageID ),
 				__METHOD__
 			);
 			$row = $dbr->fetchObject( $res );
 			if( $row ) {
-				$voteAvg = $row->VoteAvg;
+				$voteAvg = $row->voteavg;
 			}
 			$wgMemc->set( $key, $voteAvg );
 		}
@@ -120,6 +120,7 @@ class Vote {
 	 */
 	function delete() {
 		$dbw = wfGetDB( DB_MASTER );
+		$dbw->begin();
 		$dbw->delete(
 			'Vote',
 			array(
@@ -149,6 +150,7 @@ class Vote {
 		$voteDate = date( 'Y-m-d H:i:s' );
 		wfRestoreWarnings();
 		if( $this->UserAlreadyVoted() == false ) {
+			$dbw->begin();
 			$dbw->insert(
 				'Vote',
 				array(
@@ -276,7 +278,7 @@ class VoteStars extends Vote {
 		$output .= '<div class="rating-section">';
 		$output .= $this->displayStars( $id, $display_stars_rating, $voted );
 		$count = $this->count();
-		if( $count ) {
+		if( isset( $count ) ) {
 			$output .= ' <span class="rating-total">(' .
 				wfMsgExt( 'voteny-votes', 'parsemag', $count ) . ')</span>';
 		}

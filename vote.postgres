@@ -1,0 +1,21 @@
+CREATE TABLE "Vote" (
+  -- Internal ID to identify between different vote tags on different pages
+  vote_id SERIAL NOT NULL PRIMARY KEY,
+  -- Username (if any) of the person who voted
+  username varchar(255) NOT NULL default '0',
+  -- User ID of the person who voted
+  vote_user_id integer NOT NULL default '0',
+  -- ID of the page where the vote tag is in
+  vote_page_id integer NOT NULL default '0',
+  -- Value of the vote (ranging from 1 to 5)
+  vote_value integer NOT NULL,
+  -- Timestamp when the vote was cast
+  vote_date timestamp without time zone NOT NULL,
+  -- IP address of the user who voted
+  vote_ip varchar(45) NOT NULL default ''
+) /*$wgDBTableOptions*/;
+
+CREATE INDEX vote_page_id_index ON "Vote" (vote_page_id);
+CREATE INDEX valueidx ON "Vote" (vote_value);
+CREATE INDEX usernameidx ON "Vote" (username);
+CREATE INDEX vote_date ON "Vote" (vote_date);

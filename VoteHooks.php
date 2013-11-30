@@ -149,9 +149,13 @@ class VoteHooks {
 	 * @return Boolean: true
 	 */
 	public static function addTable( $updater ) {
-		$dir = dirname( __FILE__ );
-		$file = "$dir/vote.sql";
-		$updater->addExtensionUpdate( array( 'addTable', 'Vote', $file, true ) );
+		$dbt = $updater->getDB()->getType();
+		$file = dirname( __FILE__ ) . "/vote.$dbt";
+		if ( file_exists( $file ) ) {
+			$updater->addExtensionUpdate( array( 'addTable', 'Vote', $file, true ) );
+		} else {
+			throw new MWException("VoteNY does not support $dbt.");
+		}
 		return true;
 	}
 }
