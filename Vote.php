@@ -59,6 +59,7 @@ $wgHooks['ParserFirstCallInit'][] = 'VoteHooks::registerParserHook';
 $wgHooks['RenameUserSQL'][] = 'VoteHooks::onUserRename';
 $wgHooks['ParserGetVariableValueSwitch'][] = 'VoteHooks::assignValueToMagicWord';
 $wgHooks['MagicWordwgVariableIDs'][] = 'VoteHooks::registerVariableId';
+$wgHooks['ParserFirstCallInit'][] = 'VoteHooks::setupNumberOfVotesPageParser';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'VoteHooks::addTable';
 
 // ResourceLoader support for MediaWiki 1.17+

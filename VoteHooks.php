@@ -126,18 +126,78 @@ class VoteHooks {
 				// ...and return the value to the user
 				$ret = $voteCount;
 			}
+		} elseif ( $magicWordId == 'NUMBEROFVOTESPAGE' ) {
+			$ret = VoteHooks::getNumberOfVotesPage( $parser->getTitle() );
 		}
+
 		return true;
 	}
 
 	/**
-	 * Register the magic word ID for {{NUMBEROFVOTES}}.
+	 * Main function to get the number of votes for a specific page
+	 * @param Title $title: page to get votes for
+	 * @return integer: number of votes for the given page
+	 */
+	public static function getNumberOfVotesPage( Title $title ) {
+		global $wgMemc;
+		$id = $title->getArticleID();
+
+		$key = wfMemcKey( 'vote', 'magic-word-page', $id );
+		$data = $wgMemc->get( $key );
+
+		if ( $data ) {
+			return $data;
+		} else {
+			$dbr = wfGetDB( DB_SLAVE );
+
+			$voteCount = (int)$dbr->selectField(
+				'Vote',
+				'COUNT(*) AS count',
+				array( 'vote_page_id' => $id ),
+				__METHOD__
+			);
+
+			$wgMemc->set( $key, $voteCount, 3600 );
+
+			return $voteCount;
+		}
+	}
+
+	/**
+	 * Hook for parser function {{NUMBEROFVOTESPAGE:<page>}}
+	 * @param Parser $parser
+	 * @param string $pagename
+	 * @return integer
+	 */
+	static function getNumberOfVotesPageParser( $parser, $pagename ) {
+		$title = Title::newFromText( $pagename );
+
+		if ( !$title instanceof Title ) {
+			$title = $parser->getTitle();
+		}
+
+		return VoteHooks::getNumberOfVotesPage( $title );
+	}
+
+	/**
+	 * Register the magic word ID for {{NUMBEROFVOTES}} and {{NUMBEROFVOTESPAGE}}
 	 *
 	 * @param $variableIds Array: array of pre-existing variable IDs
 	 * @return Boolean: true
 	 */
 	public static function registerVariableId( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFVOTES';
+		$variableIds[] = 'NUMBEROFVOTESPAGE';
+		return true;
+	}
+
+	/**
+	 * Hook to setup parser function {{NUMBEROFVOTESPAGE:<page>}}
+	 * @param Parser $parser
+	 * @return boolean
+	 */
+	static function setupNumberOfVotesPageParser( &$parser ) {
+		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteHooks::getNumberOfVotesPageParser', SFH_NO_HASH );
 		return true;
 	}
 
