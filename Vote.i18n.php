@@ -34,23 +34,23 @@ $messages['en'] = array(
  * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'desc' => '{{desc|name=Vote NY|url=http://www.mediawiki.org/wiki/Extension:VoteNY}}',
-	'link' => 'Link title',
-	'unvote-link' => 'Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.',
-	'community-score' => 'Community score is the average of votes a page has been given.
+	'voteny-desc' => '{{desc|name=Vote NY|url=http://www.mediawiki.org/wiki/Extension:VoteNY}}',
+	'voteny-link' => 'Link title',
+	'voteny-unvote-link' => 'Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.',
+	'voteny-community-score' => 'Community score is the average of votes a page has been given.
 
 Parameters:
 * $1 - the actual score in numbers (i.e. 4.5 or 3)',
-	'ratings' => 'Parameters:
+	'voteny-ratings' => 'Parameters:
 * $1 - the number of ratings, if said number is greater than 1',
-	'remove' => 'Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.',
-	'gave-this' => 'Followed by the action link text {{msg-mw|Voteny-remove}}.
+	'voteny-remove' => 'Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.',
+	'voteny-gave-this' => 'Followed by the action link text {{msg-mw|Voteny-remove}}.
 
 Parameter:
 * $1 - a number, the vote the user gave to the page.
 
 Refer to the [[mw:File:VoteNY.png|image]] for details.',
-	'votes' => 'Parameters:
+	'voteny-votes' => 'Parameters:
 * $1 - number of votes',
 	'topratings' => '{{doc-special|TopRatings}}',
 	'topratings-no-pages' => 'Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.',
@@ -62,14 +62,14 @@ Right to place a vote on pages with the extension.',
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'desc' => 'Votación basada en JavaScript cola etiqueta <tt>&lt;vote&gt;</tt>',
-	'link' => 'Votar',
-	'unvote-link' => 'retirar el votu',
-	'community-score' => 'puntuación de la comunidá: $1',
-	'ratings' => '{{PLURAL:$1|una valoración|$1 valoraciones}}',
-	'remove' => 'desaniciar',
-	'gave-this' => 'dio-y a esto un $1',
-	'votes' => '{{PLURAL:$1|un votu|$1 votos}}',
+	'voteny-desc' => 'Votación basada en JavaScript cola etiqueta <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Votar',
+	'voteny-unvote-link' => 'retirar el votu',
+	'voteny-community-score' => 'puntuación de la comunidá: $1',
+	'voteny-ratings' => '{{PLURAL:$1|una valoración|$1 valoraciones}}',
+	'voteny-remove' => 'desaniciar',
+	'voteny-gave-this' => 'dio-y a esto un $1',
+	'voteny-votes' => '{{PLURAL:$1|un votu|$1 votos}}',
 	'topratings' => 'Páxines meyor calificaes',
 	'topratings-no-pages' => 'Nun hai páxines meyor calificaes',
 	'right-vote' => 'Votar páxines',
@@ -79,21 +79,21 @@ $messages['ast'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['bg'] = array(
-	'remove' => 'премахване',
+	'voteny-remove' => 'премахване',
 );
 
 /** Catalan (català)
  * @author Toniher
  */
 $messages['ca'] = array(
-	'desc' => "Votació basada en JavaScript amb l'etiqueta <tt>&lt;vote&gt;</tt>",
-	'link' => 'Vota',
-	'unvote-link' => 'anul·la el vot',
-	'community-score' => 'puntuació comunitària: $1',
-	'ratings' => '{{PLURAL:$1|una valoració|$1 valoracions}}',
-	'remove' => 'suprimeix',
-	'gave-this' => 'vau donar-li un $1',
-	'votes' => '{{PLURAL:$1|un vot|$1 vots}}',
+	'voteny-desc' => "Votació basada en JavaScript amb l'etiqueta <tt>&lt;vote&gt;</tt>",
+	'voteny-link' => 'Vota',
+	'voteny-unvote-link' => 'anul·la el vot',
+	'voteny-community-score' => 'puntuació comunitària: $1',
+	'voteny-ratings' => '{{PLURAL:$1|una valoració|$1 valoracions}}',
+	'voteny-remove' => 'suprimeix',
+	'voteny-gave-this' => 'vau donar-li un $1',
+	'voteny-votes' => '{{PLURAL:$1|un vot|$1 vots}}',
 	'topratings' => 'Pàgines més puntuades',
 	'topratings-no-pages' => 'No hi ha cap pàgina puntuada.',
 	'right-vote' => 'Pàgines de votació',
@@ -105,14 +105,14 @@ $messages['ca'] = array(
  * @author Purodha
  */
 $messages['de'] = array(
-	'desc' => 'Ergänzt das Tag <tt>&lt;vote&gt;</tt> zum Durchführen JavaScript-gestützter Abstimmungen',
-	'link' => 'Abstimmen',
-	'unvote-link' => 'Stimme zurücknehmen',
-	'community-score' => 'Punktestand der Gemeinschaft: $1',
-	'ratings' => '{{PLURAL:$1|eine Bewertung|$1 Bewertungen}}',
-	'remove' => 'entfernen',
-	'gave-this' => 'Du hast eine $1 vergeben.',
-	'votes' => '{{PLURAL:$1|eine Stimme|$1 Stimmen}}',
+	'voteny-desc' => 'Ergänzt das Tag <tt>&lt;vote&gt;</tt> zum Durchführen JavaScript-gestützter Abstimmungen',
+	'voteny-link' => 'Abstimmen',
+	'voteny-unvote-link' => 'Stimme zurücknehmen',
+	'voteny-community-score' => 'Punktestand der Gemeinschaft: $1',
+	'voteny-ratings' => '{{PLURAL:$1|eine Bewertung|$1 Bewertungen}}',
+	'voteny-remove' => 'entfernen',
+	'voteny-gave-this' => 'Du hast eine $1 vergeben.',
+	'voteny-votes' => '{{PLURAL:$1|eine Stimme|$1 Stimmen}}',
 	'topratings' => 'Höchstbewertete Seiten',
 	'topratings-no-pages' => 'Es sind keine höchstbewerteten Seiten vorhanden.',
 	'right-vote' => 'Abstimmen über Seiten',
@@ -122,7 +122,7 @@ $messages['de'] = array(
  * @author Kghbln
  */
 $messages['de-formal'] = array(
-	'gave-this' => 'Sie haben eine $1 vergeben.',
+	'voteny-gave-this' => 'Sie haben eine $1 vergeben.',
 );
 
 /** Zazaki (Zazaki)
@@ -130,12 +130,12 @@ $messages['de-formal'] = array(
  * @author Mirzali
  */
 $messages['diq'] = array(
-	'link' => 'Rey',
-	'unvote-link' => 'rey mede',
-	'community-score' => 'Puwanê şêlıki: $1',
-	'ratings' => '{{PLURAL:$1|yew nırğnayış|$1 nırğnayışi}}',
-	'remove' => 'wedare',
-	'votes' => '{{PLURAL:$1|yew rey|$1 reyi}}',
+	'voteny-link' => 'Rey',
+	'voteny-unvote-link' => 'rey mede',
+	'voteny-community-score' => 'Puwanê şêlıki: $1',
+	'voteny-ratings' => '{{PLURAL:$1|yew nırğnayış|$1 nırğnayışi}}',
+	'voteny-remove' => 'wedare',
+	'voteny-votes' => '{{PLURAL:$1|yew rey|$1 reyi}}',
 	'right-vote' => 'Pelê reydayışi',
 );
 
@@ -143,14 +143,14 @@ $messages['diq'] = array(
  * @author Michawiki
  */
 $messages['dsb'] = array(
-	'desc' => 'Wótgłosowanje z toflicku <tt>&lt;vote&gt;</tt> na zakłaźe JavaScripta',
-	'link' => 'Wótgłosowaś',
-	'unvote-link' => 'Wótgłosowanje anulěrowaś',
-	'community-score' => 'Licba głosow zgromaźeństwa: $1',
-	'ratings' => '{{PLURAL:$1|jadno pógódnośenje|$1 pógódnośeni|$1 pógódnośenja|$1 pógódnośenjow}}',
-	'remove' => 'wótpóraś',
-	'gave-this' => 'sy toś tomu $1 dał',
-	'votes' => '{{PLURAL:$1|jaden głos|$1 głosa|$1 głose|$1 głosow}}',
+	'voteny-desc' => 'Wótgłosowanje z toflicku <tt>&lt;vote&gt;</tt> na zakłaźe JavaScripta',
+	'voteny-link' => 'Wótgłosowaś',
+	'voteny-unvote-link' => 'Wótgłosowanje anulěrowaś',
+	'voteny-community-score' => 'Licba głosow zgromaźeństwa: $1',
+	'voteny-ratings' => '{{PLURAL:$1|jadno pógódnośenje|$1 pógódnośeni|$1 pógódnośenja|$1 pógódnośenjow}}',
+	'voteny-remove' => 'wótpóraś',
+	'voteny-gave-this' => 'sy toś tomu $1 dał',
+	'voteny-votes' => '{{PLURAL:$1|jaden głos|$1 głosa|$1 głose|$1 głosow}}',
 	'topratings' => 'Nejwuše pógódnośone boki',
 	'topratings-no-pages' => 'Žedne nejwuše pógódnośone boki.',
 	'right-vote' => 'Wótgłosowańske boki',
@@ -160,14 +160,14 @@ $messages['dsb'] = array(
  * @author Armando-Martin
  */
 $messages['es'] = array(
-	'desc' => 'Votación basada en JavaScript con la etiqueta <tt>&lt;vote&gt;</tt>',
-	'link' => 'Votar',
-	'unvote-link' => 'Eliminar voto',
-	'community-score' => 'puntuación de la comunidad: $1',
-	'ratings' => '{{PLURAL:$1|una valoración|$1 valoraciones}}',
-	'remove' => 'eliminar',
-	'gave-this' => 'le diste a esto un $1',
-	'votes' => '{{PLURAL:$1|un voto|$1 votos}}',
+	'voteny-desc' => 'Votación basada en JavaScript con la etiqueta <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Votar',
+	'voteny-unvote-link' => 'Eliminar voto',
+	'voteny-community-score' => 'puntuación de la comunidad: $1',
+	'voteny-ratings' => '{{PLURAL:$1|una valoración|$1 valoraciones}}',
+	'voteny-remove' => 'eliminar',
+	'voteny-gave-this' => 'le diste a esto un $1',
+	'voteny-votes' => '{{PLURAL:$1|un voto|$1 votos}}',
 	'topratings' => 'Páginas más valoradas',
 	'topratings-no-pages' => 'No hay páginas mejor valoradas',
 	'right-vote' => 'Páginas de votación',
@@ -179,14 +179,14 @@ $messages['es'] = array(
  * @author Omidh
  */
 $messages['fa'] = array(
-	'desc' => 'سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با تگ <tt>&lt;vote&gt;</tt>',
-	'link' => 'رأی دهی',
-	'unvote-link' => 'حذف رأی',
-	'community-score' => 'امتیاز کلی: $1',
-	'ratings' => '{{PLURAL:$1|یک امتیاز|$1 امتیاز}}',
-	'remove' => 'حذف',
-	'gave-this' => 'شما $1 امتیاز دادید',
-	'votes' => '{{PLURAL:$1|یک رای|$1 رای}}',
+	'voteny-desc' => 'سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با تگ <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'رأی دهی',
+	'voteny-unvote-link' => 'حذف رأی',
+	'voteny-community-score' => 'امتیاز کلی: $1',
+	'voteny-ratings' => '{{PLURAL:$1|یک امتیاز|$1 امتیاز}}',
+	'voteny-remove' => 'حذف',
+	'voteny-gave-this' => 'شما $1 امتیاز دادید',
+	'voteny-votes' => '{{PLURAL:$1|یک رای|$1 رای}}',
 	'topratings' => 'صفحات دارای امتیاز بالا',
 	'topratings-no-pages' => 'صفحه‌هایی با امتیاز بالا وجود ندارند.',
 	'right-vote' => 'صفحه‌های رأی',
@@ -197,13 +197,13 @@ $messages['fa'] = array(
  * @author Nike
  */
 $messages['fi'] = array(
-	'link' => 'Äänestä',
-	'unvote-link' => 'poista ääni',
-	'community-score' => 'yhteisön antama pistemäärä: $1',
-	'ratings' => '{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}',
-	'remove' => 'poista',
-	'gave-this' => 'annoit {{PLURAL:$1|yhden tähden|$1 tähteä}}',
-	'votes' => '{{PLURAL:$1|yksi ääni|$1 ääntä}}',
+	'voteny-link' => 'Äänestä',
+	'voteny-unvote-link' => 'poista ääni',
+	'voteny-community-score' => 'yhteisön antama pistemäärä: $1',
+	'voteny-ratings' => '{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}',
+	'voteny-remove' => 'poista',
+	'voteny-gave-this' => 'annoit {{PLURAL:$1|yhden tähden|$1 tähteä}}',
+	'voteny-votes' => '{{PLURAL:$1|yksi ääni|$1 ääntä}}',
 	'topratings' => 'Huippusivut',
 	'topratings-no-pages' => 'Ei huippusivuja.',
 );
@@ -214,14 +214,14 @@ $messages['fi'] = array(
  * @author Tititou36
  */
 $messages['fr'] = array(
-	'desc' => 'Système de vote en JavaScript avec la balise <tt>&lt;vote&gt;</tt>',
-	'link' => 'Voter',
-	'unvote-link' => 'supprimer vote',
-	'community-score' => 'note de la communauté : $1',
-	'ratings' => '{{PLURAL:$1|une note|$1 notes}}',
-	'remove' => 'supprimer',
-	'gave-this' => 'Vous avez noté $1',
-	'votes' => '{{PLURAL:$1|un vote|$1 votes}}',
+	'voteny-desc' => 'Système de vote en JavaScript avec la balise <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Voter',
+	'voteny-unvote-link' => 'supprimer vote',
+	'voteny-community-score' => 'note de la communauté : $1',
+	'voteny-ratings' => '{{PLURAL:$1|une note|$1 notes}}',
+	'voteny-remove' => 'supprimer',
+	'voteny-gave-this' => 'Vous avez noté $1',
+	'voteny-votes' => '{{PLURAL:$1|un vote|$1 votes}}',
 	'topratings' => 'Pages les mieux notées',
 	'topratings-no-pages' => 'Aucune page notée.',
 	'right-vote' => 'Pages de vote',
@@ -231,13 +231,13 @@ $messages['fr'] = array(
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
-	'link' => 'Votar',
-	'unvote-link' => 'enlevar lo voto',
-	'community-score' => 'mârca de la comunôtât : $1',
-	'ratings' => '{{PLURAL:$1|yona èstimacion|$1 èstimacions}}',
-	'remove' => 'enlevar',
-	'gave-this' => 'vos éd balyê $1',
-	'votes' => '{{PLURAL:$1|yon voto|$1 votos}}',
+	'voteny-link' => 'Votar',
+	'voteny-unvote-link' => 'enlevar lo voto',
+	'voteny-community-score' => 'mârca de la comunôtât : $1',
+	'voteny-ratings' => '{{PLURAL:$1|yona èstimacion|$1 èstimacions}}',
+	'voteny-remove' => 'enlevar',
+	'voteny-gave-this' => 'vos éd balyê $1',
+	'voteny-votes' => '{{PLURAL:$1|yon voto|$1 votos}}',
 	'right-vote' => 'Votar des pâges',
 );
 
@@ -245,14 +245,14 @@ $messages['frp'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'desc' => 'Sistema de votación en JavaScript coa etiqueta <tt>&lt;vote&gt;</tt>',
-	'link' => 'Votar',
-	'unvote-link' => 'retirar o voto',
-	'community-score' => 'puntuación da comunidade: $1',
-	'ratings' => '{{PLURAL:$1|unha valoración|$1 valoracións}}',
-	'remove' => 'eliminar',
-	'gave-this' => 'vostede deu un $1',
-	'votes' => '{{PLURAL:$1|un voto|$1 votos}}',
+	'voteny-desc' => 'Sistema de votación en JavaScript coa etiqueta <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Votar',
+	'voteny-unvote-link' => 'retirar o voto',
+	'voteny-community-score' => 'puntuación da comunidade: $1',
+	'voteny-ratings' => '{{PLURAL:$1|unha valoración|$1 valoracións}}',
+	'voteny-remove' => 'eliminar',
+	'voteny-gave-this' => 'vostede deu un $1',
+	'voteny-votes' => '{{PLURAL:$1|un voto|$1 votos}}',
 	'topratings' => 'Páxinas mellor valoradas',
 	'topratings-no-pages' => 'Non hai ningunha páxina valorada.',
 	'right-vote' => 'Votar páxinas',
@@ -262,11 +262,11 @@ $messages['gl'] = array(
  * @author חיים
  */
 $messages['he'] = array(
-	'link' => 'הצבעה',
-	'unvote-link' => 'הסר הצבעה',
-	'remove' => 'הסרה',
-	'gave-this' => 'נתת לזה $1',
-	'votes' => '{{PLURAL:$1|הצבעה אחת|$1 הצבעות}}',
+	'voteny-link' => 'הצבעה',
+	'voteny-unvote-link' => 'הסר הצבעה',
+	'voteny-remove' => 'הסרה',
+	'voteny-gave-this' => 'נתת לזה $1',
+	'voteny-votes' => '{{PLURAL:$1|הצבעה אחת|$1 הצבעות}}',
 	'right-vote' => 'דפי ההצבעה',
 );
 
@@ -274,14 +274,14 @@ $messages['he'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'desc' => 'Wothłosowanje z tafličku <tt>&lt;vote&gt;</tt> na zakładźe JavaScripta',
-	'link' => 'Wothłosować',
-	'unvote-link' => 'Wothłosowanje anulować',
-	'community-score' => 'Ličba hłosow zhromadźenstwa: $1',
-	'ratings' => '{{PLURAL:$1|jedne pohódnoćenje|$1 pohódnoćeni|$1 pohódnoćenja|$1 pohódnoćenjow}}',
-	'remove' => 'wotstronić',
-	'gave-this' => 'sy tutomu $1 dał',
-	'votes' => '{{PLURAL:$1|jedyn hłós|$1 hłosaj|$1 hłosy|$1 hłosow}}',
+	'voteny-desc' => 'Wothłosowanje z tafličku <tt>&lt;vote&gt;</tt> na zakładźe JavaScripta',
+	'voteny-link' => 'Wothłosować',
+	'voteny-unvote-link' => 'Wothłosowanje anulować',
+	'voteny-community-score' => 'Ličba hłosow zhromadźenstwa: $1',
+	'voteny-ratings' => '{{PLURAL:$1|jedne pohódnoćenje|$1 pohódnoćeni|$1 pohódnoćenja|$1 pohódnoćenjow}}',
+	'voteny-remove' => 'wotstronić',
+	'voteny-gave-this' => 'sy tutomu $1 dał',
+	'voteny-votes' => '{{PLURAL:$1|jedyn hłós|$1 hłosaj|$1 hłosy|$1 hłosow}}',
 	'topratings' => 'Najwyše pohódnoćene strony',
 	'topratings-no-pages' => 'Žane najwyše pohódnoćene strony.',
 	'right-vote' => 'Wothłosowanske strony',
@@ -291,7 +291,7 @@ $messages['hsb'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['id'] = array(
-	'remove' => 'hapus',
+	'voteny-remove' => 'hapus',
 );
 
 /** Italian (italiano)
@@ -299,14 +299,14 @@ $messages['id'] = array(
  * @author Darth Kule
  */
 $messages['it'] = array(
-	'desc' => 'Sistema di voto basato su JavaScript con il tag <tt>&lt;vote&gt;</tt>',
-	'link' => 'Vota',
-	'unvote-link' => 'rimuovi voto',
-	'community-score' => 'punteggio della comunità: $1',
-	'ratings' => '{{PLURAL:$1|un giudizio|$1 giudizi}}',
-	'remove' => 'rimuovi',
-	'gave-this' => 'hai dato $1',
-	'votes' => '{{PLURAL:$1|un voto|$1 voti}}',
+	'voteny-desc' => 'Sistema di voto basato su JavaScript con il tag <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Vota',
+	'voteny-unvote-link' => 'rimuovi voto',
+	'voteny-community-score' => 'punteggio della comunità: $1',
+	'voteny-ratings' => '{{PLURAL:$1|un giudizio|$1 giudizi}}',
+	'voteny-remove' => 'rimuovi',
+	'voteny-gave-this' => 'hai dato $1',
+	'voteny-votes' => '{{PLURAL:$1|un voto|$1 voti}}',
 	'topratings' => 'Pagine migliori',
 	'topratings-no-pages' => 'Nessuna pagina migliore.',
 	'right-vote' => 'Vota le pagine',
@@ -316,14 +316,14 @@ $messages['it'] = array(
  * @author Shirayuki
  */
 $messages['ja'] = array(
-	'desc' => '<tt>&lt;vote&gt;</tt> タグを使用した、JavaScript ベースの投票',
-	'link' => '投票',
-	'unvote-link' => '投票取り消し',
-	'community-score' => 'コミュニティでの得点: $1',
-	'ratings' => '{{PLURAL:$1|$1 件の評価}}',
-	'remove' => '除去',
-	'gave-this' => 'あなたはこれを $1 と評価しました',
-	'votes' => '{{PLURAL:$1|$1 票}}',
+	'voteny-desc' => '<tt>&lt;vote&gt;</tt> タグを使用した、JavaScript ベースの投票',
+	'voteny-link' => '投票',
+	'voteny-unvote-link' => '投票取り消し',
+	'voteny-community-score' => 'コミュニティでの得点: $1',
+	'voteny-ratings' => '{{PLURAL:$1|$1 件の評価}}',
+	'voteny-remove' => '除去',
+	'voteny-gave-this' => 'あなたはこれを $1 と評価しました',
+	'voteny-votes' => '{{PLURAL:$1|$1 票}}',
 	'topratings' => '評価が高いページ',
 	'topratings-no-pages' => '評価が高いページはありません。',
 	'right-vote' => 'ページに投票',
@@ -333,22 +333,22 @@ $messages['ja'] = array(
  * @author David1010
  */
 $messages['ka'] = array(
-	'link' => 'ხმის მიცემა',
-	'remove' => 'წაშლა',
+	'voteny-link' => 'ხმის მიცემა',
+	'voteny-remove' => 'წაშლა',
 );
 
 /** Korean (한국어)
  * @author 아라
  */
 $messages['ko'] = array(
-	'desc' => '<tt>&lt;vote&gt;</tt> 태그로 자바스크립트 기반 투포',
-	'link' => '투표',
-	'unvote-link' => '투표 취소',
-	'community-score' => '공동체 점수: $1',
-	'ratings' => '{{PLURAL:$1|평가 한 개|평가 $1개}}',
-	'remove' => '제거',
-	'gave-this' => '이것을 $1(으)로 주었습니다',
-	'votes' => '{{PLURAL:$1|한 표|$1표}}',
+	'voteny-desc' => '<tt>&lt;vote&gt;</tt> 태그로 자바스크립트 기반 투포',
+	'voteny-link' => '투표',
+	'voteny-unvote-link' => '투표 취소',
+	'voteny-community-score' => '공동체 점수: $1',
+	'voteny-ratings' => '{{PLURAL:$1|평가 한 개|평가 $1개}}',
+	'voteny-remove' => '제거',
+	'voteny-gave-this' => '이것을 $1(으)로 주었습니다',
+	'voteny-votes' => '{{PLURAL:$1|한 표|$1표}}',
 	'topratings' => '평가가 높은 문서',
 	'topratings-no-pages' => '평가가 높은 문서가 없습니다.',
 	'right-vote' => '문서 투표',
@@ -358,14 +358,14 @@ $messages['ko'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'desc' => 'Afschtemmonge met JavaSkrep övver dä Befähl <code lang="en">&lt;vote&gt;</code>.',
-	'link' => 'Afschtemme',
-	'unvote-link' => 'Schtemm zerökträke',
-	'community-score' => 'Jemeinschafflejje Pünkscher: $1',
-	'ratings' => '{{PLURAL:$1|Ein Bewertong|$1 Bewertonge|Kein Bewertonge}}',
-	'remove' => 'fott nämme',
-	'gave-this' => 'Do häs en $1 verjovve.',
-	'votes' => '{{PLURAL:$1|Ein Schtemm|$1 Schtemme|Kein Schtemme}}',
+	'voteny-desc' => 'Afschtemmonge met JavaSkrep övver dä Befähl <code lang="en">&lt;vote&gt;</code>.',
+	'voteny-link' => 'Afschtemme',
+	'voteny-unvote-link' => 'Schtemm zerökträke',
+	'voteny-community-score' => 'Jemeinschafflejje Pünkscher: $1',
+	'voteny-ratings' => '{{PLURAL:$1|Ein Bewertong|$1 Bewertonge|Kein Bewertonge}}',
+	'voteny-remove' => 'fott nämme',
+	'voteny-gave-this' => 'Do häs en $1 verjovve.',
+	'voteny-votes' => '{{PLURAL:$1|Ein Schtemm|$1 Schtemme|Kein Schtemme}}',
 	'topratings' => 'Sigge met de hühste Bewertonge',
 	'topratings-no-pages' => 'Kein Sigge met hühste Bewertonge jefonge.',
 	'right-vote' => 'Övver Siige afschtemme',
@@ -375,10 +375,10 @@ $messages['ksh'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
-	'link' => 'Ofstëmmen',
-	'unvote-link' => 'Stëmm zréckzéien',
-	'remove' => 'ewechhuelen',
-	'gave-this' => 'Dir hutt eng $1 ofginn',
+	'voteny-link' => 'Ofstëmmen',
+	'voteny-unvote-link' => 'Stëmm zréckzéien',
+	'voteny-remove' => 'ewechhuelen',
+	'voteny-gave-this' => 'Dir hutt eng $1 ofginn',
 	'right-vote' => 'Ofstëmmen iwwer Säiten',
 );
 
@@ -386,14 +386,14 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
-	'desc' => 'Гласање на основа на JavaScript со ознаката <tt>&lt;vote&gt;</tt>',
-	'link' => 'Гласај',
-	'unvote-link' => 'повлечи глас',
-	'community-score' => 'бодови од заедницата: $1',
-	'ratings' => '{{PLURAL:$1|една оценка|$1 оценки}}',
-	'remove' => 'отстрани',
-	'gave-this' => 'страницава  ја оценивте со $1',
-	'votes' => '{{PLURAL:$1|еден глас|$1 гласа}}',
+	'voteny-desc' => 'Гласање на основа на JavaScript со ознаката <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Гласај',
+	'voteny-unvote-link' => 'повлечи глас',
+	'voteny-community-score' => 'бодови од заедницата: $1',
+	'voteny-ratings' => '{{PLURAL:$1|една оценка|$1 оценки}}',
+	'voteny-remove' => 'отстрани',
+	'voteny-gave-this' => 'страницава  ја оценивте со $1',
+	'voteny-votes' => '{{PLURAL:$1|еден глас|$1 гласа}}',
 	'topratings' => 'Водечки страници',
 	'topratings-no-pages' => 'Нема водечки страници.',
 	'right-vote' => 'Гласање за страници',
@@ -403,14 +403,14 @@ $messages['mk'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
-	'desc' => 'Pengundian berasaskan JavaScript dengan teg <tt>&lt;vote&gt;</tt>',
-	'link' => 'Undi',
-	'unvote-link' => 'tarik balik undi',
-	'community-score' => 'markah komuniti: $1',
-	'ratings' => '$1 penilaian',
-	'remove' => 'buang',
-	'gave-this' => 'anda memberi yang ini $1',
-	'votes' => '$1 undian',
+	'voteny-desc' => 'Pengundian berasaskan JavaScript dengan teg <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Undi',
+	'voteny-unvote-link' => 'tarik balik undi',
+	'voteny-community-score' => 'markah komuniti: $1',
+	'voteny-ratings' => '$1 penilaian',
+	'voteny-remove' => 'buang',
+	'voteny-gave-this' => 'anda memberi yang ini $1',
+	'voteny-votes' => '$1 undian',
 	'topratings' => 'Halaman undian tertinggi',
 	'topratings-no-pages' => 'Tiada halaman undian tertinggi.',
 	'right-vote' => 'Mengundi halaman',
@@ -421,14 +421,14 @@ $messages['ms'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'desc' => 'Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>',
-	'link' => 'Stemmen',
-	'unvote-link' => 'stem terugtrekken',
-	'community-score' => 'gemeenschapsscore: $1',
-	'ratings' => '{{PLURAL:$1|één waardering|$1 waarderingen}}',
-	'remove' => 'verwijderen',
-	'gave-this' => 'u heeft een $1 gegeven',
-	'votes' => '{{PLURAL:$1|één stem|$1 stemmen}}',
+	'voteny-desc' => 'Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>',
+	'voteny-link' => 'Stemmen',
+	'voteny-unvote-link' => 'stem terugtrekken',
+	'voteny-community-score' => 'gemeenschapsscore: $1',
+	'voteny-ratings' => '{{PLURAL:$1|één waardering|$1 waarderingen}}',
+	'voteny-remove' => 'verwijderen',
+	'voteny-gave-this' => 'u heeft een $1 gegeven',
+	'voteny-votes' => '{{PLURAL:$1|één stem|$1 stemmen}}',
 	'topratings' => "Meest gewaardeerde pagina's",
 	'topratings-no-pages' => "Er zijn nog geen meest gewaardeerde pagina's.",
 	'right-vote' => "Op pagina's stemmen",
@@ -437,13 +437,13 @@ $messages['nl'] = array(
 /** Polish (polski)
  */
 $messages['pl'] = array(
-	'link' => 'Głosuj',
-	'unvote-link' => 'Anuluj',
-	'community-score' => 'Wynik wśród społeczności: $1',
-	'ratings' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
-	'remove' => 'usuń',
-	'gave-this' => 'Oceniłeś to na $1',
-	'votes' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
+	'voteny-link' => 'Głosuj',
+	'voteny-unvote-link' => 'Anuluj',
+	'voteny-community-score' => 'Wynik wśród społeczności: $1',
+	'voteny-ratings' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
+	'voteny-remove' => 'usuń',
+	'voteny-gave-this' => 'Oceniłeś to na $1',
+	'voteny-votes' => '{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}',
 );
 
 /** Piedmontese (Piemontèis)
@@ -451,14 +451,14 @@ $messages['pl'] = array(
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'desc' => 'Votassion basà dzor JavaScript con la tichëtta <tt>&lt;vote&gt;</tt>',
-	'link' => 'Voté',
-	'unvote-link' => 'scancelé vot',
-	'community-score' => 'Pontegi dla comunità: $1',
-	'ratings' => '{{PLURAL:$1|na valutassion|$1 valutassion}}',
-	'remove' => 'gava',
-	'gave-this' => "It l'has daje un $1",
-	'votes' => '{{PLURAL:$1|un vot|$1 vot}}',
+	'voteny-desc' => 'Votassion basà dzor JavaScript con la tichëtta <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Voté',
+	'voteny-unvote-link' => 'scancelé vot',
+	'voteny-community-score' => 'Pontegi dla comunità: $1',
+	'voteny-ratings' => '{{PLURAL:$1|na valutassion|$1 valutassion}}',
+	'voteny-remove' => 'gava',
+	'voteny-gave-this' => "It l'has daje un $1",
+	'voteny-votes' => '{{PLURAL:$1|un vot|$1 vot}}',
 	'topratings' => 'Le pàgine valutà mej',
 	'topratings-no-pages' => 'Gnun-e pàgine valutà.',
 	'right-vote' => 'Pàgine ëd vot',
@@ -475,9 +475,9 @@ $messages['ps'] = array(
  * @author Luckas
  */
 $messages['pt-br'] = array(
-	'link' => 'Votar',
-	'remove' => 'remover',
-	'votes' => '{{PLURAL:$1|um voto|$1 votos}}',
+	'voteny-link' => 'Votar',
+	'voteny-remove' => 'remover',
+	'voteny-votes' => '{{PLURAL:$1|um voto|$1 votos}}',
 );
 
 /** Romanian (română)
@@ -485,22 +485,22 @@ $messages['pt-br'] = array(
  * @author Stelistcristi
  */
 $messages['ro'] = array(
-	'link' => 'Votați',
-	'remove' => 'elimină',
+	'voteny-link' => 'Votați',
+	'voteny-remove' => 'elimină',
 );
 
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
-	'desc' => "Votazione ca se base sus a JavaScript cu 'u tag <tt>&lt;vote&gt;</tt>",
-	'link' => 'Vote',
-	'unvote-link' => 'no vutà',
-	'community-score' => "pundegge d'a comunitate: $1",
-	'ratings' => "{{PLURAL:$1|'na valutazione|$1 valutaziune}}",
-	'remove' => 'live',
-	'gave-this' => 'Tu è date quiste $1',
-	'votes' => "{{PLURAL:$1|'nu vote|$1 vote}}",
+	'voteny-desc' => "Votazione ca se base sus a JavaScript cu 'u tag <tt>&lt;vote&gt;</tt>",
+	'voteny-link' => 'Vote',
+	'voteny-unvote-link' => 'no vutà',
+	'voteny-community-score' => "pundegge d'a comunitate: $1",
+	'voteny-ratings' => "{{PLURAL:$1|'na valutazione|$1 valutaziune}}",
+	'voteny-remove' => 'live',
+	'voteny-gave-this' => 'Tu è date quiste $1',
+	'voteny-votes' => "{{PLURAL:$1|'nu vote|$1 vote}}",
 	'topratings' => 'Pàggene cchiù vutate',
 	'topratings-no-pages' => "Pàggene ca no stonne 'ngape a le vote.",
 	'right-vote' => 'Vote le vôsce',
@@ -511,14 +511,14 @@ $messages['roa-tara'] = array(
  * @author Okras
  */
 $messages['ru'] = array(
-	'desc' => 'Голосование на основе JavaScript с использованием тега <tt>&lt;vote&gt;</tt>',
-	'link' => 'Голосовать',
-	'unvote-link' => 'отменить выбор',
-	'community-score' => 'оценка сообщества: $1',
-	'ratings' => '{{PLURAL:$1|$1 балл|$1 баллов|$1 балла}}',
-	'remove' => 'отменить',
-	'gave-this' => 'Вы поставили $1',
-	'votes' => '{{PLURAL:$1|$1 голос|$1 голосов|$1 голоса}}',
+	'voteny-desc' => 'Голосование на основе JavaScript с использованием тега <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Голосовать',
+	'voteny-unvote-link' => 'отменить выбор',
+	'voteny-community-score' => 'оценка сообщества: $1',
+	'voteny-ratings' => '{{PLURAL:$1|$1 балл|$1 баллов|$1 балла}}',
+	'voteny-remove' => 'отменить',
+	'voteny-gave-this' => 'Вы поставили $1',
+	'voteny-votes' => '{{PLURAL:$1|$1 голос|$1 голосов|$1 голоса}}',
 	'topratings' => 'Самые популярные страницы',
 	'topratings-no-pages' => 'Нет популярных страниц.',
 	'right-vote' => 'Страницы голосований',
@@ -528,13 +528,13 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
-	'link' => 'ඡන්දය දෙන්න',
-	'unvote-link' => 'මනාපය ලබා නොදෙන්න',
-	'community-score' => 'ප්‍රජා ලකුණ: $1',
-	'ratings' => '{{PLURAL:$1|තරාතිරමක්|තරාතිරම් $1 ක්}}',
-	'remove' => 'ඉවත් කරන්න',
-	'gave-this' => 'ඔබ මෙයට $1 දී ඇත',
-	'votes' => '{{PLURAL:$1|මනාපයක්|මනාප $1 ක්}}',
+	'voteny-link' => 'ඡන්දය දෙන්න',
+	'voteny-unvote-link' => 'මනාපය ලබා නොදෙන්න',
+	'voteny-community-score' => 'ප්‍රජා ලකුණ: $1',
+	'voteny-ratings' => '{{PLURAL:$1|තරාතිරමක්|තරාතිරම් $1 ක්}}',
+	'voteny-remove' => 'ඉවත් කරන්න',
+	'voteny-gave-this' => 'ඔබ මෙයට $1 දී ඇත',
+	'voteny-votes' => '{{PLURAL:$1|මනාපයක්|මනාප $1 ක්}}',
 	'topratings' => 'ඉහළ ශ්‍රේණිගත පිටු',
 	'topratings-no-pages' => 'ඉහළ ශ්‍රේණිගත පිටු නොමැත.',
 	'right-vote' => 'මනාප පිටු',
@@ -544,13 +544,13 @@ $messages['si'] = array(
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
-	'link' => 'Rösta',
-	'unvote-link' => 'ta bort röst',
-	'community-score' => 'gemenskapspoäng: $1',
-	'ratings' => '{{PLURAL:$1|ett betyg|$1 betyg}}',
-	'remove' => 'ta bort',
-	'gave-this' => 'du gav detta $1',
-	'votes' => '{{PLURAL:$1|en röst|$1 röster}}',
+	'voteny-link' => 'Rösta',
+	'voteny-unvote-link' => 'ta bort röst',
+	'voteny-community-score' => 'gemenskapspoäng: $1',
+	'voteny-ratings' => '{{PLURAL:$1|ett betyg|$1 betyg}}',
+	'voteny-remove' => 'ta bort',
+	'voteny-gave-this' => 'du gav detta $1',
+	'voteny-votes' => '{{PLURAL:$1|en röst|$1 röster}}',
 	'topratings' => 'Topplistade sidor',
 	'topratings-no-pages' => 'Inga topplistade sidor.',
 );
@@ -559,8 +559,8 @@ $messages['sv'] = array(
  * @author மதனாஹரன்
  */
 $messages['ta'] = array(
-	'link' => 'வாக்களி',
-	'remove' => 'நீக்கு',
+	'voteny-link' => 'வாக்களி',
+	'voteny-remove' => 'நீக்கு',
 );
 
 /** Tagalog (Tagalog)
@@ -568,14 +568,14 @@ $messages['ta'] = array(
  * @author TheSleepyhollow02
  */
 $messages['tl'] = array(
-	'desc' => 'Botohan na nakabatay sa JavaScript na mayroong tatak na <tt>&lt;bumoto&gt;</tt>',
-	'link' => 'Bumoto',
-	'unvote-link' => 'huwag bumoto',
-	'community-score' => 'puntos ng pamayanan: $1',
-	'ratings' => '{{PLURAL:$1|isang pag-aantas|$1 mga pag-aantas}}',
-	'remove' => 'tanggalin',
-	'gave-this' => 'binigyan mo ito ng isang $1',
-	'votes' => '{{PLURAL:$1| isang boto| $1 mga boto}}',
+	'voteny-desc' => 'Botohan na nakabatay sa JavaScript na mayroong tatak na <tt>&lt;bumoto&gt;</tt>',
+	'voteny-link' => 'Bumoto',
+	'voteny-unvote-link' => 'huwag bumoto',
+	'voteny-community-score' => 'puntos ng pamayanan: $1',
+	'voteny-ratings' => '{{PLURAL:$1|isang pag-aantas|$1 mga pag-aantas}}',
+	'voteny-remove' => 'tanggalin',
+	'voteny-gave-this' => 'binigyan mo ito ng isang $1',
+	'voteny-votes' => '{{PLURAL:$1| isang boto| $1 mga boto}}',
 	'topratings' => 'Mga pahinang nangunguna sa pag-aantas',
 	'topratings-no-pages' => 'Walang mga pahinang nangunguna sa pag-aantas.',
 	'right-vote' => 'Iboto ang mga pahina',
@@ -585,14 +585,14 @@ $messages['tl'] = array(
  * @author Base
  */
 $messages['uk'] = array(
-	'desc' => 'Голосування на основі JavaScript із теґом <tt>&lt;vote&gt;</tt>',
-	'link' => 'Голосувати',
-	'unvote-link' => 'скасувати голос',
-	'community-score' => 'середня оцінка: $1',
-	'ratings' => '{{PLURAL:$1|один голос|$1 голоси|$1 голосів}}',
-	'remove' => 'вилучити',
-	'gave-this' => 'Ви оцінили це як $1',
-	'votes' => '{{PLURAL:$1|один голос|$1 голоси|$1 голосів}}',
+	'voteny-desc' => 'Голосування на основі JavaScript із теґом <tt>&lt;vote&gt;</tt>',
+	'voteny-link' => 'Голосувати',
+	'voteny-unvote-link' => 'скасувати голос',
+	'voteny-community-score' => 'середня оцінка: $1',
+	'voteny-ratings' => '{{PLURAL:$1|один голос|$1 голоси|$1 голосів}}',
+	'voteny-remove' => 'вилучити',
+	'voteny-gave-this' => 'Ви оцінили це як $1',
+	'voteny-votes' => '{{PLURAL:$1|один голос|$1 голоси|$1 голосів}}',
 	'topratings' => 'Сторінки із найвищим оцінками',
 	'topratings-no-pages' => 'Сторінки із не найвищими оцінками.',
 	'right-vote' => 'Голосувати за сторінки',
@@ -603,14 +603,14 @@ $messages['uk'] = array(
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
-	'desc' => '基于JavaScript的投票与<tt>&lt;vote&gt;</tt>标签',
-	'link' => '投票',
-	'unvote-link' => '消票',
-	'community-score' => '社区分数：$1',
-	'ratings' => '{{PLURAL:$1|$1人评分}}',
-	'remove' => '删除',
-	'gave-this' => '您给了$1分',
-	'votes' => '{{PLURAL:$1|$1票}}',
+	'voteny-desc' => '基于JavaScript的投票与<tt>&lt;vote&gt;</tt>标签',
+	'voteny-link' => '投票',
+	'voteny-unvote-link' => '消票',
+	'voteny-community-score' => '社区分数：$1',
+	'voteny-ratings' => '{{PLURAL:$1|$1人评分}}',
+	'voteny-remove' => '删除',
+	'voteny-gave-this' => '您给了$1分',
+	'voteny-votes' => '{{PLURAL:$1|$1票}}',
 	'topratings' => '最受好评的页面',
 	'topratings-no-pages' => '没有最受好评的页面。',
 	'right-vote' => '投票页面',
@@ -621,14 +621,14 @@ $messages['zh-hans'] = array(
  * @author Shirayuki
  */
 $messages['zh-hant'] = array(
-	'desc' => '基於JavaScript的投票與<tt>&lt;vote&gt;</tt>標記',
-	'link' => '投票',
-	'unvote-link' => '取消投票',
-	'community-score' => '社羣積分：$1',
-	'ratings' => '{{PLURAL:$1|$1個評級}}',
-	'remove' => '移除',
-	'gave-this' => '你給了$1分',
-	'votes' => '{{PLURAL:$1|$1票}}',
+	'voteny-desc' => '基於JavaScript的投票與<tt>&lt;vote&gt;</tt>標記',
+	'voteny-link' => '投票',
+	'voteny-unvote-link' => '取消投票',
+	'voteny-community-score' => '社羣積分：$1',
+	'voteny-ratings' => '{{PLURAL:$1|$1個評級}}',
+	'voteny-remove' => '移除',
+	'voteny-gave-this' => '你給了$1分',
+	'voteny-votes' => '{{PLURAL:$1|$1票}}',
 	'topratings' => '最受好評的頁面',
 	'topratings-no-pages' => '沒有最受好評的頁面。',
 	'right-vote' => '投票頁面',

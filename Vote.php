@@ -42,7 +42,7 @@ require_once( 'Vote_AjaxFunctions.php' );
 
 // Autoload classes and set up i18n
 $dir = dirname( __FILE__ ) . '/';
-$wgExtensionMessagesFiles['Vote'] = $dir . 'Vote.i18n.php';
+$wgExtensionMessagesFiles['VoteNY'] = $dir . 'Vote.i18n.php';
 $wgExtensionMessagesFiles['VoteNYMagic'] = $dir . 'VoteNY.i18n.magic.php';
 $wgAutoloadClasses['Vote'] = $dir . 'VoteClass.php';
 $wgAutoloadClasses['VoteStars'] = $dir . 'VoteClass.php';
