@@ -86,16 +86,16 @@ $messages['bg'] = array(
  * @author Toniher
  */
 $messages['ca'] = array(
-	'voteny-desc' => "Votació basada en JavaScript amb l'etiqueta <tt>&lt;vote&gt;</tt>",
-	'voteny-link' => 'Vota',
-	'voteny-unvote-link' => 'anul·la el vot',
-	'voteny-community-score' => 'puntuació comunitària: $1',
-	'voteny-ratings' => '{{PLURAL:$1|una valoració|$1 valoracions}}',
-	'voteny-remove' => 'suprimeix',
-	'voteny-gave-this' => 'vau donar-li un $1',
-	'voteny-votes' => '{{PLURAL:$1|un vot|$1 vots}}',
-	'topratings' => 'Pàgines més puntuades',
-	'topratings-no-pages' => 'No hi ha cap pàgina puntuada.',
+	'desc' => "Votació basada en JavaScript amb l'etiqueta <tt>&lt;vote&gt;</tt>",
+	'link' => 'Vota',
+	'unvote-link' => 'anul·la el vot',
+	'community-score' => 'puntuació comunitària: $1',
+	'ratings' => '{{PLURAL:$1|una valoració|$1 valoracions}}',
+	'remove' => 'anul·la',
+	'gave-this' => 'vau donar-li un $1',
+	'votes' => '{{PLURAL:$1|un vot|$1 vots}}',
+	'topratings' => 'Pàgines més valorades',
+	'topratings-no-pages' => 'No hi ha cap pàgina valorada.',
 	'right-vote' => 'Pàgines de votació',
 );
 
