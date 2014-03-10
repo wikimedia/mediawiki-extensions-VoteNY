@@ -259,14 +259,20 @@ $messages['gl'] = array(
 );
 
 /** Hebrew (עברית)
+ * @author Yona b
  * @author חיים
  */
 $messages['he'] = array(
-	'voteny-link' => 'הצבעה',
-	'voteny-unvote-link' => 'הסר הצבעה',
-	'voteny-remove' => 'הסרה',
-	'voteny-gave-this' => 'נתת לזה $1',
-	'voteny-votes' => '{{PLURAL:$1|הצבעה אחת|$1 הצבעות}}',
+	'desc' => 'הצבעה מבוססת JavaScript עם התג <tt>&lt;vote&gt;</tt>',
+	'link' => 'הצבעה',
+	'unvote-link' => 'הסר הצבעה',
+	'community-score' => 'ציון הקהילה: $1',
+	'ratings' => '{{PLURAL:$1|מדרג אחד|$1 מדרגים}}',
+	'remove' => 'הסרה',
+	'gave-this' => 'נתת לזה $1',
+	'votes' => '{{PLURAL:$1|הצבעה אחת|$1 הצבעות}}',
+	'topratings' => 'דפים המדורגים ביותר',
+	'topratings-no-pages' => 'דפים שדורגו הכי פחות פעמים.',
 	'right-vote' => 'דפי ההצבעה',
 );
 
