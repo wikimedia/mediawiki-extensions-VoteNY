@@ -611,14 +611,14 @@ $messages['uk'] = array(
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
-	'voteny-desc' => '基于JavaScript的投票与<tt>&lt;vote&gt;</tt>标签',
-	'voteny-link' => '投票',
-	'voteny-unvote-link' => '消票',
-	'voteny-community-score' => '社区分数：$1',
-	'voteny-ratings' => '{{PLURAL:$1|$1人评分}}',
-	'voteny-remove' => '删除',
-	'voteny-gave-this' => '您给了$1分',
-	'voteny-votes' => '{{PLURAL:$1|$1票}}',
+	'desc' => '基于JavaScript的投票与<tt>&lt;vote&gt;</tt>标签',
+	'link' => '投票',
+	'unvote-link' => '消票',
+	'community-score' => '社区分数：$1',
+	'ratings' => '{{PLURAL:$1|$1人评分}}',
+	'remove' => '删除',
+	'gave-this' => '您给了$1分',
+	'votes' => '{{PLURAL:$1|$1票}}',
 	'topratings' => '最受好评的页面',
 	'topratings-no-pages' => '没有最受好评的页面。',
 	'right-vote' => '投票页面',
