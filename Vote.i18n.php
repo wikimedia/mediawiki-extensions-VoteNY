@@ -517,14 +517,14 @@ $messages['roa-tara'] = array(
  * @author Okras
  */
 $messages['ru'] = array(
-	'voteny-desc' => 'Голосование на основе JavaScript с использованием тега <tt>&lt;vote&gt;</tt>',
-	'voteny-link' => 'Голосовать',
-	'voteny-unvote-link' => 'отменить выбор',
-	'voteny-community-score' => 'оценка сообщества: $1',
-	'voteny-ratings' => '{{PLURAL:$1|$1 балл|$1 баллов|$1 балла}}',
-	'voteny-remove' => 'отменить',
-	'voteny-gave-this' => 'Вы поставили $1',
-	'voteny-votes' => '{{PLURAL:$1|$1 голос|$1 голосов|$1 голоса}}',
+	'desc' => 'Голосование на основе JavaScript с использованием тега <tt>&lt;vote&gt;</tt>',
+	'link' => 'Голосовать',
+	'unvote-link' => 'отменить выбор',
+	'community-score' => 'оценка сообщества: $1',
+	'ratings' => '{{PLURAL:$1|$1 балл|$1 баллов|$1 балла}}',
+	'remove' => 'отменить',
+	'gave-this' => 'Вы поставили $1',
+	'votes' => '{{PLURAL:$1|$1 голос|$1 голосов|$1 голоса}}',
 	'topratings' => 'Самые популярные страницы',
 	'topratings-no-pages' => 'Нет популярных страниц.',
 	'right-vote' => 'Страницы голосований',
