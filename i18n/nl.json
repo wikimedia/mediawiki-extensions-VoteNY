@@ -1,0 +1,19 @@
+{
+    "@metadata": {
+        "authors": [
+            "Mitchel Corstjens",
+            "Siebrand"
+        ]
+    },
+    "voteny-desc": "Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>",
+    "voteny-link": "Stemmen",
+    "voteny-unvote-link": "stem terugtrekken",
+    "voteny-community-score": "gemeenschapsscore: $1",
+    "voteny-ratings": "{{PLURAL:$1|één waardering|$1 waarderingen}}",
+    "voteny-remove": "verwijderen",
+    "voteny-gave-this": "u heeft een $1 gegeven",
+    "voteny-votes": "{{PLURAL:$1|één stem|$1 stemmen}}",
+    "topratings": "Meest gewaardeerde pagina's",
+    "topratings-no-pages": "Er zijn nog geen meest gewaardeerde pagina's.",
+    "right-vote": "Op pagina's stemmen"
+}

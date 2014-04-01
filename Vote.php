@@ -4,7 +4,6 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.5.1
  * @author Aaron Wright <aaron.wright@gmail.com>
  * @author David Pean <david.pean@gmail.com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -23,7 +22,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Vote',
-	'version' => '2.5.1',
+	'version' => '2.6.0',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'voteny-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:VoteNY'
@@ -42,6 +41,7 @@ require_once( 'Vote_AjaxFunctions.php' );
 
 // Autoload classes and set up i18n
 $dir = dirname( __FILE__ ) . '/';
+$wgMessagesDirs['VoteNY'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['VoteNY'] = $dir . 'Vote.i18n.php';
 $wgExtensionMessagesFiles['VoteNYMagic'] = $dir . 'VoteNY.i18n.magic.php';
 $wgAutoloadClasses['Vote'] = $dir . 'VoteClass.php';

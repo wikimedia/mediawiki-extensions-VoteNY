@@ -1,0 +1,18 @@
+{
+    "@metadata": {
+        "authors": [
+            "Armando-Martin"
+        ]
+    },
+    "voteny-desc": "Votación basada en JavaScript con la etiqueta <tt>&lt;vote&gt;</tt>",
+    "voteny-link": "Votar",
+    "voteny-unvote-link": "Eliminar voto",
+    "voteny-community-score": "puntuación de la comunidad: $1",
+    "voteny-ratings": "{{PLURAL:$1|una valoración|$1 valoraciones}}",
+    "voteny-remove": "eliminar",
+    "voteny-gave-this": "le diste a esto un $1",
+    "voteny-votes": "{{PLURAL:$1|un voto|$1 votos}}",
+    "topratings": "Páginas más valoradas",
+    "topratings-no-pages": "No hay páginas mejor valoradas",
+    "right-vote": "Páginas de votación"
+}

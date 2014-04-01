@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Luckas"
+        ]
+    },
+    "voteny-link": "Votar",
+    "voteny-remove": "remover",
+    "voteny-votes": "{{PLURAL:$1|um voto|$1 votos}}"
+}

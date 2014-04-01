@@ -1,0 +1,18 @@
+{
+    "@metadata": {
+        "authors": [
+            "Michawiki"
+        ]
+    },
+    "voteny-desc": "Wothłosowanje z tafličku <tt>&lt;vote&gt;</tt> na zakładźe JavaScripta",
+    "voteny-link": "Wothłosować",
+    "voteny-unvote-link": "Wothłosowanje anulować",
+    "voteny-community-score": "Ličba hłosow zhromadźenstwa: $1",
+    "voteny-ratings": "{{PLURAL:$1|jedne pohódnoćenje|$1 pohódnoćeni|$1 pohódnoćenja|$1 pohódnoćenjow}}",
+    "voteny-remove": "wotstronić",
+    "voteny-gave-this": "sy tutomu $1 dał",
+    "voteny-votes": "{{PLURAL:$1|jedyn hłós|$1 hłosaj|$1 hłosy|$1 hłosow}}",
+    "topratings": "Najwyše pohódnoćene strony",
+    "topratings-no-pages": "Žane najwyše pohódnoćene strony.",
+    "right-vote": "Wothłosowanske strony"
+}

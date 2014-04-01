@@ -1,0 +1,20 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ebraminio",
+            "Mjbmr",
+            "Omidh"
+        ]
+    },
+    "voteny-desc": "سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با تگ <tt>&lt;vote&gt;</tt>",
+    "voteny-link": "رأی دهی",
+    "voteny-unvote-link": "حذف رأی",
+    "voteny-community-score": "امتیاز کلی: $1",
+    "voteny-ratings": "{{PLURAL:$1|یک امتیاز|$1 امتیاز}}",
+    "voteny-remove": "حذف",
+    "voteny-gave-this": "شما $1 امتیاز دادید",
+    "voteny-votes": "{{PLURAL:$1|یک رای|$1 رای}}",
+    "topratings": "صفحات دارای امتیاز بالا",
+    "topratings-no-pages": "صفحه‌هایی با امتیاز بالا وجود ندارند.",
+    "right-vote": "صفحه‌های رأی"
+}

@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "ChrisPtDe"
+        ]
+    },
+    "voteny-link": "Votar",
+    "voteny-unvote-link": "enlevar lo voto",
+    "voteny-community-score": "mârca de la comunôtât : $1",
+    "voteny-ratings": "{{PLURAL:$1|yona èstimacion|$1 èstimacions}}",
+    "voteny-remove": "enlevar",
+    "voteny-gave-this": "vos éd balyê $1",
+    "voteny-votes": "{{PLURAL:$1|yon voto|$1 votos}}",
+    "right-vote": "Votar des pâges"
+}
