@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Purodha"
-        ]
-    },
-    "voteny-desc": "Afschtemmonge met JavaSkrep övver dä Befähl <code lang=\"en\">&lt;vote&gt;</code>.",
-    "voteny-link": "Afschtemme",
-    "voteny-unvote-link": "Schtemm zerökträke",
-    "voteny-community-score": "Jemeinschafflejje Pünkscher: $1",
-    "voteny-ratings": "{{PLURAL:$1|Ein Bewertong|$1 Bewertonge|Kein Bewertonge}}",
-    "voteny-remove": "fott nämme",
-    "voteny-gave-this": "Do häs en $1 verjovve.",
-    "voteny-votes": "{{PLURAL:$1|Ein Schtemm|$1 Schtemme|Kein Schtemme}}",
-    "topratings": "Sigge met de hühste Bewertonge",
-    "topratings-no-pages": "Kein Sigge met hühste Bewertonge jefonge.",
-    "right-vote": "Övver Siige afschtemme"
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"desc": "Afschtemmonge met JavaSkrep övver dä Befähl <code lang=\"en\">&lt;vote&gt;</code>.",
+	"link": "Afschtemme",
+	"unvote-link": "Schtemm zerökträke",
+	"community-score": "Jemeinschafflejje Pünkscher: $1",
+	"ratings": "{{PLURAL:$1|Ein Bewertong|$1 Bewertonge|Kein Bewertonge}}",
+	"remove": "fott nämme",
+	"gave-this": "Do häs en $1 verjovve.",
+	"votes": "{{PLURAL:$1|Ein Schtemm|$1 Schtemme|Kein Schtemme}}",
+	"topratings": "Sigge met de hühste Bewertonge",
+	"topratings-no-pages": "Kein Sigge met hühste Bewertonge jefonge.",
+	"right-vote": "Övver Siige afschtemme"
 }

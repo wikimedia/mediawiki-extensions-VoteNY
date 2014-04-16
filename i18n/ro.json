@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Minisarm",
-            "Stelistcristi"
-        ]
-    },
-    "voteny-link": "Votați",
-    "voteny-remove": "elimină"
+	"@metadata": {
+		"authors": [
+			"Minisarm",
+			"Stelistcristi"
+		]
+	},
+	"link": "Votați",
+	"remove": "elimină"
 }

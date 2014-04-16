@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "மதனாஹரன்"
-        ]
-    },
-    "voteny-link": "வாக்களி",
-    "voteny-remove": "நீக்கு"
+	"@metadata": {
+		"authors": [
+			"மதனாஹரன்"
+		]
+	},
+	"link": "வாக்களி",
+	"remove": "நீக்கு"
 }

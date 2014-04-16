@@ -1,19 +1,19 @@
 {
-    "@metadata": {
-        "authors": [
-            "Beta16",
-            "Darth Kule"
-        ]
-    },
-    "voteny-desc": "Sistema di voto basato su JavaScript con il tag <tt>&lt;vote&gt;</tt>",
-    "voteny-link": "Vota",
-    "voteny-unvote-link": "rimuovi voto",
-    "voteny-community-score": "punteggio della comunità: $1",
-    "voteny-ratings": "{{PLURAL:$1|un giudizio|$1 giudizi}}",
-    "voteny-remove": "rimuovi",
-    "voteny-gave-this": "hai dato $1",
-    "voteny-votes": "{{PLURAL:$1|un voto|$1 voti}}",
-    "topratings": "Pagine migliori",
-    "topratings-no-pages": "Nessuna pagina migliore.",
-    "right-vote": "Vota le pagine"
+	"@metadata": {
+		"authors": [
+			"Beta16",
+			"Darth Kule"
+		]
+	},
+	"desc": "Sistema di voto basato su JavaScript con il tag <tt>&lt;vote&gt;</tt>",
+	"link": "Vota",
+	"unvote-link": "rimuovi voto",
+	"community-score": "punteggio della comunità: $1",
+	"ratings": "{{PLURAL:$1|un giudizio|$1 giudizi}}",
+	"remove": "rimuovi",
+	"gave-this": "hai dato $1",
+	"votes": "{{PLURAL:$1|un voto|$1 voti}}",
+	"topratings": "Pagine migliori",
+	"topratings-no-pages": "Nessuna pagina migliore.",
+	"right-vote": "Vota le pagine"
 }

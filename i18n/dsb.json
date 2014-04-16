@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Michawiki"
-        ]
-    },
-    "voteny-desc": "Wótgłosowanje z toflicku <tt>&lt;vote&gt;</tt> na zakłaźe JavaScripta",
-    "voteny-link": "Wótgłosowaś",
-    "voteny-unvote-link": "Wótgłosowanje anulěrowaś",
-    "voteny-community-score": "Licba głosow zgromaźeństwa: $1",
-    "voteny-ratings": "{{PLURAL:$1|jadno pógódnośenje|$1 pógódnośeni|$1 pógódnośenja|$1 pógódnośenjow}}",
-    "voteny-remove": "wótpóraś",
-    "voteny-gave-this": "sy toś tomu $1 dał",
-    "voteny-votes": "{{PLURAL:$1|jaden głos|$1 głosa|$1 głose|$1 głosow}}",
-    "topratings": "Nejwuše pógódnośone boki",
-    "topratings-no-pages": "Žedne nejwuše pógódnośone boki.",
-    "right-vote": "Wótgłosowańske boki"
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"desc": "Wótgłosowanje z toflicku <tt>&lt;vote&gt;</tt> na zakłaźe JavaScripta",
+	"link": "Wótgłosowaś",
+	"unvote-link": "Wótgłosowanje anulěrowaś",
+	"community-score": "Licba głosow zgromaźeństwa: $1",
+	"ratings": "{{PLURAL:$1|jadno pógódnośenje|$1 pógódnośeni|$1 pógódnośenja|$1 pógódnośenjow}}",
+	"remove": "wótpóraś",
+	"gave-this": "sy toś tomu $1 dał",
+	"votes": "{{PLURAL:$1|jaden głos|$1 głosa|$1 głose|$1 głosow}}",
+	"topratings": "Nejwuše pógódnośone boki",
+	"topratings-no-pages": "Žedne nejwuše pógódnośone boki.",
+	"right-vote": "Wótgłosowańske boki"
 }

@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Robby"
-        ]
-    },
-    "voteny-link": "Ofstëmmen",
-    "voteny-unvote-link": "Stëmm zréckzéien",
-    "voteny-remove": "ewechhuelen",
-    "voteny-gave-this": "Dir hutt eng $1 ofginn",
-    "right-vote": "Ofstëmmen iwwer Säiten"
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"link": "Ofstëmmen",
+	"unvote-link": "Stëmm zréckzéien",
+	"remove": "ewechhuelen",
+	"gave-this": "Dir hutt eng $1 ofginn",
+	"right-vote": "Ofstëmmen iwwer Säiten"
 }

@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "David1010"
-        ]
-    },
-    "voteny-link": "ხმის მიცემა",
-    "voteny-remove": "წაშლა"
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"link": "ხმის მიცემა",
+	"remove": "წაშლა"
 }

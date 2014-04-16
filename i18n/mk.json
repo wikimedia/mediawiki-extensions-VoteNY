@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "voteny-desc": "Гласање на основа на JavaScript со ознаката <tt>&lt;vote&gt;</tt>",
-    "voteny-link": "Гласај",
-    "voteny-unvote-link": "повлечи глас",
-    "voteny-community-score": "бодови од заедницата: $1",
-    "voteny-ratings": "{{PLURAL:$1|една оценка|$1 оценки}}",
-    "voteny-remove": "отстрани",
-    "voteny-gave-this": "страницава  ја оценивте со $1",
-    "voteny-votes": "{{PLURAL:$1|еден глас|$1 гласа}}",
-    "topratings": "Водечки страници",
-    "topratings-no-pages": "Нема водечки страници.",
-    "right-vote": "Гласање за страници"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"desc": "Гласање на основа на JavaScript со ознаката <tt>&lt;vote&gt;</tt>",
+	"link": "Гласај",
+	"unvote-link": "повлечи глас",
+	"community-score": "бодови од заедницата: $1",
+	"ratings": "{{PLURAL:$1|една оценка|$1 оценки}}",
+	"remove": "отстрани",
+	"gave-this": "страницава  ја оценивте со $1",
+	"votes": "{{PLURAL:$1|еден глас|$1 гласа}}",
+	"topratings": "Водечки страници",
+	"topratings-no-pages": "Нема водечки страници.",
+	"right-vote": "Гласање за страници"
 }

@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kghbln"
-        ]
-    },
-    "voteny-gave-this": "Sie haben eine $1 vergeben."
+	"@metadata": {
+		"authors": [
+			"Kghbln"
+		]
+	},
+	"gave-this": "Sie haben eine $1 vergeben."
 }

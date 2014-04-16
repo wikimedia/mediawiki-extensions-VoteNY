@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "voteny-desc": "<tt>&lt;vote&gt;</tt> タグを使用した、JavaScript ベースの投票",
-    "voteny-link": "投票",
-    "voteny-unvote-link": "投票取り消し",
-    "voteny-community-score": "コミュニティでの得点: $1",
-    "voteny-ratings": "{{PLURAL:$1|$1 件の評価}}",
-    "voteny-remove": "除去",
-    "voteny-gave-this": "あなたはこれを $1 と評価しました",
-    "voteny-votes": "{{PLURAL:$1|$1 票}}",
-    "topratings": "評価が高いページ",
-    "topratings-no-pages": "評価が高いページはありません。",
-    "right-vote": "ページに投票"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"desc": "<tt>&lt;vote&gt;</tt> タグを使用した、JavaScript ベースの投票",
+	"link": "投票",
+	"unvote-link": "投票取り消し",
+	"community-score": "コミュニティでの得点: $1",
+	"ratings": "{{PLURAL:$1|$1 件の評価}}",
+	"remove": "除去",
+	"gave-this": "あなたはこれを $1 と評価しました",
+	"votes": "{{PLURAL:$1|$1 票}}",
+	"topratings": "評価が高いページ",
+	"topratings-no-pages": "評価が高いページはありません。",
+	"right-vote": "ページに投票"
 }
