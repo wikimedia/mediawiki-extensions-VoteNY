@@ -224,7 +224,7 @@ class Vote {
 			// not require them to log in!
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
 			$output .= '<a class="votebutton" href="' .
-				$login->escapeFullURL() . '" rel="nofollow">' .
+				htmlspecialchars( $login->getFullURL() ) . '" rel="nofollow">' .
 				wfMsg( 'voteny-link' ) . '</a>';
 		} else {
 			if( !wfReadOnly() ) {
