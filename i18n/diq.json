@@ -5,11 +5,11 @@
 			"Mirzali"
 		]
 	},
-	"link": "Rey",
-	"unvote-link": "rey mede",
-	"community-score": "Puwanê şêlıki: $1",
-	"ratings": "{{PLURAL:$1|yew nırğnayış|$1 nırğnayışi}}",
-	"remove": "wedare",
-	"votes": "{{PLURAL:$1|yew rey|$1 reyi}}",
+	"voteny-link": "Rey",
+	"voteny-unvote-link": "rey mede",
+	"voteny-community-score": "Puwanê şêlıki: $1",
+	"voteny-ratings": "{{PLURAL:$1|yew nırğnayış|$1 nırğnayışi}}",
+	"voteny-remove": "wedare",
+	"voteny-votes": "{{PLURAL:$1|yew rey|$1 reyi}}",
 	"right-voteny": "Pelê reydayışi"
 }

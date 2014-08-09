@@ -6,14 +6,14 @@
 			"Purodha"
 		]
 	},
-	"desc": "Ergänzt das Tag <tt>&lt;vote&gt;</tt> zum Durchführen JavaScript-gestützter Abstimmungen",
-	"link": "Abstimmen",
-	"unvote-link": "Stimme zurücknehmen",
-	"community-score": "Punktestand der Gemeinschaft: $1",
-	"ratings": "{{PLURAL:$1|eine Bewertung|$1 Bewertungen}}",
-	"remove": "entfernen",
-	"gave-this": "Du hast eine $1 vergeben.",
-	"votes": "{{PLURAL:$1|eine Stimme|$1 Stimmen}}",
+	"voteny-desc": "Ergänzt das Tag <tt>&lt;vote&gt;</tt> zum Durchführen JavaScript-gestützter Abstimmungen",
+	"voteny-link": "Abstimmen",
+	"voteny-unvote-link": "Stimme zurücknehmen",
+	"voteny-community-score": "Punktestand der Gemeinschaft: $1",
+	"voteny-ratings": "{{PLURAL:$1|eine Bewertung|$1 Bewertungen}}",
+	"voteny-remove": "entfernen",
+	"voteny-gave-this": "Du hast eine $1 vergeben.",
+	"voteny-votes": "{{PLURAL:$1|eine Stimme|$1 Stimmen}}",
 	"topratings": "Höchstbewertete Seiten",
 	"topratings-no-pages": "Es sind keine höchstbewerteten Seiten vorhanden.",
 	"right-voteny": "Abstimmen über Seiten"

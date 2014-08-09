@@ -3,17 +3,18 @@
 		"authors": [
 			"Darth Kule",
 			"Nemo bis",
-			"Shirayuki"
+			"Shirayuki",
+			"Siebrand"
 		]
 	},
-	"desc": "{{desc|name=Vote NY|url=http://www.mediawiki.org/wiki/Extension:VoteNY}}",
-	"link": "Link title",
-	"unvote-link": "Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.",
-	"community-score": "Community score is the average of votes a page has been given.\n\nParameters:\n* $1 - the actual score in numbers (i.e. 4.5 or 3)",
-	"ratings": "Parameters:\n* $1 - the number of ratings, if said number is greater than 1",
-	"remove": "Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.",
-	"gave-this": "Followed by the action link text {{msg-mw|Voteny-remove}}.\n\nParameter:\n* $1 - a number, the vote the user gave to the page.\n\nRefer to the [[mw:File:VoteNY.png|image]] for details.",
-	"votes": "Parameters:\n* $1 - number of votes",
+	"voteny-desc": "{{desc|name=Vote NY|url=http://www.mediawiki.org/wiki/Extension:VoteNY}}",
+	"voteny-link": "Link title",
+	"voteny-unvote-link": "Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.",
+	"voteny-community-score": "Community score is the average of votes a page has been given.\n\nParameters:\n* $1 - the actual score in numbers (i.e. 4.5 or 3)",
+	"voteny-ratings": "Parameters:\n* $1 - the number of ratings, if said number is greater than 1",
+	"voteny-remove": "Link title, clicking on this link removes your vote. Refer to the [[mw:File:VoteNY.png|image]] for details.",
+	"voteny-gave-this": "Followed by the action link text {{msg-mw|Voteny-remove}}.\n\nParameter:\n* $1 - a number, the vote the user gave to the page.\n\nRefer to the [[mw:File:VoteNY.png|image]] for details.",
+	"voteny-votes": "Parameters:\n* $1 - number of votes",
 	"topratings": "{{doc-special|TopRatings}}",
 	"topratings-no-pages": "Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.",
 	"right-voteny": "{{doc-right|vote|prefix=Voteny-}}\nRight to place a vote on pages with the extension."

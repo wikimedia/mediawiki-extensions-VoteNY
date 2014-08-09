@@ -4,14 +4,14 @@
 			"Anakmalaysia"
 		]
 	},
-	"desc": "Pengundian berasaskan JavaScript dengan teg <tt>&lt;vote&gt;</tt>",
-	"link": "Undi",
-	"unvote-link": "tarik balik undi",
-	"community-score": "markah komuniti: $1",
-	"ratings": "$1 penilaian",
-	"remove": "buang",
-	"gave-this": "anda memberi yang ini $1",
-	"votes": "$1 undian",
+	"voteny-desc": "Pengundian berasaskan JavaScript dengan teg <tt>&lt;vote&gt;</tt>",
+	"voteny-link": "Undi",
+	"voteny-unvote-link": "tarik balik undi",
+	"voteny-community-score": "markah komuniti: $1",
+	"voteny-ratings": "$1 penilaian",
+	"voteny-remove": "buang",
+	"voteny-gave-this": "anda memberi yang ini $1",
+	"voteny-votes": "$1 undian",
 	"topratings": "Halaman undian tertinggi",
 	"topratings-no-pages": "Tiada halaman undian tertinggi.",
 	"right-voteny": "Mengundi halaman"

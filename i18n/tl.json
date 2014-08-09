@@ -5,14 +5,14 @@
 			"TheSleepyhollow02"
 		]
 	},
-	"desc": "Botohan na nakabatay sa JavaScript na mayroong tatak na <tt>&lt;bumoto&gt;</tt>",
-	"link": "Bumoto",
-	"unvote-link": "huwag bumoto",
-	"community-score": "puntos ng pamayanan: $1",
-	"ratings": "{{PLURAL:$1|isang pag-aantas|$1 mga pag-aantas}}",
-	"remove": "tanggalin",
-	"gave-this": "binigyan mo ito ng isang $1",
-	"votes": "{{PLURAL:$1| isang boto| $1 mga boto}}",
+	"voteny-desc": "Botohan na nakabatay sa JavaScript na mayroong tatak na <tt>&lt;bumoto&gt;</tt>",
+	"voteny-link": "Bumoto",
+	"voteny-unvote-link": "huwag bumoto",
+	"voteny-community-score": "puntos ng pamayanan: $1",
+	"voteny-ratings": "{{PLURAL:$1|isang pag-aantas|$1 mga pag-aantas}}",
+	"voteny-remove": "tanggalin",
+	"voteny-gave-this": "binigyan mo ito ng isang $1",
+	"voteny-votes": "{{PLURAL:$1| isang boto| $1 mga boto}}",
 	"topratings": "Mga pahinang nangunguna sa pag-aantas",
 	"topratings-no-pages": "Walang mga pahinang nangunguna sa pag-aantas.",
 	"right-voteny": "Iboto ang mga pahina"

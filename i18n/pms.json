@@ -5,14 +5,14 @@
 			"Dragonòt"
 		]
 	},
-	"desc": "Votassion basà dzor JavaScript con la tichëtta <tt>&lt;vote&gt;</tt>",
-	"link": "Voté",
-	"unvote-link": "scancelé vot",
-	"community-score": "Pontegi dla comunità: $1",
-	"ratings": "{{PLURAL:$1|na valutassion|$1 valutassion}}",
-	"remove": "gava",
-	"gave-this": "It l'has daje un $1",
-	"votes": "{{PLURAL:$1|un vot|$1 vot}}",
+	"voteny-desc": "Votassion basà dzor JavaScript con la tichëtta <tt>&lt;vote&gt;</tt>",
+	"voteny-link": "Voté",
+	"voteny-unvote-link": "scancelé vot",
+	"voteny-community-score": "Pontegi dla comunità: $1",
+	"voteny-ratings": "{{PLURAL:$1|na valutassion|$1 valutassion}}",
+	"voteny-remove": "gava",
+	"voteny-gave-this": "It l'has daje un $1",
+	"voteny-votes": "{{PLURAL:$1|un vot|$1 vot}}",
 	"topratings": "Le pàgine valutà mej",
 	"topratings-no-pages": "Gnun-e pàgine valutà.",
 	"right-voteny": "Pàgine ëd vot"

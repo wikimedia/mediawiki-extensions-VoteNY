@@ -1,10 +1,10 @@
 {
 	"@metadata": [],
-	"link": "Głosuj",
-	"unvote-link": "Anuluj",
-	"community-score": "Wynik wśród społeczności: $1",
-	"ratings": "{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}",
-	"remove": "usuń",
-	"gave-this": "Oceniłeś to na $1",
-	"votes": "{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}"
+	"voteny-link": "Głosuj",
+	"voteny-unvote-link": "Anuluj",
+	"voteny-community-score": "Wynik wśród społeczności: $1",
+	"voteny-ratings": "{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}",
+	"voteny-remove": "usuń",
+	"voteny-gave-this": "Oceniłeś to na $1",
+	"voteny-votes": "{{PLURAL:$1|1 głos|$1 głosy|$1 głosów}}"
 }

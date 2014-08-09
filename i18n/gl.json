@@ -4,14 +4,14 @@
 			"Toliño"
 		]
 	},
-	"desc": "Sistema de votación en JavaScript coa etiqueta <tt>&lt;vote&gt;</tt>",
-	"link": "Votar",
-	"unvote-link": "retirar o voto",
-	"community-score": "puntuación da comunidade: $1",
-	"ratings": "{{PLURAL:$1|unha valoración|$1 valoracións}}",
-	"remove": "eliminar",
-	"gave-this": "vostede deu un $1",
-	"votes": "{{PLURAL:$1|un voto|$1 votos}}",
+	"voteny-desc": "Sistema de votación en JavaScript coa etiqueta <tt>&lt;vote&gt;</tt>",
+	"voteny-link": "Votar",
+	"voteny-unvote-link": "retirar o voto",
+	"voteny-community-score": "puntuación da comunidade: $1",
+	"voteny-ratings": "{{PLURAL:$1|unha valoración|$1 valoracións}}",
+	"voteny-remove": "eliminar",
+	"voteny-gave-this": "vostede deu un $1",
+	"voteny-votes": "{{PLURAL:$1|un voto|$1 votos}}",
 	"topratings": "Páxinas mellor valoradas",
 	"topratings-no-pages": "Non hai ningunha páxina valorada.",
 	"right-voteny": "Votar páxinas"

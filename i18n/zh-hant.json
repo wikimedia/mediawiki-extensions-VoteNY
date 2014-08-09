@@ -5,14 +5,14 @@
 			"Shirayuki"
 		]
 	},
-	"desc": "基於JavaScript的投票與<tt>&lt;vote&gt;</tt>標記",
-	"link": "投票",
-	"unvote-link": "取消投票",
-	"community-score": "社羣積分：$1",
-	"ratings": "{{PLURAL:$1|$1個評級}}",
-	"remove": "移除",
-	"gave-this": "你給了$1分",
-	"votes": "{{PLURAL:$1|$1票}}",
+	"voteny-desc": "基於JavaScript的投票與<tt>&lt;vote&gt;</tt>標記",
+	"voteny-link": "投票",
+	"voteny-unvote-link": "取消投票",
+	"voteny-community-score": "社羣積分：$1",
+	"voteny-ratings": "{{PLURAL:$1|$1個評級}}",
+	"voteny-remove": "移除",
+	"voteny-gave-this": "你給了$1分",
+	"voteny-votes": "{{PLURAL:$1|$1票}}",
 	"topratings": "最受好評的頁面",
 	"topratings-no-pages": "沒有最受好評的頁面。",
 	"right-voteny": "投票頁面"

@@ -5,13 +5,13 @@
 			"Nike"
 		]
 	},
-	"link": "Äänestä",
-	"unvote-link": "poista ääni",
-	"community-score": "yhteisön antama pistemäärä: $1",
-	"ratings": "{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}",
-	"remove": "poista",
-	"gave-this": "annoit {{PLURAL:$1|yhden tähden|$1 tähteä}}",
-	"votes": "{{PLURAL:$1|yksi ääni|$1 ääntä}}",
+	"voteny-link": "Äänestä",
+	"voteny-unvote-link": "poista ääni",
+	"voteny-community-score": "yhteisön antama pistemäärä: $1",
+	"voteny-ratings": "{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}",
+	"voteny-remove": "poista",
+	"voteny-gave-this": "annoit {{PLURAL:$1|yhden tähden|$1 tähteä}}",
+	"voteny-votes": "{{PLURAL:$1|yksi ääni|$1 ääntä}}",
 	"topratings": "Huippusivut",
 	"topratings-no-pages": "Ei huippusivuja."
 }

@@ -4,12 +4,12 @@
 			"ChrisPtDe"
 		]
 	},
-	"link": "Votar",
-	"unvote-link": "enlevar lo voto",
-	"community-score": "mârca de la comunôtât : $1",
-	"ratings": "{{PLURAL:$1|yona èstimacion|$1 èstimacions}}",
-	"remove": "enlevar",
-	"gave-this": "vos éd balyê $1",
-	"votes": "{{PLURAL:$1|yon voto|$1 votos}}",
+	"voteny-link": "Votar",
+	"voteny-unvote-link": "enlevar lo voto",
+	"voteny-community-score": "mârca de la comunôtât : $1",
+	"voteny-ratings": "{{PLURAL:$1|yona èstimacion|$1 èstimacions}}",
+	"voteny-remove": "enlevar",
+	"voteny-gave-this": "vos éd balyê $1",
+	"voteny-votes": "{{PLURAL:$1|yon voto|$1 votos}}",
 	"right-voteny": "Votar des pâges"
 }

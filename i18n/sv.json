@@ -4,14 +4,14 @@
 			"WikiPhoenix"
 		]
 	},
-	"desc": "JavaScript-baserad omröstning med taggen <tt>&lt;vote&gt;</tt>",
-	"link": "Rösta",
-	"unvote-link": "ta bort röst",
-	"community-score": "gemenskapspoäng: $1",
-	"ratings": "{{PLURAL:$1|ett betyg|$1 betyg}}",
-	"remove": "ta bort",
-	"gave-this": "du gav detta $1",
-	"votes": "{{PLURAL:$1|en röst|$1 röster}}",
+	"voteny-desc": "JavaScript-baserad omröstning med taggen <tt>&lt;vote&gt;</tt>",
+	"voteny-link": "Rösta",
+	"voteny-unvote-link": "ta bort röst",
+	"voteny-community-score": "gemenskapspoäng: $1",
+	"voteny-ratings": "{{PLURAL:$1|ett betyg|$1 betyg}}",
+	"voteny-remove": "ta bort",
+	"voteny-gave-this": "du gav detta $1",
+	"voteny-votes": "{{PLURAL:$1|en röst|$1 röster}}",
 	"topratings": "Topplistade sidor",
 	"topratings-no-pages": "Inga topplistade sidor.",
 	"right-voteny": "Omröstningssidor"

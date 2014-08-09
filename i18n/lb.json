@@ -4,9 +4,9 @@
 			"Robby"
 		]
 	},
-	"link": "Ofstëmmen",
-	"unvote-link": "Stëmm zréckzéien",
-	"remove": "ewechhuelen",
-	"gave-this": "Dir hutt eng $1 ofginn",
+	"voteny-link": "Ofstëmmen",
+	"voteny-unvote-link": "Stëmm zréckzéien",
+	"voteny-remove": "ewechhuelen",
+	"voteny-gave-this": "Dir hutt eng $1 ofginn",
 	"right-voteny": "Ofstëmmen iwwer Säiten"
 }

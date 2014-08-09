@@ -5,14 +5,14 @@
 			"Siebrand"
 		]
 	},
-	"desc": "Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>",
-	"link": "Stemmen",
-	"unvote-link": "stem terugtrekken",
-	"community-score": "gemeenschapsscore: $1",
-	"ratings": "{{PLURAL:$1|één waardering|$1 waarderingen}}",
-	"remove": "verwijderen",
-	"gave-this": "u heeft een $1 gegeven",
-	"votes": "{{PLURAL:$1|één stem|$1 stemmen}}",
+	"voteny-desc": "Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>",
+	"voteny-link": "Stemmen",
+	"voteny-unvote-link": "stem terugtrekken",
+	"voteny-community-score": "gemeenschapsscore: $1",
+	"voteny-ratings": "{{PLURAL:$1|één waardering|$1 waarderingen}}",
+	"voteny-remove": "verwijderen",
+	"voteny-gave-this": "u heeft een $1 gegeven",
+	"voteny-votes": "{{PLURAL:$1|één stem|$1 stemmen}}",
 	"topratings": "Meest gewaardeerde pagina's",
 	"topratings-no-pages": "Er zijn nog geen meest gewaardeerde pagina's.",
 	"right-voteny": "Op pagina's stemmen"
