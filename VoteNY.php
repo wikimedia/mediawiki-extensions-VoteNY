@@ -32,9 +32,9 @@ $wgExtensionCredits['parserhook'][] = array(
 $wgVoteDirectory = "$IP/extensions/VoteNY";
 
 // New user right
-$wgAvailableRights[] = 'vote';
-$wgGroupPermissions['*']['vote'] = false; // Anonymous users cannot vote
-$wgGroupPermissions['user']['vote'] = true; // Registered users can vote
+$wgAvailableRights[] = 'voteny';
+$wgGroupPermissions['*']['voteny'] = false; // Anonymous users cannot vote
+$wgGroupPermissions['user']['voteny'] = true; // Registered users can vote
 
 // AJAX functions needed by this extension
 require_once( 'Vote_AjaxFunctions.php' );

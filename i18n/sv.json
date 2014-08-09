@@ -14,5 +14,5 @@
 	"votes": "{{PLURAL:$1|en röst|$1 röster}}",
 	"topratings": "Topplistade sidor",
 	"topratings-no-pages": "Inga topplistade sidor.",
-	"right-vote": "Omröstningssidor"
+	"right-voteny": "Omröstningssidor"
 }

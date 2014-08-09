@@ -16,5 +16,5 @@
 	"votes": "{{PLURAL:$1|eine Stimme|$1 Stimmen}}",
 	"topratings": "Höchstbewertete Seiten",
 	"topratings-no-pages": "Es sind keine höchstbewerteten Seiten vorhanden.",
-	"right-vote": "Abstimmen über Seiten"
+	"right-voteny": "Abstimmen über Seiten"
 }

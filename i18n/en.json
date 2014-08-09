@@ -15,5 +15,5 @@
     "voteny-votes": "{{PLURAL:$1|one vote|$1 votes}}",
     "topratings": "Top rated pages",
     "topratings-no-pages": "No top rated pages.",
-    "right-vote": "Vote pages"
+    "right-voteny": "Vote pages"
 }

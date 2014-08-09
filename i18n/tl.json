@@ -15,5 +15,5 @@
 	"votes": "{{PLURAL:$1| isang boto| $1 mga boto}}",
 	"topratings": "Mga pahinang nangunguna sa pag-aantas",
 	"topratings-no-pages": "Walang mga pahinang nangunguna sa pag-aantas.",
-	"right-vote": "Iboto ang mga pahina"
+	"right-voteny": "Iboto ang mga pahina"
 }

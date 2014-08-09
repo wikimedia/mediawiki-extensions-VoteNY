@@ -218,7 +218,7 @@ class Vote {
 		$output .= '</div>';
 		$output .= '<div id="Answer" class="vote-action">';
 
-		if ( !$wgUser->isAllowed( 'vote' ) ) {
+		if ( !$wgUser->isAllowed( 'voteny' ) ) {
 			// @todo FIXME: this is horrible. If we don't have enough
 			// permissions to vote, we should tell the end-user /that/,
 			// not require them to log in!
