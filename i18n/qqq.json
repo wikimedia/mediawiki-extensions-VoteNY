@@ -17,5 +17,5 @@
 	"voteny-votes": "Parameters:\n* $1 - number of votes",
 	"topratings": "{{doc-special|TopRatings}}",
 	"topratings-no-pages": "Displayed on Special:TopRatings if there are no top rated pages, i.e. if no pages have been rated on the wiki at all.",
-	"right-voteny": "{{doc-right|vote|prefix=Voteny-}}\nRight to place a vote on pages with the extension."
+	"right-voteny": "{{doc-right|voteny}}\nRight to place a vote on pages with the extension."
 }
