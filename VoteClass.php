@@ -7,9 +7,9 @@
  * @ingroup Extensions
  */
 class Vote {
-	var $PageID = 0;
-	var $Userid = 0;
-	var $Username = null;
+	public $PageID = 0;
+	public $Userid = 0;
+	public $Username = null;
 
 	/**
 	 * Constructor
@@ -248,7 +248,7 @@ class Vote {
  */
 class VoteStars extends Vote {
 
-	var $maxRating = 5;
+	public $maxRating = 5;
 
 	/**
 	 * Displays voting stars
