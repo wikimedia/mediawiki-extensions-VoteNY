@@ -145,6 +145,7 @@ class Vote {
 	 * @param $voteValue
 	 */
 	function insert( $voteValue ) {
+		global $wgRequest;
 		$dbw = wfGetDB( DB_MASTER );
 		wfSuppressWarnings(); // E_STRICT whining
 		$voteDate = date( 'Y-m-d H:i:s' );
@@ -159,7 +160,7 @@ class Vote {
 					'vote_page_id' => $this->PageID,
 					'vote_value' => $voteValue,
 					'vote_date' => $voteDate,
-					'vote_ip' => wfGetIP()
+					'vote_ip' => $wgRequest->getIP(),
 				),
 				__METHOD__
 			);
