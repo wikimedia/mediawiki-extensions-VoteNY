@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"C.R."
+		]
+	},
+	"voteny-desc": "Sistema 'e voto basato ncopp'a JavaScript c' 'o tag <tt>&lt;vote&gt;</tt>",
+	"voteny-link": "Vota",
+	"voteny-unvote-link": "leva voto",
+	"voteny-community-score": "punteggio d' 'a communità: $1",
+	"voteny-ratings": "{{PLURAL:$1|nu judizio|$1 ghiudizie}}",
+	"voteny-remove": "leva",
+	"voteny-gave-this": "hè dato $1",
+	"voteny-votes": "{{PLURAL:$1|nu voto|$1 vote}}",
+	"topratings": "Paggene cchiù mmeglio vutate",
+	"topratings-no-pages": "Nun ce sta paggena mmeglio.",
+	"right-voteny": "Vota 'e paggene"
+}
