@@ -4,7 +4,7 @@
  * @file
  * @ingroup Extensions
  * @author Jack Phoenix <jack@countervandalism.net>
- * @date 29 August 2012
+ * @date 21 September 2014
  */
 var VoteNY = {
 	MaxRating: 5,
@@ -12,7 +12,7 @@ var VoteNY = {
 	voted_new: [],
 	id: 0,
 	last_id: 0,
-	imagePath: wgScriptPath + '/extensions/VoteNY/images/',
+	imagePath: mw.config.get( 'wgExtensionAssetsPath' ) + '/VoteNY/images/',
 
 	/**
 	 * Called when voting through the green square voting box
