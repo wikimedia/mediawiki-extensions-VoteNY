@@ -22,7 +22,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Vote',
-	'version' => '2.6.0',
+	'version' => '2.6.1',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'voteny-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:VoteNY'
@@ -40,20 +40,18 @@ $wgGroupPermissions['user']['voteny'] = true; // Registered users can vote
 require_once( 'Vote_AjaxFunctions.php' );
 
 // Autoload classes and set up i18n
-$dir = dirname( __FILE__ ) . '/';
 $wgMessagesDirs['VoteNY'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['VoteNY'] = $dir . 'Vote.i18n.php';
-$wgExtensionMessagesFiles['VoteNYMagic'] = $dir . 'VoteNY.i18n.magic.php';
-$wgAutoloadClasses['Vote'] = $dir . 'VoteClass.php';
-$wgAutoloadClasses['VoteStars'] = $dir . 'VoteClass.php';
+$wgExtensionMessagesFiles['VoteNYMagic'] = __DIR__ . '/VoteNY.i18n.magic.php';
+$wgAutoloadClasses['Vote'] = __DIR__ . '/VoteClass.php';
+$wgAutoloadClasses['VoteStars'] = __DIR__ . '/VoteClass.php';
 
 // Set up the new special page, Special:TopRatings, which shows top rated pages
 // based on given criteria
-$wgAutoloadClasses['SpecialTopRatings'] = $dir . 'SpecialTopRatings.php';
+$wgAutoloadClasses['SpecialTopRatings'] = __DIR__ . '/SpecialTopRatings.php';
 $wgSpecialPages['TopRatings'] = 'SpecialTopRatings';
 
 // Hooked functions
-$wgAutoloadClasses['VoteHooks'] = $dir . 'VoteHooks.php';
+$wgAutoloadClasses['VoteHooks'] = __DIR__ . '/VoteHooks.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'VoteHooks::registerParserHook';
 $wgHooks['RenameUserSQL'][] = 'VoteHooks::onUserRename';
@@ -67,7 +65,7 @@ $wgResourceModules['ext.voteNY'] = array(
 	'styles' => 'Vote.css',
 	'scripts' => 'Vote.js',
 	'messages' => array( 'voteny-link', 'voteny-unvote-link' ),
-	'localBasePath' => dirname( __FILE__ ),
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'VoteNY',
 	'position' => 'top' // available since r85616
 );
