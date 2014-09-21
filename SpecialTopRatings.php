@@ -27,8 +27,6 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	 * @param $par Mixed: parameter passed to the special page or null
 	 */
 	public function execute( $par ) {
-		global $wgOut, $wgScriptPath;
-
 		// Set the page title, robot policies, etc.
 		$this->setHeaders();
 
@@ -51,7 +49,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 
 		// Add JS (and CSS) -- needed so that users can vote on this page and
 		// so that their browsers' consoles won't be filled with JS errors ;-)
-		$wgOut->addModules( 'ext.voteNY' );
+		$this->getOutput()->addModules( 'ext.voteNY' );
 
 		$ratings = array();
 		$output = '';
@@ -110,8 +108,9 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			/* XXX dirrrrrrty hack! because when we include this page, the JS
 			is not included, but we want things to work still */
 			if ( $this->including() ) {
+				global $wgExtensionAssetsPath;
 				$output .= '<script type="text/javascript" src="' .
-					$wgScriptPath . '/extensions/VoteNY/Vote.js"></script>';
+					$wgExtensionAssetsPath . '/VoteNY/Vote.js"></script>';
 			}
 
 			// yes, array_keys() is needed
@@ -126,8 +125,8 @@ class SpecialTopRatings extends IncludableSpecialPage {
 					Linker::link(
 						$titleObj,
 						$titleObj->getPrefixedText() // prefixed, so that the namespace shows!
-					) . wfMsg( 'word-separator' ) . // i18n overkill? ya betcha...
-					wfMsg( 'parentheses', $ratings[$pageId] ) .
+					) . $this->msg( 'word-separator' )->escaped() . // i18n overkill? ya betcha...
+					$this->msg( 'parentheses', $ratings[$pageId] )->escaped() .
 				'</div>';
 
 				$id = mt_rand(); // AFAIK these IDs are and originally were totally random...
@@ -144,11 +143,11 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		} else {
 			// Nothing? Well, display an informative error message rather than
 			// a blank page or somesuch.
-			$output .= wfMsg( 'topratings-no-pages' );
+			$output .= $this->msg( 'topratings-no-pages' )->escaped();
 		}
 
 		// Output everything!
-		$wgOut->addHTML( $output );
+		$this->getOutput()->addHTML( $output );
 	}
 
 	/**

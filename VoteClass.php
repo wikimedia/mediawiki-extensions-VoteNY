@@ -226,15 +226,15 @@ class Vote {
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
 			$output .= '<a class="votebutton" href="' .
 				htmlspecialchars( $login->getFullURL() ) . '" rel="nofollow">' .
-				wfMsg( 'voteny-link' ) . '</a>';
+				wfMessage( 'voteny-link' )->plain() . '</a>';
 		} else {
 			if( !wfReadOnly() ) {
 				if( $voted == false ) {
 					$output .= '<a href="javascript:void(0);" class="vote-vote-link">' .
-						wfMsg( 'voteny-link' ) . '</a>';
+						wfMessage( 'voteny-link' )->plain() . '</a>';
 				} else {
 					$output .= '<a href="javascript:void(0);" class="vote-unvote-link">' .
-						wfMsg( 'voteny-unvote-link' ) . '</a>';
+						wfMessage( 'voteny-unvote-link' )->plain() . '</a>';
 				}
 			}
 		}
@@ -281,15 +281,15 @@ class VoteStars extends Vote {
 		$count = $this->count();
 		if( isset( $count ) ) {
 			$output .= ' <span class="rating-total">(' .
-				wfMsgExt( 'voteny-votes', 'parsemag', $count ) . ')</span>';
+				wfMessage( 'voteny-votes', $count )->parse() . ')</span>';
 		}
 		$already_voted = $this->UserAlreadyVoted();
 		if( $already_voted && $wgUser->isLoggedIn() ) {
 			$output .= '<div class="rating-voted">' .
-				wfMsgExt( 'voteny-gave-this', 'parsemag', $already_voted ) .
+				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
 			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\" data-vote-id=\"{$id}\">("
-				. wfMsg( 'voteny-remove' ) .
+				. wfMessage( 'voteny-remove' )->plain() .
 			')</a>';
 		}
 		$output .= '</div>
@@ -308,7 +308,7 @@ class VoteStars extends Vote {
 	 * @return Mixed: generated <img> tag
 	 */
 	function displayStars( $id, $rating, $voted ) {
-		global $wgScriptPath;
+		global $wgExtensionAssetsPath;
 
 		if( !$rating ) {
 			$rating = 0;
@@ -327,7 +327,7 @@ class VoteStars extends Vote {
 			$output .= "<img class=\"vote-rating-star\" data-vote-the-vote=\"{$x}\"" .
 				" data-vote-id=\"{$id}\" data-vote-action=\"{$action}\" data-vote-rating=\"{$rating}\"" .
 				" data-vote-voted=\"{$voted}\" id=\"rating_{$id}_{$x}\"" .
-				" src=\"{$wgScriptPath}/extensions/VoteNY/images/star_";
+				" src=\"{$wgExtensionAssetsPath}/VoteNY/images/star_";
 			switch( true ) {
 				case $rating >= $x:
 					if( $voted ) {
@@ -356,8 +356,8 @@ class VoteStars extends Vote {
 	 */
 	function displayScore() {
 		$count = $this->count();
-		return wfMsg( 'voteny-community-score', '<b>' . $this->getAverageVote() . '</b>' ) .
-				' (' . wfMsgExt( 'voteny-ratings', 'parsemag', $count ) . ')';
+		return wfMessage( 'voteny-community-score', '<b>' . $this->getAverageVote() . '</b>' )->text() .
+				' (' . wfMessage( 'voteny-ratings', $count )->parse() . ')';
 	}
 
 }
