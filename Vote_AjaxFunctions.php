@@ -11,7 +11,7 @@ function wfVoteClick( $voteValue, $pageId ) {
 		return '';
 	}
 
-	if( is_numeric( $pageId ) && ( is_numeric( $voteValue ) ) ) {
+	if ( is_numeric( $pageId ) && ( is_numeric( $voteValue ) ) ) {
 		$vote = new Vote( $pageId );
 		$vote->insert( $voteValue );
 
@@ -29,7 +29,7 @@ function wfVoteDelete( $pageId ) {
 		return '';
 	}
 
-	if( is_numeric( $pageId ) ) {
+	if ( is_numeric( $pageId ) ) {
 		$vote = new Vote( $pageId );
 		$vote->delete();
 
@@ -48,7 +48,7 @@ function wfVoteStars( $voteValue, $pageId ) {
 	}
 
 	$vote = new VoteStars( $pageId );
-	if( $vote->UserAlreadyVoted() ) {
+	if ( $vote->UserAlreadyVoted() ) {
 		$vote->delete();
 	}
 	$vote->insert( $voteValue );
@@ -65,7 +65,7 @@ function wfVoteStarsMulti( $voteValue, $pageId ) {
 	}
 
 	$vote = new VoteStars( $pageId );
-	if( $vote->UserAlreadyVoted() ) {
+	if ( $vote->UserAlreadyVoted() ) {
 		$vote->delete();
 	}
 	$vote->insert( $voteValue );

@@ -10,8 +10,8 @@ class VoteHooks {
 	/**
 	 * Set up the <vote> parser hook.
 	 *
-	 * @param $parser Parser: instance of Parser
-	 * @return Boolean: true
+	 * @param Parser $parser
+	 * @return bool
 	 */
 	public static function registerParserHook( &$parser ) {
 		$parser->setHook( 'vote', array( 'VoteHooks', 'renderVote' ) );
@@ -21,10 +21,10 @@ class VoteHooks {
 	/**
 	 * Callback function for registerParserHook.
 	 *
-	 * @param $input String: user-supplied input, unused
-	 * @param $args Array: user-supplied arguments, unused
-	 * @param $parser Parser: instance of Parser, unused
-	 * @return String: HTML
+	 * @param string $input User-supplied input, unused
+	 * @param array $args User-supplied arguments
+	 * @param Parser $parser Instance of Parser, unused
+	 * @return string HTML
 	 */
 	public static function renderVote( $input, $args, $parser ) {
 		global $wgOut;
@@ -45,16 +45,15 @@ class VoteHooks {
 		$type = 0;
 
 		// Determine what kind of a voting gadget the user wants: a box or pretty stars?
-		if(	preg_match( "/^\s*type\s*=\s*(.*)/mi", $input, $matches ) ) {
+		if ( preg_match( "/^\s*type\s*=\s*(.*)/mi", $input, $matches ) ) {
 			$type = htmlspecialchars( $matches[1] );
-		} elseif( !empty( $args['type'] ) ) {
+		} elseif ( !empty( $args['type'] ) ) {
 			$type = intval( $args['type'] );
 		}
 
 		$output = null;
 		$title = $wgOut->getTitle();
-		if( $title ) {
-
+		if ( $title ) {
 			$articleID = $title->getArticleID();
 			switch( $type ) {
 				case 0:
@@ -78,8 +77,8 @@ class VoteHooks {
 	/**
 	 * For the Renameuser extension.
 	 *
-	 * @param $renameUserSQL
-	 * @return Boolean: true
+	 * @param RenameuserSQL $renameUserSQL
+	 * @return bool
 	 */
 	public static function onUserRename( $renameUserSQL ) {
 		$renameUserSQL->tables['Vote'] = array( 'username', 'vote_user_id' );
@@ -90,11 +89,11 @@ class VoteHooks {
 	 * Assign a value to {{NUMBEROFVOTES}}. First we try memcached and if that
 	 * fails, we fetch it directly from the database and cache it for 24 hours.
 	 *
-	 * @param $parser Parser
+	 * @param Parser $parser
 	 * @param $cache
-	 * @param $magicWordId String: magic word ID
-	 * @param $ret Integer: return value (number of votes)
-	 * @return Boolean: true
+	 * @param string $magicWordId Magic word ID
+	 * @param int $ret Return value (number of votes)
+	 * @return bool
 	 */
 	public static function assignValueToMagicWord( &$parser, &$cache, &$magicWordId, &$ret ) {
 		global $wgMemc;
@@ -135,11 +134,13 @@ class VoteHooks {
 
 	/**
 	 * Main function to get the number of votes for a specific page
-	 * @param Title $title: page to get votes for
-	 * @return integer: number of votes for the given page
+	 *
+	 * @param Title $title Page to get votes for
+	 * @return int Number of votes for the given page
 	 */
 	public static function getNumberOfVotesPage( Title $title ) {
 		global $wgMemc;
+
 		$id = $title->getArticleID();
 
 		$key = wfMemcKey( 'vote', 'magic-word-page', $id );
@@ -165,9 +166,10 @@ class VoteHooks {
 
 	/**
 	 * Hook for parser function {{NUMBEROFVOTESPAGE:<page>}}
+	 *
 	 * @param Parser $parser
-	 * @param string $pagename
-	 * @return integer
+	 * @param string $pagename Page name
+	 * @return int Amount of votes for the given page
 	 */
 	static function getNumberOfVotesPageParser( $parser, $pagename ) {
 		$title = Title::newFromText( $pagename );
@@ -182,8 +184,8 @@ class VoteHooks {
 	/**
 	 * Register the magic word ID for {{NUMBEROFVOTES}} and {{NUMBEROFVOTESPAGE}}
 	 *
-	 * @param $variableIds Array: array of pre-existing variable IDs
-	 * @return Boolean: true
+	 * @param array $variableIds Array of pre-existing variable IDs
+	 * @return bool
 	 */
 	public static function registerVariableId( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFVOTES';
@@ -193,8 +195,9 @@ class VoteHooks {
 
 	/**
 	 * Hook to setup parser function {{NUMBEROFVOTESPAGE:<page>}}
+	 *
 	 * @param Parser $parser
-	 * @return boolean
+	 * @return bool
 	 */
 	static function setupNumberOfVotesPageParser( &$parser ) {
 		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteHooks::getNumberOfVotesPageParser', SFH_NO_HASH );
@@ -205,16 +208,16 @@ class VoteHooks {
 	 * Creates the necessary database table when the user runs
 	 * maintenance/update.php.
 	 *
-	 * @param $updater DatabaseUpdater
-	 * @return Boolean: true
+	 * @param DatabaseUpdater $updater
+	 * @return bool
 	 */
 	public static function addTable( $updater ) {
 		$dbt = $updater->getDB()->getType();
-		$file = dirname( __FILE__ ) . "/vote.$dbt";
+		$file = __DIR__ . "/vote.$dbt";
 		if ( file_exists( $file ) ) {
 			$updater->addExtensionUpdate( array( 'addTable', 'Vote', $file, true ) );
 		} else {
-			throw new MWException("VoteNY does not support $dbt.");
+			throw new MWException( "VoteNY does not support $dbt." );
 		}
 		return true;
 	}

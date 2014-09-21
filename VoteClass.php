@@ -14,7 +14,7 @@ class Vote {
 	/**
 	 * Constructor
 	 *
-	 * @param $pageID Integer: article ID number
+	 * @param int $pageID Article ID number
 	 */
 	public function __construct( $pageID ) {
 		global $wgUser;
@@ -28,7 +28,7 @@ class Vote {
 	 * Counts all votes, fetching the data from memcached if available
 	 * or from the database if memcached isn't available
 	 *
-	 * @return Integer: amount of votes
+	 * @return int Amount of votes
 	 */
 	function count() {
 		global $wgMemc;
@@ -37,7 +37,7 @@ class Vote {
 		$data = $wgMemc->get( $key );
 
 		// Try cache
-		if( $data ) {
+		if ( $data ) {
 			wfDebug( "Loading vote count for page {$this->PageID} from cache\n" );
 			$vote_count = $data;
 		} else {
@@ -50,7 +50,7 @@ class Vote {
 				__METHOD__
 			);
 			$row = $dbr->fetchObject( $res );
-			if( $row ) {
+			if ( $row ) {
 				$vote_count = $row->votecount;
 			}
 			$wgMemc->set( $key, $vote_count );
@@ -61,7 +61,8 @@ class Vote {
 
 	/**
 	 * Gets the average score of all votes
-	 * @return Integer: formatted average number of votes (something like 3.50)
+	 *
+	 * @return int Formatted average number of votes (something like 3.50)
 	 */
 	function getAverageVote() {
 		global $wgMemc;
@@ -69,7 +70,7 @@ class Vote {
 		$data = $wgMemc->get( $key );
 
 		$voteAvg = 0;
-		if( $data ) {
+		if ( $data ) {
 			wfDebug( "Loading vote avg for page {$this->PageID} from cache\n" );
 			$voteAvg = $data;
 		} else {
@@ -81,7 +82,7 @@ class Vote {
 				__METHOD__
 			);
 			$row = $dbr->fetchObject( $res );
-			if( $row ) {
+			if ( $row ) {
 				$voteAvg = $row->voteavg;
 			}
 			$wgMemc->set( $key, $voteAvg );
@@ -102,7 +103,7 @@ class Vote {
 
 		// Purge squid
 		$pageTitle = Title::newFromID( $this->PageID );
-		if( is_object( $pageTitle ) ) {
+		if ( is_object( $pageTitle ) ) {
 			$pageTitle->invalidateCache();
 			$pageTitle->purgeSquid();
 
@@ -134,7 +135,7 @@ class Vote {
 		$this->clearCache();
 
 		// Update social statistics if SocialProfile extension is enabled
-		if( class_exists( 'UserStatsTrack' ) ) {
+		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $this->Userid, $this->Username );
 			$stats->decStatField( 'vote' );
 		}
@@ -142,7 +143,8 @@ class Vote {
 
 	/**
 	 * Inserts a new vote into the Vote database table
-	 * @param $voteValue
+	 *
+	 * @param int $voteValue
 	 */
 	function insert( $voteValue ) {
 		global $wgRequest;
@@ -150,7 +152,7 @@ class Vote {
 		wfSuppressWarnings(); // E_STRICT whining
 		$voteDate = date( 'Y-m-d H:i:s' );
 		wfRestoreWarnings();
-		if( $this->UserAlreadyVoted() == false ) {
+		if ( $this->UserAlreadyVoted() == false ) {
 			$dbw->begin();
 			$dbw->insert(
 				'Vote',
@@ -169,7 +171,7 @@ class Vote {
 			$this->clearCache();
 
 			// Update social statistics if SocialProfile extension is enabled
-			if( class_exists( 'UserStatsTrack' ) ) {
+			if ( class_exists( 'UserStatsTrack' ) ) {
 				$stats = new UserStatsTrack( $this->Userid, $this->Username );
 				$stats->incStatField( 'vote' );
 			}
@@ -179,8 +181,8 @@ class Vote {
 	/**
 	 * Checks if a user has already voted
 	 *
-	 * @return Boolean|Integer: false if s/he hasn't, otherwise returns the
-	 *                          value of 'vote_value' column from Vote DB table
+	 * @return bool|int False if s/he hasn't, otherwise returns the
+	 *                  value of 'vote_value' column from Vote DB table
 	 */
 	function UserAlreadyVoted() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -193,7 +195,7 @@ class Vote {
 			),
 			__METHOD__
 		);
-		if( $s === false ) {
+		if ( $s === false ) {
 			return false;
 		} else {
 			return $s->vote_value;
@@ -202,7 +204,8 @@ class Vote {
 
 	/**
 	 * Displays the green voting box
-	 * @return Mixed: HTML output
+	 *
+	 * @return string HTML output
 	 */
 	function display() {
 		global $wgUser;
@@ -210,7 +213,7 @@ class Vote {
 		$voted = $this->UserAlreadyVoted();
 
 		$make_vote_box_clickable = '';
-		if( $voted == false ) {
+		if ( $voted == false ) {
 			$make_vote_box_clickable = ' vote-clickable';
 		}
 
@@ -228,8 +231,8 @@ class Vote {
 				htmlspecialchars( $login->getFullURL() ) . '" rel="nofollow">' .
 				wfMessage( 'voteny-link' )->plain() . '</a>';
 		} else {
-			if( !wfReadOnly() ) {
-				if( $voted == false ) {
+			if ( !wfReadOnly() ) {
+				if ( $voted == false ) {
 					$output .= '<a href="javascript:void(0);" class="vote-vote-link">' .
 						wfMessage( 'voteny-link' )->plain() . '</a>';
 				} else {
@@ -254,15 +257,15 @@ class VoteStars extends Vote {
 	/**
 	 * Displays voting stars
 	 *
-	 * @param $voted Boolean: has the user already voted? False by default
-	 * @return Mixed: HTML output
+	 * @param bool $voted Has the user already voted? False by default
+	 * @return string HTML output
 	 */
 	function display( $voted = false ) {
 		global $wgUser;
 
 		$overall_rating = $this->getAverageVote();
 
-		if( $voted ) {
+		if ( $voted ) {
 			$display_stars_rating = $voted;
 		} else {
 			$display_stars_rating = $this->getAverageVote();
@@ -279,12 +282,12 @@ class VoteStars extends Vote {
 		$output .= '<div class="rating-section">';
 		$output .= $this->displayStars( $id, $display_stars_rating, $voted );
 		$count = $this->count();
-		if( isset( $count ) ) {
+		if ( isset( $count ) ) {
 			$output .= ' <span class="rating-total">(' .
 				wfMessage( 'voteny-votes', $count )->parse() . ')</span>';
 		}
 		$already_voted = $this->UserAlreadyVoted();
-		if( $already_voted && $wgUser->isLoggedIn() ) {
+		if ( $already_voted && $wgUser->isLoggedIn() ) {
 			$output .= '<div class="rating-voted">' .
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
@@ -302,24 +305,25 @@ class VoteStars extends Vote {
 
 	/**
 	 * Displays the actual star images, depending on the state of the user's mouse
-	 * @param $id Integer: ID of the rating (div) element
-	 * @param $rating Integer: average rating
-	 * @param $voted Integer
-	 * @return Mixed: generated <img> tag
+	 *
+	 * @param int $id ID of the rating (div) element
+	 * @param int $rating Average rating
+	 * @param int $voted
+	 * @return string Generated <img> tag
 	 */
 	function displayStars( $id, $rating, $voted ) {
 		global $wgExtensionAssetsPath;
 
-		if( !$rating ) {
+		if ( !$rating ) {
 			$rating = 0;
 		}
-		if( !$voted ) {
+		if ( !$voted ) {
 			$voted = 0;
 		}
 		$output = '';
 
-		for( $x = 1; $x <= $this->maxRating; $x++ ) {
-			if( !$id ) {
+		for ( $x = 1; $x <= $this->maxRating; $x++ ) {
+			if ( !$id ) {
 				$action = 3;
 			} else {
 				$action = 5;
@@ -328,18 +332,18 @@ class VoteStars extends Vote {
 				" data-vote-id=\"{$id}\" data-vote-action=\"{$action}\" data-vote-rating=\"{$rating}\"" .
 				" data-vote-voted=\"{$voted}\" id=\"rating_{$id}_{$x}\"" .
 				" src=\"{$wgExtensionAssetsPath}/VoteNY/images/star_";
-			switch( true ) {
+			switch ( true ) {
 				case $rating >= $x:
-					if( $voted ) {
+					if ( $voted ) {
 						$output .= 'voted';
 					} else {
 						$output .= 'on';
 					}
 					break;
-				case( $rating > 0 && $rating < $x && $rating > ( $x - 1 ) ):
+				case ( $rating > 0 && $rating < $x && $rating > ( $x - 1 ) ):
 					$output .= 'half';
 					break;
-				case( $rating < $x ):
+				case ( $rating < $x ):
 					$output .= 'off';
 					break;
 			}
@@ -353,6 +357,8 @@ class VoteStars extends Vote {
 	/**
 	 * Displays the average score for the current page
 	 * and the total amount of votes.
+	 *
+	 * @return string
 	 */
 	function displayScore() {
 		$count = $this->count();

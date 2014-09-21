@@ -24,7 +24,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the special page or null
+	 * @param mixed|null $par Parameter passed to the special page or null
 	 */
 	public function execute( $par ) {
 		// Set the page title, robot policies, etc.
@@ -164,7 +164,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$data = $wgMemc->get( $key );
 		$voteAvg = 0;
 
-		if( $data ) {
+		if ( $data ) {
 			wfDebug( "Loading vote avg for page {$pageId} from cache (TopRatings)\n" );
 			$voteAvg = $data;
 		} else {
