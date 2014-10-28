@@ -9,10 +9,10 @@
 	"voteny-link": "Голосовать",
 	"voteny-unvote-link": "отменить выбор",
 	"voteny-community-score": "оценка сообщества: $1",
-	"voteny-ratings": "{{PLURAL:$1|$1 балл|$1 баллов|$1 балла}}",
+	"voteny-ratings": "{{PLURAL:$1|$1 балл|$1 балла|$1 баллов}}",
 	"voteny-remove": "отменить",
 	"voteny-gave-this": "Вы поставили $1",
-	"voteny-votes": "{{PLURAL:$1|$1 голос|$1 голосов|$1 голоса}}",
+	"voteny-votes": "{{PLURAL:$1|$1 голос|$1 голоса|$1 голосов}}",
 	"topratings": "Самые популярные страницы",
 	"topratings-no-pages": "Нет популярных страниц.",
 	"right-voteny": "Страницы голосований"
