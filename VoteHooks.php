@@ -200,7 +200,7 @@ class VoteHooks {
 	 * @return bool
 	 */
 	static function setupNumberOfVotesPageParser( &$parser ) {
-		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteHooks::getNumberOfVotesPageParser', SFH_NO_HASH );
+		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteHooks::getNumberOfVotesPageParser', Parser::SFH_NO_HASH );
 		return true;
 	}
 
