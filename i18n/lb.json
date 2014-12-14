@@ -8,5 +8,6 @@
 	"voteny-unvote-link": "Stëmm zréckzéien",
 	"voteny-remove": "ewechhuelen",
 	"voteny-gave-this": "Dir hutt eng $1 ofginn",
+	"voteny-votes": "({{PLURAL:$1|eng Stëmm|$1 Stëmmen}})",
 	"right-voteny": "Ofstëmmen iwwer Säiten"
 }
