@@ -1,18 +1,21 @@
 /**
- * JavaScript functions for Vote extension
+ * JavaScript functions for Vote extension.
  *
- * @file
- * @ingroup Extensions
+ * TODO: Should refactor this into a jQuery widget. The widget should get a PageID in its
+ *       constructor so it can work on any page for any page and with multiple instances per page.
+ *
+ * @constructor
+ *
  * @author Jack Phoenix <jack@countervandalism.net>
- * @date 21 September 2014
+ * @author Daniel A. R. Werner < daniel.a.r.werner@gmail.com >
  */
-var VoteNY = {
-	MaxRating: 5,
-	clearRatingTimer: null,
-	voted_new: [],
-	id: 0,
-	last_id: 0,
-	imagePath: mw.config.get( 'wgExtensionAssetsPath' ) + '/VoteNY/images/',
+var VoteNY = function VoteNY() {
+	this.MaxRating = 5;
+	this.clearRatingTimer = null;
+	this.voted_new = [];
+	this.id = 0;
+	this.last_id = 0;
+	this.imagePath = mw.config.get( 'wgExtensionAssetsPath' ) + '/VoteNY/images/';
 
 	/**
 	 * Called when voting through the green square voting box
@@ -20,16 +23,15 @@ var VoteNY = {
 	 * @param TheVote
 	 * @param PageID Integer: internal ID number of the current article
 	 */
-	clickVote: function( TheVote, PageID ) {
+	this.clickVote = function( TheVote, PageID ) {
 		sajax_request_type = 'POST';
 		sajax_do_call( 'wfVoteClick', [ TheVote, PageID ], function( request ) {
-			document.getElementById( 'votebox' ).style.cursor = 'default';
 			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
 			document.getElementById( 'Answer' ).innerHTML =
 				'<a href="javascript:void(0);" class="vote-unvote-link">' +
 				mediaWiki.msg( 'voteny-unvote-link' ) + '</a>';
 		} );
-	},
+	};
 
 	/**
 	 * Called when removing your vote through the green square voting box
@@ -37,16 +39,15 @@ var VoteNY = {
 	 * @param PageID Integer: internal ID number of the current article
 	 * @param mk Mixed: random token
 	 */
-	unVote: function( PageID ) {
+	this.unVote = function( PageID ) {
 		sajax_request_type = 'POST';
 		sajax_do_call( 'wfVoteDelete', [ PageID ], function( request ) {
-			document.getElementById( 'votebox' ).style.cursor = 'pointer';
 			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
 			document.getElementById( 'Answer' ).innerHTML =
 				'<a href="javascript:void(0);" class="vote-vote-link">' +
 				mediaWiki.msg( 'voteny-link' ) + '</a>';
 		} );
-	},
+	};
 
 	/**
 	 * Called when adding a vote after a user has clicked the yellow voting stars
@@ -55,8 +56,8 @@ var VoteNY = {
 	 * @param id Integer: ID of the current rating star
 	 * @param action Integer: controls which AJAX function will be called
 	 */
-	clickVoteStars: function( TheVote, PageID, id, action ) {
-		VoteNY.voted_new[id] = TheVote;
+	this.clickVoteStars = function( TheVote, PageID, id, action ) {
+		this.voted_new[id] = TheVote;
 		var rsfun;
 		if( action == 3 ) {
 			rsfun = 'wfVoteStars';
@@ -68,7 +69,7 @@ var VoteNY = {
 		var resultElement = document.getElementById( 'rating_' + id );
 		sajax_request_type = 'POST';
 		sajax_do_call( rsfun, [ TheVote, PageID ], resultElement );
-	},
+	};
 
 	/**
 	 * Called when removing your vote through the yellow voting stars
@@ -76,24 +77,24 @@ var VoteNY = {
 	 * @param PageID Integer: internal ID number of the current article
 	 * @param id Integer: ID of the current rating star
 	 */
-	unVoteStars: function( PageID, id ) {
+	this.unVoteStars = function( PageID, id ) {
 		var resultElement = document.getElementById( 'rating_' + id );
 		sajax_request_type = 'POST';
 		sajax_do_call( 'wfVoteStarsDelete', [ PageID ], resultElement );
-	},
+	};
 
-	startClearRating: function( id, rating, voted ) {
-		VoteNY.clearRatingTimer = setTimeout( function() {
-			VoteNY.clearRating( id, 0, rating, voted );
+	this.startClearRating = function( id, rating, voted ) {
+		this.clearRatingTimer = setTimeout( function() {
+			this.clearRating( id, 0, rating, voted );
 		}, 200 );
-	},
+	};
 
-	clearRating: function( id, num, prev_rating, voted ) {
-		if( VoteNY.voted_new[id] ) {
-			voted = VoteNY.voted_new[id];
+	this.clearRating = function( id, num, prev_rating, voted ) {
+		if( this.voted_new[id] ) {
+			voted = this.voted_new[id];
 		}
 
-		for( var x = 1; x <= VoteNY.MaxRating; x++ ) {
+		for( var x = 1; x <= this.MaxRating; x++ ) {
 			var star_on, old_rating;
 			if( voted ) {
 				star_on = 'voted';
@@ -104,39 +105,43 @@ var VoteNY = {
 			}
 			var ratingElement = document.getElementById( 'rating_' + id + '_' + x );
 			if( !num && old_rating >= x ) {
-				ratingElement.src = VoteNY.imagePath + 'star_' + star_on + '.gif';
+				ratingElement.src = this.imagePath + 'star_' + star_on + '.gif';
 			} else {
-				ratingElement.src = VoteNY.imagePath + 'star_off.gif';
+				ratingElement.src = this.imagePath + 'star_off.gif';
 			}
 		}
-	},
+	};
 
-	updateRating: function( id, num, prev_rating ) {
-		if( VoteNY.clearRatingTimer && VoteNY.last_id == id ) {
-			clearTimeout( VoteNY.clearRatingTimer );
+	this.updateRating = function( id, num, prev_rating ) {
+		if( this.clearRatingTimer && this.last_id == id ) {
+			clearTimeout( this.clearRatingTimer );
 		}
-		VoteNY.clearRating( id, num, prev_rating );
+		this.clearRating( id, num, prev_rating );
 		for( var x = 1; x <= num; x++ ) {
-			document.getElementById( 'rating_' + id + '_' + x ).src = VoteNY.imagePath + 'star_voted.gif';
+			document.getElementById( 'rating_' + id + '_' + x ).src = this.imagePath + 'star_voted.gif';
 		}
-		VoteNY.last_id = id;
-	}
+		this.last_id = id;
+	};
 };
 
+// TODO:Mmake event handlers part of a widget as described in the VoteNY's TODO and reduce this
+//       code to instantiating such a widget for the current wiki page if required.
 jQuery( document ).ready( function() {
-	// Green voting box
-	jQuery( '#votebox, a.vote-vote-link' ).click( function() {
-		VoteNY.clickVote( 1, mw.config.get( 'wgArticleId' ) );
-	} );
+	var vote = new VoteNY();
 
-	jQuery( 'a.vote-unvote-link' ).click( function() {
-		VoteNY.unVote( mw.config.get( 'wgArticleId' ) );
+	// Green voting box's link
+	jQuery( '.vote-action' ).on( 'click', '> a', function( event ) {
+		if( jQuery( this ).hasClass( 'vote-unvote-link' ) ) {
+			vote.unVote( mw.config.get( 'wgArticleId' ) );
+		} else {
+			vote.clickVote( 1, mw.config.get( 'wgArticleId' ) );
+		}
 	} );
 
 	// Rating stars
 	jQuery( 'img.vote-rating-star' ).click( function() {
 		var that = jQuery( this );
-		VoteNY.clickVoteStars(
+		vote.clickVoteStars(
 			that.data( 'vote-the-vote' ),
 			mw.config.get( 'wgArticleId' ),
 			that.data( 'vote-id' ),
@@ -144,14 +149,14 @@ jQuery( document ).ready( function() {
 		);
 	} ).mouseover( function() {
 		var that = jQuery( this );
-		VoteNY.updateRating(
+		vote.updateRating(
 			that.data( 'vote-id' ),
 			that.data( 'vote-the-vote' ),
 			that.data( 'vote-rating' )
 		);
 	} ).mouseout( function() {
 		var that = jQuery( this );
-		VoteNY.startClearRating(
+		vote.startClearRating(
 			that.data( 'vote-id' ),
 			that.data( 'vote-rating' ),
 			that.data( 'vote-voted' )
@@ -160,7 +165,7 @@ jQuery( document ).ready( function() {
 
 	// Remove vote (rating stars)
 	jQuery( 'a.vote-remove-stars-link' ).click( function() {
-		VoteNY.unVoteStars(
+		vote.unVoteStars(
 			mw.config.get( 'wgArticleId' ),
 			jQuery( this ).data( 'vote-id' )
 		);
