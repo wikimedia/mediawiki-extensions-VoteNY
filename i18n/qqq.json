@@ -5,10 +5,11 @@
 			"Nemo bis",
 			"Shirayuki",
 			"Siebrand",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Umherirrender"
 		]
 	},
-	"voteny-desc": "{{desc|name=Vote NY|url=http://www.mediawiki.org/wiki/Extension:VoteNY}}",
+	"voteny-desc": "{{desc|name=Vote NY|url=https://www.mediawiki.org/wiki/Extension:VoteNY}}",
 	"voteny-link": "Link title\n{{Identical|Vote}}",
 	"voteny-unvote-link": "Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.\n{{Identical|Unvote}}",
 	"voteny-community-score": "Community score is the average of votes a page has been given.\n\nParameters:\n* $1 - the actual score in numbers (i.e. 4.5 or 3)",
