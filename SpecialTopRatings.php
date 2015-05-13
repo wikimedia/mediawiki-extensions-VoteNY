@@ -30,6 +30,9 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		// Set the page title, robot policies, etc.
 		$this->setHeaders();
 
+		$out = $this->getOutput();
+		$user = $this->getUser();
+
 		$categoryName = $namespace = '';
 
 		// Parse the parameters passed to the special page
@@ -47,9 +50,13 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$limit = 50;
 		}
 
-		// Add JS (and CSS) -- needed so that users can vote on this page and
-		// so that their browsers' consoles won't be filled with JS errors ;-)
-		$this->getOutput()->addModules( 'ext.voteNY' );
+		// Add CSS
+		$out->addModuleStyles( 'ext.voteNY.styles' );
+		/* scroll down some lines to see why I'm not including JS here anymore
+		if ( $user->isAllowed( 'voteny' ) ) {
+			$out->addModules( 'ext.voteNY.scripts' );
+		}
+		*/
 
 		$ratings = array();
 		$output = '';
@@ -106,12 +113,21 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		// If we have some ratings, start building HTML output
 		if ( !empty( $ratings ) ) {
 			/* XXX dirrrrrrty hack! because when we include this page, the JS
-			is not included, but we want things to work still */
-			if ( $this->including() ) {
+			 * is not included, but we want things to work still
+			 * Actually, this is way harder than what it looks like.
+			 * The JS uses wgArticleId but when directly viewing Special:TopRatings,
+			 * wgArticleId is zero, because special pages aren't articles.
+			 * As for including the special page, then wgArticleId would likely
+			 * point at the ID of the page that includes {{Special:TopRatings}},
+			 * which would be stupid and wrong.
+			 * Besides, shouldn't you check out the images/pages that you're gonna
+			 * vote for? Yeah, that's what I thought, too.
+			if ( $this->including() && $user->isAllowed( 'voteny' ) ) {
 				global $wgExtensionAssetsPath;
 				$output .= '<script type="text/javascript" src="' .
 					$wgExtensionAssetsPath . '/VoteNY/Vote.js"></script>';
 			}
+			*/
 
 			// yes, array_keys() is needed
 			foreach ( array_keys( $ratings ) as $discardThis => $pageId ) {
@@ -147,7 +163,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		}
 
 		// Output everything!
-		$this->getOutput()->addHTML( $output );
+		$out->addHTML( $output );
 	}
 
 	/**

@@ -11,18 +11,10 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-/**
- * Protect against register_globals vulnerabilities.
- * This line must be present before any global variable is referenced.
- */
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( "This is not a valid entry point.\n" );
-}
-
 // Extension credits that show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Vote',
-	'version' => '2.6.1',
+	'version' => '2.7',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'voteny-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:VoteNY'
@@ -37,11 +29,13 @@ $wgGroupPermissions['*']['voteny'] = false; // Anonymous users cannot vote
 $wgGroupPermissions['user']['voteny'] = true; // Registered users can vote
 
 // AJAX functions needed by this extension
-require_once( 'Vote_AjaxFunctions.php' );
+require_once 'Vote_AjaxFunctions.php';
 
 // Autoload classes and set up i18n
 $wgMessagesDirs['VoteNY'] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['VoteNYAlias'] = __DIR__ . '/VoteNY.alias.php';
 $wgExtensionMessagesFiles['VoteNYMagic'] = __DIR__ . '/VoteNY.i18n.magic.php';
+
 $wgAutoloadClasses['Vote'] = __DIR__ . '/VoteClass.php';
 $wgAutoloadClasses['VoteStars'] = __DIR__ . '/VoteClass.php';
 
@@ -61,11 +55,16 @@ $wgHooks['ParserFirstCallInit'][] = 'VoteHooks::setupNumberOfVotesPageParser';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'VoteHooks::addTable';
 
 // ResourceLoader support for MediaWiki 1.17+
-$wgResourceModules['ext.voteNY'] = array(
+$wgResourceModules['ext.voteNY.styles'] = array(
 	'styles' => 'Vote.css',
-	'scripts' => 'Vote.js',
-	'messages' => array( 'voteny-link', 'voteny-unvote-link' ),
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'VoteNY',
 	'position' => 'top' // available since r85616
+);
+
+$wgResourceModules['ext.voteNY.scripts'] = array(
+	'scripts' => 'Vote.js',
+	'messages' => array( 'voteny-link', 'voteny-unvote-link' ),
+	'localBasePath' => __DIR__,
+	'remoteExtPath' => 'VoteNY'
 );

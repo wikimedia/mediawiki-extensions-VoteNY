@@ -1,8 +1,9 @@
 /**
  * JavaScript functions for Vote extension.
  *
- * TODO: Should refactor this into a jQuery widget. The widget should get a PageID in its
- *       constructor so it can work on any page for any page and with multiple instances per page.
+ * TODO: Should refactor this into a jQuery widget.
+ * The widget should get a PageID in its constructor so it can work on any page
+ * for any page and with multiple instances per page.
  *
  * @constructor
  *
@@ -24,12 +25,18 @@ var VoteNY = function VoteNY() {
 	 * @param PageID Integer: internal ID number of the current article
 	 */
 	this.clickVote = function( TheVote, PageID ) {
-		sajax_request_type = 'POST';
-		sajax_do_call( 'wfVoteClick', [ TheVote, PageID ], function( request ) {
-			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
-			document.getElementById( 'Answer' ).innerHTML =
+		$.post(
+			mw.util.wikiScript(), {
+				action: 'ajax',
+				rs: 'wfVoteClick',
+				rsargs: [ TheVote, PageID ]
+			}
+		).done( function( data ) {
+			$( '#PollVotes' ).html( ( data || '0' ) );
+			$( '#Answer' ).html(
 				'<a href="javascript:void(0);" class="vote-unvote-link">' +
-				mediaWiki.msg( 'voteny-unvote-link' ) + '</a>';
+				mediaWiki.msg( 'voteny-unvote-link' ) + '</a>'
+			);
 		} );
 	};
 
@@ -40,12 +47,18 @@ var VoteNY = function VoteNY() {
 	 * @param mk Mixed: random token
 	 */
 	this.unVote = function( PageID ) {
-		sajax_request_type = 'POST';
-		sajax_do_call( 'wfVoteDelete', [ PageID ], function( request ) {
-			document.getElementById( 'PollVotes' ).innerHTML = request.responseText;
-			document.getElementById( 'Answer' ).innerHTML =
+		$.post(
+			mw.util.wikiScript(), {
+				action: 'ajax',
+				rs: 'wfVoteDelete',
+				rsargs: [ PageID ]
+			}
+		).done( function( data ) {
+			$( '#PollVotes' ).html( ( data || '0' ) );
+			$( '#Answer' ).html(
 				'<a href="javascript:void(0);" class="vote-vote-link">' +
-				mediaWiki.msg( 'voteny-link' ) + '</a>';
+				mediaWiki.msg( 'voteny-link' ) + '</a>'
+			);
 		} );
 	};
 
@@ -59,16 +72,22 @@ var VoteNY = function VoteNY() {
 	this.clickVoteStars = function( TheVote, PageID, id, action ) {
 		this.voted_new[id] = TheVote;
 		var rsfun;
-		if( action == 3 ) {
+		if ( action == 3 ) {
 			rsfun = 'wfVoteStars';
 		}
-		if( action == 5 ) {
+		if ( action == 5 ) {
 			rsfun = 'wfVoteStarsMulti';
 		}
 
-		var resultElement = document.getElementById( 'rating_' + id );
-		sajax_request_type = 'POST';
-		sajax_do_call( rsfun, [ TheVote, PageID ], resultElement );
+		$.post(
+			mw.util.wikiScript(), {
+				action: 'ajax',
+				rs: rsfun,
+				rsargs: [ TheVote, PageID ]
+			}
+		).done( function( data ) {
+			$( '#rating_' + id ).html( data );
+		} );
 	};
 
 	/**
@@ -78,60 +97,67 @@ var VoteNY = function VoteNY() {
 	 * @param id Integer: ID of the current rating star
 	 */
 	this.unVoteStars = function( PageID, id ) {
-		var resultElement = document.getElementById( 'rating_' + id );
-		sajax_request_type = 'POST';
-		sajax_do_call( 'wfVoteStarsDelete', [ PageID ], resultElement );
+		$.post(
+			mw.util.wikiScript(), {
+				action: 'ajax',
+				rs: 'wfVoteStarsDelete',
+				rsargs: [ PageID ]
+			}
+		).done( function( data ) {
+			$( '#rating_' + id ).html( data );
+		} );
 	};
 
 	this.startClearRating = function( id, rating, voted ) {
+		var voteNY = this;
 		this.clearRatingTimer = setTimeout( function() {
-			this.clearRating( id, 0, rating, voted );
+			voteNY.clearRating( id, 0, rating, voted );
 		}, 200 );
 	};
 
 	this.clearRating = function( id, num, prev_rating, voted ) {
-		if( this.voted_new[id] ) {
+		if ( this.voted_new[id] ) {
 			voted = this.voted_new[id];
 		}
 
-		for( var x = 1; x <= this.MaxRating; x++ ) {
+		for ( var x = 1; x <= this.MaxRating; x++ ) {
 			var star_on, old_rating;
-			if( voted ) {
+			if ( voted ) {
 				star_on = 'voted';
 				old_rating = voted;
 			} else {
 				star_on = 'on';
 				old_rating = prev_rating;
 			}
-			var ratingElement = document.getElementById( 'rating_' + id + '_' + x );
-			if( !num && old_rating >= x ) {
-				ratingElement.src = this.imagePath + 'star_' + star_on + '.gif';
+			var ratingElement = $( '#rating_' + id + '_' + x );
+			if ( !num && old_rating >= x ) {
+				ratingElement.attr( 'src', this.imagePath + 'star_' + star_on + '.gif' );
 			} else {
-				ratingElement.src = this.imagePath + 'star_off.gif';
+				ratingElement.attr( 'src', this.imagePath + 'star_off.gif' );
 			}
 		}
 	};
 
 	this.updateRating = function( id, num, prev_rating ) {
-		if( this.clearRatingTimer && this.last_id == id ) {
+		if ( this.clearRatingTimer && this.last_id == id ) {
 			clearTimeout( this.clearRatingTimer );
 		}
 		this.clearRating( id, num, prev_rating );
-		for( var x = 1; x <= num; x++ ) {
-			document.getElementById( 'rating_' + id + '_' + x ).src = this.imagePath + 'star_voted.gif';
+		for ( var x = 1; x <= num; x++ ) {
+			$( '#rating_' + id + '_' + x ).attr( 'src', this.imagePath + 'star_voted.gif' );
 		}
 		this.last_id = id;
 	};
 };
 
-// TODO:Mmake event handlers part of a widget as described in the VoteNY's TODO and reduce this
+// TODO: Make event handlers part of a widget as described in the VoteNY's TODO and reduce this
 //       code to instantiating such a widget for the current wiki page if required.
-jQuery( document ).ready( function() {
+$( function() {
 	var vote = new VoteNY();
 
 	// Green voting box's link
-	jQuery( '.vote-action' ).on( 'click', '> a', function( event ) {
-		if( jQuery( this ).hasClass( 'vote-unvote-link' ) ) {
+	$( '.vote-action' ).on( 'click', '> a', function( event ) {
+		if ( $( this ).hasClass( 'vote-unvote-link' ) ) {
 			vote.unVote( mw.config.get( 'wgArticleId' ) );
 		} else {
 			vote.clickVote( 1, mw.config.get( 'wgArticleId' ) );
@@ -139,23 +165,27 @@ jQuery( document ).ready( function() {
 	} );
 
 	// Rating stars
-	jQuery( 'img.vote-rating-star' ).click( function() {
-		var that = jQuery( this );
+	// Note: this uses $( 'body' ).on( 'actionName', 'selector'
+	// instead of $( 'selector' ).actionName so that the hover effects work
+	// correctly even *after* you've voted (say, if you wanted to change your
+	// vote with the star ratings without reloading the page).
+	$( 'body' ).on( 'click', '.vote-rating-star', function() {
+		var that = $( this );
 		vote.clickVoteStars(
 			that.data( 'vote-the-vote' ),
 			mw.config.get( 'wgArticleId' ),
 			that.data( 'vote-id' ),
 			that.data( 'vote-action' )
 		);
-	} ).mouseover( function() {
-		var that = jQuery( this );
+	} ).on( 'mouseover', '.vote-rating-star', function() {
+		var that = $( this );
 		vote.updateRating(
 			that.data( 'vote-id' ),
 			that.data( 'vote-the-vote' ),
 			that.data( 'vote-rating' )
 		);
-	} ).mouseout( function() {
-		var that = jQuery( this );
+	} ).on( 'mouseout', '.vote-rating-star', function() {
+		var that = $( this );
 		vote.startClearRating(
 			that.data( 'vote-id' ),
 			that.data( 'vote-rating' ),
@@ -164,10 +194,10 @@ jQuery( document ).ready( function() {
 	} );
 
 	// Remove vote (rating stars)
-	jQuery( 'a.vote-remove-stars-link' ).click( function() {
+	$( 'body' ).on( 'click', '.vote-remove-stars-link', function() {
 		vote.unVoteStars(
 			mw.config.get( 'wgArticleId' ),
-			jQuery( this ).data( 'vote-id' )
+			$( this ).data( 'vote-id' )
 		);
 	} );
 } );

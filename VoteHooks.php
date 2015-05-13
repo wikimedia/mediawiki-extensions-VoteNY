@@ -27,7 +27,7 @@ class VoteHooks {
 	 * @return string HTML
 	 */
 	public static function renderVote( $input, $args, $parser ) {
-		global $wgOut;
+		global $wgOut, $wgUser;
 
 		wfProfileIn( __METHOD__ );
 
@@ -39,7 +39,10 @@ class VoteHooks {
 		// Add CSS & JS
 		// In order for us to do this *here* instead of having to do this in
 		// registerParserHook(), we must've disabled parser cache
-		$wgOut->addModules( 'ext.voteNY' );
+		$parser->getOutput()->addModuleStyles( 'ext.voteNY.styles' );
+		if ( $wgUser->isAllowed( 'voteny' ) ) {
+			$parser->getOutput()->addModules( 'ext.voteNY.scripts' );
+		}
 
 		// Define variable - 0 means that we'll get that green voting box by default
 		$type = 0;
