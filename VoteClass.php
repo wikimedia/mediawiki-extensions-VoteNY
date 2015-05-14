@@ -291,7 +291,7 @@ class VoteStars extends Vote {
 			$output .= '<div class="rating-voted">' .
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
-			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\" data-vote-id=\"{$id}\">("
+			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\" data-page-id=\"{$this->PageID}\" data-vote-id=\"{$id}\">("
 				. wfMessage( 'voteny-remove' )->plain() .
 			')</a>';
 		}
@@ -329,6 +329,7 @@ class VoteStars extends Vote {
 				$action = 5;
 			}
 			$output .= "<img class=\"vote-rating-star\" data-vote-the-vote=\"{$x}\"" .
+				" data-page-id=\"{$this->PageID}\"" .
 				" data-vote-id=\"{$id}\" data-vote-action=\"{$action}\" data-vote-rating=\"{$rating}\"" .
 				" data-vote-voted=\"{$voted}\" id=\"rating_{$id}_{$x}\"" .
 				" src=\"{$wgExtensionAssetsPath}/VoteNY/images/star_";

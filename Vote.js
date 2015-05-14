@@ -173,7 +173,7 @@ $( function() {
 		var that = $( this );
 		vote.clickVoteStars(
 			that.data( 'vote-the-vote' ),
-			mw.config.get( 'wgArticleId' ),
+			$( this ).data( 'page-id' ),
 			that.data( 'vote-id' ),
 			that.data( 'vote-action' )
 		);
@@ -196,7 +196,7 @@ $( function() {
 	// Remove vote (rating stars)
 	$( 'body' ).on( 'click', '.vote-remove-stars-link', function() {
 		vote.unVoteStars(
-			mw.config.get( 'wgArticleId' ),
+			$( this ).data( 'page-id' ),
 			$( this ).data( 'vote-id' )
 		);
 	} );
