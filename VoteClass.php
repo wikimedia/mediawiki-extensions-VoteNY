@@ -121,7 +121,6 @@ class Vote {
 	 */
 	function delete() {
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin();
 		$dbw->delete(
 			'Vote',
 			array(
@@ -130,7 +129,6 @@ class Vote {
 			),
 			__METHOD__
 		);
-		$dbw->commit();
 
 		$this->clearCache();
 
@@ -153,7 +151,6 @@ class Vote {
 		$voteDate = date( 'Y-m-d H:i:s' );
 		wfRestoreWarnings();
 		if ( $this->UserAlreadyVoted() == false ) {
-			$dbw->begin();
 			$dbw->insert(
 				'Vote',
 				array(
@@ -166,7 +163,6 @@ class Vote {
 				),
 				__METHOD__
 			);
-			$dbw->commit();
 
 			$this->clearCache();
 
