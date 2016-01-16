@@ -359,8 +359,9 @@ class VoteStars extends Vote {
 	 */
 	function displayScore() {
 		$count = $this->count();
-		return wfMessage( 'voteny-community-score', '<b>' . $this->getAverageVote() . '</b>' )->text() .
-				' (' . wfMessage( 'voteny-ratings', $count )->parse() . ')';
+		return wfMessage( 'voteny-community-score', '<b>' . $this->getAverageVote() . '</b>' )
+		->numParams( $count )->text() .
+		' (' . wfMessage( 'voteny-ratings' )->numParams( $count )->parse() . ')';
 	}
 
 }
