@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Liuxinyu970226"
 		]
 	},
 	"voteny-desc": "基于JavaScript的投票与<tt>&lt;vote&gt;</tt>标签",
 	"voteny-link": "投票",
 	"voteny-unvote-link": "消票",
-	"voteny-community-score": "社区分数：$1",
+	"voteny-community-score": "社区{{PLURAL:$2|分数}}：$1",
 	"voteny-ratings": "{{PLURAL:$1|$1人评分}}",
 	"voteny-remove": "删除",
 	"voteny-gave-this": "您给了$1分",
