@@ -5,6 +5,16 @@
 			"David Pean <david.pean@gmail.com>"
 		]
 	},
+	"apihelp-voteny-description": "VoteNY API module",
+	"apihelp-voteny-param-what": "Action to take; valid values are 'vote' (green voting box), 'multi' (voting stars) or 'delete' (delete a previously given vote)",
+	"apihelp-voteny-param-pageId": "Page ID of the page where the voting box/stars is/are",
+	"apihelp-voteny-param-voteValue": "Numerical vote value between 1 and 5",
+	"apihelp-voteny-param-type": "Set this to 'stars' to call the voting stars (VoteStars PHP class), otherwise the green vote box (Vote PHP class) is used",
+	"apihelp-voteny-example-1": "Cast a vote for the page which has the ID number 666",
+	"apihelp-voteny-example-2": "Delete your vote from the page which has the ID number 666",
+	"apihelp-voteny-example-3": "Cast a vote (3 stars out of 5) for the page which has the ID number 666",
+	"apihelp-voteny-example-4": "Delete your vote from the page which has the ID number 666 which is using the star rating",
+	"apihelp-voteny-example-5": "Cast a vote (4 stars out of 5) for the page which has the ID number 666, deleting your previous vote, if any",
 	"voteny-desc": "JavaScript-based voting with the <tt>&lt;vote&gt;</tt> tag",
 	"voteny-link": "Vote",
 	"voteny-unvote-link": "unvote",
