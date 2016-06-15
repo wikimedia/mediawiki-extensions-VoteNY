@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Yona b",
-			"חיים"
+			"חיים",
+			"Guycn2"
 		]
 	},
 	"voteny-desc": "הצבעה מבוססת JavaScript עם התג <tt>&lt;vote&gt;</tt>",
@@ -15,5 +16,5 @@
 	"voteny-votes": "{{PLURAL:$1|הצבעה אחת|$1 הצבעות}}",
 	"topratings": "דפים המדורגים ביותר",
 	"topratings-no-pages": "דפים שדורגו הכי פחות פעמים.",
-	"right-voteny": "דפי ההצבעה"
+	"right-voteny": "הצבעה על דפים"
 }
