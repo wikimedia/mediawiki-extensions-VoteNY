@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Otokoume"
 		]
 	},
 	"voteny-desc": "<tt>&lt;vote&gt;</tt> タグを使用した、JavaScript ベースの投票",
 	"voteny-link": "投票",
 	"voteny-unvote-link": "投票取り消し",
-	"voteny-community-score": "コミュニティでの得点: $1",
+	"voteny-community-score": "コミュニティでの{{PLURAL:$2|得点}}: $1",
 	"voteny-ratings": "{{PLURAL:$1|$1 件の評価}}",
 	"voteny-remove": "除去",
 	"voteny-gave-this": "あなたはこれを $1 と評価しました",
