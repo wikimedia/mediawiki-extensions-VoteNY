@@ -7,7 +7,7 @@
 	"voteny-desc": "Гласање на основа на JavaScript со ознаката <tt>&lt;vote&gt;</tt>",
 	"voteny-link": "Гласај",
 	"voteny-unvote-link": "повлечи глас",
-	"voteny-community-score": "бодови од заедницата: $1",
+	"voteny-community-score": "{{PLURAL:$2|оценка|оценки}} од заедницата: $1",
 	"voteny-ratings": "{{PLURAL:$1|една оценка|$1 оценки}}",
 	"voteny-remove": "отстрани",
 	"voteny-gave-this": "страницава  ја оценивте со $1",
