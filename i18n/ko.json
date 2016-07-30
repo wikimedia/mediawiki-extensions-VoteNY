@@ -7,7 +7,7 @@
 	"voteny-desc": "<tt>&lt;vote&gt;</tt> 태그로 자바스크립트 기반 투포",
 	"voteny-link": "투표",
 	"voteny-unvote-link": "투표 취소",
-	"voteny-community-score": "공동체 점수: $1",
+	"voteny-community-score": "공동체 {{PLURAL:$2|점수}}: $1",
 	"voteny-ratings": "{{PLURAL:$1|평가 한 개|평가 $1개}}",
 	"voteny-remove": "제거",
 	"voteny-gave-this": "이것을 $1(으)로 주었습니다",
