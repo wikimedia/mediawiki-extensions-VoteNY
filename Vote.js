@@ -25,14 +25,14 @@ var VoteNY = function VoteNY() {
 	 * @param PageID Integer: internal ID number of the current article
 	 */
 	this.clickVote = function( TheVote, PageID ) {
-		$.post(
-			mw.util.wikiScript(), {
-				action: 'ajax',
-				rs: 'wfVoteClick',
-				rsargs: [ TheVote, PageID ]
-			}
-		).done( function( data ) {
-			$( '#PollVotes' ).html( ( data || '0' ) );
+		( new mw.Api() ).postWithToken( 'csrf', {
+			action: 'voteny',
+			format: 'json',
+			what: 'vote',
+			pageId: PageID,
+			voteValue: TheVote
+		} ).done( function( data ) {
+			$( '#PollVotes' ).html( data.voteny.result );
 			$( '#Answer' ).html(
 				'<a href="javascript:void(0);" class="vote-unvote-link">' +
 				mediaWiki.msg( 'voteny-unvote-link' ) + '</a>'
@@ -44,17 +44,15 @@ var VoteNY = function VoteNY() {
 	 * Called when removing your vote through the green square voting box
 	 *
 	 * @param PageID Integer: internal ID number of the current article
-	 * @param mk Mixed: random token
 	 */
 	this.unVote = function( PageID ) {
-		$.post(
-			mw.util.wikiScript(), {
-				action: 'ajax',
-				rs: 'wfVoteDelete',
-				rsargs: [ PageID ]
-			}
-		).done( function( data ) {
-			$( '#PollVotes' ).html( ( data || '0' ) );
+		( new mw.Api() ).postWithToken( 'csrf', {
+			action: 'voteny',
+			format: 'json',
+			what: 'delete',
+			pageId: PageID
+		} ).done( function( data ) {
+			$( '#PollVotes' ).html( data.voteny.result );
 			$( '#Answer' ).html(
 				'<a href="javascript:void(0);" class="vote-vote-link">' +
 				mediaWiki.msg( 'voteny-link' ) + '</a>'
@@ -71,22 +69,22 @@ var VoteNY = function VoteNY() {
 	 */
 	this.clickVoteStars = function( TheVote, PageID, id, action ) {
 		this.voted_new[id] = TheVote;
-		var rsfun;
+		var actionName;
 		if ( action == 3 ) {
-			rsfun = 'wfVoteStars';
+			actionName = 'stars'; // all other values but 'multi' are ignored anyway
 		}
 		if ( action == 5 ) {
-			rsfun = 'wfVoteStarsMulti';
+			actionName = 'multi';
 		}
 
-		$.post(
-			mw.util.wikiScript(), {
-				action: 'ajax',
-				rs: rsfun,
-				rsargs: [ TheVote, PageID ]
-			}
-		).done( function( data ) {
-			$( '#rating_' + id ).html( data );
+		( new mw.Api() ).postWithToken( 'csrf', {
+			action: 'voteny',
+			type: 'stars',
+			what: actionName,
+			voteValue: TheVote,
+			pageId: PageID
+		} ).done( function( data ) {
+			$( '#rating_' + id ).html( data.voteny.result );
 		} );
 	};
 
@@ -97,14 +95,13 @@ var VoteNY = function VoteNY() {
 	 * @param id Integer: ID of the current rating star
 	 */
 	this.unVoteStars = function( PageID, id ) {
-		$.post(
-			mw.util.wikiScript(), {
-				action: 'ajax',
-				rs: 'wfVoteStarsDelete',
-				rsargs: [ PageID ]
-			}
-		).done( function( data ) {
-			$( '#rating_' + id ).html( data );
+		( new mw.Api() ).postWithToken( 'csrf', {
+			action: 'voteny',
+			what: 'delete',
+			type: 'stars',
+			pageId: PageID
+		} ).done( function( data ) {
+			$( '#rating_' + id ).html( data.voteny.result );
 		} );
 	};
 

@@ -29,8 +29,6 @@ class VoteHooks {
 	public static function renderVote( $input, $args, $parser ) {
 		global $wgOut, $wgUser;
 
-		wfProfileIn( __METHOD__ );
-
 		// Disable parser cache (sadly we have to do this, because the caching is
 		// messing stuff up; we want to show an up-to-date rating instead of old
 		// or totally wrong rating, i.e. another page's rating...)
@@ -71,8 +69,6 @@ class VoteHooks {
 
 			$output = $vote->display();
 		}
-
-		wfProfileOut( __METHOD__ );
 
 		return $output;
 	}
@@ -174,7 +170,7 @@ class VoteHooks {
 	 * @param string $pagename Page name
 	 * @return int Amount of votes for the given page
 	 */
-	static function getNumberOfVotesPageParser( $parser, $pagename ) {
+	public static function getNumberOfVotesPageParser( $parser, $pagename ) {
 		$title = Title::newFromText( $pagename );
 
 		if ( !$title instanceof Title ) {
@@ -202,7 +198,7 @@ class VoteHooks {
 	 * @param Parser $parser
 	 * @return bool
 	 */
-	static function setupNumberOfVotesPageParser( &$parser ) {
+	public static function setupNumberOfVotesPageParser( &$parser ) {
 		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteHooks::getNumberOfVotesPageParser', Parser::SFH_NO_HASH );
 		return true;
 	}
