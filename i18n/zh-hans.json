@@ -3,9 +3,20 @@
 		"authors": [
 			"Shirayuki",
 			"Yfdyh000",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Hanyanbo98"
 		]
 	},
+	"apihelp-voteny-description": "VoteNY API模块",
+	"apihelp-voteny-param-what": "要进行的操作；有效值为“vote”（绿色投票框）、“multi”（投票星标）或“delete”（删除之前投出的投票）",
+	"apihelp-voteny-param-pageId": "投票框/星标所在页面的页面ID",
+	"apihelp-voteny-param-voteValue": "数字投票值（1~5之间）",
+	"apihelp-voteny-param-type": "将此设置为“stars”来调用投票星标（投票星标PHP类），否则会使用绿色投票框（投票框PHP类）",
+	"apihelp-voteny-example-1": "为ID为666的页面投出一票",
+	"apihelp-voteny-example-2": "删除您为ID为666的页面投出的票",
+	"apihelp-voteny-example-3": "为ID为666的页面投出一票（5颗星中的3颗）",
+	"apihelp-voteny-example-4": "删除您为ID为666的页面（使用星级）投出的票",
+	"apihelp-voteny-example-5": "为ID为666的页面投出一票（5颗星中的4颗），并删除您之前的投票（如果有）",
 	"voteny-desc": "基于JavaScript的投票与<tt>&lt;vote&gt;</tt>标签",
 	"voteny-link": "投票",
 	"voteny-unvote-link": "消票",

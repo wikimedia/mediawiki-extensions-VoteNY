@@ -7,6 +7,16 @@
 			"Gomoko"
 		]
 	},
+	"apihelp-voteny-description": "Module d’API VoteNY",
+	"apihelp-voteny-param-what": "Action à entreprendre ; les valeurs valides sont 'vote' (case de vote verte), 'multi' (étoiles de vote) ou 'delete' (supprime un vote déjà donné)",
+	"apihelp-voteny-param-pageId": "ID de la page où se situe la case de vote/les étoiles",
+	"apihelp-voteny-param-voteValue": "Valeur numérique du vote entre 1 et 5",
+	"apihelp-voteny-param-type": "Mettre cela à 'stars' pour appeler les étoiles de vote (classe PHP VoteStars), sinon la case de vote verte (classe PHP Vote) est utilisée",
+	"apihelp-voteny-example-1": "Mettre un vote pour la page qui a le numéro d’ID 666",
+	"apihelp-voteny-example-2": "Supprimer votre vote de la page qui a le numéro d’ID 666",
+	"apihelp-voteny-example-3": "Mettre un vote (3 étoiles sur 5) pour la page qui a le numéro d’ID 666",
+	"apihelp-voteny-example-4": "Supprimer votre vote de la page qui a le numéro d’ID 666 en utilisant la notation par étoiles",
+	"apihelp-voteny-example-5": "Mettre un vote (4 étoiles sur 5) pour la page de numéro d’ID 666, en supprimant votre vote précédent s’il y en avait un",
 	"voteny-desc": "Système de vote en JavaScript avec la balise <tt>&lt;vote&gt;</tt>",
 	"voteny-link": "Voter",
 	"voteny-unvote-link": "supprimer vote",
