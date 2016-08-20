@@ -4,6 +4,8 @@
 			"Robby"
 		]
 	},
+	"apihelp-voteny-param-voteValue": "Numeresche Wäert fir d'Ofstëmmung tëscht 1 a 5",
+	"apihelp-voteny-example-2": "Läscht Är Stëmm vun der Säit mat der ID-Nummer 666",
 	"voteny-link": "Ofstëmmen",
 	"voteny-unvote-link": "Stëmm zréckzéien",
 	"voteny-remove": "ewechhuelen",
