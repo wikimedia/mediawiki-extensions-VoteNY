@@ -1,5 +1,10 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"apihelp-voteny-description": "Moduł API VoteNY",
 	"voteny-link": "Głosuj",
 	"voteny-unvote-link": "Anuluj",
 	"voteny-community-score": "Wynik wśród społeczności: $1",
