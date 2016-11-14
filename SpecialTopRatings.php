@@ -63,7 +63,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = $where = $joinConds = array();
-		$whatToSelect = array( 'DISTINCT vote_page_id' );
+		$whatToSelect = array( 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' );
 
 		// By default we have no category and no namespace
 		$tables = array( 'Vote' );
@@ -85,29 +85,24 @@ class SpecialTopRatings extends IncludableSpecialPage {
 
 		// Perform the SQL query with the given conditions; the basic idea is
 		// that we get $limit (however, 100 or less) unique page IDs from the
-		// Vote table. If a category and a namespace have been given, we also
-		// do an INNER JOIN with page and categorylinks table to get the
-		// correct data.
+		// Vote table. The GROUP BY is to make SUM(vote_value) give the SUM of
+		// all vote_values for a page. If a category and a namespace have been
+		// given, we also do an INNER JOIN with page and categorylinks table
+		// to get the correct data.
 		$res = $dbr->select(
 			$tables,
 			$whatToSelect,
 			$where,
 			__METHOD__,
-			array( 'LIMIT' => intval( $limit ) ),
+			array( 'GROUP BY' => 'vote_page_id', 'LIMIT' => intval( $limit ) ),
 			$joinConds
 		);
 
 		foreach ( $res as $row ) {
-			// Add the results to the $ratings array and get the amount of
-			// votes the given page ID has
+			// Add the results to the $ratings array
 			// For example: $ratings[1] = 11 = page with the page ID 1 has 11
 			// votes
-			$ratings[$row->vote_page_id] = (int)$dbr->selectField(
-				'Vote',
-				'SUM(vote_value)',
-				array( 'vote_page_id' => $row->vote_page_id ),
-				__METHOD__
-			);
+			$ratings[$row->vote_page_id] = (int)$row->vote_value_sum;
 		}
 
 		// If we have some ratings, start building HTML output
