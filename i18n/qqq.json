@@ -9,6 +9,16 @@
 			"Umherirrender"
 		]
 	},
+	"apihelp-voteny-description": "{{doc-apihelp-description|voteny}}",
+	"apihelp-voteny-param-what": "{{doc-apihelp-param|voteny|what}}",
+	"apihelp-voteny-param-pageId": "{{doc-apihelp-param|voteny|pageId}}",
+	"apihelp-voteny-param-voteValue": "{{doc-apihelp-param|voteny|voteValue}}",
+	"apihelp-voteny-param-type": "{{doc-apihelp-param|voteny|type}}",
+	"apihelp-voteny-example-1": "{{doc-apihelp-example|voteny}}",
+	"apihelp-voteny-example-2": "{{doc-apihelp-example|voteny}}",
+	"apihelp-voteny-example-3": "{{doc-apihelp-example|voteny}}",
+	"apihelp-voteny-example-4": "{{doc-apihelp-example|voteny}}",
+	"apihelp-voteny-example-5": "{{doc-apihelp-example|voteny}}",
 	"voteny-desc": "{{desc|name=Vote NY|url=https://www.mediawiki.org/wiki/Extension:VoteNY}}",
 	"voteny-link": "Link title\n{{Identical|Vote}}",
 	"voteny-unvote-link": "Displayed to the user after their vote has been successfully added; they can click on this link to remove their vote.\n{{Identical|Unvote}}",
