@@ -6,10 +6,12 @@
 			"Purodha"
 		]
 	},
+	"apihelp-voteny-description": "VoteNY-API-Modul",
+	"apihelp-voteny-param-voteValue": "Numerischer Abstimmungswert zwischen 1 und 5",
 	"voteny-desc": "Ergänzt das Tag <tt>&lt;vote&gt;</tt> zum Durchführen JavaScript-gestützter Abstimmungen",
 	"voteny-link": "Abstimmen",
 	"voteny-unvote-link": "Stimme zurücknehmen",
-	"voteny-community-score": "{{PLURAL:$2|Punktestand|Punktestände}} der Gemeinschaft: $1",
+	"voteny-community-score": "Punktestand der Gemeinschaft: $1",
 	"voteny-ratings": "{{PLURAL:$1|eine Bewertung|$1 Bewertungen}}",
 	"voteny-remove": "entfernen",
 	"voteny-gave-this": "Du hast eine $1 vergeben.",
