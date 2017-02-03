@@ -1,6 +1,6 @@
 CREATE TABLE /*_*/Vote (
   -- Internal ID to identify between different vote tags on different pages
-  `vote_id` int(11) NOT NULL auto_increment PRIMARY KEY,
+  `vote_id` int(11) NOT NULL PRIMARY KEY auto_increment,
   -- Username (if any) of the person who voted
   `username` varchar(255) NOT NULL default '0',
   -- User ID of the person who voted

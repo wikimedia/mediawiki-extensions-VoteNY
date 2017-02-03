@@ -212,6 +212,12 @@ class VoteHooks {
 	 */
 	public static function addTable( $updater ) {
 		$dbt = $updater->getDB()->getType();
+		// If using SQLite, just use the MySQL/MariaDB schema, it's compatible
+		// anyway. Only PGSQL and some more exotic variants need a totally
+		// different schema.
+		if ( $dbt === 'sqlite' ) {
+			$dbt = 'mysql';
+		}
 		$file = __DIR__ . "/vote.$dbt";
 		if ( file_exists( $file ) ) {
 			$updater->addExtensionUpdate( array( 'addTable', 'Vote', $file, true ) );
