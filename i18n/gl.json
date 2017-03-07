@@ -18,7 +18,7 @@
 	"voteny-desc": "Sistema de votación en JavaScript coa etiqueta <tt>&lt;vote&gt;</tt>",
 	"voteny-link": "Votar",
 	"voteny-unvote-link": "retirar o voto",
-	"voteny-community-score": "{{PLURAL:$2|puntuación|puntuacións}} da comunidade: $1",
+	"voteny-community-score": "puntuación da comunidade: $1",
 	"voteny-ratings": "{{PLURAL:$1|unha valoración|$1 valoracións}}",
 	"voteny-remove": "eliminar",
 	"voteny-gave-this": "vostede deu un $1",
