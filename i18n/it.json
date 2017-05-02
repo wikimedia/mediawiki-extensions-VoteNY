@@ -5,7 +5,7 @@
 			"Darth Kule"
 		]
 	},
-	"voteny-desc": "Sistema di voto basato su JavaScript con il tag <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Sistema di voto basato su JavaScript con il tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vota",
 	"voteny-unvote-link": "rimuovi voto",
 	"voteny-community-score": "punteggio della comunità: $1",

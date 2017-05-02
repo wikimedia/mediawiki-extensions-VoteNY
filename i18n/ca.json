@@ -4,7 +4,7 @@
 			"Toniher"
 		]
 	},
-	"voteny-desc": "Votació basada en JavaScript amb l'etiqueta <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Votació basada en JavaScript amb l'etiqueta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vota",
 	"voteny-unvote-link": "anul·la el vot",
 	"voteny-community-score": "puntuació comunitària: $1",

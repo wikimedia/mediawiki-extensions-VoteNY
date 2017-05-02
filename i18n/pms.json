@@ -5,7 +5,7 @@
 			"Dragonòt"
 		]
 	},
-	"voteny-desc": "Votassion basà dzor JavaScript con la tichëtta <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Votassion basà dzor JavaScript con la tichëtta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Voté",
 	"voteny-unvote-link": "scancelé vot",
 	"voteny-community-score": "Pontegi dla comunità: $1",

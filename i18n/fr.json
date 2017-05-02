@@ -17,7 +17,7 @@
 	"apihelp-voteny-example-3": "Mettre un vote (3 étoiles sur 5) pour la page qui a le numéro d’ID 666",
 	"apihelp-voteny-example-4": "Supprimer votre vote de la page qui a le numéro d’ID 666 en utilisant la notation par étoiles",
 	"apihelp-voteny-example-5": "Mettre un vote (4 étoiles sur 5) pour la page de numéro d’ID 666, en supprimant votre vote précédent s’il y en avait un",
-	"voteny-desc": "Système de vote en JavaScript avec la balise <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Système de vote en JavaScript avec la balise <code>&lt;vote&gt;</code>",
 	"voteny-link": "Voter",
 	"voteny-unvote-link": "supprimer vote",
 	"voteny-community-score": "note de la communauté : $1",

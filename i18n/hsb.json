@@ -4,7 +4,7 @@
 			"Michawiki"
 		]
 	},
-	"voteny-desc": "Wothłosowanje z tafličku <tt>&lt;vote&gt;</tt> na zakładźe JavaScripta",
+	"voteny-desc": "Wothłosowanje z tafličku <code>&lt;vote&gt;</code> na zakładźe JavaScripta",
 	"voteny-link": "Wothłosować",
 	"voteny-unvote-link": "Wothłosowanje anulować",
 	"voteny-community-score": "Ličba hłosow zhromadźenstwa: $1",

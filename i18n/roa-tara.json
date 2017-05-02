@@ -4,7 +4,7 @@
 			"Joetaras"
 		]
 	},
-	"voteny-desc": "Votazione ca se base sus a JavaScript cu 'u tag <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Votazione ca se base sus a JavaScript cu 'u tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vote",
 	"voteny-unvote-link": "no vutà",
 	"voteny-community-score": "pundegge d'a comunitate: $1",

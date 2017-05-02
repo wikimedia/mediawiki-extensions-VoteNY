@@ -14,7 +14,7 @@
 	"apihelp-voteny-example-3": "Unviar un votu (3 estrelles de 5) a la páxina que tien el númberu d'ID 666",
 	"apihelp-voteny-example-4": "Desaniciar el votu de la páxina que tien el númberu d'ID 666 qu'usa la puntuación d'estrelles",
 	"apihelp-voteny-example-5": "Unviar un votu (4 estrelles de 5) a la páxina que tien el númberu d'ID 666, desaniciando'l votu anterior si lu hai",
-	"voteny-desc": "Votación basada en JavaScript cola etiqueta <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Votación basada en JavaScript cola etiqueta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Votar",
 	"voteny-unvote-link": "retirar el votu",
 	"voteny-community-score": "{{PLURAL:$2|puntuación|puntuaciones}} de la comunidá: $1",

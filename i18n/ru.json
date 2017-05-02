@@ -6,7 +6,7 @@
 			"Alex Great"
 		]
 	},
-	"voteny-desc": "Голосование на основе JavaScript с использованием тега <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Голосование на основе JavaScript с использованием тега <code>&lt;vote&gt;</code>",
 	"voteny-link": "Голосовать",
 	"voteny-unvote-link": "отменить выбор",
 	"voteny-community-score": "Оценка сообщества: $1",

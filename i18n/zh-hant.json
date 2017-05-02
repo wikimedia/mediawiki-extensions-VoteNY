@@ -6,7 +6,7 @@
 			"烈羽"
 		]
 	},
-	"voteny-desc": "基於JavaScript的投票與<tt>&lt;vote&gt;</tt>標記",
+	"voteny-desc": "基於JavaScript的投票與<code>&lt;vote&gt;</code>標記",
 	"voteny-link": "投票",
 	"voteny-unvote-link": "取消投票",
 	"voteny-community-score": "社群積分：$1",

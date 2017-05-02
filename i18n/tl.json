@@ -5,7 +5,7 @@
 			"TheSleepyhollow02"
 		]
 	},
-	"voteny-desc": "Botohan na nakabatay sa JavaScript na mayroong tatak na <tt>&lt;bumoto&gt;</tt>",
+	"voteny-desc": "Botohan na nakabatay sa JavaScript na mayroong tatak na <code>&lt;bumoto&gt;</code>",
 	"voteny-link": "Bumoto",
 	"voteny-unvote-link": "huwag bumoto",
 	"voteny-community-score": "puntos ng pamayanan: $1",

@@ -4,7 +4,7 @@
 			"Anakmalaysia"
 		]
 	},
-	"voteny-desc": "Pengundian berasaskan JavaScript dengan teg <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Pengundian berasaskan JavaScript dengan teg <code>&lt;vote&gt;</code>",
 	"voteny-link": "Undi",
 	"voteny-unvote-link": "tarik balik undi",
 	"voteny-community-score": "markah komuniti: $1",

@@ -15,7 +15,7 @@
 	"apihelp-voteny-example-3": "Votar (3 estrelas sobre 5) para a páxina que ten o número de identificación 666",
 	"apihelp-voteny-example-4": "Borrar o seu voto da páxina que ten o número de identificación 666 que está usando a notación por estrelas",
 	"apihelp-voteny-example-5": "Votar (4 estrelas sobre 5) para a páxina que ten o número de identificación 666, borrando o seu voto previo, se existe",
-	"voteny-desc": "Sistema de votación en JavaScript coa etiqueta <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Sistema de votación en JavaScript coa etiqueta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Votar",
 	"voteny-unvote-link": "retirar o voto",
 	"voteny-community-score": "puntuación da comunidade: $1",

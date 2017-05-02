@@ -6,7 +6,7 @@
 			"Macofe"
 		]
 	},
-	"voteny-desc": "Votación basada en JavaScript con la etiqueta <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Votación basada en JavaScript con la etiqueta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Votar",
 	"voteny-unvote-link": "Eliminar voto",
 	"voteny-community-score": "puntuación de la comunidad: $1",

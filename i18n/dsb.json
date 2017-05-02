@@ -4,7 +4,7 @@
 			"Michawiki"
 		]
 	},
-	"voteny-desc": "Wótgłosowanje z toflicku <tt>&lt;vote&gt;</tt> na zakłaźe JavaScripta",
+	"voteny-desc": "Wótgłosowanje z toflicku <code>&lt;vote&gt;</code> na zakłaźe JavaScripta",
 	"voteny-link": "Wótgłosowaś",
 	"voteny-unvote-link": "Wótgłosowanje anulěrowaś",
 	"voteny-community-score": "Licba głosow zgromaźeństwa: $1",

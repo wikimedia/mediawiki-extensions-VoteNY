@@ -14,7 +14,7 @@
 	"apihelp-voteny-example-3": "Дајте глас (3 од 5 ѕвездички) за страницата со назнака 666",
 	"apihelp-voteny-example-4": "Избриеште го гласот од страница со назнака 666 која користи оценување со ѕвездички",
 	"apihelp-voteny-example-5": "Дајте глас (4 од 5 ѕвездички) за страницата со број 666, бришејќи го претходниот глас, ако го има",
-	"voteny-desc": "Гласање на основа на JavaScript со ознаката <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Гласање на основа на JavaScript со ознаката <code>&lt;vote&gt;</code>",
 	"voteny-link": "Гласај",
 	"voteny-unvote-link": "повлечи глас",
 	"voteny-community-score": "{{PLURAL:$2|оценка|оценки}} од заедницата: $1",

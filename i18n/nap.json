@@ -4,7 +4,7 @@
 			"C.R."
 		]
 	},
-	"voteny-desc": "Sistema 'e voto basato ncopp'a JavaScript c' 'o tag <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "Sistema 'e voto basato ncopp'a JavaScript c' 'o tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vota",
 	"voteny-unvote-link": "leva voto",
 	"voteny-community-score": "punteggio d' 'a communità: $1",

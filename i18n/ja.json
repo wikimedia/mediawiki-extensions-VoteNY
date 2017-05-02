@@ -5,7 +5,7 @@
 			"Otokoume"
 		]
 	},
-	"voteny-desc": "<tt>&lt;vote&gt;</tt> タグを使用した、JavaScript ベースの投票",
+	"voteny-desc": "<code>&lt;vote&gt;</code> タグを使用した、JavaScript ベースの投票",
 	"voteny-link": "投票",
 	"voteny-unvote-link": "投票取り消し",
 	"voteny-community-score": "コミュニティでの{{PLURAL:$2|得点}}: $1",

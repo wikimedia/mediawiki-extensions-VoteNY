@@ -6,7 +6,7 @@
 			"Omidh"
 		]
 	},
-	"voteny-desc": "سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با تگ <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با تگ <code>&lt;vote&gt;</code>",
 	"voteny-link": "رأی دهی",
 	"voteny-unvote-link": "حذف رأی",
 	"voteny-community-score": "امتیاز کلی: $1",

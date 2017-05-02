@@ -4,7 +4,7 @@
 			"WikiPhoenix"
 		]
 	},
-	"voteny-desc": "JavaScript-baserad omröstning med taggen <tt>&lt;vote&gt;</tt>",
+	"voteny-desc": "JavaScript-baserad omröstning med taggen <code>&lt;vote&gt;</code>",
 	"voteny-link": "Rösta",
 	"voteny-unvote-link": "ta bort röst",
 	"voteny-community-score": "gemenskapspoäng: $1",
