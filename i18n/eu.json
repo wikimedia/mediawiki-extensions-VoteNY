@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Subi"
+		]
+	},
+	"voteny-remove": "kendu",
+	"voteny-votes": "{{PLURAL:$1|boto bat|$1 boto}}"
+}
