@@ -3,9 +3,20 @@
 		"authors": [
 			"Kaganer",
 			"Okras",
-			"Alex Great"
+			"Alex Great",
+			"Facenapalm"
 		]
 	},
+	"apihelp-voteny-description": "Модуль API VoteNY",
+	"apihelp-voteny-param-what": "Применяемое действие; корректными значениями являются 'vote' (зелёный флажок голосования), 'multi' (голосование звёздами) или 'delete' (удаление ранее данного голоса)",
+	"apihelp-voteny-param-pageId": "Идентификатор страницы, на которой расположены флажок или звёзды голосования",
+	"apihelp-voteny-param-voteValue": "Числовое значение голоса от 1 до 5",
+	"apihelp-voteny-param-type": "Установите этому значение 'stars' для вызова голосования звёздами (VoteStars PHP class), иначе будет использован зелёный флажок голосования (Vote PHP class)",
+	"apihelp-voteny-example-1": "Оставить голос странице с идентификатором 666",
+	"apihelp-voteny-example-2": "Удалить ваш голос со странице с идентификатором 666",
+	"apihelp-voteny-example-3": "Оставить голос (3 звезды из 5) на странице с идентификатором 666",
+	"apihelp-voteny-example-4": "Удалить голос со страницы с идентификатором 666, которая использует звёздный рейтинг",
+	"apihelp-voteny-example-5": "Оставить голос (4 звезды из 5) на странице с идентификатором 666, удалив ваш предыдущий голос, если он был",
 	"voteny-desc": "Голосование на основе JavaScript с использованием тега <code>&lt;vote&gt;</code>",
 	"voteny-link": "Голосовать",
 	"voteny-unvote-link": "отменить выбор",
