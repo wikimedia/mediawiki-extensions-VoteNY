@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Urbalazs"
+		]
+	},
+	"voteny-desc": "JavaScript alapú szavazás a <code>&lt;vote&gt;</code> címkével"
+}
