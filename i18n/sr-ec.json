@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
+	"voteny-desc": "Гласање базирано на Јаваскрипту преко тага <code>&lt;vote&gt;</code>",
 	"right-voteny": "гласање за странице"
 }
