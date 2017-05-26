@@ -6,6 +6,7 @@
 		]
 	},
 	"apihelp-voteny-description": "VoteNY API module",
+	"apihelp-voteny-summary": "VoteNY API module",
 	"apihelp-voteny-param-what": "Action to take; valid values are 'vote' (green voting box), 'multi' (voting stars) or 'delete' (delete a previously given vote)",
 	"apihelp-voteny-param-pageId": "Page ID of the page where the voting box/stars is/are",
 	"apihelp-voteny-param-voteValue": "Numerical vote value between 1 and 5",

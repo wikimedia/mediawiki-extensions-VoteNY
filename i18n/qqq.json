@@ -10,6 +10,7 @@
 		]
 	},
 	"apihelp-voteny-description": "{{doc-apihelp-description|voteny}}",
+	"apihelp-voteny-summary": "{{doc-apihelp-summary|voteny}}",
 	"apihelp-voteny-param-what": "{{doc-apihelp-param|voteny|what}}",
 	"apihelp-voteny-param-pageId": "{{doc-apihelp-param|voteny|pageId}}",
 	"apihelp-voteny-param-voteValue": "{{doc-apihelp-param|voteny|voteValue}}",
