@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-voteny-description": "Приложнички модул VoteNY",
+	"apihelp-voteny-summary": "API-модул на VoteNY",
 	"apihelp-voteny-param-what": "Дејството што ќе се преземе; се прифаќаат вредностите „vote“ (зелено гласачка кутија), „multi“ (гласачки ѕвездички) или „delete“ (бришење на претходно даден глас)",
 	"apihelp-voteny-param-pageId": "Назнака на страницата кајшто се наоѓа(ат) гласачката кутија/ѕвездички",
 	"apihelp-voteny-param-voteValue": "Бројчена вредност на гласот меѓу 1 и 5",

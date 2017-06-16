@@ -5,6 +5,7 @@
 			"Darth Kule"
 		]
 	},
+	"apihelp-voteny-summary": "Modulo API VoteNY",
 	"voteny-desc": "Sistema di voto basato su JavaScript con il tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vota",
 	"voteny-unvote-link": "rimuovi voto",

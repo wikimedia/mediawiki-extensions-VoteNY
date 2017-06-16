@@ -6,6 +6,7 @@
 		]
 	},
 	"apihelp-voteny-description": "VoteNY API 모듈",
+	"apihelp-voteny-summary": "VoteNY API 모듈",
 	"voteny-desc": "<code>&lt;vote&gt;</code> 태그로 자바스크립트 기반 투표",
 	"voteny-link": "투표",
 	"voteny-unvote-link": "투표 취소",
