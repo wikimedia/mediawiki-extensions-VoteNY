@@ -8,6 +8,7 @@
 		]
 	},
 	"apihelp-voteny-description": "Модуль API VoteNY",
+	"apihelp-voteny-summary": "API-модуль VoteNY",
 	"apihelp-voteny-param-what": "Применяемое действие; корректными значениями являются 'vote' (зелёный флажок голосования), 'multi' (голосование звёздами) или 'delete' (удаление ранее данного голоса)",
 	"apihelp-voteny-param-pageId": "Идентификатор страницы, на которой расположены флажок или звёзды голосования",
 	"apihelp-voteny-param-voteValue": "Числовое значение голоса от 1 до 5",

@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-voteny-description": "Módulu API VoteNY",
+	"apihelp-voteny-summary": "Módulu VoteNY de la API",
 	"apihelp-voteny-param-what": "Aición a facer; los valores válidos son 'vote' (cuadru de votu verde), 'multi' (estrelles de votación) o 'delete' (desaniciar un votu dau anteriormente)",
 	"apihelp-voteny-param-pageId": "ID de páxina de la páxina onde ta/tan el cuadru de votu o estrelles",
 	"apihelp-voteny-param-voteValue": "Valor numbéricu del votu ente 1 y 5",
