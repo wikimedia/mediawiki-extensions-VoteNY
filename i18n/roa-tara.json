@@ -4,6 +4,8 @@
 			"Joetaras"
 		]
 	},
+	"apihelp-voteny-description": "Module de l'API VoteNY",
+	"apihelp-voteny-summary": "Module de l'API VoteNY",
 	"voteny-desc": "Votazione ca se base sus a JavaScript cu 'u tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vote",
 	"voteny-unvote-link": "no vutà",
