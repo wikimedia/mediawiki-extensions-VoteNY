@@ -1,6 +1,6 @@
 {
 	"name": "VoteNY",
-	"version": "2.8.1",
+	"version": "2.9.0",
 	"author": [
 		"Aaron Wright",
 		"David Pean",
@@ -22,15 +22,15 @@
 		"voteny": "ApiVoteNY"
 	},
 	"ExtensionMessagesFiles": {
-		"VoteNYAlias": "VoteNY.alias.php",
-		"VoteNYMagic": "VoteNY.i18n.magic.php"
+		"VoteNYAlias": "includes/VoteNY.alias.php",
+		"VoteNYMagic": "includes/VoteNY.i18n.magic.php"
 	},
 	"AutoloadClasses": {
-		"ApiVoteNY": "ApiVoteNY.php",
-		"Vote": "VoteClass.php",
-		"VoteStars": "VoteClass.php",
-		"SpecialTopRatings": "SpecialTopRatings.php",
-		"VoteHooks": "VoteHooks.php"
+		"ApiVoteNY": "includes/api/ApiVoteNY.php",
+		"Vote": "includes/Vote.class.php",
+		"VoteStars": "includes/VoteStars.class.php",
+		"SpecialTopRatings": "includes/specials/SpecialTopRatings.php",
+		"VoteHooks": "includes/VoteNY.hooks.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
@@ -56,7 +56,7 @@
 	},
 	"ResourceModules": {
 		"ext.voteNY.scripts": {
-			"scripts": "Vote.js",
+			"scripts": "resources/js/Vote.js",
 			"messages": [
 				"voteny-link",
 				"voteny-unvote-link"
@@ -65,7 +65,7 @@
 			"position": "bottom"
 		},
 		"ext.voteNY.styles": {
-			"styles": "Vote.css",
+			"styles": "resources/css/Vote.css",
 			"position": "top"
 		}
 	},

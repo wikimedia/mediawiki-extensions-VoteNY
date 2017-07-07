@@ -218,7 +218,7 @@ class VoteHooks {
 		if ( $dbt === 'sqlite' ) {
 			$dbt = 'mysql';
 		}
-		$file = __DIR__ . "/vote.$dbt";
+		$file = __DIR__ . "/../sql/vote.$dbt";
 		if ( file_exists( $file ) ) {
 			$updater->addExtensionUpdate( array( 'addTable', 'Vote', $file, true ) );
 		} else {

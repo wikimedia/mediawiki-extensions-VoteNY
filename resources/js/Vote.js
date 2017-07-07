@@ -16,7 +16,7 @@ var VoteNY = function VoteNY() {
 	this.voted_new = [];
 	this.id = 0;
 	this.last_id = 0;
-	this.imagePath = mw.config.get( 'wgExtensionAssetsPath' ) + '/VoteNY/images/';
+	this.imagePath = mw.config.get( 'wgExtensionAssetsPath' ) + '/VoteNY/resources/images/';
 
 	/**
 	 * Called when voting through the green square voting box
