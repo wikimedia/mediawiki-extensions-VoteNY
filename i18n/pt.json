@@ -5,5 +5,25 @@
 		]
 	},
 	"apihelp-voteny-description": "Módulo da API VoteNY",
-	"apihelp-voteny-summary": "Módulo da API VoteNY"
+	"apihelp-voteny-summary": "Módulo da API VoteNY",
+	"apihelp-voteny-param-what": "Ação a ser tomada; os valores válidos são 'vote' (urna verde), 'multi' (estrelas de voto) ou 'delete' (apagar um voto prévio).",
+	"apihelp-voteny-param-pageId": "Identificador da página onde estão a urna ou as estrelas",
+	"apihelp-voteny-param-voteValue": "Valor de voto numérico entre 1 e 5",
+	"apihelp-voteny-param-type": "Defina este valor como 'stars' para chamar as estrelas de voto (classe PHP VoteStars), caso contrário será usada a urna verde (classe PHP Vote)",
+	"apihelp-voteny-example-1": "Votar na página que tem o identificador número 666",
+	"apihelp-voteny-example-2": "Apagar o seu voto da página que tem o identificador número 666",
+	"apihelp-voteny-example-3": "Votar (3 estrelas de 5) na página que tem o número de identificação 666",
+	"apihelp-voteny-example-4": "Apagar o seu voto da página com o número de identificação 666 que está a usar a classificação por estrelas",
+	"apihelp-voteny-example-5": "Votar (4 estrelas de 5) na página que tem o número de identificação 666, apagando o seu voto anterior, se existir",
+	"voteny-desc": "Votação baseada em JavaScript com a etiqueta <code>&lt;vote&gt;</code>",
+	"voteny-link": "Votar",
+	"voteny-unvote-link": "apagar voto",
+	"voteny-community-score": "pontuação combinada: $1",
+	"voteny-ratings": "{{PLURAL:$1|uma classificação|$1 classificações}}",
+	"voteny-remove": "remover",
+	"voteny-gave-this": "deu-lhe um $1",
+	"voteny-votes": "{{PLURAL:$1|um voto|$1 votos}}",
+	"topratings": "Páginas mais bem classificadas",
+	"topratings-no-pages": "Não há páginas mais bem classificadas.",
+	"right-voteny": "Votar em páginas"
 }
