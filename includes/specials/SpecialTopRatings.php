@@ -61,7 +61,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$ratings = array();
 		$output = '';
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$tables = $where = $joinConds = array();
 		$whatToSelect = array( 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' );
 
@@ -179,7 +179,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			wfDebug( "Loading vote avg for page {$pageId} from cache (TopRatings)\n" );
 			$voteAvg = $data;
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$voteAvg = (int)$dbr->selectField(
 				'Vote',
 				'AVG(vote_value) AS VoteAvg',

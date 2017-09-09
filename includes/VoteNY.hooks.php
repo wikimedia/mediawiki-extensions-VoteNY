@@ -110,7 +110,7 @@ class VoteHooks {
 				$ret = $data;
 			} else {
 				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_SLAVE );
+				$dbr = wfGetDB( DB_REPLICA );
 				$voteCount = (int)$dbr->selectField(
 					'Vote',
 					'COUNT(*) AS count',
@@ -148,7 +148,7 @@ class VoteHooks {
 		if ( $data ) {
 			return $data;
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 
 			$voteCount = (int)$dbr->selectField(
 				'Vote',

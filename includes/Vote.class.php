@@ -41,7 +41,7 @@ class Vote {
 			wfDebug( "Loading vote count for page {$this->PageID} from cache\n" );
 			$vote_count = $data;
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$vote_count = 0;
 			$res = $dbr->select(
 				'Vote',
@@ -74,7 +74,7 @@ class Vote {
 			wfDebug( "Loading vote avg for page {$this->PageID} from cache\n" );
 			$voteAvg = $data;
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$res = $dbr->select(
 				'Vote',
 				'AVG(vote_value) AS voteavg',
@@ -181,7 +181,7 @@ class Vote {
 	 *                  value of 'vote_value' column from Vote DB table
 	 */
 	function UserAlreadyVoted() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Vote',
 			array( 'vote_value' ),
