@@ -7,7 +7,7 @@
  *
  * @constructor
  *
- * @author Jack Phoenix <jack@countervandalism.net>
+ * @author Jack Phoenix
  * @author Daniel A. R. Werner < daniel.a.r.werner@gmail.com >
  */
 var VoteNY = function VoteNY() {
