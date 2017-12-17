@@ -6,6 +6,9 @@
  * @file
  * @ingroup Extensions
  */
+
+use MediaWiki\MediaWikiServices;
+
 class Vote {
 	public $PageID = 0;
 	public $Userid = 0;
@@ -109,7 +112,7 @@ class Vote {
 
 			// Kill parser cache
 			$article = new Article( $pageTitle, /* oldid */0 );
-			$parserCache = ParserCache::singleton();
+			$parserCache = MediaWikiServices::getInstance()->getParserCache();
 			$parserKey = $parserCache->getKey( $article, $wgUser );
 			$wgMemc->delete( $parserKey );
 		}

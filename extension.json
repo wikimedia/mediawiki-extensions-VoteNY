@@ -1,6 +1,6 @@
 {
 	"name": "VoteNY",
-	"version": "2.9.2",
+	"version": "2.9.3",
 	"author": [
 		"Aaron Wright",
 		"David Pean",
@@ -10,6 +10,9 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:VoteNY",
 	"descriptionmsg": "voteny-desc",
 	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.30.0"
+	},
 	"SpecialPages": {
 		"TopRatings": "SpecialTopRatings"
 	},
