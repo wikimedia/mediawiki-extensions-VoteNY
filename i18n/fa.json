@@ -3,10 +3,11 @@
 		"authors": [
 			"Ebraminio",
 			"Mjbmr",
-			"Omidh"
+			"Omidh",
+			"Huji"
 		]
 	},
-	"voteny-desc": "سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با تگ <code>&lt;vote&gt;</code>",
+	"voteny-desc": "سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با برچسب <code>&lt;vote&gt;</code>",
 	"voteny-link": "رأی دهی",
 	"voteny-unvote-link": "حذف رأی",
 	"voteny-community-score": "امتیاز کلی: $1",
