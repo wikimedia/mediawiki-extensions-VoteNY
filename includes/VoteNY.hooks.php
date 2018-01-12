@@ -98,7 +98,7 @@ class VoteHooks {
 		global $wgMemc;
 
 		if ( $magicWordId == 'NUMBEROFVOTES' ) {
-			$key = wfMemcKey( 'vote', 'magic-word' );
+			$key = $wgMemc->makeKey( 'vote', 'magic-word' );
 			$data = $wgMemc->get( $key );
 			if ( $data != '' ) {
 				// We have it in cache? Oh goody, let's just use the cached value!
@@ -142,7 +142,7 @@ class VoteHooks {
 
 		$id = $title->getArticleID();
 
-		$key = wfMemcKey( 'vote', 'magic-word-page', $id );
+		$key = $wgMemc->makeKey( 'vote', 'magic-word-page', $id );
 		$data = $wgMemc->get( $key );
 
 		if ( $data ) {

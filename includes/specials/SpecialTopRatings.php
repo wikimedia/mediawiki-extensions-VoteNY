@@ -9,7 +9,6 @@
  *
  * @file
  * @ingroup Extensions
- * @date 11 December 2011
  * @license To the extent that it is possible, this code is in the public domain
  */
 class SpecialTopRatings extends IncludableSpecialPage {
@@ -171,7 +170,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	public static function getAverageRatingForPage( $pageId ) {
 		global $wgMemc;
 
-		$key = wfMemcKey( 'vote', 'avg', $pageId );
+		$key = $wgMemc->makeKey( 'vote', 'avg', $pageId );
 		$data = $wgMemc->get( $key );
 		$voteAvg = 0;
 

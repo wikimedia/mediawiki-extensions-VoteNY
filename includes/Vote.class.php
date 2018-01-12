@@ -36,7 +36,7 @@ class Vote {
 	function count() {
 		global $wgMemc;
 
-		$key = wfMemcKey( 'vote', 'count', $this->PageID );
+		$key = $wgMemc->makeKey( 'vote', 'count', $this->PageID );
 		$data = $wgMemc->get( $key );
 
 		// Try cache
@@ -69,7 +69,8 @@ class Vote {
 	 */
 	function getAverageVote() {
 		global $wgMemc;
-		$key = wfMemcKey( 'vote', 'avg', $this->PageID );
+
+		$key = $wgMemc->makeKey( 'vote', 'avg', $this->PageID );
 		$data = $wgMemc->get( $key );
 
 		$voteAvg = 0;
@@ -101,8 +102,8 @@ class Vote {
 		global $wgUser, $wgMemc;
 
 		// Kill internal cache
-		$wgMemc->delete( wfMemcKey( 'vote', 'count', $this->PageID ) );
-		$wgMemc->delete( wfMemcKey( 'vote', 'avg', $this->PageID ) );
+		$wgMemc->delete( $wgMemc->makeKey( 'vote', 'count', $this->PageID ) );
+		$wgMemc->delete( $wgMemc->makeKey( 'vote', 'avg', $this->PageID ) );
 
 		// Purge squid
 		$pageTitle = Title::newFromID( $this->PageID );
