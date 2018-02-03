@@ -64,12 +64,10 @@
 				"voteny-link",
 				"voteny-unvote-link"
 			],
-			"dependencies": [ "mediawiki.api" ],
-			"position": "bottom"
+			"dependencies": [ "mediawiki.api" ]
 		},
 		"ext.voteNY.styles": {
-			"styles": "resources/css/Vote.css",
-			"position": "top"
+			"styles": "resources/css/Vote.css"
 		}
 	},
 	"AvailableRights": [
