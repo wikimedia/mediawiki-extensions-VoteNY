@@ -151,9 +151,9 @@ class Vote {
 	function insert( $voteValue ) {
 		global $wgRequest;
 		$dbw = wfGetDB( DB_MASTER );
-		MediaWiki\suppressWarnings(); // E_STRICT whining
+		Wikimedia\suppressWarnings(); // E_STRICT whining
 		$voteDate = date( 'Y-m-d H:i:s' );
-		MediaWiki\restoreWarnings();
+		Wikimedia\restoreWarnings();
 		if ( $this->UserAlreadyVoted() == false ) {
 			$dbw->insert(
 				'Vote',
