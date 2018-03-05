@@ -3,9 +3,21 @@
 		"authors": [
 			"Justincheng12345",
 			"Shirayuki",
-			"烈羽"
+			"烈羽",
+			"Kly"
 		]
 	},
+	"apihelp-voteny-description": "VoteNY API 模組",
+	"apihelp-voteny-summary": "VoteNY API 模組",
+	"apihelp-voteny-param-what": "可採用的操作，有效值為「vote」（綠色投票框）、「multi」（星級評比），或是「delete」（刪除之前投下的票）",
+	"apihelp-voteny-param-pageId": "投票框/星級評比所在頁面的頁面 ID 為",
+	"apihelp-voteny-param-voteValue": "1 至 5 之間的數字投票值",
+	"apihelp-voteny-param-type": "設定此為「stars」來呼叫星級評比（VoteStars PHP 類別），不然就會使用綠色投票框（Vote PHP 類別）",
+	"apihelp-voteny-example-1": "向 ID 號碼為 666 的頁面投下一票",
+	"apihelp-voteny-example-2": "刪除您向 ID 號碼為 666 的頁面所投下的票",
+	"apihelp-voteny-example-3": "向 ID 號碼為 666 的頁面投下一票（5 顆星中的 3 顆星）",
+	"apihelp-voteny-example-4": "刪除您向 ID 號碼為 666 的頁面所投下採用星級評比的票",
+	"apihelp-voteny-example-5": "向 ID 號碼為 666 的頁面投下一票（5 顆星中的 4 顆星），若先前有投過票則將舊票刪除",
 	"voteny-desc": "基於JavaScript的投票與<code>&lt;vote&gt;</code>標記",
 	"voteny-link": "投票",
 	"voteny-unvote-link": "取消投票",
