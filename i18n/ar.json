@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"apihelp-voteny-description": "وحدة VoteNY API",
+	"apihelp-voteny-summary": "وحدة VoteNY API",
+	"apihelp-voteny-param-what": "إجراءات لاتخاذها; القيم الصالحة هي 'تصويت' (صندوق التصويت الأخضر) أو 'متعددة' (نجوم التصويت) أو 'حذف' (حذف صوت مُعطَى سابقا)",
+	"apihelp-voteny-param-pageId": "معرف الصفحة للصفحة التي يكون/ـتكون فيها صندوق/نجوم التصويت",
+	"apihelp-voteny-param-voteValue": "قيمة التصويت العددية بين 1 و5",
+	"apihelp-voteny-param-type": "اضبط هذا الخيار على 'النجوم' للاتصال بنجوم التصويت (صنف VoteStars PHP)، وإلا يتم استخدام صندوق التصويت الأخضر (فئة صوت PHP)",
+	"apihelp-voteny-example-1": "إرسال تصويت للصفحة التي تحتوي على المعرف 666",
+	"apihelp-voteny-example-2": "حذف تصويتك من الصفحة التي تحتوي على المعرف رقم 666",
+	"apihelp-voteny-example-3": "إرسال تصويت (3 نجوم من 5) للصفحة التي تحتوي على رقم المعرف 666",
+	"apihelp-voteny-example-4": "احذف صوتك من الصفحة التي تحتوي على رقم المعرف 666 الذي يستخدم تقييم النجوم",
+	"apihelp-voteny-example-5": "إرسال تصويت (4 نجوم من 5) للصفحة التي بها رقم المعرف 666، وحذف صوتك السابق، إن وُجِد",
+	"voteny-desc": "التصويت المبني على جافا سكريبت بالوسم <code>&lt;vote&gt;</code>",
+	"voteny-link": "تصويت",
+	"voteny-unvote-link": "إزالة التصويت",
+	"voteny-community-score": "النتيجة المجتمعية: $1",
+	"voteny-ratings": "{{PLURAL:$1|تقييم واحد|$1 تقييمات}}",
+	"voteny-remove": "إزالة",
+	"voteny-gave-this": "لقد أعطيت هذا $1",
+	"voteny-votes": "{{PLURAL:$1|صوت واحد|$1 أصوات}}",
+	"topratings": "أكثر الصفحات تقييما",
+	"topratings-no-pages": "لا توجد صفحات أعلى تقييما.",
+	"right-voteny": "صفحات التصويت"
+}
