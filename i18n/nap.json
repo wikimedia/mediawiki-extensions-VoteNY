@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"C.R."
+			"C.R.",
+			"Ruthven"
 		]
 	},
 	"voteny-desc": "Sistema 'e voto basato ncopp'a JavaScript c' 'o tag <code>&lt;vote&gt;</code>",
@@ -14,5 +15,5 @@
 	"voteny-votes": "{{PLURAL:$1|nu voto|$1 vote}}",
 	"topratings": "Paggene cchiù mmeglio vutate",
 	"topratings-no-pages": "Nun ce sta paggena mmeglio.",
-	"right-voteny": "Vota 'e paggene"
+	"right-voteny": "Paggene 'e vutazione"
 }
