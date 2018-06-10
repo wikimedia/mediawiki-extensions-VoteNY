@@ -123,6 +123,8 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			}
 			*/
 
+			$linkRenderer = $this->getLinkRenderer();
+
 			// yes, array_keys() is needed
 			foreach ( array_keys( $ratings ) as $discardThis => $pageId ) {
 				$titleObj = Title::newFromId( $pageId );
@@ -131,8 +133,9 @@ class SpecialTopRatings extends IncludableSpecialPage {
 				}
 
 				$vote = new VoteStars( $pageId );
+
 				$output .= '<div class="user-list-rating">' .
-					Linker::link(
+					$linkRenderer->makeLink(
 						$titleObj,
 						$titleObj->getPrefixedText() // prefixed, so that the namespace shows!
 					) . $this->msg( 'word-separator' )->escaped() . // i18n overkill? ya betcha...
