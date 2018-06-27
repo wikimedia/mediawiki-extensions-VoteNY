@@ -7,9 +7,9 @@
  */
 // @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
-/** English (English) */
-$specialPageAliases['en'] = array(
-	'TopRatings' => array( 'TopRatings' ),
-);
+/** English */
+$specialPageAliases['en'] = [
+	'TopRatings' => [ 'TopRatings' ],
+];

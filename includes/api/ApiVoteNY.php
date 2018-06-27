@@ -39,14 +39,14 @@ class ApiVoteNY extends ApiBase {
 		$pageId = $params['pageId'];
 
 		if ( !$pageId || $pageId === null || !is_numeric( $pageId ) ) {
-			$this->dieUsageMsg( array( 'missingparam', 'pageId' ) );
+			$this->dieUsageMsg( [ 'missingparam', 'pageId' ] );
 		}
 
 		// Vote value is needed for actual vote actions, i.e. everything but "delete"
 		$voteValue = $params['voteValue'];
 
 		if ( !( $voteValue || $voteValue === null ) && $action !== 'delete' ) {
-			$this->dieUsageMsg( array( 'missingparam', 'voteValue' ) );
+			$this->dieUsageMsg( [ 'missingparam', 'voteValue' ] );
 		}
 
 		// Set the private class member variable and do something...
@@ -92,7 +92,7 @@ class ApiVoteNY extends ApiBase {
 
 		// Top level
 		$this->getResult()->addValue( null, $this->getModuleName(),
-			array( 'result' => $output )
+			[ 'result' => $output ]
 		);
 
 		return true;
@@ -110,34 +110,34 @@ class ApiVoteNY extends ApiBase {
 	 * @return array
 	 */
 	public function getAllowedParams() {
-		return array(
-			'what' => array(
+		return [
+			'what' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'pageId' => array(
+			],
+			'pageId' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'voteValue' => array(
+			],
+			'voteValue' => [
 				ApiBase::PARAM_TYPE => 'integer',
-			),
-			'type' => array(
+			],
+			'type' => [
 				ApiBase::PARAM_TYPE => 'string',
-			)
-		);
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=voteny&what=vote&pageId=666' => 'apihelp-voteny-example-1',
 			'action=voteny&what=delete&pageId=666' => 'apihelp-voteny-example-2',
 			'action=voteny&what=vote&type=stars&pageId=666&voteValue=3' => 'apihelp-voteny-example-3',
 			'action=voteny&what=delete&type=stars&pageId=666' => 'apihelp-voteny-example-4',
 			'action=voteny&what=multi&type=stars&pageId=666&voteValue=4' => 'apihelp-voteny-example-5'
-		);
+		];
 	}
 }

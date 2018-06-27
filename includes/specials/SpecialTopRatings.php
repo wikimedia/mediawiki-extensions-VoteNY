@@ -57,29 +57,29 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		}
 		*/
 
-		$ratings = array();
+		$ratings = [];
 		$output = '';
 
 		$dbr = wfGetDB( DB_REPLICA );
-		$tables = $where = $joinConds = array();
-		$whatToSelect = array( 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' );
+		$tables = $where = $joinConds = [];
+		$whatToSelect = [ 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' ];
 
 		// By default we have no category and no namespace
-		$tables = array( 'Vote' );
-		$where = array( 'vote_page_id <> 0' );
+		$tables = [ 'Vote' ];
+		$where = [ 'vote_page_id <> 0' ];
 
 		// isset(), because 0 is a totally valid NS
 		if ( !empty( $categoryName ) && isset( $namespace ) ) {
-			$tables = array( 'Vote', 'page', 'categorylinks' );
-			$where = array(
+			$tables = [ 'Vote', 'page', 'categorylinks' ];
+			$where = [
 				'vote_page_id <> 0',
 				'cl_to' => str_replace( ' ', '_', $categoryName ),
 				'page_namespace' => $namespace
-			);
-			$joinConds = array(
-				'categorylinks' => array( 'INNER JOIN', 'cl_from = page_id' ),
-				'page' => array( 'INNER JOIN', 'page_id = vote_page_id' )
-			);
+			];
+			$joinConds = [
+				'categorylinks' => [ 'INNER JOIN', 'cl_from = page_id' ],
+				'page' => [ 'INNER JOIN', 'page_id = vote_page_id' ]
+			];
 		}
 
 		// Perform the SQL query with the given conditions; the basic idea is
@@ -93,7 +93,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$whatToSelect,
 			$where,
 			__METHOD__,
-			array( 'GROUP BY' => 'vote_page_id', 'LIMIT' => intval( $limit ) ),
+			[ 'GROUP BY' => 'vote_page_id', 'LIMIT' => intval( $limit ) ],
 			$joinConds
 		);
 
@@ -163,9 +163,8 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	/**
 	 * Static version of Vote::getAverageVote().
 	 *
-	 * @param $pageId Integer: ID of the page for which we want to get the avg.
-	 *                         rating
-	 * @return Integer: average vote for the given page (ID)
+	 * @param int $pageId ID of the page for which we want to get the avg. rating
+	 * @return int Average vote for the given page (ID)
 	 */
 	public static function getAverageRatingForPage( $pageId ) {
 		global $wgMemc;
@@ -182,7 +181,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$voteAvg = (int)$dbr->selectField(
 				'Vote',
 				'AVG(vote_value) AS VoteAvg',
-				array( 'vote_page_id' => $pageId ),
+				[ 'vote_page_id' => $pageId ],
 				__METHOD__
 			);
 			$wgMemc->set( $key, $voteAvg );

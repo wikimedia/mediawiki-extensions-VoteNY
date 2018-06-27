@@ -3,9 +3,9 @@
  * Internationalization file for magic words.
  */
 
-$magicWords = array();
+$magicWords = [];
 
-$magicWords['en'] = array(
-	'NUMBEROFVOTES' => array( 0, 'NUMBEROFVOTES' ),
-	'NUMBEROFVOTESPAGE' => array( 0, 'NUMBEROFVOTESPAGE' ),
-);
+$magicWords['en'] = [
+	'NUMBEROFVOTES' => [ 0, 'NUMBEROFVOTES' ],
+	'NUMBEROFVOTESPAGE' => [ 0, 'NUMBEROFVOTESPAGE' ],
+];

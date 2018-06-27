@@ -24,7 +24,7 @@ class Vote {
 
 		$this->PageID = $pageID;
 		$this->Username = $wgUser->getName();
-		$this->Userid = $wgUser->getID();
+		$this->Userid = $wgUser->getId();
 	}
 
 	/**
@@ -49,7 +49,7 @@ class Vote {
 			$res = $dbr->select(
 				'Vote',
 				'COUNT(*) AS votecount',
-				array( 'vote_page_id' => $this->PageID ),
+				[ 'vote_page_id' => $this->PageID ],
 				__METHOD__
 			);
 			$row = $dbr->fetchObject( $res );
@@ -82,7 +82,7 @@ class Vote {
 			$res = $dbr->select(
 				'Vote',
 				'AVG(vote_value) AS voteavg',
-				array( 'vote_page_id' => $this->PageID ),
+				[ 'vote_page_id' => $this->PageID ],
 				__METHOD__
 			);
 			$row = $dbr->fetchObject( $res );
@@ -127,10 +127,10 @@ class Vote {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete(
 			'Vote',
-			array(
+			[
 				'vote_page_id' => $this->PageID,
 				'username' => $this->Username
-			),
+			],
 			__METHOD__
 		);
 
@@ -150,21 +150,24 @@ class Vote {
 	 */
 	function insert( $voteValue ) {
 		global $wgRequest;
+
 		$dbw = wfGetDB( DB_MASTER );
+
 		MediaWiki\suppressWarnings(); // E_STRICT whining
 		$voteDate = date( 'Y-m-d H:i:s' );
 		MediaWiki\restoreWarnings();
+
 		if ( $this->UserAlreadyVoted() == false ) {
 			$dbw->insert(
 				'Vote',
-				array(
+				[
 					'username' => $this->Username,
 					'vote_user_id' => $this->Userid,
 					'vote_page_id' => $this->PageID,
 					'vote_value' => $voteValue,
 					'vote_date' => $voteDate,
 					'vote_ip' => $wgRequest->getIP(),
-				),
+				],
 				__METHOD__
 			);
 
@@ -188,11 +191,11 @@ class Vote {
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Vote',
-			array( 'vote_value' ),
-			array(
+			[ 'vote_value' ],
+			[
 				'vote_page_id' => $this->PageID,
 				'username' => $this->Username
-			),
+			],
 			__METHOD__
 		);
 		if ( $s === false ) {

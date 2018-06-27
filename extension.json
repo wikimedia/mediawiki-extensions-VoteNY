@@ -1,6 +1,6 @@
 {
 	"name": "VoteNY",
-	"version": "2.9.3",
+	"version": "2.9.4",
 	"author": [
 		"Aaron Wright",
 		"David Pean",
@@ -40,18 +40,10 @@
 			"VoteHooks::registerParserHook",
 			"VoteHooks::setupNumberOfVotesPageParser"
 		],
-		"RenameUserSQL": [
-			"VoteHooks::onUserRename"
-		],
-		"ParserGetVariableValueSwitch": [
-			"VoteHooks::assignValueToMagicWord"
-		],
-		"MagicWordwgVariableIDs": [
-			"VoteHooks::registerVariableId"
-		],
-		"LoadExtensionSchemaUpdates": [
-			"VoteHooks::addTable"
-		]
+		"RenameUserSQL": "VoteHooks::onUserRename",
+		"ParserGetVariableValueSwitch": "VoteHooks::assignValueToMagicWord",
+		"MagicWordwgVariableIDs": "VoteHooks::registerVariableId",
+		"LoadExtensionSchemaUpdates": "VoteHooks::addTable"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
