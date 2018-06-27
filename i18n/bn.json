@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Elias Ahmmad",
-			"Aftabuzzaman"
+			"Aftabuzzaman",
+			"আফতাবুজ্জামান"
 		]
 	},
 	"voteny-desc": "<code>&lt;vote&gt;</code> ট্যাগসহ জাভাস্ক্রিপ্ট-ভিত্তিক ভোট ব্যবস্থা",
