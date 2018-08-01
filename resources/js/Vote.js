@@ -118,20 +118,19 @@ var VoteNY = function VoteNY() {
 		}
 
 		for ( var x = 1; x <= this.MaxRating; x++ ) {
-			var star_on, old_rating;
+			var old_rating = voted ? voted : prev_rating;
+			var star = 'off';
+
 			if ( voted ) {
-				star_on = 'voted';
-				old_rating = voted;
-			} else {
-				star_on = 'on';
-				old_rating = prev_rating;
+				star = 'voted';
+			} else if ( !num && old_rating >= x ) {
+				star = 'on';
+			} else if ( !num && x == Math.ceil( old_rating ) ) {
+				star = 'half';
 			}
-			var ratingElement = $( '#rating_' + id + '_' + x );
-			if ( !num && old_rating >= x ) {
-				ratingElement.attr( 'src', this.imagePath + 'star_' + star_on + '.gif' );
-			} else {
-				ratingElement.attr( 'src', this.imagePath + 'star_off.gif' );
-			}
+
+			$( '#rating_' + id + '_' + x )
+				.attr( 'src', this.imagePath + 'star_' + star + '.gif' );
 		}
 	};
 
