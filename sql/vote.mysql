@@ -1,4 +1,4 @@
-CREATE TABLE /*_*/Vote (
+CREATE TABLE IF NOT EXISTS /*_*/Vote (
   -- Internal ID to identify between different vote tags on different pages
   `vote_id` int(11) NOT NULL PRIMARY KEY auto_increment,
   -- Username (if any) of the person who voted
