@@ -7,6 +7,8 @@
 	"apihelp-voteny-description": "Module de l'API VoteNY",
 	"apihelp-voteny-summary": "Module de l'API VoteNY",
 	"apihelp-voteny-param-voteValue": "Vote numereche 'mbrà 1 e 5",
+	"apihelp-voteny-example-1": "Vote pa pàgene ca tène l'ID numere 666",
+	"apihelp-voteny-example-2": "Scangìlle 'u vote tune da 'a pàgene ca tène l'ID numere 666",
 	"voteny-desc": "Votazione ca se base sus a JavaScript cu 'u tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vote",
 	"voteny-unvote-link": "no vutà",
