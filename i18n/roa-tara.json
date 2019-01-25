@@ -6,6 +6,7 @@
 	},
 	"apihelp-voteny-description": "Module de l'API VoteNY",
 	"apihelp-voteny-summary": "Module de l'API VoteNY",
+	"apihelp-voteny-param-what": "Azione da fà; valore valide so 'vote' (sckatole verde), 'multi' (vote cu le stelle) o 'delete' (scangìlle 'u vote date apprime)",
 	"apihelp-voteny-param-voteValue": "Vote numereche 'mbrà 1 e 5",
 	"apihelp-voteny-example-1": "Vote pa pàgene ca tène l'ID numere 666",
 	"apihelp-voteny-example-2": "Scangìlle 'u vote tune da 'a pàgene ca tène l'ID numere 666",
