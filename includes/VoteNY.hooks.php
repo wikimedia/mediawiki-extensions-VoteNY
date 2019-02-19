@@ -25,19 +25,20 @@ class VoteHooks {
 	 * @return string HTML
 	 */
 	public static function renderVote( $input, $args, $parser ) {
-		global $wgOut, $wgUser;
+		global $wgUser;
 
+		$po = $parser->getOutput();
 		// Disable parser cache (sadly we have to do this, because the caching is
 		// messing stuff up; we want to show an up-to-date rating instead of old
 		// or totally wrong rating, i.e. another page's rating...)
-		$parser->getOutput()->updateCacheExpiry( 0 );
+		$po->updateCacheExpiry( 0 );
 
 		// Add CSS & JS
 		// In order for us to do this *here* instead of having to do this in
 		// registerParserHook(), we must've disabled parser cache
-		$parser->getOutput()->addModuleStyles( 'ext.voteNY.styles' );
+		$po->addModuleStyles( 'ext.voteNY.styles' );
 		if ( $wgUser->isAllowed( 'voteny' ) ) {
-			$parser->getOutput()->addModules( 'ext.voteNY.scripts' );
+			$po->addModules( 'ext.voteNY.scripts' );
 		}
 
 		// Define variable - 0 means that we'll get that green voting box by default
@@ -50,8 +51,8 @@ class VoteHooks {
 			$type = intval( $args['type'] );
 		}
 
-		$output = null;
-		$title = $wgOut->getTitle();
+		$output = '';
+		$title = $parser->getTitle();
 		if ( $title ) {
 			$articleID = $title->getArticleID();
 			switch ( $type ) {
