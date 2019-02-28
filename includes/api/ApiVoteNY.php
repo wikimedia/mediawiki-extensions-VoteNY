@@ -27,26 +27,26 @@ class ApiVoteNY extends ApiBase {
 
 		// If the "what" param isn't present, we don't know what to do!
 		if ( !$action || $action === null ) {
-			$this->dieUsageMsg( 'missingparam' );
+			$this->dieWithError( [ 'apierror-missingparam', 'what' ] );
 		}
 
 		// Need to have sufficient user rights to proceed...
 		if ( !$user->isAllowed( 'voteny' ) ) {
-			$this->dieUsageMsg( 'badaccess-group0' );
+			$this->dieWithError( 'badaccess-group0' );
 		}
 
 		// Ensure that the page ID is present and that it really is numeric
 		$pageId = $params['pageId'];
 
 		if ( !$pageId || $pageId === null || !is_numeric( $pageId ) ) {
-			$this->dieUsageMsg( [ 'missingparam', 'pageId' ] );
+			$this->dieWithError( [ 'apierror-missingparam', 'pageId' ] );
 		}
 
 		// Vote value is needed for actual vote actions, i.e. everything but "delete"
 		$voteValue = $params['voteValue'];
 
 		if ( !( $voteValue || $voteValue === null ) && $action !== 'delete' ) {
-			$this->dieUsageMsg( [ 'missingparam', 'voteValue' ] );
+			$this->dieWithError( [ 'apierror-missingparam', 'voteValue' ] );
 		}
 
 		// Set the private class member variable and do something...
