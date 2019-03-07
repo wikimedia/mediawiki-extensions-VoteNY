@@ -9,6 +9,7 @@
 	"apihelp-voteny-description": "VoteNY-API-Modul",
 	"apihelp-voteny-summary": "VoteNY-API-Modul",
 	"apihelp-voteny-param-voteValue": "Numerischer Abstimmungswert zwischen 1 und 5",
+	"apihelp-voteny-example-2": "Löscht deine Stimme von der Seite, die die Kennung 666 hat.",
 	"voteny-desc": "Ergänzt das Tag <code>&lt;vote&gt;</code> zum Durchführen JavaScript-gestützter Abstimmungen",
 	"voteny-link": "Abstimmen",
 	"voteny-unvote-link": "Stimme zurücknehmen",
