@@ -25,7 +25,7 @@ var VoteNY = function VoteNY() {
 	 * @param PageID Integer: internal ID number of the current article
 	 */
 	this.clickVote = function( TheVote, PageID ) {
-		( new mw.Api() ).postWithToken( 'edit', {
+		( new mw.Api() ).postWithToken( 'csrf', {
 			action: 'voteny',
 			format: 'json',
 			what: 'vote',
@@ -46,7 +46,7 @@ var VoteNY = function VoteNY() {
 	 * @param PageID Integer: internal ID number of the current article
 	 */
 	this.unVote = function( PageID ) {
-		( new mw.Api() ).postWithToken( 'edit', {
+		( new mw.Api() ).postWithToken( 'csrf', {
 			action: 'voteny',
 			format: 'json',
 			what: 'delete',
@@ -77,7 +77,7 @@ var VoteNY = function VoteNY() {
 			actionName = 'multi';
 		}
 
-		( new mw.Api() ).postWithToken( 'edit', {
+		( new mw.Api() ).postWithToken( 'csrf', {
 			action: 'voteny',
 			type: 'stars',
 			what: actionName,
@@ -95,7 +95,7 @@ var VoteNY = function VoteNY() {
 	 * @param id Integer: ID of the current rating star
 	 */
 	this.unVoteStars = function( PageID, id ) {
-		( new mw.Api() ).postWithToken( 'edit', {
+		( new mw.Api() ).postWithToken( 'csrf', {
 			action: 'voteny',
 			what: 'delete',
 			type: 'stars',
