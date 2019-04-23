@@ -56,10 +56,18 @@
 				"voteny-link",
 				"voteny-unvote-link"
 			],
-			"dependencies": [ "mediawiki.api" ]
+			"dependencies": [ "mediawiki.api" ],
+			"targets": [
+				"mobile",
+				"desktop"
+			]
 		},
 		"ext.voteNY.styles": {
-			"styles": "resources/css/Vote.css"
+			"styles": "resources/css/Vote.css",
+			"targets": [
+				"mobile",
+				"desktop"
+			]
 		}
 	},
 	"AvailableRights": [
