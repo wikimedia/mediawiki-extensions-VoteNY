@@ -25,5 +25,6 @@
 	"voteny-votes": "{{PLURAL:$1|صوت واحد|$1 أصوات}}",
 	"topratings": "أكثر الصفحات تقييما",
 	"topratings-no-pages": "لا توجد صفحات أعلى تقييما.",
+	"action-voteny": "صفحات التصويت",
 	"right-voteny": "صفحات التصويت"
 }

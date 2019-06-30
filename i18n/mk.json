@@ -25,5 +25,6 @@
 	"voteny-votes": "{{PLURAL:$1|еден глас|$1 гласа}}",
 	"topratings": "Водечки страници",
 	"topratings-no-pages": "Нема водечки страници.",
+	"action-voteny": "гласање за страници",
 	"right-voteny": "Гласање за страници"
 }

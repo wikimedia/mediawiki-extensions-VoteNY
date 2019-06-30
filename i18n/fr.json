@@ -4,7 +4,8 @@
 			"Crochet.david",
 			"Jack Phoenix",
 			"Tititou36",
-			"Gomoko"
+			"Gomoko",
+			"Wladek92"
 		]
 	},
 	"apihelp-voteny-description": "Module d’API VoteNY",
@@ -28,5 +29,6 @@
 	"voteny-votes": "{{PLURAL:$1|un vote|$1 votes}}",
 	"topratings": "Pages les mieux notées",
 	"topratings-no-pages": "Aucune page notée.",
+	"action-voteny": "pages de vote",
 	"right-voteny": "Pages de vote"
 }
