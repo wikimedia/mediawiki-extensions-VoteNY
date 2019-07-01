@@ -28,5 +28,6 @@
 	"voteny-votes": "{{PLURAL:$1|$1票}}",
 	"topratings": "最受好評的頁面",
 	"topratings-no-pages": "沒有最受好評的頁面。",
+	"action-voteny": "投票頁面",
 	"right-voteny": "投票頁面"
 }
