@@ -200,18 +200,26 @@ class VoteHooks {
 	 * @param DatabaseUpdater $updater
 	 */
 	public static function addTable( $updater ) {
-		$dbt = $updater->getDB()->getType();
+		$db = $updater->getDB();
+		$dbt = $db->getType();
+		$sqlPath = __DIR__ . '/../sql';
 		// If using SQLite, just use the MySQL/MariaDB schema, it's compatible
 		// anyway. Only PGSQL and some more exotic variants need a totally
 		// different schema.
 		if ( $dbt === 'sqlite' ) {
 			$dbt = 'mysql';
 		}
-		$file = __DIR__ . "/../sql/vote.$dbt";
+
+		$file = "$sqlPath/vote.$dbt";
 		if ( file_exists( $file ) ) {
 			$updater->addExtensionTable( 'Vote', $file );
 		} else {
 			throw new MWException( "VoteNY does not support $dbt." );
+		}
+
+		// Actor support (see T227345)
+		if ( $db->tableExists( 'Vote' ) && !$db->fieldExists( 'Vote', 'vote_actor', __METHOD__ ) ) {
+			$updater->addExtensionField( 'Vote', 'vote_actor', "$sqlPath/patch-add-vote_actor-column.$dbt" );
 		}
 	}
 }

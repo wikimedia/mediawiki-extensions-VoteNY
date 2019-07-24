@@ -11,6 +11,7 @@ use MediaWiki\MediaWikiServices;
 
 class Vote {
 	public $PageID = 0;
+	public $ActorID = 0;
 	public $Userid = 0;
 	public $Username = null;
 
@@ -23,6 +24,7 @@ class Vote {
 		global $wgUser;
 
 		$this->PageID = $pageID;
+		$this->ActorID = $wgUser->getActorId();
 		$this->Username = $wgUser->getName();
 		$this->Userid = $wgUser->getId();
 	}
@@ -124,13 +126,25 @@ class Vote {
 	 * updates SocialProfile's statistics, if SocialProfile is active.
 	 */
 	function delete() {
+		global $wgActorTableSchemaMigrationStage;
+
 		$dbw = wfGetDB( DB_MASTER );
+
+		$fields = [
+			'vote_page_id' => $this->PageID
+		];
+
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
+			$fields['vote_actor'] = $this->ActorID;
+		}
+
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
+			$fields['username'] = $this->Username;
+		}
+
 		$dbw->delete(
 			'Vote',
-			[
-				'vote_page_id' => $this->PageID,
-				'username' => $this->Username
-			],
+			$fields,
 			__METHOD__
 		);
 
@@ -149,7 +163,7 @@ class Vote {
 	 * @param int $voteValue
 	 */
 	function insert( $voteValue ) {
-		global $wgRequest;
+		global $wgActorTableSchemaMigrationStage, $wgRequest;
 
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -158,16 +172,25 @@ class Vote {
 		Wikimedia\restoreWarnings();
 
 		if ( $this->UserAlreadyVoted() == false ) {
+			$fields = [
+				'vote_page_id' => $this->PageID,
+				'vote_value' => $voteValue,
+				'vote_date' => $voteDate,
+				'vote_ip' => $wgRequest->getIP(),
+			];
+
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
+				$fields['vote_actor'] = $this->ActorID;
+			}
+
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
+				$fields['username'] = $this->Username;
+				$fields['vote_user_id'] = $this->Userid;
+			}
+
 			$dbw->insert(
 				'Vote',
-				[
-					'username' => $this->Username,
-					'vote_user_id' => $this->Userid,
-					'vote_page_id' => $this->PageID,
-					'vote_value' => $voteValue,
-					'vote_date' => $voteDate,
-					'vote_ip' => $wgRequest->getIP(),
-				],
+				$fields,
 				__METHOD__
 			);
 
@@ -188,14 +211,25 @@ class Vote {
 	 *                  value of 'vote_value' column from Vote DB table
 	 */
 	function UserAlreadyVoted() {
+		global $wgActorTableSchemaMigrationStage;
+
+		$where = [
+			'vote_page_id' => $this->PageID
+		];
+
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+			$where['vote_actor'] = $this->ActorID;
+		}
+
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+			$where['username'] = $this->Username;
+		}
+
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Vote',
 			[ 'vote_value' ],
-			[
-				'vote_page_id' => $this->PageID,
-				'username' => $this->Username
-			],
+			$where,
 			__METHOD__
 		);
 		if ( $s === false ) {
