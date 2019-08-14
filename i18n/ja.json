@@ -16,5 +16,6 @@
 	"voteny-votes": "{{PLURAL:$1|$1 票}}",
 	"topratings": "評価が高いページ",
 	"topratings-no-pages": "評価が高いページはありません。",
+	"action-voteny": "ページへの投票",
 	"right-voteny": "ページに投票"
 }
