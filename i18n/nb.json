@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"apihelp-voteny-description": "VoteNY-API-modul",
+	"apihelp-voteny-summary": "VoteNY-API-modul",
+	"apihelp-voteny-param-what": "Handling som skal tas; gyldige verdier er «vote» (grøn avstemningsboks), «multi» (avstemningsstjerner) eller «delete» (slett en tidligere avgitt stemme)",
+	"apihelp-voteny-param-pageId": "Side-ID for siden der avstemningsboksen/-stjernene er",
+	"apihelp-voteny-param-voteValue": "Numerisk stemmeverdi mellom 1 og 5",
+	"apihelp-voteny-param-type": "Sett denne til «stars» for å kalle avstemningsstjerenene (PHP-klassen VoteStars), ellers brukes den grønne avstemningsboksen (PHP-klassen Vote)",
+	"apihelp-voteny-example-1": "Avgi en stemme for siden med ID-nummer 666",
+	"apihelp-voteny-example-2": "Slett din egen stemme fra siden med ID-nummer 666",
+	"apihelp-voteny-example-3": "Avgi en stemme (3 av 5 stjerner) for siden med ID-nummer 666",
+	"apihelp-voteny-example-4": "Slett din egen stemme fra siden med ID-nummer 666 som bruker avstemningsstjerner",
+	"apihelp-voteny-example-5": "Avgi en stemme (4 av 5 stjerner) for siden med ID-nummer 666, og sletter din tidligere steme hvis det er en",
+	"voteny-desc": "JavaScript-basert avstemning med taggen <code>&lty;vote&gt;</code>",
+	"voteny-link": "Stem",
+	"voteny-unvote-link": "Fjern stemme",
+	"voteny-community-score": "fellesskapspoeng: $1",
+	"voteny-ratings": "{{PLURAL:$1|én vurdering|$1 vurderinger}}",
+	"voteny-remove": "fjern",
+	"voteny-gave-this": "du ga denne $1",
+	"voteny-votes": "{{PLURAL:$1|én stemme|$1 stemmer}}",
+	"topratings": "Topplistede sider",
+	"topratings-no-pages": "Ingen topplistede sider",
+	"action-voteny": "stemme på sider",
+	"right-voteny": "Stemme på sider"
+}
