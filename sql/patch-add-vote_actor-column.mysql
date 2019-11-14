@@ -1,0 +1,4 @@
+ALTER TABLE /*_*/Vote ADD COLUMN vote_actor bigint unsigned NOT NULL AFTER vote_id;
+
+CREATE INDEX actoridx ON /*_*/Vote (vote_actor);
+

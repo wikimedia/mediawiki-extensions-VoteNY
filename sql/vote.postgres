@@ -1,6 +1,8 @@
 CREATE TABLE "Vote" (
   -- Internal ID to identify between different vote tags on different pages
   vote_id SERIAL NOT NULL PRIMARY KEY,
+  -- Key to actor_id for the person who voted
+  vote_actor integer NOT NULL,
   -- Username (if any) of the person who voted
   username varchar(255) NOT NULL default '0',
   -- User ID of the person who voted
@@ -17,5 +19,6 @@ CREATE TABLE "Vote" (
 
 CREATE INDEX vote_page_id_index ON "Vote" (vote_page_id);
 CREATE INDEX valueidx ON "Vote" (vote_value);
+CREATE INDEX actoridx ON "Vote" (vote_actor);
 CREATE INDEX usernameidx ON "Vote" (username);
 CREATE INDEX vote_date ON "Vote" (vote_date);
