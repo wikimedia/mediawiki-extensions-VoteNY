@@ -25,8 +25,6 @@ class VoteHooks {
 	 * @return string HTML
 	 */
 	public static function renderVote( $input, $args, $parser ) {
-		global $wgUser;
-
 		$po = $parser->getOutput();
 		// Disable parser cache (sadly we have to do this, because the caching is
 		// messing stuff up; we want to show an up-to-date rating instead of old
@@ -37,7 +35,9 @@ class VoteHooks {
 		// In order for us to do this *here* instead of having to do this in
 		// registerParserHook(), we must've disabled parser cache
 		$po->addModuleStyles( 'ext.voteNY.styles' );
-		if ( $wgUser->isAllowed( 'voteny' ) ) {
+
+		$user = $parser->getUser();
+		if ( $user->isAllowed( 'voteny' ) ) {
 			$po->addModules( 'ext.voteNY.scripts' );
 		}
 
@@ -57,13 +57,13 @@ class VoteHooks {
 			$articleID = $title->getArticleID();
 			switch ( $type ) {
 				case 0:
-					$vote = new Vote( $articleID );
+					$vote = new Vote( $articleID, $user );
 					break;
 				case 1:
-					$vote = new VoteStars( $articleID );
+					$vote = new VoteStars( $articleID, $user );
 					break;
 				default:
-					$vote = new Vote( $articleID );
+					$vote = new Vote( $articleID, $user );
 			}
 
 			$output = $vote->display();

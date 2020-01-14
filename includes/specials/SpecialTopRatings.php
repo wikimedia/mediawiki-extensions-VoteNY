@@ -132,7 +132,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 					continue;
 				}
 
-				$vote = new VoteStars( $pageId );
+				$vote = new VoteStars( $pageId, $user );
 
 				$output .= '<div class="user-list-rating">' .
 					$linkRenderer->makeLink(
