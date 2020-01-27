@@ -126,25 +126,14 @@ class Vote {
 	 * updates SocialProfile's statistics, if SocialProfile is active.
 	 */
 	function delete() {
-		global $wgActorTableSchemaMigrationStage;
-
 		$dbw = wfGetDB( DB_MASTER );
-
-		$fields = [
-			'vote_page_id' => $this->PageID
-		];
-
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			$fields['vote_actor'] = $this->ActorID;
-		}
-
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			$fields['username'] = $this->Username;
-		}
 
 		$dbw->delete(
 			'Vote',
-			$fields,
+			[
+				'vote_page_id' => $this->PageID,
+				'vote_actor' => $this->ActorID
+			],
 			__METHOD__
 		);
 
@@ -163,7 +152,7 @@ class Vote {
 	 * @param int $voteValue
 	 */
 	function insert( $voteValue ) {
-		global $wgActorTableSchemaMigrationStage, $wgRequest;
+		global $wgRequest;
 
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -172,25 +161,15 @@ class Vote {
 		Wikimedia\restoreWarnings();
 
 		if ( $this->UserAlreadyVoted() == false ) {
-			$fields = [
-				'vote_page_id' => $this->PageID,
-				'vote_value' => $voteValue,
-				'vote_date' => $voteDate,
-				'vote_ip' => $wgRequest->getIP(),
-			];
-
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-				$fields['vote_actor'] = $this->ActorID;
-			}
-
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-				$fields['username'] = $this->Username;
-				$fields['vote_user_id'] = $this->Userid;
-			}
-
 			$dbw->insert(
 				'Vote',
-				$fields,
+				[
+					'vote_page_id' => $this->PageID,
+					'vote_value' => $voteValue,
+					'vote_date' => $voteDate,
+					'vote_ip' => $wgRequest->getIP(),
+					'vote_actor' => $this->ActorID
+				],
 				__METHOD__
 			);
 
@@ -211,25 +190,14 @@ class Vote {
 	 *                  value of 'vote_value' column from Vote DB table
 	 */
 	function UserAlreadyVoted() {
-		global $wgActorTableSchemaMigrationStage;
-
-		$where = [
-			'vote_page_id' => $this->PageID
-		];
-
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-			$where['vote_actor'] = $this->ActorID;
-		}
-
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-			$where['username'] = $this->Username;
-		}
-
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Vote',
 			[ 'vote_value' ],
-			$where,
+			[
+				'vote_page_id' => $this->PageID,
+				'vote_actor' => $this->ActorID
+			],
 			__METHOD__
 		);
 		if ( $s === false ) {
