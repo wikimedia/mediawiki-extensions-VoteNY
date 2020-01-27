@@ -19,14 +19,13 @@ class Vote {
 	 * Constructor
 	 *
 	 * @param int $pageID Article ID number
+	 * @param User $user
 	 */
-	public function __construct( $pageID ) {
-		global $wgUser;
-
+	public function __construct( $pageID, User $user ) {
 		$this->PageID = $pageID;
-		$this->ActorID = $wgUser->getActorId();
-		$this->Username = $wgUser->getName();
-		$this->Userid = $wgUser->getId();
+		$this->ActorID = $user->getActorId();
+		$this->Username = $user->getName();
+		$this->Userid = $user->getId();
 	}
 
 	/**
@@ -101,7 +100,7 @@ class Vote {
 	 * Clear caches - memcached, parser cache and Squid cache
 	 */
 	function clearCache() {
-		global $wgUser, $wgMemc;
+		global $wgMemc;
 
 		// Kill internal cache
 		$wgMemc->delete( $wgMemc->makeKey( 'vote', 'count', $this->PageID ) );
@@ -116,7 +115,10 @@ class Vote {
 			// Kill parser cache
 			$article = new Article( $pageTitle, /* oldid */0 );
 			$parserCache = MediaWikiServices::getInstance()->getParserCache();
-			$parserKey = $parserCache->getKey( $article, $wgUser );
+			$parserKey = $parserCache->getKey(
+				$article,
+				User::newFromName( $this->Username )
+			);
 			$wgMemc->delete( $parserKey );
 		}
 	}
@@ -213,8 +215,6 @@ class Vote {
 	 * @return string HTML output
 	 */
 	function display() {
-		global $wgUser;
-
 		$voted = $this->UserAlreadyVoted();
 
 		$make_vote_box_clickable = '';
@@ -227,7 +227,7 @@ class Vote {
 		$output .= '</div>';
 		$output .= '<div id="Answer" class="vote-action">';
 
-		if ( !$wgUser->isAllowed( 'voteny' ) ) {
+		if ( !User::newFromName( $this->Username )->isAllowed( 'voteny' ) ) {
 			// @todo FIXME: this is horrible. If we don't have enough
 			// permissions to vote, we should tell the end-user /that/,
 			// not require them to log in!

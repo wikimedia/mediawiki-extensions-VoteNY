@@ -51,7 +51,7 @@ class ApiVoteNY extends ApiBase {
 
 		// Set the private class member variable and do something...
 		if ( isset( $params['type'] ) && $params['type'] && $params['type'] == 'stars' ) {
-			$this->vote = new VoteStars( $pageId );
+			$this->vote = new VoteStars( $pageId, $user );
 
 			switch ( $action ) {
 				case 'delete':
@@ -75,7 +75,7 @@ class ApiVoteNY extends ApiBase {
 					break;
 			}
 		} else {
-			$this->vote = new Vote( $pageId );
+			$this->vote = new Vote( $pageId, $user );
 
 			switch ( $action ) {
 				case 'delete':

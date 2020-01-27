@@ -13,8 +13,6 @@ class VoteStars extends Vote {
 	 * @return string HTML output
 	 */
 	function display( $voted = false ) {
-		global $wgUser;
-
 		$overall_rating = $this->getAverageVote();
 
 		if ( $voted ) {
@@ -39,7 +37,7 @@ class VoteStars extends Vote {
 				wfMessage( 'voteny-votes', $count )->parse() . ')</span>';
 		}
 		$already_voted = $this->UserAlreadyVoted();
-		if ( $already_voted && $wgUser->isLoggedIn() ) {
+		if ( $already_voted && User::newFromName( $this->Username )->isLoggedIn() ) {
 			$output .= '<div class="rating-voted">' .
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
