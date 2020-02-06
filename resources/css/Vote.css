@@ -1,6 +1,6 @@
 /* CSS for Vote extension */
 .vote-box {
-	background-color: #68BD46;
+	background-color: #68bd46;
 	height: 30px;
 	padding: 13px 0px 0px;
 	text-align: center;
@@ -8,7 +8,7 @@
 }
 
 .vote-number {
-	color: #FFF;
+	color: #fff;
 	font-size: 16px;
 	font-weight: bold;
 }
@@ -25,8 +25,8 @@
 }
 
 .rating-score {
-	background-color: #68BD46;
-	color: #FFF;
+	background-color: #68bd46;
+	color: #fff;
 	float: left;
 	font-size: 14px;
 	font-weight: bold;
@@ -47,7 +47,7 @@
 }
 
 .rating-voted {
-	color: #666666;
+	color: #666;
 	line-height: 10px;
 	font-size: 9px;
 	position: absolute;
