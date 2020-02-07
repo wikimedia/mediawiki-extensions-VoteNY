@@ -1,4 +1,4 @@
-ALTER TABLE /*_*/Vote ADD COLUMN vote_actor integer NOT NULL AFTER vote_id;
+ALTER TABLE "Vote" ADD COLUMN vote_actor integer NOT NULL;
 
 CREATE INDEX actoridx ON "Vote" (vote_actor);
 
