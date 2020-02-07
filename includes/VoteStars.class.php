@@ -37,7 +37,7 @@ class VoteStars extends Vote {
 				wfMessage( 'voteny-votes', $count )->parse() . ')</span>';
 		}
 		$already_voted = $this->UserAlreadyVoted();
-		if ( $already_voted && User::newFromName( $this->Username )->isLoggedIn() ) {
+		if ( $already_voted && $this->User->isLoggedIn() ) {
 			$output .= '<div class="rating-voted">' .
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
@@ -114,8 +114,8 @@ class VoteStars extends Vote {
 	function displayScore() {
 		$count = $this->count();
 		return wfMessage( 'voteny-community-score', '<b>' . $this->getAverageVote() . '</b>' )
-		->numParams( $count )->text() .
-		' (' . wfMessage( 'voteny-ratings' )->numParams( $count )->parse() . ')';
+			->numParams( $count )->text() .
+			' (' . wfMessage( 'voteny-ratings' )->numParams( $count )->parse() . ')';
 	}
 
 }

@@ -11,9 +11,7 @@ use MediaWiki\MediaWikiServices;
 
 class Vote {
 	public $PageID = 0;
-	public $ActorID = 0;
-	public $Userid = 0;
-	public $Username = null;
+	public $User;
 
 	/**
 	 * Constructor
@@ -23,9 +21,7 @@ class Vote {
 	 */
 	public function __construct( $pageID, User $user ) {
 		$this->PageID = $pageID;
-		$this->ActorID = $user->getActorId();
-		$this->Username = $user->getName();
-		$this->Userid = $user->getId();
+		$this->User = $user;
 	}
 
 	/**
@@ -117,7 +113,7 @@ class Vote {
 			$parserCache = MediaWikiServices::getInstance()->getParserCache();
 			$parserKey = $parserCache->getKey(
 				$article,
-				User::newFromName( $this->Username )
+				$this->User
 			);
 			$wgMemc->delete( $parserKey );
 		}
@@ -134,7 +130,7 @@ class Vote {
 			'Vote',
 			[
 				'vote_page_id' => $this->PageID,
-				'vote_actor' => $this->ActorID
+				'vote_actor' => $this->User->getActorId()
 			],
 			__METHOD__
 		);
@@ -143,7 +139,7 @@ class Vote {
 
 		// Update social statistics if SocialProfile extension is enabled
 		if ( class_exists( 'UserStatsTrack' ) ) {
-			$stats = new UserStatsTrack( $this->Userid, $this->Username );
+			$stats = new UserStatsTrack( $this->User->getId(), $this->User->getName() );
 			$stats->decStatField( 'vote' );
 		}
 	}
@@ -170,7 +166,7 @@ class Vote {
 					'vote_value' => $voteValue,
 					'vote_date' => $voteDate,
 					'vote_ip' => $wgRequest->getIP(),
-					'vote_actor' => $this->ActorID
+					'vote_actor' => $this->User->getActorId()
 				],
 				__METHOD__
 			);
@@ -179,7 +175,7 @@ class Vote {
 
 			// Update social statistics if SocialProfile extension is enabled
 			if ( class_exists( 'UserStatsTrack' ) ) {
-				$stats = new UserStatsTrack( $this->Userid, $this->Username );
+				$stats = new UserStatsTrack( $this->User->getId(), $this->User->getName() );
 				$stats->incStatField( 'vote' );
 			}
 		}
@@ -198,7 +194,7 @@ class Vote {
 			[ 'vote_value' ],
 			[
 				'vote_page_id' => $this->PageID,
-				'vote_actor' => $this->ActorID
+				'vote_actor' => $this->User->getActorId()
 			],
 			__METHOD__
 		);
@@ -227,7 +223,7 @@ class Vote {
 		$output .= '</div>';
 		$output .= '<div id="Answer" class="vote-action">';
 
-		if ( !User::newFromName( $this->Username )->isAllowed( 'voteny' ) ) {
+		if ( !$this->User->isAllowed( 'voteny' ) ) {
 			// @todo FIXME: this is horrible. If we don't have enough
 			// permissions to vote, we should tell the end-user /that/,
 			// not require them to log in!
