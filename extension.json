@@ -30,20 +30,20 @@
 	},
 	"AutoloadClasses": {
 		"ApiVoteNY": "includes/api/ApiVoteNY.php",
-		"Vote": "includes/Vote.class.php",
-		"VoteStars": "includes/VoteStars.class.php",
+		"Vote": "includes/Vote.php",
+		"VoteStars": "includes/VoteStars.php",
 		"SpecialTopRatings": "includes/specials/SpecialTopRatings.php",
-		"VoteHooks": "includes/VoteNY.hooks.php"
+		"VoteNYHooks": "includes/VoteNYHooks.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
-			"VoteHooks::registerParserHook",
-			"VoteHooks::setupNumberOfVotesPageParser"
+			"VoteNYHooks::registerParserHook",
+			"VoteNYHooks::setupNumberOfVotesPageParser"
 		],
-		"RenameUserSQL": "VoteHooks::onUserRename",
-		"ParserGetVariableValueSwitch": "VoteHooks::assignValueToMagicWord",
-		"MagicWordwgVariableIDs": "VoteHooks::registerVariableId",
-		"LoadExtensionSchemaUpdates": "VoteHooks::addTable"
+		"RenameUserSQL": "VoteNYHooks::onUserRename",
+		"ParserGetVariableValueSwitch": "VoteNYHooks::assignValueToMagicWord",
+		"MagicWordwgVariableIDs": "VoteNYHooks::registerVariableId",
+		"LoadExtensionSchemaUpdates": "VoteNYHooks::addTable"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",

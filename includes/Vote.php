@@ -158,7 +158,7 @@ class Vote {
 		$voteDate = date( 'Y-m-d H:i:s' );
 		Wikimedia\restoreWarnings();
 
-		if ( $this->UserAlreadyVoted() == false ) {
+		if ( $this->hasUserAlreadyVoted() == false ) {
 			$dbw->insert(
 				'Vote',
 				[
@@ -187,7 +187,7 @@ class Vote {
 	 * @return bool|int False if s/he hasn't, otherwise returns the
 	 *                  value of 'vote_value' column from Vote DB table
 	 */
-	function UserAlreadyVoted() {
+	function hasUserAlreadyVoted() {
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Vote',
@@ -211,7 +211,7 @@ class Vote {
 	 * @return string HTML output
 	 */
 	function display() {
-		$voted = $this->UserAlreadyVoted();
+		$voted = $this->hasUserAlreadyVoted();
 
 		$make_vote_box_clickable = '';
 		if ( $voted == false ) {
@@ -219,7 +219,7 @@ class Vote {
 		}
 
 		$output = "<div class=\"vote-box{$make_vote_box_clickable}\" id=\"votebox\">";
-	 	$output .= '<span id="PollVotes" class="vote-number">' . $this->count() . '</span>';
+		$output .= '<span id="PollVotes" class="vote-number">' . $this->count() . '</span>';
 		$output .= '</div>';
 		$output .= '<div id="Answer" class="vote-action">';
 

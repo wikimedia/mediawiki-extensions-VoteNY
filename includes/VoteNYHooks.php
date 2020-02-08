@@ -5,7 +5,7 @@
  * @file
  * @ingroup Extensions
  */
-class VoteHooks {
+class VoteNYHooks {
 
 	/**
 	 * Set up the <vote> parser hook.
@@ -13,7 +13,7 @@ class VoteHooks {
 	 * @param Parser $parser
 	 */
 	public static function registerParserHook( &$parser ) {
-		$parser->setHook( 'vote', [ 'VoteHooks', 'renderVote' ] );
+		$parser->setHook( 'vote', [ 'VoteNYHooks', 'renderVote' ] );
 	}
 
 	/**
@@ -121,7 +121,7 @@ class VoteHooks {
 				$ret = $voteCount;
 			}
 		} elseif ( $magicWordId == 'NUMBEROFVOTESPAGE' ) {
-			$ret = VoteHooks::getNumberOfVotesPage( $parser->getTitle() );
+			$ret = self::getNumberOfVotesPage( $parser->getTitle() );
 		}
 	}
 
@@ -171,7 +171,7 @@ class VoteHooks {
 			$title = $parser->getTitle();
 		}
 
-		return VoteHooks::getNumberOfVotesPage( $title );
+		return self::getNumberOfVotesPage( $title );
 	}
 
 	/**
@@ -190,7 +190,7 @@ class VoteHooks {
 	 * @param Parser $parser
 	 */
 	public static function setupNumberOfVotesPageParser( &$parser ) {
-		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteHooks::getNumberOfVotesPageParser', Parser::SFH_NO_HASH );
+		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteNYHooks::getNumberOfVotesPageParser', Parser::SFH_NO_HASH );
 	}
 
 	/**

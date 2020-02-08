@@ -21,7 +21,7 @@ class VoteStars extends Vote {
 			$display_stars_rating = $this->getAverageVote();
 		}
 
-	 	$id = '';
+		$id = '';
 
 		// Should probably be $this->PageID or something?
 		// 'cause we define $id just above as an empty string...duh
@@ -36,7 +36,7 @@ class VoteStars extends Vote {
 			$output .= ' <span class="rating-total">(' .
 				wfMessage( 'voteny-votes', $count )->parse() . ')</span>';
 		}
-		$already_voted = $this->UserAlreadyVoted();
+		$already_voted = $this->hasUserAlreadyVoted();
 		if ( $already_voted && $this->User->isLoggedIn() ) {
 			$output .= '<div class="rating-voted">' .
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .

@@ -59,7 +59,7 @@ class ApiVoteNY extends ApiBase {
 					$output = $this->vote->display();
 					break;
 				case 'multi':
-					if ( $this->vote->UserAlreadyVoted() ) {
+					if ( $this->vote->hasUserAlreadyVoted() ) {
 						$this->vote->delete();
 					}
 					$this->vote->insert( $voteValue );
@@ -67,7 +67,7 @@ class ApiVoteNY extends ApiBase {
 					break;
 				case 'vote':
 				default:
-					if ( $this->vote->UserAlreadyVoted() ) {
+					if ( $this->vote->hasUserAlreadyVoted() ) {
 						$this->vote->delete();
 					}
 					$this->vote->insert( $voteValue );
