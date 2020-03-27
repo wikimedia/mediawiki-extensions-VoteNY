@@ -90,7 +90,7 @@ class VoteNYHooks {
 	 * @param string $magicWordId Magic word ID
 	 * @param int $ret Return value (number of votes)
 	 */
-	public static function assignValueToMagicWord( &$parser, &$cache, &$magicWordId, &$ret ) {
+	public static function assignValueToMagicWord( $parser, &$cache, $magicWordId, &$ret ) {
 		global $wgMemc;
 
 		if ( $magicWordId == 'NUMBEROFVOTES' ) {
@@ -103,7 +103,7 @@ class VoteNYHooks {
 					'Got the amount of votes from memcached'
 				);
 				// return value
-				$ret = $data;
+				$ret = $cache[$magicWordId] = $data;
 			} else {
 				// Not cached → have to fetch it from the database
 				$dbr = wfGetDB( DB_REPLICA );
@@ -118,10 +118,10 @@ class VoteNYHooks {
 				// (86400 = seconds in a day)
 				$wgMemc->set( $key, $voteCount, 86400 );
 				// ...and return the value to the user
-				$ret = $voteCount;
+				$ret = $cache[$magicWordId] = $voteCount;
 			}
 		} elseif ( $magicWordId == 'NUMBEROFVOTESPAGE' ) {
-			$ret = self::getNumberOfVotesPage( $parser->getTitle() );
+			$ret = $cache[$magicWordId] = self::getNumberOfVotesPage( $parser->getTitle() );
 		}
 	}
 
