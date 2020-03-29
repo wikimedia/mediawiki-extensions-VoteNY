@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * All hooked functions used by VoteNY extension.
  *
@@ -86,42 +89,32 @@ class VoteNYHooks {
 	 * fails, we fetch it directly from the database and cache it for 24 hours.
 	 *
 	 * @param Parser $parser
-	 * @param $cache
+	 * @param array &$wordCache
 	 * @param string $magicWordId Magic word ID
-	 * @param int $ret Return value (number of votes)
+	 * @param int &$ret Return value (number of votes)
 	 */
-	public static function assignValueToMagicWord( $parser, &$cache, $magicWordId, &$ret ) {
-		global $wgMemc;
+	public static function assignValueToMagicWord( $parser, &$wordCache, $magicWordId, &$ret ) {
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 
 		if ( $magicWordId == 'NUMBEROFVOTES' ) {
-			$key = $wgMemc->makeKey( 'vote', 'magic-word' );
-			$data = $wgMemc->get( $key );
-			if ( $data != '' ) {
-				// We have it in cache? Oh goody, let's just use the cached value!
-				wfDebugLog(
-					'VoteNY',
-					'Got the amount of votes from memcached'
-				);
-				// return value
-				$ret = $cache[$magicWordId] = $data;
-			} else {
-				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_REPLICA );
-				$voteCount = (int)$dbr->selectField(
-					'Vote',
-					'COUNT(*) AS count',
-					[],
-					__METHOD__
-				);
-				wfDebugLog( 'VoteNY', 'Got the amount of votes from DB' );
-				// Store the count in cache...
-				// (86400 = seconds in a day)
-				$wgMemc->set( $key, $voteCount, 86400 );
-				// ...and return the value to the user
-				$ret = $cache[$magicWordId] = $voteCount;
-			}
+			$fname = __METHOD__;
+			$ret = $wordCache[$magicWordId] = $cache->getWithSetCallback(
+				$cache->makeKey( 'vote-magicword' ),
+				$cache::TTL_DAY,
+				function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
+					$dbr = wfGetDB( DB_REPLICA );
+					$setOpts += Database::getCacheSetOptions( $dbr );
+
+					return (int)$dbr->selectField(
+						'Vote',
+						'COUNT(*) AS count',
+						[],
+						$fname
+					);
+				}
+			);
 		} elseif ( $magicWordId == 'NUMBEROFVOTESPAGE' ) {
-			$ret = $cache[$magicWordId] = self::getNumberOfVotesPage( $parser->getTitle() );
+			$ret = $wordCache[$magicWordId] = self::getNumberOfVotesPage( $parser->getTitle() );
 		}
 	}
 
@@ -132,29 +125,26 @@ class VoteNYHooks {
 	 * @return int Number of votes for the given page
 	 */
 	public static function getNumberOfVotesPage( Title $title ) {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 
 		$id = $title->getArticleID();
+		$fname = __METHOD__;
 
-		$key = $wgMemc->makeKey( 'vote', 'magic-word-page', $id );
-		$data = $wgMemc->get( $key );
+		return $cache->getWithSetCallback(
+			$cache->makeKey( 'vote-magicword-page', $id ),
+			$cache::TTL_HOUR,
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
+				$dbr = wfGetDB( DB_REPLICA );
+				$setOpts += Database::getCacheSetOptions( $dbr );
 
-		if ( $data ) {
-			return $data;
-		} else {
-			$dbr = wfGetDB( DB_REPLICA );
-
-			$voteCount = (int)$dbr->selectField(
-				'Vote',
-				'COUNT(*) AS count',
-				[ 'vote_page_id' => $id ],
-				__METHOD__
-			);
-
-			$wgMemc->set( $key, $voteCount, 3600 );
-
-			return $voteCount;
-		}
+				return (int)$dbr->selectField(
+					'Vote',
+					'COUNT(*) AS count',
+					[ 'vote_page_id' => $id ],
+					$fname
+				);
+			}
+		);
 	}
 
 	/**

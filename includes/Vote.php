@@ -31,32 +31,24 @@ class Vote {
 	 * @return int Amount of votes
 	 */
 	function count() {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$fname = __METHOD__;
 
-		$key = $wgMemc->makeKey( 'vote', 'count', $this->PageID );
-		$data = $wgMemc->get( $key );
+		return $cache->getWithSetCallback(
+			$cache->makeKey( 'vote-count', $this->PageID ),
+			$cache::TTL_WEEK,
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
+				$dbr = wfGetDB( DB_REPLICA );
+				$setOpts += Database::getCacheSetOptions( $dbr );
 
-		// Try cache
-		if ( $data ) {
-			wfDebug( "Loading vote count for page {$this->PageID} from cache\n" );
-			$vote_count = $data;
-		} else {
-			$dbr = wfGetDB( DB_REPLICA );
-			$vote_count = 0;
-			$res = $dbr->select(
-				'Vote',
-				'COUNT(*) AS votecount',
-				[ 'vote_page_id' => $this->PageID ],
-				__METHOD__
-			);
-			$row = $dbr->fetchObject( $res );
-			if ( $row ) {
-				$vote_count = $row->votecount;
+				return (int)$dbr->selectField(
+					'Vote',
+					'COUNT(*) AS votecount',
+					[ 'vote_page_id' => $this->PageID ],
+					$fname
+				);
 			}
-			$wgMemc->set( $key, $vote_count );
-		}
-
-		return $vote_count;
+		);
 	}
 
 	/**
@@ -65,29 +57,24 @@ class Vote {
 	 * @return int Formatted average number of votes (something like 3.50)
 	 */
 	function getAverageVote() {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$fname = __METHOD__;
 
-		$key = $wgMemc->makeKey( 'vote', 'avg', $this->PageID );
-		$data = $wgMemc->get( $key );
+		$voteAvg = $cache->getWithSetCallback(
+			$cache->makeKey( 'vote-avg', $this->PageID ),
+			$cache::TTL_WEEK,
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
+				$dbr = wfGetDB( DB_REPLICA );
+				$setOpts += Database::getCacheSetOptions( $dbr );
 
-		$voteAvg = 0;
-		if ( $data ) {
-			wfDebug( "Loading vote avg for page {$this->PageID} from cache\n" );
-			$voteAvg = $data;
-		} else {
-			$dbr = wfGetDB( DB_REPLICA );
-			$res = $dbr->select(
-				'Vote',
-				'AVG(vote_value) AS voteavg',
-				[ 'vote_page_id' => $this->PageID ],
-				__METHOD__
-			);
-			$row = $dbr->fetchObject( $res );
-			if ( $row ) {
-				$voteAvg = $row->voteavg;
+				return (int)$dbr->selectField(
+					'Vote',
+					'AVG(vote_value)',
+					[ 'vote_page_id' => $this->PageID ],
+					$fname
+				);
 			}
-			$wgMemc->set( $key, $voteAvg );
-		}
+		);
 
 		return number_format( $voteAvg, 2 );
 	}
@@ -96,26 +83,18 @@ class Vote {
 	 * Clear caches - memcached, parser cache and Squid cache
 	 */
 	function clearCache() {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 
 		// Kill internal cache
-		$wgMemc->delete( $wgMemc->makeKey( 'vote', 'count', $this->PageID ) );
-		$wgMemc->delete( $wgMemc->makeKey( 'vote', 'avg', $this->PageID ) );
+		$cache->delete( $cache->makeKey( 'vote-count', $this->PageID ) );
+		$cache->delete( $cache->makeKey( 'vote-avg', $this->PageID ) );
 
 		// Purge squid
 		$pageTitle = Title::newFromID( $this->PageID );
 		if ( is_object( $pageTitle ) ) {
+			// Invalidate page caches (including parser cache)
 			$pageTitle->invalidateCache();
 			$pageTitle->purgeSquid();
-
-			// Kill parser cache
-			$article = new Article( $pageTitle, /* oldid */0 );
-			$parserCache = MediaWikiServices::getInstance()->getParserCache();
-			$parserKey = $parserCache->getKey(
-				$article,
-				$this->User
-			);
-			$wgMemc->delete( $parserKey );
 		}
 	}
 

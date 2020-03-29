@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * A special page to display the highest rated pages on the wiki.
  *
@@ -61,7 +64,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$output = '';
 
 		$dbr = wfGetDB( DB_REPLICA );
-		$tables = $where = $joinConds = [];
+		$joinConds = [];
 		$whatToSelect = [ 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' ];
 
 		// By default we have no category and no namespace
@@ -170,26 +173,23 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	 * @return int Average vote for the given page (ID)
 	 */
 	public static function getAverageRatingForPage( $pageId ) {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$fname = __METHOD__;
 
-		$key = $wgMemc->makeKey( 'vote', 'avg', $pageId );
-		$data = $wgMemc->get( $key );
-		$voteAvg = 0;
+		return $cache->getWithSetCallback(
+			$cache->makeKey( 'vote-avg', $pageId ),
+			$cache::TTL_WEEK,
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $pageId, $fname ) {
+				$dbr = wfGetDB( DB_REPLICA );
+				$setOpts += Database::getCacheSetOptions( $dbr );
 
-		if ( $data ) {
-			wfDebug( "Loading vote avg for page {$pageId} from cache (TopRatings)\n" );
-			$voteAvg = $data;
-		} else {
-			$dbr = wfGetDB( DB_REPLICA );
-			$voteAvg = (int)$dbr->selectField(
-				'Vote',
-				'AVG(vote_value) AS VoteAvg',
-				[ 'vote_page_id' => $pageId ],
-				__METHOD__
-			);
-			$wgMemc->set( $key, $voteAvg );
-		}
-
-		return $voteAvg;
+				return (int)$dbr->selectField(
+					'Vote',
+					'AVG(vote_value) AS VoteAvg',
+					[ 'vote_page_id' => $pageId ],
+					$fname
+				);
+			}
+		);
 	}
 }
