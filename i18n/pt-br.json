@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luckas",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Luckas"
 		]
 	},
 	"apihelp-voteny-description": "Módulo da API VoteNY",

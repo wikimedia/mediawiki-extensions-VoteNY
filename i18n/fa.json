@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Ebraminio",
+			"Huji",
 			"Mjbmr",
-			"Omidh",
-			"Huji"
+			"Omidh"
 		]
 	},
 	"voteny-desc": "سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با برچسب <code>&lt;vote&gt;</code>",

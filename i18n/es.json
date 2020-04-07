@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Armando-Martin",
-			"Matiia",
-			"Macofe"
+			"Macofe",
+			"Matiia"
 		]
 	},
 	"voteny-desc": "Votación basada en JavaScript con la etiqueta <code>&lt;vote&gt;</code>",

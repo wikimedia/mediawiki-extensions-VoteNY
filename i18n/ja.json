@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki",
+			"Omotecho",
 			"Otokoume",
-			"Omotecho"
+			"Shirayuki"
 		]
 	},
 	"voteny-desc": "<code>&lt;vote&gt;</code> タグを使用した、JavaScript ベースの投票",

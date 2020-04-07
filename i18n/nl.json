@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mar(c)",
 			"Mitchel Corstjens",
-			"Siebrand",
-			"Mar(c)"
+			"Siebrand"
 		]
 	},
 	"voteny-desc": "Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>",

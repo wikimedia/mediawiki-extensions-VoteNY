@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Guycn2",
 			"Yona b",
-			"חיים",
-			"Guycn2"
+			"חיים"
 		]
 	},
 	"voteny-desc": "הצבעה מבוססת JavaScript עם התג <code>&lt;vote&gt;</code>",

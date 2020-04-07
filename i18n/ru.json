@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kaganer",
-			"Okras",
 			"Alex Great",
-			"Facenapalm"
+			"Facenapalm",
+			"Kaganer",
+			"Okras"
 		]
 	},
 	"apihelp-voteny-description": "Модуль API VoteNY",
