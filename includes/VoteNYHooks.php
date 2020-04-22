@@ -13,7 +13,7 @@ class VoteNYHooks {
 	/**
 	 * Set up the <vote> parser hook.
 	 *
-	 * @param Parser $parser
+	 * @param Parser &$parser
 	 */
 	public static function registerParserHook( &$parser ) {
 		$parser->setHook( 'vote', [ 'VoteNYHooks', 'renderVote' ] );
@@ -167,7 +167,7 @@ class VoteNYHooks {
 	/**
 	 * Register the magic word ID for {{NUMBEROFVOTES}} and {{NUMBEROFVOTESPAGE}}
 	 *
-	 * @param array $variableIds Array of pre-existing variable IDs
+	 * @param array &$variableIds Array of pre-existing variable IDs
 	 */
 	public static function registerVariableId( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFVOTES';
@@ -177,7 +177,7 @@ class VoteNYHooks {
 	/**
 	 * Hook to setup parser function {{NUMBEROFVOTESPAGE:<page>}}
 	 *
-	 * @param Parser $parser
+	 * @param Parser &$parser
 	 */
 	public static function setupNumberOfVotesPageParser( &$parser ) {
 		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteNYHooks::getNumberOfVotesPageParser', Parser::SFH_NO_HASH );
