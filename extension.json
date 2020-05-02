@@ -29,6 +29,7 @@
 		"VoteNYMagic": "includes/VoteNY.i18n.magic.php"
 	},
 	"AutoloadClasses": {
+		"MigrateOldVoteUserColumnsToActor": "maintenance/migrateOldVoteUserColumnsToActor.php",
 		"ApiVoteNY": "includes/api/ApiVoteNY.php",
 		"Vote": "includes/Vote.php",
 		"VoteStars": "includes/VoteStars.php",

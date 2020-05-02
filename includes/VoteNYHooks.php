@@ -192,7 +192,8 @@ class VoteNYHooks {
 	public static function addTable( $updater ) {
 		$db = $updater->getDB();
 		$dbt = $db->getType();
-		$sqlPath = __DIR__ . '/../sql';
+		$dir = __DIR__ . '/..';
+		$sqlPath = "{$dir}/sql";
 		// If using SQLite, just use the MySQL/MariaDB schema, it's compatible
 		// anyway. Only PGSQL and some more exotic variants need a totally
 		// different schema.
@@ -210,6 +211,12 @@ class VoteNYHooks {
 		// Actor support (see T227345)
 		if ( $db->tableExists( 'Vote' ) && !$db->fieldExists( 'Vote', 'vote_actor', __METHOD__ ) ) {
 			$updater->addExtensionField( 'Vote', 'vote_actor', "$sqlPath/patch-add-vote_actor-column.$dbt" );
+
+			$updater->addExtensionUpdate( [
+				'runMaintenance',
+				'MigrateOldVoteUserColumnsToActor',
+				"$dir/maintenance/migrateOldVoteUserColumnsToActor.php"
+			] );
 		}
 	}
 }
