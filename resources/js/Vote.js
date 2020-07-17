@@ -63,6 +63,7 @@ var VoteNY = function VoteNY() {
 	/**
 	 * Called when adding a vote after a user has clicked the yellow voting stars
 	 *
+	 * @param TheVote
 	 * @param PageID Integer: internal ID number of the current article
 	 * @param id Integer: ID of the current rating star
 	 * @param action Integer: controls which AJAX function will be called
