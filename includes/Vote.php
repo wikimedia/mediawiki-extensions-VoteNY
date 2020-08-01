@@ -143,7 +143,7 @@ class Vote {
 				[
 					'vote_page_id' => $this->PageID,
 					'vote_value' => $voteValue,
-					'vote_date' => $voteDate,
+					'vote_date' => $dbw->timestamp( $voteDate ),
 					'vote_ip' => $wgRequest->getIP(),
 					'vote_actor' => $this->User->getActorId()
 				],
