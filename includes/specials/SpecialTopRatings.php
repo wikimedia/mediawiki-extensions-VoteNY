@@ -60,52 +60,9 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		}
 		*/
 
-		$ratings = [];
 		$output = '';
 
-		$dbr = wfGetDB( DB_REPLICA );
-		$joinConds = [];
-		$whatToSelect = [ 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' ];
-
-		// By default we have no category and no namespace
-		$tables = [ 'Vote' ];
-		$where = [ 'vote_page_id <> 0' ];
-
-		// isset(), because 0 is a totally valid NS
-		if ( !empty( $categoryName ) && isset( $namespace ) ) {
-			$tables = [ 'Vote', 'page', 'categorylinks' ];
-			$where = [
-				'vote_page_id <> 0',
-				'cl_to' => str_replace( ' ', '_', $categoryName ),
-				'page_namespace' => $namespace
-			];
-			$joinConds = [
-				'categorylinks' => [ 'INNER JOIN', 'cl_from = page_id' ],
-				'page' => [ 'INNER JOIN', 'page_id = vote_page_id' ]
-			];
-		}
-
-		// Perform the SQL query with the given conditions; the basic idea is
-		// that we get $limit (however, 100 or less) unique page IDs from the
-		// Vote table. The GROUP BY is to make SUM(vote_value) give the SUM of
-		// all vote_values for a page. If a category and a namespace have been
-		// given, we also do an INNER JOIN with page and categorylinks table
-		// to get the correct data.
-		$res = $dbr->select(
-			$tables,
-			$whatToSelect,
-			$where,
-			__METHOD__,
-			[ 'GROUP BY' => 'vote_page_id', 'LIMIT' => intval( $limit ) ],
-			$joinConds
-		);
-
-		foreach ( $res as $row ) {
-			// Add the results to the $ratings array
-			// For example: $ratings[1] = 11 = page with the page ID 1 has 11
-			// votes
-			$ratings[$row->vote_page_id] = (int)$row->vote_value_sum;
-		}
+		$ratings = self::getTopRatings( $limit, $categoryName, $namespace );
 
 		// If we have some ratings, start building HTML output
 		if ( !empty( $ratings ) ) {
@@ -191,5 +148,62 @@ class SpecialTopRatings extends IncludableSpecialPage {
 				);
 			}
 		);
+	}
+
+	/**
+	 * Get the $limit top rated pages, optionally in $categoryName a non-NS_MAIN $namespace.
+	 *
+	 * @param int $limit LIMIT for the SQL query (get this many records)
+	 * @param string $categoryName Category name, if any; if this contains spaces they are replaced with underscores
+	 * @param int $namespace Namespace index, if fetching pages from a non-NS_MAIN NS
+	 * @return array Array of page ID => total votes mappings
+	 */
+	public static function getTopRatings( $limit = 10, $categoryName = '', $namespace = 0 ) {
+		$dbr = wfGetDB( DB_REPLICA );
+		$ratings = [];
+		$joinConds = [];
+		$whatToSelect = [ 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' ];
+
+		// By default we have no category and no namespace
+		$tables = [ 'Vote' ];
+		$where = [ 'vote_page_id <> 0' ];
+
+		// isset(), because 0 is a totally valid NS
+		if ( !empty( $categoryName ) && isset( $namespace ) ) {
+			$tables = [ 'Vote', 'page', 'categorylinks' ];
+			$where = [
+				'vote_page_id <> 0',
+				'cl_to' => str_replace( ' ', '_', $categoryName ),
+				'page_namespace' => $namespace
+			];
+			$joinConds = [
+				'categorylinks' => [ 'INNER JOIN', 'cl_from = page_id' ],
+				'page' => [ 'INNER JOIN', 'page_id = vote_page_id' ]
+			];
+		}
+
+		// Perform the SQL query with the given conditions; the basic idea is
+		// that we get $limit (however, 100 or less) unique page IDs from the
+		// Vote table. The GROUP BY is to make SUM(vote_value) give the SUM of
+		// all vote_values for a page. If a category and a namespace have been
+		// given, we also do an INNER JOIN with page and categorylinks table
+		// to get the correct data.
+		$res = $dbr->select(
+			$tables,
+			$whatToSelect,
+			$where,
+			__METHOD__,
+			[ 'GROUP BY' => 'vote_page_id', 'LIMIT' => intval( $limit ) ],
+			$joinConds
+		);
+
+		foreach ( $res as $row ) {
+			// Add the results to the $ratings array
+			// For example: $ratings[1] = 11 = page with the page ID 1 has 11
+			// votes
+			$ratings[$row->vote_page_id] = (int)$row->vote_value_sum;
+		}
+
+		return $ratings;
 	}
 }
