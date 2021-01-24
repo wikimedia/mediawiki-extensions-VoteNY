@@ -4,6 +4,7 @@
  */
 class VoteStars extends Vote {
 
+	/** @var int */
 	public $maxRating = 5;
 
 	/**

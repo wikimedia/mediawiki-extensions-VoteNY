@@ -10,7 +10,9 @@
 use MediaWiki\MediaWikiServices;
 
 class Vote {
+	/** @var int */
 	public $PageID = 0;
+	/** @var User */
 	public $User;
 
 	/**
