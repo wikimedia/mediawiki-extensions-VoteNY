@@ -26,7 +26,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param mixed|null $par Parameter passed to the special page or null
+	 * @param string|null $par Parameter passed to the special page or null
 	 */
 	public function execute( $par ) {
 		// Set the page title, robot policies, etc.

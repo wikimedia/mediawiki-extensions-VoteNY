@@ -94,21 +94,19 @@ class ApiVoteNY extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(),
 			[ 'result' => $output ]
 		);
-
-		return true;
 	}
 
+	/** @inheritDoc */
 	public function needsToken() {
 		return 'csrf';
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'what' => [
@@ -128,9 +126,7 @@ class ApiVoteNY extends ApiBase {
 		];
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=voteny&what=vote&pageId=666' => 'apihelp-voteny-example-1',
