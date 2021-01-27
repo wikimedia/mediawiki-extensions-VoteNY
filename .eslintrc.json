@@ -17,6 +17,7 @@
 		"no-unused-vars": "off",
 		"valid-jsdoc": "off",
 		"vars-on-top": "off",
-		"es/no-object-assign": "warn"
+		"es/no-object-assign": "warn",
+		"compat/compat": "warn"
 	}
 }
