@@ -3,6 +3,9 @@
  * @file
  * @ingroup Maintenance
  */
+
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -61,10 +64,16 @@ class MigrateOldVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 			// We check that the id does not equal 0 because
 			// if a wiki has already migrated, new entries will have 0.
 			if ( $user->getId() != 0 ) {
+				if ( interface_exists( '\MediaWiki\User\ActorNormalization' ) ) {
+					// MW 1.36+
+					$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user );
+				} else {
+					$actorId = $user->getActorId( $dbw );
+				}
 				$dbw->update(
 					'Vote',
 					[
-						'vote_actor' => $user->getActorId( $dbw )
+						'vote_actor' => $actorId
 					],
 					[
 						'vote_user_id' => $row->vote_user_id
