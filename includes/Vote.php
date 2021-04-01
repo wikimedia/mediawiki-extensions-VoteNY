@@ -69,7 +69,7 @@ class Vote {
 				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return (int)$dbr->selectField(
+				return (float)$dbr->selectField(
 					'Vote',
 					'AVG(vote_value)',
 					[ 'vote_page_id' => $this->PageID ],
