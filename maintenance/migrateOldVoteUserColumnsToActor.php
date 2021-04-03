@@ -20,8 +20,9 @@ require_once "$IP/maintenance/Maintenance.php";
 class MigrateOldVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 	public function __construct() {
 		parent::__construct();
-		// @codingStandardsIgnoreLine
-		$this->addDescription( 'Migrates data from old vote_user_id column in the Vote table to the new actor columns.' );
+		$this->addDescription(
+			'Migrates data from old vote_user_id column in the Vote table to the new actor columns.'
+		);
 	}
 
 	/**
