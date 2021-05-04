@@ -136,7 +136,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		return $cache->getWithSetCallback(
 			$cache->makeKey( 'vote-avg', $pageId ),
 			$cache::TTL_WEEK,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $pageId, $fname ) {
+			static function ( $oldValue, &$ttl, &$setOpts ) use ( $pageId, $fname ) {
 				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 

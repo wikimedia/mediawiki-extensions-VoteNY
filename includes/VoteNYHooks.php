@@ -101,7 +101,7 @@ class VoteNYHooks {
 			$ret = $wordCache[$magicWordId] = $cache->getWithSetCallback(
 				$cache->makeKey( 'vote-magicword' ),
 				$cache::TTL_DAY,
-				function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
+				static function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
 					$dbr = wfGetDB( DB_REPLICA );
 					$setOpts += Database::getCacheSetOptions( $dbr );
 
@@ -133,7 +133,7 @@ class VoteNYHooks {
 		return $cache->getWithSetCallback(
 			$cache->makeKey( 'vote-magicword-page', $id ),
 			$cache::TTL_HOUR,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
+			static function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
 				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
