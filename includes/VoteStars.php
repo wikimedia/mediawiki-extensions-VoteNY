@@ -38,7 +38,7 @@ class VoteStars extends Vote {
 				wfMessage( 'voteny-votes', $count )->parse() . ')</span>';
 		}
 		$already_voted = $this->hasUserAlreadyVoted();
-		if ( $already_voted && $this->User->isLoggedIn() ) {
+		if ( $already_voted && $this->User->isRegistered() ) {
 			$output .= '<div class="rating-voted">' .
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
