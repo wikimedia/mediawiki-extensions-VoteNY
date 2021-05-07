@@ -26,6 +26,7 @@ class ApiVoteNY extends ApiBase {
 		$action = $params['what'];
 
 		// If the "what" param isn't present, we don't know what to do!
+		// @phan-suppress-next-line PhanImpossibleTypeComparison
 		if ( !$action || $action === null ) {
 			$this->dieWithError( [ 'apierror-missingparam', 'what' ] );
 		}
@@ -38,6 +39,7 @@ class ApiVoteNY extends ApiBase {
 		// Ensure that the page ID is present and that it really is numeric
 		$pageId = $params['pageId'];
 
+		// @phan-suppress-next-line PhanImpossibleTypeComparison
 		if ( !$pageId || $pageId === null || !is_numeric( $pageId ) ) {
 			$this->dieWithError( [ 'apierror-missingparam', 'pageId' ] );
 		}
@@ -80,12 +82,12 @@ class ApiVoteNY extends ApiBase {
 			switch ( $action ) {
 				case 'delete':
 					$this->vote->delete();
-					$output = $this->vote->count( 1 );
+					$output = $this->vote->count();
 					break;
 				case 'vote':
 				default:
 					$this->vote->insert( $voteValue );
-					$output = $this->vote->count( 1 );
+					$output = $this->vote->count();
 					break;
 			}
 		}

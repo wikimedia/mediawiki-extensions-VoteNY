@@ -56,7 +56,7 @@ class Vote {
 	/**
 	 * Gets the average score of all votes
 	 *
-	 * @return int Formatted average number of votes (something like 3.50)
+	 * @return string Formatted average number of votes (something like 3.50)
 	 */
 	function getAverageVote() {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
@@ -211,15 +211,15 @@ class Vote {
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
 			$output .= '<a class="votebutton" href="' .
 				htmlspecialchars( $login->getFullURL() ) . '" rel="nofollow">' .
-				wfMessage( 'voteny-link' )->plain() . '</a>';
+				wfMessage( 'voteny-link' )->escaped() . '</a>';
 		} else {
 			if ( !wfReadOnly() ) {
 				if ( $voted == false ) {
 					$output .= '<a href="javascript:void(0);" class="vote-vote-link">' .
-						wfMessage( 'voteny-link' )->plain() . '</a>';
+						wfMessage( 'voteny-link' )->escaped() . '</a>';
 				} else {
 					$output .= '<a href="javascript:void(0);" class="vote-unvote-link">' .
-						wfMessage( 'voteny-unvote-link' )->plain() . '</a>';
+						wfMessage( 'voteny-unvote-link' )->escaped() . '</a>';
 				}
 			}
 		}
