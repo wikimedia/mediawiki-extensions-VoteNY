@@ -22,16 +22,14 @@ class VoteStars extends Vote {
 			$display_stars_rating = $this->getAverageVote();
 		}
 
-		$id = '';
+		$id = $this->PageID;
 
-		// Should probably be $this->PageID or something?
-		// 'cause we define $id just above as an empty string...duh
 		$output = '<div id="rating_' . $id . '">';
 		$output .= '<div class="rating-score">';
 		$output .= '<div class="voteboxrate">' . $overall_rating . '</div>';
 		$output .= '</div>';
 		$output .= '<div class="rating-section">';
-		$output .= $this->displayStars( $id, $display_stars_rating, $voted );
+		$output .= $this->displayStars( $id, (int)$display_stars_rating, $voted );
 		$count = $this->count();
 		if ( isset( $count ) ) {
 			$output .= ' <span class="rating-total">(' .
@@ -43,7 +41,7 @@ class VoteStars extends Vote {
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
 			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\" data-page-id=\"{$this->PageID}\" data-vote-id=\"{$id}\">("
-				. wfMessage( 'voteny-remove' )->plain() .
+				. wfMessage( 'voteny-remove' )->escaped() .
 			')</a>';
 		}
 		$output .= '</div>
@@ -59,7 +57,7 @@ class VoteStars extends Vote {
 	 *
 	 * @param int $id ID of the rating (div) element
 	 * @param int $rating Average rating
-	 * @param int $voted
+	 * @param int|bool $voted
 	 * @return string Generated <img> tag
 	 */
 	function displayStars( $id, $rating, $voted ) {
@@ -114,8 +112,8 @@ class VoteStars extends Vote {
 	 */
 	function displayScore() {
 		$count = $this->count();
-		return wfMessage( 'voteny-community-score', '<b>' . $this->getAverageVote() . '</b>' )
-			->numParams( $count )->text() .
+		return wfMessage( 'voteny-community-score', $this->getAverageVote() )
+			->numParams( $count )->parse() .
 			' (' . wfMessage( 'voteny-ratings' )->numParams( $count )->parse() . ')';
 	}
 

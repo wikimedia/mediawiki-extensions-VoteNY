@@ -19,7 +19,7 @@
 	"voteny-desc": "JavaScript-based voting with the <code>&lt;vote&gt;</code> tag",
 	"voteny-link": "Vote",
 	"voteny-unvote-link": "unvote",
-	"voteny-community-score": "community score: $1",
+	"voteny-community-score": "community score: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|one rating|$1 ratings}}",
 	"voteny-remove": "remove",
 	"voteny-gave-this": "you gave this a $1",
