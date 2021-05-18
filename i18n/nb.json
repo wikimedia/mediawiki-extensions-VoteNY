@@ -18,7 +18,7 @@
 	"voteny-desc": "JavaScript-basert avstemning med taggen <code>&lty;vote&gt;</code>",
 	"voteny-link": "Stem",
 	"voteny-unvote-link": "Fjern stemme",
-	"voteny-community-score": "fellesskapspoeng: $1",
+	"voteny-community-score": "fellesskapspoeng: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|én vurdering|$1 vurderinger}}",
 	"voteny-remove": "fjern",
 	"voteny-gave-this": "du ga denne $1",

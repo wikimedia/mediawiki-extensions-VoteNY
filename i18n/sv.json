@@ -7,7 +7,7 @@
 	"voteny-desc": "JavaScript-baserad omröstning med taggen <code>&lt;vote&gt;</code>",
 	"voteny-link": "Rösta",
 	"voteny-unvote-link": "ta bort röst",
-	"voteny-community-score": "gemenskapspoäng: $1",
+	"voteny-community-score": "gemenskapspoäng: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|ett betyg|$1 betyg}}",
 	"voteny-remove": "ta bort",
 	"voteny-gave-this": "du gav detta $1",

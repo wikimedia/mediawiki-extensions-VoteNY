@@ -6,7 +6,7 @@
 	},
 	"voteny-link": "ඡන්දය දෙන්න",
 	"voteny-unvote-link": "මනාපය ලබා නොදෙන්න",
-	"voteny-community-score": "ප්‍රජා ලකුණ: $1",
+	"voteny-community-score": "ප්‍රජා ලකුණ: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|තරාතිරමක්|තරාතිරම් $1 ක්}}",
 	"voteny-remove": "ඉවත් කරන්න",
 	"voteny-gave-this": "ඔබ මෙයට $1 දී ඇත",

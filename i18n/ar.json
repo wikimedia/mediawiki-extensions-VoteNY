@@ -18,7 +18,7 @@
 	"voteny-desc": "التصويت المبني على جافا سكريبت بالوسم <code>&lt;vote&gt;</code>",
 	"voteny-link": "تصويت",
 	"voteny-unvote-link": "إزالة التصويت",
-	"voteny-community-score": "النتيجة المجتمعية: $1",
+	"voteny-community-score": "النتيجة المجتمعية: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|تقييم واحد|$1 تقييمات}}",
 	"voteny-remove": "إزالة",
 	"voteny-gave-this": "لقد أعطيت هذا $1",

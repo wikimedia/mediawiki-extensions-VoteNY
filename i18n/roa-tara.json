@@ -18,7 +18,7 @@
 	"voteny-desc": "Votazione ca se base sus a JavaScript cu 'u tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vote",
 	"voteny-unvote-link": "no vutà",
-	"voteny-community-score": "pundegge d'a comunitate: $1",
+	"voteny-community-score": "pundegge d'a comunitate: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|'na valutazione|$1 valutaziune}}",
 	"voteny-remove": "live",
 	"voteny-gave-this": "Tu è date quiste $1",

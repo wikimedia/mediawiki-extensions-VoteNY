@@ -9,7 +9,7 @@
 	"voteny-desc": "Sistema di voto basato su JavaScript con il tag <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vota",
 	"voteny-unvote-link": "rimuovi voto",
-	"voteny-community-score": "punteggio della comunità: $1",
+	"voteny-community-score": "punteggio della comunità: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|un giudizio|$1 giudizi}}",
 	"voteny-remove": "rimuovi",
 	"voteny-gave-this": "hai dato $1",

@@ -8,7 +8,7 @@
 	"voteny-desc": "Botohan na nakabatay sa JavaScript na mayroong tatak na <code>&lt;bumoto&gt;</code>",
 	"voteny-link": "Bumoto",
 	"voteny-unvote-link": "huwag bumoto",
-	"voteny-community-score": "puntos ng pamayanan: $1",
+	"voteny-community-score": "puntos ng pamayanan: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|isang pag-aantas|$1 mga pag-aantas}}",
 	"voteny-remove": "tanggalin",
 	"voteny-gave-this": "binigyan mo ito ng isang $1",

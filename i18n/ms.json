@@ -7,7 +7,7 @@
 	"voteny-desc": "Pengundian berasaskan JavaScript dengan teg <code>&lt;vote&gt;</code>",
 	"voteny-link": "Undi",
 	"voteny-unvote-link": "tarik balik undi",
-	"voteny-community-score": "markah komuniti: $1",
+	"voteny-community-score": "markah komuniti: '''$1'''",
 	"voteny-ratings": "$1 penilaian",
 	"voteny-remove": "buang",
 	"voteny-gave-this": "anda memberi yang ini $1",

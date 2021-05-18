@@ -8,7 +8,7 @@
 	"voteny-desc": "Votassion basà dzor JavaScript con la tichëtta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Voté",
 	"voteny-unvote-link": "scancelé vot",
-	"voteny-community-score": "Pontegi dla comunità: $1",
+	"voteny-community-score": "Pontegi dla comunità: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|na valutassion|$1 valutassion}}",
 	"voteny-remove": "gava",
 	"voteny-gave-this": "It l'has daje un $1",

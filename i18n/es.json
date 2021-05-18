@@ -9,7 +9,7 @@
 	"voteny-desc": "Votación basada en JavaScript con la etiqueta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Votar",
 	"voteny-unvote-link": "Eliminar voto",
-	"voteny-community-score": "puntuación de la comunidad: $1",
+	"voteny-community-score": "puntuación de la comunidad: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|una valoración|$1 valoraciones}}",
 	"voteny-remove": "eliminar",
 	"voteny-gave-this": "le diste a esto un $1",

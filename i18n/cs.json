@@ -9,7 +9,7 @@
 	"apihelp-voteny-param-voteValue": "Numerický hlas v rozmezí 1 a 5",
 	"voteny-link": "Hlasovat",
 	"voteny-unvote-link": "Anulovat",
-	"voteny-community-score": "skóre komunity: $1",
+	"voteny-community-score": "skóre komunity: '''$1'''",
 	"voteny-remove": "odstranit",
 	"voteny-gave-this": "dal jsi tomuto $1",
 	"topratings": "Nejlépe hodnocené stránky",

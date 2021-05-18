@@ -21,7 +21,7 @@
 	"voteny-desc": "基於JavaScript的投票與<code>&lt;vote&gt;</code>標記",
 	"voteny-link": "投票",
 	"voteny-unvote-link": "取消投票",
-	"voteny-community-score": "社群積分：$1",
+	"voteny-community-score": "社群積分：'''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|$1個評級}}",
 	"voteny-remove": "移除",
 	"voteny-gave-this": "你給了$1分",

@@ -7,7 +7,7 @@
 	},
 	"voteny-link": "Äänestä",
 	"voteny-unvote-link": "poista ääni",
-	"voteny-community-score": "yhteisön antama pistemäärä: $1",
+	"voteny-community-score": "yhteisön antama pistemäärä: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|yksi arvostelu|$1 arvostelua}}",
 	"voteny-remove": "poista",
 	"voteny-gave-this": "annoit {{PLURAL:$1|yhden tähden|$1 tähteä}}",

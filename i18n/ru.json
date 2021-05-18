@@ -21,7 +21,7 @@
 	"voteny-desc": "Голосование на основе JavaScript с использованием тега <code>&lt;vote&gt;</code>",
 	"voteny-link": "Голосовать",
 	"voteny-unvote-link": "отменить выбор",
-	"voteny-community-score": "Оценка сообщества: $1",
+	"voteny-community-score": "Оценка сообщества: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|$1 балл|$1 балла|$1 баллов}}",
 	"voteny-remove": "отменить",
 	"voteny-gave-this": "Вы поставили $1",

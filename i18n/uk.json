@@ -20,7 +20,7 @@
 	"voteny-desc": "Голосування на основі JavaScript із теґом <code>&lt;vote&gt;</code>",
 	"voteny-link": "Голосувати",
 	"voteny-unvote-link": "скасувати голос",
-	"voteny-community-score": "оцінка спільноти: $1",
+	"voteny-community-score": "оцінка спільноти: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|один голос|$1 голоси|$1 голосів}}",
 	"voteny-remove": "вилучити",
 	"voteny-gave-this": "Ви оцінили це як $1",

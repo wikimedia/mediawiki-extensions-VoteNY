@@ -7,7 +7,7 @@
 	"voteny-desc": "Wótgłosowanje z toflicku <code>&lt;vote&gt;</code> na zakłaźe JavaScripta",
 	"voteny-link": "Wótgłosowaś",
 	"voteny-unvote-link": "Wótgłosowanje anulěrowaś",
-	"voteny-community-score": "Licba głosow zgromaźeństwa: $1",
+	"voteny-community-score": "Licba głosow zgromaźeństwa: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|jadno pógódnośenje|$1 pógódnośeni|$1 pógódnośenja|$1 pógódnośenjow}}",
 	"voteny-remove": "wótpóraś",
 	"voteny-gave-this": "sy toś tomu $1 dał",

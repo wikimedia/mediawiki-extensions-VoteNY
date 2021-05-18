@@ -7,7 +7,7 @@
 	},
 	"voteny-link": "Rey",
 	"voteny-unvote-link": "rey mede",
-	"voteny-community-score": "Puwanê şêlıki: $1",
+	"voteny-community-score": "Puwanê şêlıki: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|yew nırğnayış|$1 nırğnayışi}}",
 	"voteny-remove": "wedare",
 	"voteny-votes": "{{PLURAL:$1|yew rey|$1 reyi}}",

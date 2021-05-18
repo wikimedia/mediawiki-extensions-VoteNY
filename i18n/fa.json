@@ -10,7 +10,7 @@
 	"voteny-desc": "سامانه‌ای بر اساس جاوااسکریپت برای رای‌گیری با برچسب <code>&lt;vote&gt;</code>",
 	"voteny-link": "رأی دهی",
 	"voteny-unvote-link": "حذف رأی",
-	"voteny-community-score": "امتیاز کلی: $1",
+	"voteny-community-score": "امتیاز کلی: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|یک امتیاز|$1 امتیاز}}",
 	"voteny-remove": "حذف",
 	"voteny-gave-this": "شما $1 امتیاز دادید",

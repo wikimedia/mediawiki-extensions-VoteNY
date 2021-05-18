@@ -7,7 +7,7 @@
 	"voteny-desc": "Votació basada en JavaScript amb l'etiqueta <code>&lt;vote&gt;</code>",
 	"voteny-link": "Vota",
 	"voteny-unvote-link": "anul·la el vot",
-	"voteny-community-score": "puntuació comunitària: $1",
+	"voteny-community-score": "puntuació comunitària: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|una valoració|$1 valoracions}}",
 	"voteny-remove": "anul·la",
 	"voteny-gave-this": "vau donar-li un $1",

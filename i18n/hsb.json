@@ -7,7 +7,7 @@
 	"voteny-desc": "Wothłosowanje z tafličku <code>&lt;vote&gt;</code> na zakładźe JavaScripta",
 	"voteny-link": "Wothłosować",
 	"voteny-unvote-link": "Wothłosowanje anulować",
-	"voteny-community-score": "Ličba hłosow zhromadźenstwa: $1",
+	"voteny-community-score": "Ličba hłosow zhromadźenstwa: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|jedne pohódnoćenje|$1 pohódnoćeni|$1 pohódnoćenja|$1 pohódnoćenjow}}",
 	"voteny-remove": "wotstronić",
 	"voteny-gave-this": "sy tutomu $1 dał",

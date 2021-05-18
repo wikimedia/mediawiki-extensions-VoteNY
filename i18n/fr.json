@@ -23,7 +23,7 @@
 	"voteny-desc": "Système de vote en JavaScript avec la balise <code>&lt;vote&gt;</code>",
 	"voteny-link": "Voter",
 	"voteny-unvote-link": "supprimer vote",
-	"voteny-community-score": "note de la communauté : $1",
+	"voteny-community-score": "note de la communauté : '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|une note|$1 notes}}",
 	"voteny-remove": "supprimer",
 	"voteny-gave-this": "Vous avez noté $1",
