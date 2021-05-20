@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"Melissadilara"
 		]
 	},
 	"apihelp-voteny-description": "VoteNY API modülü",
@@ -18,7 +19,7 @@
 	"voteny-desc": "<code>&lt;vote&gt;</code> etiketi ile JavaScript tabanlı oylama",
 	"voteny-link": "Oyla",
 	"voteny-unvote-link": "oylama",
-	"voteny-community-score": "topluluk skoru: '''$1'''",
+	"voteny-community-score": "topluluk puanı: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|bir oylama|$1 oylama}}",
 	"voteny-remove": "kaldır",
 	"voteny-gave-this": "buna $1 verdin",
