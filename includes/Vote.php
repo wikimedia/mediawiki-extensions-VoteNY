@@ -105,7 +105,7 @@ class Vote {
 	 * updates SocialProfile's statistics, if SocialProfile is active.
 	 */
 	function delete() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$dbw->delete(
 			'Vote',
@@ -133,7 +133,7 @@ class Vote {
 	function insert( $voteValue ) {
 		global $wgRequest;
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		Wikimedia\suppressWarnings(); // E_STRICT whining
 		$voteDate = date( 'Y-m-d H:i:s' );
