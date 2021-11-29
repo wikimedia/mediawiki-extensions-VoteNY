@@ -39,7 +39,13 @@ class VoteNYHooks {
 		// registerParserHook(), we must've disabled parser cache
 		$po->addModuleStyles( 'ext.voteNY.styles' );
 
-		$user = $parser->getUser();
+		if ( method_exists( $parser, 'getUserIdentity' ) ) {
+			// MW 1.36+
+			$user = MediaWikiServices::getInstance()->getUserFactory()
+				->newFromUserIdentity( $parser->getUserIdentity() );
+		} else {
+			$user = $parser->getUser();
+		}
 		if ( $user->isAllowed( 'voteny' ) ) {
 			$po->addModules( 'ext.voteNY.scripts' );
 		}
