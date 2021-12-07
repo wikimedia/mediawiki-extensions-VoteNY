@@ -4,5 +4,6 @@
 			"Milicevic01"
 		]
 	},
+	"voteny-desc": "Glasanje bazirano na Javaskriptu preko taga <code>&lt;vote&gt;</code>",
 	"right-voteny": "glasanje za stranice"
 }
