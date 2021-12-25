@@ -213,7 +213,7 @@ class Vote {
 				htmlspecialchars( $login->getFullURL() ) . '" rel="nofollow">' .
 				wfMessage( 'voteny-link' )->escaped() . '</a>';
 		} else {
-			if ( !wfReadOnly() ) {
+			if ( !MediaWikiServices::getInstance()->getReadOnlyMode()->isReadOnly() ) {
 				if ( $voted == false ) {
 					$output .= '<a href="javascript:void(0);" class="vote-vote-link">' .
 						wfMessage( 'voteny-link' )->escaped() . '</a>';
