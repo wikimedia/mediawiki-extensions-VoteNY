@@ -37,7 +37,7 @@ class VoteNYHooks {
 		// Add CSS & JS
 		// In order for us to do this *here* instead of having to do this in
 		// registerParserHook(), we must've disabled parser cache
-		$po->addModuleStyles( 'ext.voteNY.styles' );
+		$po->addModuleStyles( [ 'ext.voteNY.styles' ] );
 
 		if ( method_exists( $parser, 'getUserIdentity' ) ) {
 			// MW 1.36+
@@ -47,7 +47,7 @@ class VoteNYHooks {
 			$user = $parser->getUser();
 		}
 		if ( $user->isAllowed( 'voteny' ) ) {
-			$po->addModules( 'ext.voteNY.scripts' );
+			$po->addModules( [ 'ext.voteNY.scripts' ] );
 		}
 
 		// Define variable - 0 means that we'll get that green voting box by default
