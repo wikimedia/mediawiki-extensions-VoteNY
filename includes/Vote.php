@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\Database;
 
 class Vote {
 	/** @var int */
