@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chaduvari"
+		]
+	},
+	"apihelp-voteny-description": "VoteNY API మాడ్యూలు",
+	"apihelp-voteny-summary": "VoteNY API మాడ్యూలు",
+	"apihelp-voteny-param-voteValue": "వోటు విలువ 1-5 మధ్య",
+	"apihelp-voteny-example-1": "ఐడీ సంఖ్య 666 కలిగిన పేజీకి వోటు వెయ్యండి",
+	"apihelp-voteny-example-2": "ఐడీ సంఖ్య 666 కలిగిన పేజీలో మీరు వేసిన వోటును తొలగించండి",
+	"apihelp-voteny-example-3": "ఐడీ సంఖ్య 666 కలిగిన పేజీకి వోటు (5 తారకల్లో 3) వెయ్యండి",
+	"apihelp-voteny-example-4": "తారకల రేటింగు వాడుతున్న, ఐడీ సంఖ్య 666 కలిగిన పేజీకి మీరు వేసిన వోటును తొలగించండి",
+	"apihelp-voteny-example-5": "ఐడీ సంఖ్య 666 కలిగిన పేజీకి మీరు గతంలో వోటు వేసి ఉంటే, దాన్ని తొలగించి దానికి మళ్ళీ వోటు (5 తారకల్లో 4) వెయ్యండి",
+	"voteny-link": "వోటు వెయ్యండి",
+	"voteny-unvote-link": "వేసిన వోటును తీసెయ్యండి",
+	"voteny-ratings": "{{PLURAL:$1|ఒక రేటింగు|$1 రేటింగులు}}",
+	"voteny-remove": "తీసివెయ్యి",
+	"voteny-gave-this": "మీరు దీనికి ఒక $1 ఇచ్చారు",
+	"voteny-votes": "{{PLURAL:$1|ఒక వోటు|$1 వోట్లు}}",
+	"topratings": "అత్యధిక రేటింగు ఉన్న అగ్ర పేజీలు",
+	"topratings-no-pages": "అత్యధిక రేటింగు ఉన్న అగ్ర పేజీలేమీ లేవు.",
+	"action-voteny": "పేజీలకు వోటు వేసే",
+	"right-voteny": "పేజీలకు వోటు వెయ్యడం"
+}
