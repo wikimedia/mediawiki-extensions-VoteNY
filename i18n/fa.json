@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beginneruser",
 			"Ebraminio",
 			"Huji",
 			"Mjbmr",
@@ -15,7 +16,7 @@
 	"voteny-remove": "حذف",
 	"voteny-gave-this": "شما $1 امتیاز دادید",
 	"voteny-votes": "{{PLURAL:$1|یک رای|$1 رای}}",
-	"topratings": "صفحات دارای امتیاز بالا",
+	"topratings": "صفحه‌های دارای امتیاز بالا",
 	"topratings-no-pages": "صفحه‌هایی با امتیاز بالا وجود ندارند.",
 	"right-voteny": "صفحه‌های رأی"
 }
