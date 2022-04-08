@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\AtEase\AtEase;
 use Wikimedia\Rdbms\Database;
 
 class Vote {
@@ -136,9 +137,9 @@ class Vote {
 
 		$dbw = wfGetDB( DB_PRIMARY );
 
-		Wikimedia\suppressWarnings(); // E_STRICT whining
+		AtEase::suppressWarnings(); // E_STRICT whining
 		$voteDate = date( 'Y-m-d H:i:s' );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 
 		if ( $this->hasUserAlreadyVoted() == false ) {
 			$dbw->insert(
