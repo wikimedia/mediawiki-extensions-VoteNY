@@ -4,7 +4,8 @@
 			"Hanyanbo98",
 			"Liuxinyu970226",
 			"Shirayuki",
-			"Yfdyh000"
+			"Yfdyh000",
+			"StarrySky"
 		]
 	},
 	"apihelp-voteny-description": "VoteNY API模块",
@@ -28,5 +29,6 @@
 	"voteny-votes": "{{PLURAL:$1|$1票}}",
 	"topratings": "最受好评的页面",
 	"topratings-no-pages": "没有最受好评的页面。",
+	"action-voteny": "投票页面",
 	"right-voteny": "投票页面"
 }
