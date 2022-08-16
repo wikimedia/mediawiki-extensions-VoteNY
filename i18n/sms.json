@@ -4,5 +4,7 @@
 			"Yupik"
 		]
 	},
-	"voteny-remove": "jaukkâd"
+	"voteny-link": "Jiõnâst",
+	"voteny-remove": "jaukkâd",
+	"voteny-votes": "{{PLURAL:$1|õhtt jiõnn|$1 jiõn|$1 jiõnnâd}}"
 }
