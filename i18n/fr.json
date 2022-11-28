@@ -4,6 +4,7 @@
 			"Crochet.david",
 			"Gomoko",
 			"Jack Phoenix",
+			"McDutchie",
 			"Thibaut120094",
 			"Tititou36",
 			"Wladek92"
@@ -30,6 +31,6 @@
 	"voteny-votes": "{{PLURAL:$1|un vote|$1 votes}}",
 	"topratings": "Pages les mieux notées",
 	"topratings-no-pages": "Aucune page notée.",
-	"action-voteny": "pages de vote",
-	"right-voteny": "Pages de vote"
+	"action-voteny": "voter sur les pages",
+	"right-voteny": "Voter sur les pages"
 }
