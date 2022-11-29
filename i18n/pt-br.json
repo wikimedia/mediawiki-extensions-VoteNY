@@ -3,7 +3,8 @@
 		"authors": [
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad",
-			"Luckas"
+			"Luckas",
+			"McDutchie"
 		]
 	},
 	"apihelp-voteny-description": "Módulo da API VoteNY",
@@ -27,6 +28,6 @@
 	"voteny-votes": "{{PLURAL:$1|um voto|$1 votos}}",
 	"topratings": "Páginas mais bem classificadas",
 	"topratings-no-pages": "Não há páginas mais bem classificadas.",
-	"action-voteny": "Votar em páginas",
+	"action-voteny": "votar em páginas",
 	"right-voteny": "Votar em páginas"
 }
