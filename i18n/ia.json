@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-voteny-description": "Modulo API VoteNY",
+	"apihelp-voteny-summary": "Modulo API VoteNY",
+	"apihelp-voteny-param-what": "Le action a prender; le valores valide es 'vote' (quadro de voto verde), 'multi' (stellas de voto) o 'delete' (deler un voto ja date).",
+	"apihelp-voteny-param-pageId": "Le ID del pagina ubi se trova le quadro/stellas de voto",
+	"apihelp-voteny-param-voteValue": "Le valor numeric del voto inter 1 e 5",
+	"apihelp-voteny-param-type": "Mitte isto a 'stars' pro appellar le stellas de voto (classe PHP VoteStars), alteremente es usate le quadro verde de voto (classe PHP Vote).",
+	"apihelp-voteny-example-1": "Votar pro le paginas que ha le numero de ID 666",
+	"apihelp-voteny-example-2": "Deler tu voto del pagina que ha le numero de ID 666",
+	"apihelp-voteny-example-3": "Votar (3 stellas de 5) pro le pagina que ha le numero de ID 666",
+	"apihelp-voteny-example-4": "Deler tu voto del pagina que ha le numero de ID 666 que usa le classification per stellas",
+	"apihelp-voteny-example-5": "Votar (4 stellas de 5) pro le paginas que ha le numero de ID 666, delente tu voto previe si existe",
+	"voteny-desc": "Systema de voto in JavaScript con le etiquetta <code>&lt;vote&gt;</code>",
+	"voteny-link": "Votar",
+	"voteny-unvote-link": "cancellar voto",
+	"voteny-community-score": "punctos del communitate: '''$1'''",
+	"voteny-ratings": "$1 evalutation{{PLURAL:$1||es}}",
+	"voteny-remove": "remover",
+	"voteny-gave-this": "tu ha date $1 a isto",
+	"voteny-votes": "$1 voto{{PLURAL:$1||s}}",
+	"topratings": "Paginas melio evalutate",
+	"topratings-no-pages": "Il non ha paginas melio evalutate.",
+	"action-voteny": "votar sur paginas",
+	"right-voteny": "Votar sur paginas"
+}
