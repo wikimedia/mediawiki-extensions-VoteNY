@@ -3,7 +3,8 @@
 		"authors": [
 			"Armando-Martin",
 			"Macofe",
-			"Matiia"
+			"Matiia",
+			"McDutchie"
 		]
 	},
 	"voteny-desc": "Votación basada en JavaScript con la etiqueta <code>&lt;vote&gt;</code>",
@@ -16,5 +17,6 @@
 	"voteny-votes": "{{PLURAL:$1|un voto|$1 votos}}",
 	"topratings": "Páginas más valoradas",
 	"topratings-no-pages": "No hay páginas mejor valoradas",
-	"right-voteny": "Páginas de votación"
+	"action-voteny": "votar en las páginas",
+	"right-voteny": "Votar en las páginas"
 }
