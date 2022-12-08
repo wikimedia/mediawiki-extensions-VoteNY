@@ -7,13 +7,14 @@
 			"Thibaut120094",
 			"Tititou36",
 			"Wladek92",
-			"McDutchie"
+			"McDutchie",
+			"Verdy p"
 		]
 	},
 	"apihelp-voteny-description": "Module d’API VoteNY",
 	"apihelp-voteny-summary": "Module API VoteNY",
 	"apihelp-voteny-param-what": "Action à entreprendre ; les valeurs valides sont 'vote' (case de vote verte), 'multi' (étoiles de vote) ou 'delete' (supprime un vote déjà donné)",
-	"apihelp-voteny-param-pageId": "ID de la page où se situe la case de vote/les étoiles",
+	"apihelp-voteny-param-pageId": "Identifiant de la page où se situe(nt) la case de vote ou les étoiles",
 	"apihelp-voteny-param-voteValue": "Valeur numérique du vote entre 1 et 5",
 	"apihelp-voteny-param-type": "Mettre cela à 'stars' pour appeler les étoiles de vote (classe PHP VoteStars), sinon la case de vote verte (classe PHP Vote) est utilisée",
 	"apihelp-voteny-example-1": "Mettre un vote pour la page qui a le numéro d’ID 666",
@@ -26,7 +27,7 @@
 	"voteny-unvote-link": "supprimer vote",
 	"voteny-community-score": "note de la communauté : '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|une note|$1 notes}}",
-	"voteny-remove": "supprimer",
+	"voteny-remove": "retirer",
 	"voteny-gave-this": "Vous avez noté $1",
 	"voteny-votes": "{{PLURAL:$1|un vote|$1 votes}}",
 	"topratings": "Pages les mieux notées",
