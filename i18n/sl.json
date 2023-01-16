@@ -4,5 +4,6 @@
 			"Eleassar"
 		]
 	},
+	"voteny-ratings": "{{PLURAL:$1|ena ocena|$1 oceni|$1 ocene|$1 ocen}}",
 	"voteny-remove": "odstrani"
 }
