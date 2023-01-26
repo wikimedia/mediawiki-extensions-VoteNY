@@ -4,6 +4,27 @@
 			"Eleassar"
 		]
 	},
+	"apihelp-voteny-description": "API-modul VoteNY",
+	"apihelp-voteny-summary": "API-modul VoteNY",
+	"apihelp-voteny-param-what": "Dejanje, ki naj bo opravljeno; veljavne vrednosti so »vote« (zeleno glasovalno polje), »multi« (glasovalne zvezdice) ali »delete« (izbriši predhodno oddan glas)",
+	"apihelp-voteny-param-pageId": "ID strani strani, kjer je/so glasovalna skrinjica/zvezdice",
+	"apihelp-voteny-param-voteValue": "Številčna vrednost glasu od 1 do 5",
+	"apihelp-voteny-param-type": "To nastavite na »stars«, da prikličete glasovalne zvezdice (razred VoteStars PHP), sicer se uporabi zelena glasovalna skrinjica (razred Vote PHP).",
+	"apihelp-voteny-example-1": "Glasovanje za stran z ID-številko 666",
+	"apihelp-voteny-example-2": "Izbris vašega glasu s strani z ID-številko 666",
+	"apihelp-voteny-example-3": "Glasovanje (3 zvezdice od 5) za stran z ID-številko 666",
+	"apihelp-voteny-example-4": "Izbris vašega glasu s strani z ID-številko 666, ki uporablja oceno z zvezdicami",
+	"apihelp-voteny-example-5": "Glasovanje (4 zvezdice od 5) za stran, ki ima ID-številko 666, pri čemer izbrišite svoj prejšnji glas, če ga imate",
+	"voteny-desc": "Glasovanje, podprto z JavaScriptom, z oznako <code>&lt;vote&gt;</code>",
+	"voteny-link": "Glasuj",
+	"voteny-unvote-link": "odstrani glas",
+	"voteny-community-score": "rezultat skupnosti: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|ena ocena|$1 oceni|$1 ocene|$1 ocen}}",
-	"voteny-remove": "odstrani"
+	"voteny-remove": "odstrani",
+	"voteny-gave-this": "temu ste podelili oceno $1",
+	"voteny-votes": "{{PLURAL:$1|en glas|$1 glasova|$1 glasovi|$1 glasov}}",
+	"topratings": "Najbolje ocenjene strani",
+	"topratings-no-pages": "Ni najbolje ocenjenih strani.",
+	"action-voteny": "glasovanje o straneh",
+	"right-voteny": "Glasovanje o straneh"
 }
