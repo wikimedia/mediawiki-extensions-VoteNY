@@ -3,9 +3,21 @@
 		"authors": [
 			"Guycn2",
 			"Yona b",
-			"חיים"
+			"חיים",
+			"Amire80"
 		]
 	},
+	"apihelp-voteny-description": "מודול API של VoteNY",
+	"apihelp-voteny-summary": "מודול API של VoteNY",
+	"apihelp-voteny-param-what": "איזו פעולה לעשות; הערכים התקינים הם \"vote\" (תיבת הצבעה ירוקה), \"multi\" (כוכבי הצבעה) או \"delete\" (מחיקת הצבעה מהעבר)",
+	"apihelp-voteny-param-pageId": "מזהה הדף של הדף שתיבת ההצבעה או כוכבי ההצבעה נמצאים בו",
+	"apihelp-voteny-param-voteValue": "ערך הצבעה מספרי בין 1 ל־5",
+	"apihelp-voteny-param-type": "יש להגדיר את זה ל־\"stars\" כדי לקרוא לכוכבי ההצבעה (מחלקת PHP בשם VoteStars), אחרת תשמש תיבת ההצבעה הירוקה (מחלקת PHP בשם Vote)",
+	"apihelp-voteny-example-1": "הצבעה לדף בעל המספר המזהה 666",
+	"apihelp-voteny-example-2": "מחיקת ההצבעה שלך מהדף בעל מספר המזהה 666",
+	"apihelp-voteny-example-3": "הצבעה (3 כוכבים מתוך 5) לדף בעל המספר המזהה 666",
+	"apihelp-voteny-example-4": "מחיקת ההצבעה שלך מהדף בעל המספר המזהה 666, שמשתמש בדירוג הכוכבים",
+	"apihelp-voteny-example-5": "הצבעה (4 כוכבים מתוך 5) לדף בעל המספר המזהה 666, ומחיקה של ההצבעה הקודמת שלך, אם הייתה כזאת",
 	"voteny-desc": "הצבעה מבוססת JavaScript עם התג <code>&lt;vote&gt;</code>",
 	"voteny-link": "הצבעה",
 	"voteny-unvote-link": "הסר הצבעה",
@@ -16,5 +28,6 @@
 	"voteny-votes": "{{PLURAL:$1|הצבעה אחת|$1 הצבעות}}",
 	"topratings": "דפים המדורגים ביותר",
 	"topratings-no-pages": "דפים שדורגו הכי פחות פעמים.",
+	"action-voteny": "להצביע על דפים",
 	"right-voteny": "הצבעה על דפים"
 }
