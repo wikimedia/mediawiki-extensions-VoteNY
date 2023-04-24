@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"apihelp-voteny-description": "VoteNY API modulis",
+	"apihelp-voteny-summary": "VoteNY API modulis",
+	"voteny-link": "Balsuoti",
+	"voteny-unvote-link": "atšaukti balsavimą",
+	"voteny-ratings": "{{PLURAL:$1|vienas įvertinimas|$1 įvertinimai}}",
+	"voteny-remove": "pašalinti",
+	"voteny-gave-this": "jūs skyrėte $1",
+	"voteny-votes": "{{PLURAL:$1|vienas balsas|$1 balsai}}",
+	"topratings": "Geriausiai įvertinti puslapiai",
+	"topratings-no-pages": "Nėra geriausiai vertinamų puslapių."
+}
