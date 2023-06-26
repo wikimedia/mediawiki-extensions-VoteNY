@@ -4,7 +4,6 @@
 			"Hamilton Abreu"
 		]
 	},
-	"apihelp-voteny-description": "Módulo da API VoteNY",
 	"apihelp-voteny-summary": "Módulo da API VoteNY",
 	"apihelp-voteny-param-what": "Ação a ser tomada; os valores válidos são 'vote' (urna verde), 'multi' (estrelas de voto) ou 'delete' (apagar um voto prévio).",
 	"apihelp-voteny-param-pageId": "Identificador da página onde estão a urna ou as estrelas",

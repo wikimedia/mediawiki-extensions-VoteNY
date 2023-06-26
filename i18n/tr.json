@@ -5,7 +5,6 @@
 			"Melissadilara"
 		]
 	},
-	"apihelp-voteny-description": "VoteNY API modülü",
 	"apihelp-voteny-summary": "VoteNY API modülü",
 	"apihelp-voteny-param-what": "Yapılacak eylem; geçerli değerler 'vote' (yeşil oylama kutusu), 'multi' (oy veren yıldızlar) veya 'delete' (daha önce verilen bir oyu sil)",
 	"apihelp-voteny-param-pageId": "Oylama kutusunun/yıldızların olduğu sayfanın sayfa kimliği",

@@ -4,7 +4,6 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-voteny-description": "VoteNY-API-modul",
 	"apihelp-voteny-summary": "VoteNY-API-modul",
 	"apihelp-voteny-param-what": "Handling som skal tas; gyldige verdier er «vote» (grøn avstemningsboks), «multi» (avstemningsstjerner) eller «delete» (slett en tidligere avgitt stemme)",
 	"apihelp-voteny-param-pageId": "Side-ID for siden der avstemningsboksen/-stjernene er",

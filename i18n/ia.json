@@ -4,7 +4,6 @@
 			"McDutchie"
 		]
 	},
-	"apihelp-voteny-description": "Modulo API VoteNY",
 	"apihelp-voteny-summary": "Modulo API VoteNY",
 	"apihelp-voteny-param-what": "Le action a prender; le valores valide es 'vote' (quadro de voto verde), 'multi' (stellas de voto) o 'delete' (deler un voto ja date).",
 	"apihelp-voteny-param-pageId": "Le ID del pagina ubi se trova le quadro/stellas de voto",

@@ -6,7 +6,6 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-voteny-description": "Модуль API VoteNY",
 	"apihelp-voteny-summary": "Модуль API VoteNY",
 	"apihelp-voteny-param-what": "Дія, яку виконати; дійсними значеннями є 'vote' (зелене поле для голосування), 'multi' (зірочки голосування) або 'delete' (вилучити попередній голос)",
 	"apihelp-voteny-param-pageId": "Ідентифікатор сторінки, на якій розміщені поле/зірочки голосування",

@@ -4,7 +4,6 @@
 			"ديفيد"
 		]
 	},
-	"apihelp-voteny-description": "وحدة VoteNY API",
 	"apihelp-voteny-summary": "وحدة VoteNY API",
 	"apihelp-voteny-param-what": "إجراءات لاتخاذها; القيم الصالحة هي 'تصويت' (صندوق التصويت الأخضر) أو 'متعددة' (نجوم التصويت) أو 'حذف' (حذف صوت مُعطَى سابقا)",
 	"apihelp-voteny-param-pageId": "معرف الصفحة للصفحة التي يكون/ـتكون فيها صندوق/نجوم التصويت",

@@ -4,7 +4,6 @@
 			"Chaduvari"
 		]
 	},
-	"apihelp-voteny-description": "VoteNY API మాడ్యూలు",
 	"apihelp-voteny-summary": "VoteNY API మాడ్యూలు",
 	"apihelp-voteny-param-voteValue": "వోటు విలువ 1-5 మధ్య",
 	"apihelp-voteny-example-1": "ఐడీ సంఖ్య 666 కలిగిన పేజీకి వోటు వెయ్యండి",

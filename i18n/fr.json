@@ -11,7 +11,6 @@
 			"Wladek92"
 		]
 	},
-	"apihelp-voteny-description": "Module d’API VoteNY",
 	"apihelp-voteny-summary": "Module API VoteNY",
 	"apihelp-voteny-param-what": "Action à entreprendre ; les valeurs valides sont 'vote' (case de vote verte), 'multi' (étoiles de vote) ou 'delete' (supprime un vote déjà donné)",
 	"apihelp-voteny-param-pageId": "Identifiant de la page où se situe(nt) la case de vote ou les étoiles",

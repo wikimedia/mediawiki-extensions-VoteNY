@@ -8,7 +8,6 @@
 			"Yfdyh000"
 		]
 	},
-	"apihelp-voteny-description": "VoteNY API模块",
 	"apihelp-voteny-summary": "VoteNY API模块",
 	"apihelp-voteny-param-what": "要进行的操作；有效值为“vote”（绿色投票框）、“multi”（投票星标）或“delete”（删除之前投出的投票）",
 	"apihelp-voteny-param-pageId": "投票框/星标所在页面的页面ID",

@@ -7,7 +7,6 @@
 			"烈羽"
 		]
 	},
-	"apihelp-voteny-description": "VoteNY API 模組",
 	"apihelp-voteny-summary": "VoteNY API 模組",
 	"apihelp-voteny-param-what": "可採用的操作，有效值為「vote」（綠色投票框）、「multi」（星級評比），或是「delete」（刪除之前投下的票）",
 	"apihelp-voteny-param-pageId": "投票框/星級評比所在頁面的頁面 ID 為",

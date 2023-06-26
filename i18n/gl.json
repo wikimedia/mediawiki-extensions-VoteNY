@@ -5,7 +5,6 @@
 			"Toliño"
 		]
 	},
-	"apihelp-voteny-description": "Módulo de API VoteNY",
 	"apihelp-voteny-param-what": "Acción a realizar; os valores válidos son 'vote' (caixa de voto verde), 'multi' (estrelas de voto) ou 'delete' (borrar un voto dado previamente).",
 	"apihelp-voteny-param-pageId": "Identificador da páxina onde está/n a caixa de voto/estrelas",
 	"apihelp-voteny-param-voteValue": "Valor numérico de voto entre 1 e 5",

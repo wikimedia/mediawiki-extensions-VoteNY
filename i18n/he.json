@@ -7,7 +7,6 @@
 			"חיים"
 		]
 	},
-	"apihelp-voteny-description": "מודול API של VoteNY",
 	"apihelp-voteny-summary": "מודול API של VoteNY",
 	"apihelp-voteny-param-what": "איזו פעולה לעשות; הערכים התקינים הם \"vote\" (תיבת הצבעה ירוקה), \"multi\" (כוכבי הצבעה) או \"delete\" (מחיקת הצבעה מהעבר)",
 	"apihelp-voteny-param-pageId": "מזהה הדף של הדף שתיבת ההצבעה או כוכבי ההצבעה נמצאים בו",

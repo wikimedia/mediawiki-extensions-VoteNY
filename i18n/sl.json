@@ -4,7 +4,6 @@
 			"Eleassar"
 		]
 	},
-	"apihelp-voteny-description": "API-modul VoteNY",
 	"apihelp-voteny-summary": "API-modul VoteNY",
 	"apihelp-voteny-param-what": "Dejanje, ki naj bo opravljeno; veljavne vrednosti so »vote« (zeleno glasovalno polje), »multi« (glasovalne zvezdice) ali »delete« (izbriši predhodno oddan glas)",
 	"apihelp-voteny-param-pageId": "ID strani strani, kjer je/so glasovalna skrinjica/zvezdice",

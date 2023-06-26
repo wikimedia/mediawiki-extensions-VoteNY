@@ -4,7 +4,6 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-voteny-description": "Priložnički modul VoteNY",
 	"apihelp-voteny-summary": "API modul VoteNY",
 	"apihelp-voteny-param-what": "Radnja koju treba poduzeti; važeće vrijednosti su 'vote' (zeleno glasačka kutija), 'multi' (zvjezdice za glasanje) ili 'delete' (brisanje prethodno danog glasa)",
 	"voteny-desc": "Glasanje bazirano na Javaskriptu preko taga <code>&lt;vote&gt;</code>",

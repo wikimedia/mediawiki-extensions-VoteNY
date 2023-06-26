@@ -4,7 +4,6 @@
 			"Joetaras"
 		]
 	},
-	"apihelp-voteny-description": "Module de l'API VoteNY",
 	"apihelp-voteny-summary": "Module de l'API VoteNY",
 	"apihelp-voteny-param-what": "Azione da fà; valore valide so 'vote' (sckatole verde), 'multi' (vote cu le stelle) o 'delete' (scangìlle 'u vote date apprime)",
 	"apihelp-voteny-param-pageId": "ID d'a pàgene addò stonne le sckatele/stelle pe le votaziune",
