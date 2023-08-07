@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"apihelp-voteny-param-voteValue": "投票值喺1到5之間",
+	"apihelp-voteny-example-4": "刪除你喺頁面上嘅投票，嗰個投票含有ID號碼666使用咗評星等級。"
+}
