@@ -32,53 +32,75 @@ class Vote {
 	 * Counts all votes, fetching the data from memcached if available
 	 * or from the database if memcached isn't available
 	 *
+	 * @param string $raw Set to 'raw' to skip using cache and always fetch from the DB
 	 * @return int Amount of votes
 	 */
-	function count() {
+	function count( $raw = '' ) {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$fname = __METHOD__;
 
-		return $cache->getWithSetCallback(
-			$cache->makeKey( 'vote-count', $this->PageID ),
-			$cache::TTL_WEEK,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
-				$dbr = wfGetDB( DB_REPLICA );
-				$setOpts += Database::getCacheSetOptions( $dbr );
+		if ( $raw === 'raw' ) {
+			$dbr = wfGetDB( DB_REPLICA );
+			return (int)$dbr->selectField(
+				'Vote',
+				'COUNT(*) AS votecount',
+				[ 'vote_page_id' => $this->PageID ],
+				$fname
+			);
+		} else {
+			return $cache->getWithSetCallback(
+				$cache->makeKey( 'vote-count', $this->PageID ),
+				$cache::TTL_WEEK,
+				function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
+					$dbr = wfGetDB( DB_REPLICA );
+					$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return (int)$dbr->selectField(
-					'Vote',
-					'COUNT(*) AS votecount',
-					[ 'vote_page_id' => $this->PageID ],
-					$fname
-				);
-			}
-		);
+					return (int)$dbr->selectField(
+						'Vote',
+						'COUNT(*) AS votecount',
+						[ 'vote_page_id' => $this->PageID ],
+						$fname
+					);
+				}
+			);
+		}
 	}
 
 	/**
 	 * Gets the average score of all votes
 	 *
+	 * @param string $raw Set to 'raw' to skip using cache and always fetch from the DB
 	 * @return string Formatted average number of votes (something like 3.50)
 	 */
-	function getAverageVote() {
+	function getAverageVote( $raw = '' ) {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$fname = __METHOD__;
 
-		$voteAvg = $cache->getWithSetCallback(
-			$cache->makeKey( 'vote-avg', $this->PageID ),
-			$cache::TTL_WEEK,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
-				$dbr = wfGetDB( DB_REPLICA );
-				$setOpts += Database::getCacheSetOptions( $dbr );
+		if ( $raw === 'raw' ) {
+			$dbr = wfGetDB( DB_REPLICA );
+			$voteAvg = (float)$dbr->selectField(
+				'Vote',
+				'AVG(vote_value)',
+				[ 'vote_page_id' => $this->PageID ],
+				$fname
+			);
+		} else {
+			$voteAvg = $cache->getWithSetCallback(
+				$cache->makeKey( 'vote-avg', $this->PageID ),
+				$cache::TTL_WEEK,
+				function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
+					$dbr = wfGetDB( DB_REPLICA );
+					$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return (float)$dbr->selectField(
-					'Vote',
-					'AVG(vote_value)',
-					[ 'vote_page_id' => $this->PageID ],
-					$fname
-				);
-			}
-		);
+					return (float)$dbr->selectField(
+						'Vote',
+						'AVG(vote_value)',
+						[ 'vote_page_id' => $this->PageID ],
+						$fname
+					);
+				}
+			);
+		}
 
 		return number_format( $voteAvg, 2 );
 	}
