@@ -2,10 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"Mar(c)",
+			"McDutchie",
 			"Mitchel Corstjens",
 			"Siebrand"
 		]
 	},
+	"apihelp-voteny-summary": "VoteNY-API-Module",
+	"apihelp-voteny-param-what": "De te verrichten handeling; geldige waarden zijn ‘vote’ (groen stemvak), ‘multi’ (stemsterren) of ‘delete’ (een eerder gegeven stem verwijderen)",
+	"apihelp-voteny-param-pageId": "Pagina-ID van de pagina waar het stemvak staat of de sterren staan",
+	"apihelp-voteny-param-voteValue": "Numerieke stemwaarde tussen 1 en 5",
+	"apihelp-voteny-param-type": "Zet dit op ‘stars’ om de stemsterren te noemen (PHP-klasse VoteStars), anders wordt het groene stemvak (PHP-klasse Vote) gebruikt",
+	"apihelp-voteny-example-1": "Breng een stem uit op de pagina met ID-nummer 666",
+	"apihelp-voteny-example-2": "Verwijder uw stem van de pagina met ID-nummer 666",
+	"apihelp-voteny-example-3": "Breng een stem uit (3 sterren uit 5) voor de pagina met ID-nummer 666",
+	"apihelp-voteny-example-4": "Verwijder uw stem van de pagina met ID-nummer 666 die de sterbeoordeling gebruikt",
+	"apihelp-voteny-example-5": "Breng een stem uit (4 sterren van de 5) voor de pagina met ID-nummer 666, waarbij uw eventuele eerdere stem wordt verwijderd",
 	"voteny-desc": "Op JavaScript gebaseerde peilingen met het label <code>&lt;vote&gt;</code>",
 	"voteny-link": "Stemmen",
 	"voteny-unvote-link": "stem intrekken",
@@ -16,5 +27,6 @@
 	"voteny-votes": "{{PLURAL:$1|één stem|$1 stemmen}}",
 	"topratings": "Meest gewaardeerde pagina's",
 	"topratings-no-pages": "Er zijn nog geen meest gewaardeerde pagina's.",
+	"action-voteny": "op pagina’s te stemmen",
 	"right-voteny": "Op pagina's stemmen"
 }
