@@ -55,7 +55,7 @@ class VoteNYHooks {
 		$type = 0;
 
 		// Determine what kind of a voting gadget the user wants: a box or pretty stars?
-		if ( preg_match( "/^\s*type\s*=\s*(.*)/mi", $input, $matches ) ) {
+		if ( preg_match( "/^\s*type\s*=\s*(.*)/mi", $input ?? '', $matches ) ) {
 			$type = htmlspecialchars( $matches[1] );
 		} elseif ( !empty( $args['type'] ) ) {
 			$type = intval( $args['type'] );
