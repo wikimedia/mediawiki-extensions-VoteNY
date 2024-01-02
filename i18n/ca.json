@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"SMP",
 			"Toniher"
 		]
 	},
@@ -14,5 +15,6 @@
 	"voteny-votes": "{{PLURAL:$1|un vot|$1 vots}}",
 	"topratings": "Pàgines més valorades",
 	"topratings-no-pages": "No hi ha cap pàgina valorada.",
-	"right-voteny": "Pàgines de votació"
+	"action-voteny": "votar pàgines",
+	"right-voteny": "Votar pàgines"
 }
