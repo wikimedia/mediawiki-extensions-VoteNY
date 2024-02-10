@@ -66,7 +66,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$ratings = self::getTopRatings( $limit, $categoryName, $namespace );
 
 		// If we have some ratings, start building HTML output
-		if ( !empty( $ratings ) ) {
+		if ( $ratings ) {
 			/* XXX dirrrrrrty hack! because when we include this page, the JS
 			 * is not included, but we want things to work still
 			 * Actually, this is way harder than what it looks like.
@@ -169,8 +169,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$tables = [ 'Vote' ];
 		$where = [ 'vote_page_id <> 0' ];
 
-		// isset(), because 0 is a totally valid NS
-		if ( !empty( $categoryName ) && isset( $namespace ) ) {
+		if ( $categoryName && $namespace !== null ) {
 			$tables = [ 'Vote', 'page', 'categorylinks' ];
 			$where = [
 				'vote_page_id <> 0',
