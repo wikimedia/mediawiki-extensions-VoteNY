@@ -109,7 +109,8 @@ class Vote {
 	 * Clear caches - memcached, parser cache and Squid cache
 	 */
 	function clearCache() {
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$services = MediaWikiServices::getInstance();
+		$cache = $services->getMainWANObjectCache();
 
 		// Kill internal cache
 		$cache->delete( $cache->makeKey( 'vote-count', $this->PageID ) );
@@ -120,7 +121,9 @@ class Vote {
 		if ( is_object( $pageTitle ) ) {
 			// Invalidate page caches (including parser cache)
 			$pageTitle->invalidateCache();
-			$pageTitle->purgeSquid();
+
+			$htmlCache = $services->getHtmlCacheUpdater();
+			$htmlCache->purgeTitleUrls( $pageTitle, $htmlCache::PURGE_INTENT_TXROUND_REFLECTED );
 		}
 	}
 
