@@ -223,7 +223,6 @@ class VoteNYHooks {
 			$updater->addExtensionUpdate( [
 				'runMaintenance',
 				'MigrateOldVoteUserColumnsToActor',
-				"$dir/maintenance/migrateOldVoteUserColumnsToActor.php"
 			] );
 		}
 	}
