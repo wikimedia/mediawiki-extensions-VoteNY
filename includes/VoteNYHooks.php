@@ -217,7 +217,7 @@ class VoteNYHooks {
 		}
 
 		// Actor support (see T227345)
-		if ( $db->tableExists( 'Vote' ) && !$db->fieldExists( 'Vote', 'vote_actor', __METHOD__ ) ) {
+		if ( $db->tableExists( 'Vote', __METHOD__ ) && !$db->fieldExists( 'Vote', 'vote_actor', __METHOD__ ) ) {
 			$updater->addExtensionField( 'Vote', 'vote_actor', "$sqlPath/patch-add-vote_actor-column.$dbt" );
 
 			$updater->addExtensionUpdate( [
