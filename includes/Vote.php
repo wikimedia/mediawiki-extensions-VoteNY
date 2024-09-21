@@ -40,7 +40,7 @@ class Vote {
 		$fname = __METHOD__;
 
 		if ( $raw === 'raw' ) {
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 			return (int)$dbr->selectField(
 				'Vote',
 				'COUNT(*) AS votecount',
@@ -52,7 +52,7 @@ class Vote {
 				$cache->makeKey( 'vote-count', $this->PageID ),
 				$cache::TTL_WEEK,
 				function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
-					$dbr = wfGetDB( DB_REPLICA );
+					$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 					$setOpts += Database::getCacheSetOptions( $dbr );
 
 					return (int)$dbr->selectField(
@@ -77,7 +77,7 @@ class Vote {
 		$fname = __METHOD__;
 
 		if ( $raw === 'raw' ) {
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 			$voteAvg = (float)$dbr->selectField(
 				'Vote',
 				'AVG(vote_value)',
@@ -89,7 +89,7 @@ class Vote {
 				$cache->makeKey( 'vote-avg', $this->PageID ),
 				$cache::TTL_WEEK,
 				function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
-					$dbr = wfGetDB( DB_REPLICA );
+					$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 					$setOpts += Database::getCacheSetOptions( $dbr );
 
 					return (float)$dbr->selectField(
@@ -132,7 +132,7 @@ class Vote {
 	 * updates SocialProfile's statistics, if SocialProfile is active.
 	 */
 	function delete() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$dbw->delete(
 			'Vote',
@@ -160,7 +160,7 @@ class Vote {
 	function insert( $voteValue ) {
 		global $wgRequest;
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		AtEase::suppressWarnings(); // E_STRICT whining
 		$voteDate = date( 'Y-m-d H:i:s' );
@@ -196,7 +196,7 @@ class Vote {
 	 *                  value of 'vote_value' column from Vote DB table
 	 */
 	function hasUserAlreadyVoted() {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Vote',
 			[ 'vote_value' ],

@@ -138,7 +138,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$cache->makeKey( 'vote-avg', $pageId ),
 			$cache::TTL_WEEK,
 			static function ( $oldValue, &$ttl, &$setOpts ) use ( $pageId, $fname ) {
-				$dbr = wfGetDB( DB_REPLICA );
+				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				return (int)$dbr->selectField(
@@ -160,7 +160,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	 * @return array Array of page ID => total votes mappings
 	 */
 	public static function getTopRatings( $limit = 10, $categoryName = '', $namespace = 0 ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$ratings = [];
 		$joinConds = [];
 		$whatToSelect = [ 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' ];

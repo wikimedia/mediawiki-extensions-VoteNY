@@ -110,7 +110,7 @@ class VoteNYHooks {
 				$cache->makeKey( 'vote-magicword' ),
 				$cache::TTL_DAY,
 				static function ( $oldValue, &$ttl, &$setOpts ) use ( $fname ) {
-					$dbr = wfGetDB( DB_REPLICA );
+					$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 					$setOpts += Database::getCacheSetOptions( $dbr );
 
 					return (int)$dbr->selectField(
@@ -142,7 +142,7 @@ class VoteNYHooks {
 			$cache->makeKey( 'vote-magicword-page', $id ),
 			$cache::TTL_HOUR,
 			static function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
-				$dbr = wfGetDB( DB_REPLICA );
+				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				return (int)$dbr->selectField(
