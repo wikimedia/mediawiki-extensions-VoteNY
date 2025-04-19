@@ -11,6 +11,10 @@ use Wikimedia\Rdbms\Database;
  * pages are in the "Adventure Games" category and the pages are in the main
  * (0) namespace.
  *
+ * To flip the sort order (i.e. show the pages w/ the _lowest_ ratings):
+ * {{Special:TopRatings/Adventure Games/0/10/ASC}}
+ * (Only ASC for ascending and DESC for descending are supported, obviously.)
+ *
  * @file
  * @ingroup Extensions
  * @license To the extent that it is possible, this code is in the public domain
@@ -37,6 +41,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$user = $this->getUser();
 
 		$categoryName = $namespace = '';
+		$sort = 'DESC';
 
 		// Parse the parameters passed to the special page
 		// Make sure that the limit parameter passed to the special page is
@@ -49,6 +54,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$categoryName = $exploded[0];
 			$namespace = ( isset( $exploded[1] ) ? intval( $exploded[1] ) : $namespace );
 			$limit = ( isset( $exploded[2] ) ? intval( $exploded[2] ) : 50 );
+			$sort = ( isset( $exploded[3] ) && $exploded[3] === 'ASC' ? 'ASC' : 'DESC' );
 		} else {
 			$limit = 50;
 		}
@@ -63,7 +69,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 
 		$output = '';
 
-		$ratings = self::getTopRatings( $limit, $categoryName, $namespace );
+		$ratings = self::getTopRatings( $limit, $categoryName, $namespace, $sort );
 
 		// If we have some ratings, start building HTML output
 		if ( $ratings ) {
@@ -157,19 +163,21 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	 * @param int $limit LIMIT for the SQL query (get this many records)
 	 * @param string $categoryName Category name, if any; if this contains spaces they are replaced with underscores
 	 * @param int $namespace Namespace index, if fetching pages from a non-NS_MAIN NS
+	 * @param string $sortOrder Sorting order for the SQL query, either DESC (default) or ASC
 	 * @return array Array of page ID => total votes mappings
 	 */
-	public static function getTopRatings( $limit = 10, $categoryName = '', $namespace = 0 ) {
+	public static function getTopRatings( $limit = 10, $categoryName = '', $namespace = 0, $sortOrder = 'DESC' ) {
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$ratings = [];
 		$joinConds = [];
-		$whatToSelect = [ 'DISTINCT vote_page_id', 'SUM(vote_value) AS vote_value_sum' ];
+		$whatToSelect = [ 'vote_page_id', 'SUM(vote_value) AS vote_value_sum' ];
 
 		// By default we have no category and no namespace
 		$tables = [ 'Vote' ];
 		$where = [ 'vote_page_id <> 0' ];
 
-		if ( $categoryName && $namespace !== null ) {
+		// isset(), because 0 is a totally valid NS
+		if ( $categoryName && isset( $namespace ) ) {
 			$tables = [ 'Vote', 'page', 'categorylinks' ];
 			$where = [
 				'vote_page_id <> 0',
@@ -180,6 +188,14 @@ class SpecialTopRatings extends IncludableSpecialPage {
 				'categorylinks' => [ 'INNER JOIN', 'cl_from = page_id' ],
 				'page' => [ 'INNER JOIN', 'page_id = vote_page_id' ]
 			];
+		}
+
+		// We're not passing in $sortOrder as-is to reduce code reviewer anxiety
+		// and to increase overall sanity because no-one likes an SQL injection
+		// vector :)
+		$sortString = 'DESC';
+		if ( $sortOrder !== 'DESC' ) {
+			$sortString = 'ASC';
 		}
 
 		// Perform the SQL query with the given conditions; the basic idea is
@@ -193,7 +209,11 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$whatToSelect,
 			$where,
 			__METHOD__,
-			[ 'GROUP BY' => 'vote_page_id', 'LIMIT' => intval( $limit ) ],
+			[
+				'GROUP BY' => 'vote_page_id',
+				'ORDER BY' => "vote_value_sum $sortString",
+				'LIMIT' => intval( $limit )
+			],
 			$joinConds
 		);
 
