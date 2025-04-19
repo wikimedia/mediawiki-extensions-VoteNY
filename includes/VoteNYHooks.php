@@ -1,6 +1,8 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Parser;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\Database;
 
 /**
@@ -14,7 +16,7 @@ class VoteNYHooks {
 	/**
 	 * Set up the <vote> parser hook.
 	 *
-	 * @param Parser &$parser
+	 * @param MediaWiki\Parser\Parser &$parser
 	 */
 	public static function registerParserHook( &$parser ) {
 		$parser->setHook( 'vote', [ 'VoteNYHooks', 'renderVote' ] );
@@ -25,7 +27,7 @@ class VoteNYHooks {
 	 *
 	 * @param string $input User-supplied input, unused
 	 * @param array $args User-supplied arguments
-	 * @param Parser $parser Instance of Parser, unused
+	 * @param MediaWiki\Parser\Parser $parser Instance of Parser, unused
 	 * @return string HTML
 	 */
 	public static function renderVote( $input, $args, $parser ) {
@@ -40,13 +42,8 @@ class VoteNYHooks {
 		// registerParserHook(), we must've disabled parser cache
 		$po->addModuleStyles( [ 'ext.voteNY.styles' ] );
 
-		if ( method_exists( $parser, 'getUserIdentity' ) ) {
-			// MW 1.36+
-			$user = MediaWikiServices::getInstance()->getUserFactory()
-				->newFromUserIdentity( $parser->getUserIdentity() );
-		} else {
-			$user = $parser->getUser();
-		}
+		$user = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromUserIdentity( $parser->getUserIdentity() );
 		if ( $user->isAllowed( 'voteny' ) ) {
 			$po->addModules( [ 'ext.voteNY.scripts' ] );
 		}
@@ -96,7 +93,7 @@ class VoteNYHooks {
 	 * Assign a value to {{NUMBEROFVOTES}}. First we try memcached and if that
 	 * fails, we fetch it directly from the database and cache it for 24 hours.
 	 *
-	 * @param Parser $parser
+	 * @param MediaWiki\Parser\Parser $parser
 	 * @param array &$wordCache
 	 * @param string $magicWordId Magic word ID
 	 * @param int &$ret Return value (number of votes)
@@ -129,7 +126,7 @@ class VoteNYHooks {
 	/**
 	 * Main function to get the number of votes for a specific page
 	 *
-	 * @param Title $title Page to get votes for
+	 * @param MediaWiki\Title\Title $title Page to get votes for
 	 * @return int Number of votes for the given page
 	 */
 	public static function getNumberOfVotesPage( Title $title ) {
@@ -158,7 +155,7 @@ class VoteNYHooks {
 	/**
 	 * Hook for parser function {{NUMBEROFVOTESPAGE:<page>}}
 	 *
-	 * @param Parser $parser
+	 * @param MediaWiki\Parser\Parser $parser
 	 * @param string $pagename Page name
 	 * @return int Amount of votes for the given page
 	 */
@@ -185,7 +182,7 @@ class VoteNYHooks {
 	/**
 	 * Hook to setup parser function {{NUMBEROFVOTESPAGE:<page>}}
 	 *
-	 * @param Parser &$parser
+	 * @param MediaWiki\Parser\Parser &$parser
 	 */
 	public static function setupNumberOfVotesPageParser( &$parser ) {
 		$parser->setFunctionHook( 'NUMBEROFVOTESPAGE', 'VoteNYHooks::getNumberOfVotesPageParser', Parser::SFH_NO_HASH );
@@ -195,7 +192,7 @@ class VoteNYHooks {
 	 * Creates the necessary database table when the user runs
 	 * maintenance/update.php.
 	 *
-	 * @param DatabaseUpdater $updater
+	 * @param MediaWiki\Installer\DatabaseUpdater $updater
 	 */
 	public static function addTable( $updater ) {
 		$db = $updater->getDB();
@@ -222,8 +219,7 @@ class VoteNYHooks {
 
 			$updater->addExtensionUpdate( [
 				'runMaintenance',
-				'MigrateOldVoteUserColumnsToActor',
-				"$dir/maintenance/migrateOldVoteUserColumnsToActor.php"
+				'MigrateOldVoteUserColumnsToActor'
 			] );
 		}
 	}

@@ -8,13 +8,16 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Wikimedia\AtEase\AtEase;
 use Wikimedia\Rdbms\Database;
 
 class Vote {
 	/** @var int */
 	public $PageID = 0;
-	/** @var User */
+	/** @var MediaWiki\User\User */
 	public $User;
 
 	/**
@@ -36,11 +39,12 @@ class Vote {
 	 * @return int Amount of votes
 	 */
 	function count( $raw = '' ) {
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$services = MediaWikiServices::getInstance();
+		$cache = $services->getMainWANObjectCache();
 		$fname = __METHOD__;
 
 		if ( $raw === 'raw' ) {
-			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+			$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 			return (int)$dbr->selectField(
 				'Vote',
 				'COUNT(*) AS votecount',
@@ -73,11 +77,12 @@ class Vote {
 	 * @return string Formatted average number of votes (something like 3.50)
 	 */
 	function getAverageVote( $raw = '' ) {
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$services = MediaWikiServices::getInstance();
+		$cache = $services->getMainWANObjectCache();
 		$fname = __METHOD__;
 
 		if ( $raw === 'raw' ) {
-			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+			$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 			$voteAvg = (float)$dbr->selectField(
 				'Vote',
 				'AVG(vote_value)',

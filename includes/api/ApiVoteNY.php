@@ -7,7 +7,10 @@
  * @date 21 November 2015
  * @see https://www.mediawiki.org/wiki/API:Extensions#ApiSampleApiExtension.php
  */
-class ApiVoteNY extends ApiBase {
+
+use Wikimedia\ParamValidator\ParamValidator;
+
+class ApiVoteNY extends MediaWiki\Api\ApiBase {
 
 	/**
 	 * @var Vote|VoteStars Instance of the Vote or VoteStars class, set in execute() below
@@ -112,18 +115,18 @@ class ApiVoteNY extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'what' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'pageId' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'voteValue' => [
-				ApiBase::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_TYPE => 'integer',
 			],
 			'type' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			]
 		];
 	}

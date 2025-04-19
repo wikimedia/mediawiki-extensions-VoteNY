@@ -1,6 +1,8 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\IncludableSpecialPage;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\Database;
 
 /**
