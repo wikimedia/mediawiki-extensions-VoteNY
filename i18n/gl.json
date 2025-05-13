@@ -5,6 +5,7 @@
 			"Toliño"
 		]
 	},
+	"apihelp-voteny-summary": "Módulo API VoteNY",
 	"apihelp-voteny-param-what": "Acción a realizar; os valores válidos son 'vote' (caixa de voto verde), 'multi' (estrelas de voto) ou 'delete' (borrar un voto dado previamente).",
 	"apihelp-voteny-param-pageId": "Identificador da páxina onde está/n a caixa de voto/estrelas",
 	"apihelp-voteny-param-voteValue": "Valor numérico de voto entre 1 e 5",
@@ -24,5 +25,6 @@
 	"voteny-votes": "{{PLURAL:$1|un voto|$1 votos}}",
 	"topratings": "Páxinas mellor valoradas",
 	"topratings-no-pages": "Non hai ningunha páxina valorada.",
-	"right-voteny": "Votar páxinas"
+	"action-voteny": "votar nas páxinas",
+	"right-voteny": "Votar nas páxinas"
 }
