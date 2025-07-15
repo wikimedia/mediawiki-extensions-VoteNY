@@ -4,5 +4,12 @@
 			"Умар"
 		]
 	},
-	"voteny-unvote-link": "йухадаккха харжар"
+	"voteny-link": "Кхажтаса",
+	"voteny-unvote-link": "йухадаккха харжар",
+	"voteny-ratings": "{{PLURAL:$1|цхьа балл|$1 балл}}",
+	"voteny-remove": "дӀайаккха",
+	"voteny-votes": "{{PLURAL:$1|цхьа кхаж|$1 кхаж}}",
+	"topratings": "Уггаре а гӀарйаьлла агӀонаш",
+	"topratings-no-pages": "ГӀарйаьлла агӀонаш йац.",
+	"right-voteny": "Кхаж тасаран агӀонаш"
 }
