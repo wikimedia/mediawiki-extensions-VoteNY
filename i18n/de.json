@@ -15,7 +15,7 @@
 	"voteny-community-score": "Punktestand der Gemeinschaft: '''$1'''",
 	"voteny-ratings": "{{PLURAL:$1|eine Bewertung|$1 Bewertungen}}",
 	"voteny-remove": "entfernen",
-	"voteny-gave-this": "Du hast eine $1 vergeben.",
+	"voteny-gave-this": "{{#FORMAL:Du hast|Sie haben}} eine $1 vergeben.",
 	"voteny-votes": "{{PLURAL:$1|eine Stimme|$1 Stimmen}}",
 	"topratings": "Höchstbewertete Seiten",
 	"topratings-no-pages": "Es sind keine höchstbewerteten Seiten vorhanden.",
