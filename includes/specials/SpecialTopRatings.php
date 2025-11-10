@@ -42,20 +42,21 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$out = $this->getOutput();
 		$user = $this->getUser();
 
-		$categoryName = $namespace = '';
+		$categoryName = '';
+		$namespace = null;
 		$sort = 'DESC';
 
 		// Parse the parameters passed to the special page
 		// Make sure that the limit parameter passed to the special page is
 		// an integer and that it's less than 100 (performance!)
-		if ( isset( $par ) && is_numeric( $par ) && $par < 100 ) {
+		if ( $par !== null && is_numeric( $par ) && $par < 100 ) {
 			$limit = intval( $par );
-		} elseif ( isset( $par ) && !is_numeric( $par ) ) {
+		} elseif ( $par !== null && !is_numeric( $par ) ) {
 			// $par is a string...assume that we can explode() it
 			$exploded = explode( '/', $par );
 			$categoryName = $exploded[0];
 			$namespace = ( isset( $exploded[1] ) ? intval( $exploded[1] ) : $namespace );
-			$limit = ( isset( $exploded[2] ) ? intval( $exploded[2] ) : 50 );
+			$limit = intval( $exploded[2] ?? 50 );
 			$sort = ( isset( $exploded[3] ) && $exploded[3] === 'ASC' ? 'ASC' : 'DESC' );
 		} else {
 			$limit = 50;
@@ -164,7 +165,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 	 *
 	 * @param int $limit LIMIT for the SQL query (get this many records)
 	 * @param string $categoryName Category name, if any; if this contains spaces they are replaced with underscores
-	 * @param int $namespace Namespace index, if fetching pages from a non-NS_MAIN NS
+	 * @param int|null $namespace Namespace index, if fetching pages from a non-NS_MAIN NS
 	 * @param string $sortOrder Sorting order for the SQL query, either DESC (default) or ASC
 	 * @return array Array of page ID => total votes mappings
 	 */
@@ -178,8 +179,8 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		$tables = [ 'Vote' ];
 		$where = [ 'vote_page_id <> 0' ];
 
-		// isset(), because 0 is a totally valid NS
-		if ( $categoryName && isset( $namespace ) ) {
+		// Check for null because 0 is a totally valid NS
+		if ( $categoryName !== '' && $namespace !== null ) {
 			$tables = [ 'Vote', 'page', 'categorylinks' ];
 			$where = [
 				'vote_page_id <> 0',
@@ -195,10 +196,7 @@ class SpecialTopRatings extends IncludableSpecialPage {
 		// We're not passing in $sortOrder as-is to reduce code reviewer anxiety
 		// and to increase overall sanity because no-one likes an SQL injection
 		// vector :)
-		$sortString = 'DESC';
-		if ( $sortOrder !== 'DESC' ) {
-			$sortString = 'ASC';
-		}
+		$sortString = $sortOrder === 'DESC' ? 'DESC' : 'ASC';
 
 		// Perform the SQL query with the given conditions; the basic idea is
 		// that we get $limit (however, 100 or less) unique page IDs from the

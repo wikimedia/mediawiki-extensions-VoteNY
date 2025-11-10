@@ -38,7 +38,7 @@ class Vote {
 	 * @param string $raw Set to 'raw' to skip using cache and always fetch from the DB
 	 * @return int Amount of votes
 	 */
-	function count( $raw = '' ) {
+	public function count( $raw = '' ) {
 		$services = MediaWikiServices::getInstance();
 		$cache = $services->getMainWANObjectCache();
 		$fname = __METHOD__;
@@ -76,7 +76,7 @@ class Vote {
 	 * @param string $raw Set to 'raw' to skip using cache and always fetch from the DB
 	 * @return string Formatted average number of votes (something like 3.50)
 	 */
-	function getAverageVote( $raw = '' ) {
+	public function getAverageVote( $raw = '' ) {
 		$services = MediaWikiServices::getInstance();
 		$cache = $services->getMainWANObjectCache();
 		$fname = __METHOD__;
@@ -113,7 +113,7 @@ class Vote {
 	/**
 	 * Clear caches - memcached, parser cache and Squid cache
 	 */
-	function clearCache() {
+	private function clearCache() {
 		$services = MediaWikiServices::getInstance();
 		$cache = $services->getMainWANObjectCache();
 
@@ -136,7 +136,7 @@ class Vote {
 	 * Delete the user's vote from the database, purges normal caches and
 	 * updates SocialProfile's statistics, if SocialProfile is active.
 	 */
-	function delete() {
+	public function delete() {
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$dbw->delete(
@@ -162,7 +162,7 @@ class Vote {
 	 *
 	 * @param int $voteValue
 	 */
-	function insert( $voteValue ) {
+	public function insert( $voteValue ) {
 		global $wgRequest;
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
@@ -171,7 +171,7 @@ class Vote {
 		$voteDate = date( 'Y-m-d H:i:s' );
 		AtEase::restoreWarnings();
 
-		if ( $this->hasUserAlreadyVoted() == false ) {
+		if ( !$this->hasUserAlreadyVoted() ) {
 			$dbw->insert(
 				'Vote',
 				[
@@ -200,22 +200,17 @@ class Vote {
 	 * @return bool|int False if s/he hasn't, otherwise returns the
 	 *                  value of 'vote_value' column from Vote DB table
 	 */
-	function hasUserAlreadyVoted() {
+	public function hasUserAlreadyVoted() {
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$s = $dbr->selectRow(
+		return $dbr->selectField(
 			'Vote',
-			[ 'vote_value' ],
+			'vote_value',
 			[
 				'vote_page_id' => $this->PageID,
 				'vote_actor' => $this->User->getActorId()
 			],
 			__METHOD__
 		);
-		if ( $s === false ) {
-			return false;
-		} else {
-			return $s->vote_value;
-		}
 	}
 
 	/**
@@ -223,13 +218,9 @@ class Vote {
 	 *
 	 * @return string HTML output
 	 */
-	function display() {
+	public function display() {
 		$voted = $this->hasUserAlreadyVoted();
-
-		$make_vote_box_clickable = '';
-		if ( $voted == false ) {
-			$make_vote_box_clickable = ' vote-clickable';
-		}
+		$make_vote_box_clickable = $voted ? '' : ' vote-clickable';
 
 		$output = "<div class=\"vote-box{$make_vote_box_clickable}\" id=\"votebox\">";
 		$output .= '<span id="PollVotes" class="vote-number">' . $this->count() . '</span>';
@@ -246,7 +237,7 @@ class Vote {
 				wfMessage( 'voteny-link' )->escaped() . '</a>';
 		} else {
 			if ( !MediaWikiServices::getInstance()->getReadOnlyMode()->isReadOnly() ) {
-				if ( $voted == false ) {
+				if ( !$voted ) {
 					$output .= '<a href="javascript:void(0);" class="vote-vote-link">' .
 						wfMessage( 'voteny-link' )->escaped() . '</a>';
 				} else {

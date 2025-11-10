@@ -13,15 +13,9 @@ class VoteStars extends Vote {
 	 * @param bool $voted Has the user already voted? False by default
 	 * @return string HTML output
 	 */
-	function display( $voted = false ) {
+	public function display( $voted = false ) {
 		$overall_rating = $this->getAverageVote();
-
-		if ( $voted ) {
-			$display_stars_rating = $voted;
-		} else {
-			$display_stars_rating = $this->getAverageVote();
-		}
-
+		$display_stars_rating = $voted ?: $this->getAverageVote();
 		$id = $this->PageID;
 
 		$output = '<div id="rating_' . $id . '">';
@@ -31,7 +25,7 @@ class VoteStars extends Vote {
 		$output .= '<div class="rating-section">';
 		$output .= $this->displayStars( $id, (int)$display_stars_rating, $voted );
 		$count = $this->count();
-		if ( isset( $count ) ) {
+		if ( $count !== null ) {
 			$output .= ' <span class="rating-total">(' .
 				wfMessage( 'voteny-votes', $count )->parse() . ')</span>';
 		}
@@ -40,7 +34,8 @@ class VoteStars extends Vote {
 			$output .= '<div class="rating-voted">' .
 				wfMessage( 'voteny-gave-this', $already_voted )->parse() .
 			" </div>
-			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\" data-page-id=\"{$this->PageID}\" data-vote-id=\"{$id}\">("
+			<a href=\"javascript:void(0);\" class=\"vote-remove-stars-link\""
+				. " data-page-id=\"{$this->PageID}\" data-vote-id=\"{$id}\">("
 				. wfMessage( 'voteny-remove' )->escaped() .
 			')</a>';
 		}
@@ -60,7 +55,7 @@ class VoteStars extends Vote {
 	 * @param int|bool $voted
 	 * @return string Generated <img> tag
 	 */
-	function displayStars( $id, $rating, $voted ) {
+	public function displayStars( $id, $rating, $voted ) {
 		global $wgExtensionAssetsPath;
 
 		if ( !$rating ) {
@@ -72,11 +67,7 @@ class VoteStars extends Vote {
 		$output = '';
 
 		for ( $x = 1; $x <= $this->maxRating; $x++ ) {
-			if ( !$id ) {
-				$action = 3;
-			} else {
-				$action = 5;
-			}
+			$action = $id ? 5 : 3;
 			$output .= "<img class=\"vote-rating-star\" data-vote-the-vote=\"{$x}\"" .
 				" data-page-id=\"{$this->PageID}\"" .
 				" data-vote-id=\"{$id}\" data-vote-action=\"{$action}\" data-vote-rating=\"{$rating}\"" .
@@ -84,11 +75,7 @@ class VoteStars extends Vote {
 				" src=\"{$wgExtensionAssetsPath}/VoteNY/resources/images/star_";
 			switch ( true ) {
 				case $rating >= $x:
-					if ( $voted ) {
-						$output .= 'voted';
-					} else {
-						$output .= 'on';
-					}
+					$output .= $voted ? 'voted' : 'on';
 					break;
 				case ( $rating > 0 && $rating < $x && $rating > ( $x - 1 ) ):
 					$output .= 'half';
@@ -110,7 +97,7 @@ class VoteStars extends Vote {
 	 *
 	 * @return string
 	 */
-	function displayScore() {
+	public function displayScore() {
 		$count = $this->count();
 		return wfMessage( 'voteny-community-score', $this->getAverageVote() )
 			->numParams( $count )->parse() .

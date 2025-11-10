@@ -19,7 +19,7 @@ class VoteNYHooks {
 	 * @param MediaWiki\Parser\Parser &$parser
 	 */
 	public static function registerParserHook( &$parser ) {
-		$parser->setHook( 'vote', [ 'VoteNYHooks', 'renderVote' ] );
+		$parser->setHook( 'vote', [ __CLASS__, 'renderVote' ] );
 	}
 
 	/**
@@ -58,26 +58,13 @@ class VoteNYHooks {
 			$type = intval( $args['type'] );
 		}
 
-		$output = '';
-		$title = $parser->getTitle();
-		// @phan-suppress-next-line PhanRedundantCondition It's not redundant and the docs are wrong, getTitle can still return null
-		if ( $title ) {
-			$articleID = $title->getArticleID();
-			switch ( $type ) {
-				case 0:
-					$vote = new Vote( $articleID, $user );
-					break;
-				case 1:
-					$vote = new VoteStars( $articleID, $user );
-					break;
-				default:
-					$vote = new Vote( $articleID, $user );
-			}
+		$pageID = $parser->getTitle()->getArticleID();
+		$vote = match ( $type ) {
+			1 => new VoteStars( $pageID, $user ),
+			default => new Vote( $pageID, $user ),
+		};
 
-			$output = $vote->display();
-		}
-
-		return $output;
+		return $vote->display();
 	}
 
 	/**
@@ -160,12 +147,7 @@ class VoteNYHooks {
 	 * @return int Amount of votes for the given page
 	 */
 	public static function getNumberOfVotesPageParser( $parser, $pagename ) {
-		$title = Title::newFromText( $pagename );
-
-		if ( !$title instanceof Title ) {
-			$title = $parser->getTitle();
-		}
-
+		$title = Title::newFromText( $pagename ) ?? $parser->getTitle();
 		return self::getNumberOfVotesPage( $title );
 	}
 
@@ -197,8 +179,7 @@ class VoteNYHooks {
 	public static function addTable( $updater ) {
 		$db = $updater->getDB();
 		$dbt = $db->getType();
-		$dir = __DIR__ . '/..';
-		$sqlPath = "{$dir}/sql";
+		$sqlPath = __DIR__ . '/../sql';
 		// If using SQLite, just use the MySQL/MariaDB schema, it's compatible
 		// anyway. Only PGSQL and some more exotic variants need a totally
 		// different schema.
