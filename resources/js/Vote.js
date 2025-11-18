@@ -10,7 +10,7 @@
  * @author Jack Phoenix
  * @author Daniel A. R. Werner < daniel.a.r.werner@gmail.com >
  */
-var VoteNY = function VoteNY() {
+const VoteNY = function VoteNY() {
 	this.MaxRating = 5;
 	this.clearRatingTimer = null;
 	this.voted_new = [];
@@ -31,7 +31,7 @@ var VoteNY = function VoteNY() {
 			what: 'vote',
 			pageId: PageID,
 			voteValue: TheVote
-		} ).done( function ( data ) {
+		} ).done( ( data ) => {
 			$( '#PollVotes' ).html( data.voteny.result );
 			$( '#Answer' ).html(
 				'<a href="javascript:void(0);" class="vote-unvote-link">' +
@@ -51,7 +51,7 @@ var VoteNY = function VoteNY() {
 			format: 'json',
 			what: 'delete',
 			pageId: PageID
-		} ).done( function ( data ) {
+		} ).done( ( data ) => {
 			$( '#PollVotes' ).html( data.voteny.result );
 			$( '#Answer' ).html(
 				'<a href="javascript:void(0);" class="vote-vote-link">' +
@@ -70,7 +70,7 @@ var VoteNY = function VoteNY() {
 	 */
 	this.clickVoteStars = function ( TheVote, PageID, id, action ) {
 		this.voted_new[ id ] = TheVote;
-		var actionName;
+		let actionName;
 		if ( action == 3 ) {
 			actionName = 'stars'; // all other values but 'multi' are ignored anyway
 		}
@@ -84,7 +84,7 @@ var VoteNY = function VoteNY() {
 			what: actionName,
 			voteValue: TheVote,
 			pageId: PageID
-		} ).done( function ( data ) {
+		} ).done( ( data ) => {
 			$( '#rating_' + id ).html( data.voteny.result );
 		} );
 	};
@@ -101,14 +101,14 @@ var VoteNY = function VoteNY() {
 			what: 'delete',
 			type: 'stars',
 			pageId: PageID
-		} ).done( function ( data ) {
+		} ).done( ( data ) => {
 			$( '#rating_' + id ).html( data.voteny.result );
 		} );
 	};
 
 	this.startClearRating = function ( id, rating, voted ) {
-		var voteNY = this;
-		this.clearRatingTimer = setTimeout( function () {
+		const voteNY = this;
+		this.clearRatingTimer = setTimeout( () => {
 			voteNY.clearRating( id, 0, rating, voted );
 		}, 200 );
 	};
@@ -118,8 +118,8 @@ var VoteNY = function VoteNY() {
 			voted = this.voted_new[ id ];
 		}
 
-		for ( var x = 1; x <= this.MaxRating; x++ ) {
-			var old_rating = voted || prev_rating,
+		for ( let x = 1; x <= this.MaxRating; x++ ) {
+			let old_rating = voted || prev_rating,
 				star = 'off';
 
 			if ( voted ) {
@@ -140,7 +140,7 @@ var VoteNY = function VoteNY() {
 			clearTimeout( this.clearRatingTimer );
 		}
 		this.clearRating( id, num, prev_rating );
-		for ( var x = 1; x <= num; x++ ) {
+		for ( let x = 1; x <= num; x++ ) {
 			$( '#rating_' + id + '_' + x ).attr( 'src', this.imagePath + 'star_voted.gif' );
 		}
 		this.last_id = id;
@@ -149,8 +149,8 @@ var VoteNY = function VoteNY() {
 
 // TODO: Make event handlers part of a widget as described in the VoteNY's TODO and reduce this
 //       code to instantiating such a widget for the current wiki page if required.
-$( function () {
-	var vote = new VoteNY();
+$( () => {
+	const vote = new VoteNY();
 
 	// Green voting box's link
 	$( '.vote-action' ).on( 'click', '> a', function ( event ) {
@@ -167,7 +167,7 @@ $( function () {
 	// correctly even *after* you've voted (say, if you wanted to change your
 	// vote with the star ratings without reloading the page).
 	$( 'body' ).on( 'click', '.vote-rating-star', function () {
-		var that = $( this );
+		const that = $( this );
 		vote.clickVoteStars(
 			that.data( 'vote-the-vote' ),
 			$( this ).data( 'page-id' ),
@@ -175,14 +175,14 @@ $( function () {
 			that.data( 'vote-action' )
 		);
 	} ).on( 'mouseover', '.vote-rating-star', function () {
-		var that = $( this );
+		const that = $( this );
 		vote.updateRating(
 			that.data( 'vote-id' ),
 			that.data( 'vote-the-vote' ),
 			that.data( 'vote-rating' )
 		);
 	} ).on( 'mouseout', '.vote-rating-star', function () {
-		var that = $( this );
+		const that = $( this );
 		vote.startClearRating(
 			that.data( 'vote-id' ),
 			that.data( 'vote-rating' ),
