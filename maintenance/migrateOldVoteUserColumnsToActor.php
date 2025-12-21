@@ -39,7 +39,7 @@ class MigrateOldVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 	 *
 	 * @return string
 	 */
-	protected function updateSkippedMessage() {
+	public function updateSkippedMessage() {
 		return 'Vote has already been migrated to use the actor columns.';
 	}
 
