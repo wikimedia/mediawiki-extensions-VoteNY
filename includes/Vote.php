@@ -11,7 +11,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use Wikimedia\AtEase\AtEase;
 use Wikimedia\Rdbms\Database;
 
 class Vote {
@@ -167,17 +166,13 @@ class Vote {
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
-		AtEase::suppressWarnings(); // E_STRICT whining
-		$voteDate = date( 'Y-m-d H:i:s' );
-		AtEase::restoreWarnings();
-
 		if ( !$this->hasUserAlreadyVoted() ) {
 			$dbw->insert(
 				'Vote',
 				[
 					'vote_page_id' => $this->PageID,
 					'vote_value' => $voteValue,
-					'vote_date' => $dbw->timestamp( $voteDate ),
+					'vote_date' => $dbw->timestamp(),
 					'vote_ip' => $wgRequest->getIP(),
 					'vote_actor' => $this->User->getActorId()
 				],
