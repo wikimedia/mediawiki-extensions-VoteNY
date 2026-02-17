@@ -184,13 +184,22 @@ class SpecialTopRatings extends IncludableSpecialPage {
 			$tables = [ 'Vote', 'page', 'categorylinks' ];
 			$where = [
 				'vote_page_id <> 0',
-				'cl_to' => str_replace( ' ', '_', $categoryName ),
 				'page_namespace' => $namespace
 			];
 			$joinConds = [
 				'categorylinks' => [ 'INNER JOIN', 'cl_from = page_id' ],
 				'page' => [ 'INNER JOIN', 'page_id = vote_page_id' ]
 			];
+			if ( version_compare( MW_VERSION, '1.45', '>=' ) ) {
+				// 1.45+
+				$tables[] = 'linktarget';
+				$where['lt_namespace'] = NS_CATEGORY;
+				$where['lt_title'] = str_replace( ' ', '_', $categoryName );
+				$joinConds['linktarget'] = [ 'INNER JOIN', 'cl_target_id = lt_id' ];
+			} else {
+				// < 1.45
+				$where['cl_to'] = str_replace( ' ', '_', $categoryName );
+			}
 		}
 
 		// We're not passing in $sortOrder as-is to reduce code reviewer anxiety
