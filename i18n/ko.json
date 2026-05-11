@@ -1,11 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"Ykhwong",
 			"아라"
 		]
 	},
 	"apihelp-voteny-summary": "VoteNY API 모듈",
+	"apihelp-voteny-param-what": "수행할 작업입니다. 유효한 값은 'vote'(녹색 투표 상자), 'multi'(별표 투표) 또는 'delete'(이전에 투표한 내용 삭제)입니다.",
+	"apihelp-voteny-param-pageId": "투표 상자/별점이 있는 문서의 문서 ID입니다",
+	"apihelp-voteny-param-voteValue": "1에서 5 사이의 숫자 투표 값",
+	"apihelp-voteny-param-type": "이 값을 'stars'로 설정하면 투표 별표(VoteStars PHP 클래스)가 사용되고, 그렇지 않으면 녹색 투표 상자(Vote PHP 클래스)가 사용됩니다",
+	"apihelp-voteny-example-1": "ID 번호가 666인 문서에 투표합니다",
+	"apihelp-voteny-example-2": "ID 번호가 666인 문서에서 당신의 표를 삭제합니다",
+	"apihelp-voteny-example-3": "ID 번호가 666인 문서에 투표 (별 5개 중 3개) 합니다",
+	"apihelp-voteny-example-4": "별점 평가를 사용하는 ID 번호가 666인 문서에서 당신의 표를 삭제합니다",
+	"apihelp-voteny-example-5": "ID 번호가 666인 문서에 투표 (별 5개 중 4개) 하고, 이전 투표한 것이 있다면 삭제합니다",
 	"voteny-desc": "<code>&lt;vote&gt;</code> 태그로 자바스크립트 기반 투표",
 	"voteny-link": "투표",
 	"voteny-unvote-link": "투표 취소",
@@ -16,5 +26,6 @@
 	"voteny-votes": "{{PLURAL:$1|한 표|$1표}}",
 	"topratings": "평가가 높은 문서",
 	"topratings-no-pages": "평가가 높은 문서가 없습니다.",
+	"action-voteny": "문서에 투표할",
 	"right-voteny": "문서 투표"
 }
