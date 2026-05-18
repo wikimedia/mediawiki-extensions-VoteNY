@@ -26,6 +26,6 @@
 	"voteny-votes": "{{PLURAL:$1|한 표|$1표}}",
 	"topratings": "평가가 높은 문서",
 	"topratings-no-pages": "평가가 높은 문서가 없습니다.",
-	"action-voteny": "문서에 투표할",
-	"right-voteny": "문서 투표"
+	"action-voteny": "문서에 투표",
+	"right-voteny": "문서에 투표"
 }
