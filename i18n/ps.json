@@ -1,8 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
+	"apihelp-voteny-param-voteValue": "د ۱ او ۵ ترمنځ د رايو شمېريز ارزښت",
+	"voteny-link": "رايه ورکول",
+	"voteny-unvote-link": "رایه نه ورکول",
+	"voteny-community-score": "د ټولنې نومره: '''$1'''",
+	"voteny-remove": "لرې‌کول",
+	"voteny-gave-this": "تاسو دې ته $1 ورکړ",
+	"voteny-votes": "{{PLURAL:$1|يوه رايه|$1 رايې}}",
+	"action-voteny": "د رايې مخونه",
 	"right-voteny": "د رايې مخونه"
 }
