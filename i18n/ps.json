@@ -1,8 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
+	"apihelp-voteny-summary": "VoteNY API چلنوال",
+	"apihelp-voteny-param-what": "چاره چې بايد ترسره شي؛ باوروړ ارزښتونه 'رايه' (د رايې ورکولو زرغون بکس)، 'څو' (د رايې ورکولو ستوري) يا 'ړنگول' (مخکې ورکړل شوې رايه ړنگول) دي.",
+	"apihelp-voteny-param-pageId": "د هغه مخ پېژند چې د رايې ورکولو بکس/ستوري پکې دی/دي",
+	"apihelp-voteny-param-voteValue": "د ۱ او ۵ ترمنځ د رايو شمېريز ارزښت",
+	"apihelp-voteny-param-type": "دا 'ستوري' ته ته واوڼئ؛ ترڅو د رايې ورکولو ستوري  (رايې‌ورکولو‌ستورو پي‌اېچ‌پي ټولگی) وبلل شي، که نه نو د زرغون رايې بکس (د رايې‌ورکولو پي‌اېچ‌پي ټولگی) کارول کېږي",
+	"apihelp-voteny-example-1": "هغه مخ ته رايه ورکړئ چې ۶۶۶ پېژند شمېره لري",
+	"apihelp-voteny-example-2": "خپله رايه د هغه مخ نه ړنگه کړئ چې ۶۶۶ پېژند شمېره لري",
+	"apihelp-voteny-example-3": "هغه مخ ته رايه ورکړئ (له ۵ څخه ۳ ستوري) چې ۶۶۶ پېژند شمېره لري",
+	"apihelp-voteny-example-4": "خپله رايه د هغه مخ نه ړنگه کړئ چې ۶۶۶ پېژند شمېره لري او ستوري درجه‌بندي کاروي",
+	"apihelp-voteny-example-5": "هغه مخ ته رايه ورکړئ (له پېنځو څخه ۴ ستوري) چې ۶۶۶ پېژند شمېره لري، پخوانۍ رايه مو ړنگه کړئ، که وي",
+	"voteny-desc": " د\n<code>&lt;vote&gt;</code> نښلن سره د جاواسکريپټ پربنسټ رايه ورکول.",
+	"voteny-link": "رايه ورکول",
+	"voteny-unvote-link": "رایه نه ورکول",
+	"voteny-community-score": "د ټولنې نومره: '''$1'''",
+	"voteny-ratings": "{{PLURAL:$1|يوه درجه‌بندي|$1 درجه‌بندۍ}}",
+	"voteny-remove": "لرې‌کول",
+	"voteny-gave-this": "تاسو دې ته $1 ورکړ",
+	"voteny-votes": "{{PLURAL:$1|يوه رايه|$1 رايې}}",
+	"topratings": "غوره درجه‌بندي شوي مخونه",
+	"topratings-no-pages": "هېڅ غوره درجه‌بندي شوي مخونه نشته.",
+	"action-voteny": "د رايې مخونه",
 	"right-voteny": "د رايې مخونه"
 }
