@@ -43,7 +43,7 @@
 		],
 		"RenameUserSQL": "VoteNYHooks::onUserRename",
 		"ParserGetVariableValueSwitch": "VoteNYHooks::assignValueToMagicWord",
-		"MagicWordwgVariableIDs": "VoteNYHooks::registerVariableId",
+		"GetMagicVariableIDs": "VoteNYHooks::onGetMagicVariableIDs",
 		"LoadExtensionSchemaUpdates": "VoteNYHooks::addTable"
 	},
 	"ResourceFileModulePaths": {

@@ -156,7 +156,7 @@ class VoteNYHooks {
 	 *
 	 * @param array &$variableIds Array of pre-existing variable IDs
 	 */
-	public static function registerVariableId( &$variableIds ) {
+	public static function onGetMagicVariableIDs( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFVOTES';
 		$variableIds[] = 'NUMBEROFVOTESPAGE';
 	}
