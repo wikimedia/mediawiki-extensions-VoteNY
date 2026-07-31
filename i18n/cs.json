@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Walter Klosse"
+			"Walter Klosse",
+			"Comfyquiettree"
 		]
 	},
 	"apihelp-voteny-summary": "VoteNY API modul",
